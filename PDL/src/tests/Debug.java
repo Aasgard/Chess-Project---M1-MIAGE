@@ -46,6 +46,7 @@ public class Debug {
 		
 		JSONObject obj = new JSONObject();
 		obj.put("Test", new Integer(1));
+		System.out.println(obj.toString());
 		
 	}
 
