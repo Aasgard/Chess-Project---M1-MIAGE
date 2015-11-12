@@ -1,5 +1,11 @@
 package tests;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import org.json.*;
 import java.util.Iterator;
@@ -9,6 +15,8 @@ import classes.Move;
 import outils.Tools;
 
 public class Debug {
+
+	private static FileWriter fw;
 
 	public static void main(String[] args) {
 		
@@ -42,12 +50,22 @@ public class Debug {
 		
 		System.out.println("Cette game comporte " + g1.getNbMoves() +  " moves");
 		
-		//g1.printGame();
-		
 		JSONObject obj = new JSONObject();
-		obj.put("Test", new Integer(1));
-		System.out.println(obj.toString());
+		obj.put("name", "Joueur 1");
 		
+		JSONArray jsa = new JSONArray();
+		jsa.put(-5);
+		jsa.put(-29);
+		jsa.put(16);
+		obj.put("data", jsa);
+		
+		try {
+			File f1 = new File("D:/wamp/www/PDL Website/json/test2.json");
+			fw = new FileWriter(f1);
+			fw.write(obj.toString(2));
+			fw.flush();
+			fw.close();
+		} catch (IOException e1) { e1.printStackTrace(); }
 	}
 
 }
