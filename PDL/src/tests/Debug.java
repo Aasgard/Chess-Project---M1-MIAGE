@@ -72,5 +72,7 @@ public class Debug {
 		
 		Opening op = new Opening(85);
 		System.out.println(op.toString());
+		
+		// test commit
 	}
 }
