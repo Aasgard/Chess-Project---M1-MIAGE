@@ -1,28 +1,31 @@
 package object;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import tools.MySQL;
+import java.util.List;
 
 public class Game {
 
 	private int id;
-	private ArrayList<Move> alMoves;
+	private List<Move> alMoves;
+	private String log;
 	
-	public Game(int ident){
-		this.id = ident;
-		alMoves = new ArrayList<Move>();
-		try {
-			ResultSet rs = MySQL.getInstance().query("SELECT Move.id, FEN.log, Move.halfMove FROM Move, FEN WHERE FEN.id = Move.idFEN AND Move.idGame = " + ident + " AND FEN.log IS NOT NULL;");
-			while(rs.next()){
-				Move currentMove = new Move(rs.getInt(1), rs.getString(2), rs.getInt(3));
-				alMoves.add(currentMove);
-			}
-		} catch (SQLException e) { e.printStackTrace(); }
+	public Game(int id, List<Move> moves, String log){
+		this.id = id;
+		this.alMoves = moves;
+		this.log = log;		
+	}
+	
+	// TODO à supprimer
+	public Game(){}
+
+	public String getLog() {
+		return log;
 	}
 
+	public void setLog(String log) {
+		this.log = log;
+	}
+
+	
 	public int getId() {
 		return id;
 	}
@@ -31,11 +34,11 @@ public class Game {
 		this.id = id;
 	}
 
-	public ArrayList<Move> getAlMoves() {
+	public List<Move> getAlMoves() {
 		return alMoves;
 	}
 
-	public void setAlMoves(ArrayList<Move> alMoves) {
+	public void setAlMoves(List<Move> alMoves) {
 		this.alMoves = alMoves;
 	}
 	
