@@ -3,7 +3,7 @@ package object;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import database.MySQL;
+import tools.MySQL;
 
 public class Opening {
 
