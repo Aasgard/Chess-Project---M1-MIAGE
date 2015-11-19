@@ -8,7 +8,7 @@ import object.*;
 
 public interface ITreatmentJSON {
 
-	public void saveAllToJSON(Game g, List<Integer> scores);
+	public void saveAllScoreToJSON(Game g, List<Integer> scores);
 	
 	public void saveTotalScoreToJSON(Game g, int totalScore);
 	

@@ -13,9 +13,11 @@ import org.json.JSONObject;
 import object.Game;
 import object.Opening;
 
-public class TreatmentJSON implements ITreatmentJSON{
+public class TreatmentJSON implements ITreatmentJSON {
+	
+	private String path = "D:/wamp/www/PDL Website/json/test2.json";
 
-	public void saveAllToJSON(Game g, List<Integer> scores){
+	public void saveAllScoreToJSON(Game g, List<Integer> scores){
 		
 	}
 	
@@ -39,4 +41,17 @@ public class TreatmentJSON implements ITreatmentJSON{
 		
 	}
 	
+	private void saveInFile(JSONArray jsonArray){
+		FileWriter fw;
+		
+		try {
+			File f1 = new File(this.path);
+			fw = new FileWriter(f1);
+			fw.write(jsonArray.toString(2));
+			fw.flush();
+			fw.close();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}	
 }
