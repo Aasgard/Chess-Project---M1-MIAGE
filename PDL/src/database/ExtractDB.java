@@ -45,7 +45,7 @@ public class ExtractDB implements IExtractDB{
 
 	@Override
 	public HashMap<Opening, List<Game>> extractGamesByOpening() {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method s tub
 		return null;
 	}
 
