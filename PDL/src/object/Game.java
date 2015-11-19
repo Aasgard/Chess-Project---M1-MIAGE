@@ -6,26 +6,15 @@ public class Game {
 
 	private int id;
 	private List<Move> alMoves;
-	private String log;
 	
-	public Game(int id, List<Move> moves, String log){
+	public Game(int id, List<Move> moves){
 		this.id = id;
-		this.alMoves = moves;
-		this.log = log;		
+		this.alMoves = moves;	
 	}
 	
 	// TODO à supprimer
 	public Game(){}
 
-	public String getLog() {
-		return log;
-	}
-
-	public void setLog(String log) {
-		this.log = log;
-	}
-
-	
 	public int getId() {
 		return id;
 	}
