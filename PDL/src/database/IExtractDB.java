@@ -17,7 +17,7 @@ public interface IExtractDB {
 	 * Extract games ordered by opening
 	 * @return 
 	 */
-	HashMap<Opening, Game> extractGamesByOpening();
+	HashMap<Opening, List<Game>> extractGamesByOpening();
 	
 	/**
 	 * extract next move after each position

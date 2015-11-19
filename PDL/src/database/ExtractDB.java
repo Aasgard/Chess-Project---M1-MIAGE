@@ -30,8 +30,9 @@ public class ExtractDB implements IExtractDB{
 	public List<Game> extractGames() {
 		
 		List<Move>alMoves = new ArrayList<Move>();
+		// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
 		//try {
-			// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
+			
 			//ResultSet rs = MySQL.getInstance().query("SELECT Move.id, FEN.log, Move.halfMove FROM Move, FEN WHERE FEN.id = Move.idFEN AND Move.idGame = " + ident + " AND FEN.log IS NOT NULL;");
 			//while(rs.next()){
 //			Move currentMove = new Move(rs.getInt(1), rs.getString(2), rs.getInt(3));
@@ -43,7 +44,7 @@ public class ExtractDB implements IExtractDB{
 	}
 
 	@Override
-	public HashMap<Opening, Game> extractGamesByOpening() {
+	public HashMap<Opening, List<Game>> extractGamesByOpening() {
 		// TODO Auto-generated method stub
 		return null;
 	}
