@@ -19,7 +19,7 @@ public class ExtractDB implements IExtractDB{
 		try {
 			ResultSet rs = MySQL.getInstance().query(query);
 			while(rs.next()){
-				res.add(new Game(rs.getInt(1)));
+				//res.add(new Game(rs.getInt(1)));
 			}
 		} catch (SQLException e) { e.printStackTrace(); }
 
@@ -28,6 +28,16 @@ public class ExtractDB implements IExtractDB{
 
 	@Override
 	public List<Game> extractGames() {
+		
+		List<Move>alMoves = new ArrayList<Move>();
+		//try {
+			// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
+			//ResultSet rs = MySQL.getInstance().query("SELECT Move.id, FEN.log, Move.halfMove FROM Move, FEN WHERE FEN.id = Move.idFEN AND Move.idGame = " + ident + " AND FEN.log IS NOT NULL;");
+			//while(rs.next()){
+//			Move currentMove = new Move(rs.getInt(1), rs.getString(2), rs.getInt(3));
+//			alMoves.add(currentMove);
+//		}
+//	} catch (SQLException e) { e.printStackTrace(); }
 		// TODO Auto-generated method stub
 		return null;
 	}
