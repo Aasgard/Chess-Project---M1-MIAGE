@@ -19,7 +19,7 @@ public class Debug {
 
 	public static void main(String[] args) {
 		
-		Game g1 = new Game(1);
+/*		Game g1 = new Game(1);
 		
 		ArrayList<Move> alMoves = g1.getAlMoves();
 		
@@ -72,7 +72,7 @@ public class Debug {
 		} catch (IOException e1) { e1.printStackTrace(); }
 		
 		Opening op = new Opening(85);
-		System.out.println(op.toString());
+		System.out.println(op.toString());*/
 		
 		// test commit
 	}

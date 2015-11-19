@@ -13,7 +13,7 @@ import tools.MySQL;
 
 public class ExtractDB implements IExtractDB{
 
-	private ArrayList<Game> getGamesByOpening(int idOpening){
+/*	private ArrayList<Game> getGamesByOpening(int idOpening){
 		ArrayList<Game> res = new ArrayList<Game>();
 		String query = "SELECT Game.id FROM Game WHERE ecoId = " + idOpening;
 		try {
@@ -24,7 +24,7 @@ public class ExtractDB implements IExtractDB{
 		} catch (SQLException e) { e.printStackTrace(); }
 
 		return res;
-	}
+	}*/
 
 	@Override
 	public List<Game> extractGames() {
