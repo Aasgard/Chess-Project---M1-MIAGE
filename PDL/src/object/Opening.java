@@ -1,9 +1,9 @@
-package classes;
+package object;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import bdd.MySQL;
+import database.MySQL;
 
 public class Opening {
 

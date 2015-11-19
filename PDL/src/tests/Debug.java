@@ -5,12 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.json.*;
-import java.util.Iterator;
 
-import classes.Game;
-import classes.Move;
-import classes.Opening;
-import outils.Tools;
+import object.Game;
+import object.Move;
+import object.Opening;
+import tools.Tools;
+
+import java.util.Iterator;
 
 public class Debug {
 

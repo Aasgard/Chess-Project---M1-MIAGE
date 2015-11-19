@@ -2,8 +2,8 @@ package tests;
 
 import java.util.ArrayList;
 
-import analyse.ExtractDB;
-import classes.Game;
+import analysis.ExtractDB;
+import object.Game;
 
 public class testExtract {
 

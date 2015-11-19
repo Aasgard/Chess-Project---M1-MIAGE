@@ -1,11 +1,11 @@
-package analyse;
+package analysis;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import bdd.MySQL;
-import classes.Game;
+import database.MySQL;
+import object.Game;
 
 public class ExtractDB {
 

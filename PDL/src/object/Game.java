@@ -1,10 +1,10 @@
-package classes;
+package object;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import bdd.MySQL;
+import database.MySQL;
 
 public class Game {
 
