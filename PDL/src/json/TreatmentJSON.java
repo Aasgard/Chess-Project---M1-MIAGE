@@ -1,25 +1,42 @@
 package json;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.text.Position;
 
-import object.*;
-import util.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public interface TreatmentJSON {
+import object.Game;
+import object.Opening;
 
-	public void saveAllToJSON(Game g, List<Integer> scores) throws SaveAllJsonException;
+public class TreatmentJSON implements ITreatmentJSON{
+
+	public void saveAllToJSON(Game g, List<Integer> scores){
+		
+	}
 	
-	public void saveTotalScoreToJSON(Game g, int totalScore) throws SaveTotalScoreJsonException;
+	public void saveTotalScoreToJSON(Game g, int totalScore){
+		
+	}
 	
-	public void saveAverageVariation(Game g, double variable) throws SaveAverageVariationException;
+	public void saveAverageVariation(Game g, double variable){
+		
+	}
 	
-	public void saveBestMoveToJSON(Position g, String FEN) throws SaveBestMoveToJSONException;
+	public void saveBestMoveToJSON(Position g, String FEN){
+		
+	}
 	
-	public void saveWinRateOpening(Opening o, double rate) throws saveWinRateOpeningException;
+	public void saveWinRateOpening(Opening o, double rate){
+		
+	}
 	
-	public void saveErrorToJSON(Player p, int nbError) throws saveErrorToJSONException;
-	
+	public void saveErrorToJSON(Player p, int nbError){
+		
+	}
 	
 }
