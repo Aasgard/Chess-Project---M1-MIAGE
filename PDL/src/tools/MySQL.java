@@ -1,4 +1,4 @@
-package bdd;
+package tools;
 
 import java.sql.*;
 import com.mysql.jdbc.Connection;

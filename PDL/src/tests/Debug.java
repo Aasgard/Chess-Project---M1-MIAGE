@@ -5,12 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.json.*;
-import java.util.Iterator;
 
-import classes.Game;
-import classes.Move;
-import classes.Opening;
-import outils.Tools;
+import object.Game;
+import object.Move;
+import object.Opening;
+import tools.Tools;
+
+import java.util.Iterator;
 
 public class Debug {
 
@@ -18,7 +19,7 @@ public class Debug {
 
 	public static void main(String[] args) {
 		
-		Game g1 = new Game(1);
+/*		Game g1 = new Game(1);
 		
 		ArrayList<Move> alMoves = g1.getAlMoves();
 		
@@ -71,6 +72,8 @@ public class Debug {
 		} catch (IOException e1) { e1.printStackTrace(); }
 		
 		Opening op = new Opening(85);
-		System.out.println(op.toString());
+		System.out.println(op.toString());*/
+		
+		// test commit
 	}
 }

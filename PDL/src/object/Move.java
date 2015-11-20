@@ -1,4 +1,4 @@
-package classes;
+package object;
 
 public class Move {
 
@@ -42,5 +42,7 @@ public class Move {
 		int scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
 		return scoreVoulu;
 	}
+	
+	
 	
 }
