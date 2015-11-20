@@ -2,13 +2,15 @@ package analysis;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import database.*;
+import json.ExtractJSON;
 import object.Game;
 import object.Move;
-import object.Opening;
 
 public class Analysis {
+	
 	private static IExtractDB extractDB = new ExtractDB();
 	
 	
@@ -19,4 +21,24 @@ public class Analysis {
 			ScoreAnalysis.analyzeScoreGame(game);
 		}
 	}
+	
+	public static void analyzeScoreEvolutionFromPosition(){
+		
+		HashMap<String, List<Move>> mapFENMoves= extractDB.extractGameAndMoveByPosition();
+		
+		for(Entry<String, List<Move>> fenMoves :  mapFENMoves.entrySet()){
+			ScoreFromPositionAnalysis.getEvolScore(fenMoves.getValue());
+		}
+	}
+	
+	public static void analyzeScoreVariation(){
+		ExtractJSON extractJSON = new ExtractJSON();
+		
+		HashMap<Integer, List<Integer>> mapGameScores = extractJSON.extractScoresGames();
+		
+		for(Entry<Integer, List<Integer>> gameScores : mapGameScores.entrySet()){
+			ScoreVariationAnalysis.getAverageVariationGame(gameScores.getKey(), gameScores.getValue());
+		}
+	}
+
 }
