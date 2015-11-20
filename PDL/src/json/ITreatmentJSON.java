@@ -14,7 +14,7 @@ public interface ITreatmentJSON {
 	
 	public void saveAverageVariation(Game g, double variable);
 	
-	public void saveBestMoveToJSON(Position g, String FEN);
+	public void saveBestMoveToJSON(Position p, String FEN);
 	
 	public void saveWinRateOpening(Opening o, double rate);
 	
