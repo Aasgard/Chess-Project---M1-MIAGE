@@ -23,6 +23,7 @@ public class ScoreFromPositionAnalysis {
 		treatmentJSON.saveBestMoveToJSON(bestPosition , fen);
 	}
 
+	
 	private static void isBestMove(Position position){
 		if(position.getScore() > bestPosition.getScore()){
 			bestPosition = position;
