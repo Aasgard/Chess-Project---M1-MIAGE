@@ -27,12 +27,7 @@ public class Opening {
 		} catch (SQLException e) { e.printStackTrace(); }
 	}
 	
-	public String toString(){
-		return "L'Opening " + this.name+" - " + this.variation + " [Numéro " + this.id + "] comporte " + this.nbMoves + " HalfMoves. [ " + this.moves + " ]";
+	public int getId(){
+		return this.id;
 	}
-	
-	
-	
-	
-	
 }
