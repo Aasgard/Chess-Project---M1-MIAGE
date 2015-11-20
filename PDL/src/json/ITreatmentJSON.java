@@ -2,8 +2,6 @@ package json;
 
 import java.util.List;
 
-import javax.swing.text.Position;
-
 import object.*;
 
 public interface ITreatmentJSON {
@@ -12,9 +10,9 @@ public interface ITreatmentJSON {
 	
 	public void saveTotalScoreToJSON(Game g, int totalScore);
 	
-	public void saveAverageVariation(Game g, double variable);
+	public void saveAverageVariation(int idGame, double averageVariation);
 	
-	public void saveBestMoveToJSON(Position g, String FEN);
+	public void saveBestMoveToJSON(Position bestPosition, String FEN);
 	
 	public void saveWinRateOpening(Opening o, double rate);
 	

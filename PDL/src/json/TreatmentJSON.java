@@ -5,13 +5,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import javax.swing.text.Position;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import object.Game;
 import object.Opening;
+import object.Player;
+import object.Position;
 
 public class TreatmentJSON implements ITreatmentJSON {
 	
@@ -25,11 +25,11 @@ public class TreatmentJSON implements ITreatmentJSON {
 		
 	}
 	
-	public void saveAverageVariation(Game g, double variable){
+	public void saveAverageVariation(int idGame, double averageVariation) {
 		
 	}
 	
-	public void saveBestMoveToJSON(Position g, String FEN){
+	public void saveBestMoveToJSON(Position bestPosition, String FEN){
 		
 	}
 	
@@ -53,5 +53,6 @@ public class TreatmentJSON implements ITreatmentJSON {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-	}	
+	}
+
 }
