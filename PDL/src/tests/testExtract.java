@@ -2,8 +2,6 @@ package tests;
 
 import java.util.ArrayList;
 
-import analyse.ExtractDB;
-import classes.FEN;
 import database.ExtractDB;
 import object.Game;
 
@@ -18,14 +16,14 @@ public class testExtract {
 			o.getId();
 		}*/
 		
-		ArrayList<FEN> allFEN = ExtractDB.getAllFEN();
+		/*ArrayList<FEN> allFEN = ExtractDB.getAllFEN();
 		
 		for(FEN fen : allFEN){
 			System.out.println(fen.getStraightFEN());
 		}
 		
 		System.out.println("Il y a " + allFEN.size() + " dans la base de données.");
-		
+		*/
 	}
 
 }
