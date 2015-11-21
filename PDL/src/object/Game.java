@@ -6,12 +6,14 @@ public class Game {
 
 	private int id;
 	private List<Move> alMoves;
+	private int result;
 	
-	public Game(int id, List<Move> moves){
+	public Game(int id, List<Move> moves, int result){
 		this.id = id;
 		this.alMoves = moves;	
+		this.result = result;
 	}
-	
+
 	// TODO à supprimer
 	public Game(){}
 
@@ -33,6 +35,14 @@ public class Game {
 	
 	public int getNbMoves(){
 		return this.alMoves.size();
+	}
+	
+	public int getResult() {
+		return result;
+	}
+
+	public void setResult(int result) {
+		this.result = result;
 	}
 	
 	public void printGame(){
