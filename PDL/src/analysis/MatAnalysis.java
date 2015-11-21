@@ -1,22 +1,40 @@
 package analysis;
 
-import java.util.Iterator;
-import java.util.List;
-
-import database.ExtractDB;
+import java.util.HashMap;
+import java.util.Map;
+import json.ITreatmentJSON;
+import json.TreatmentJSON;
 import object.*;
 
 public class MatAnalysis {
-	
-	public void checkBlunderMat(Game game) {
-		List<Move> moves = game.getAlMoves();
-		Iterator<Move> it = moves.iterator();
-		String log;
+
+	private static HashMap<Player, Integer> playerErrors;
+	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+
+	public static void checkBlunderMat(Game game) {
+		int score;
 		
-		while(it.hasNext()) {
-			log = it.next().getLog();
+		for(Move move : game.getAlMoves()) {
 			
+		}
+	}
+	
+	public static void addErrorToPlayer(Player p) {
+		if(playerErrors.containsKey(p)) {
+			int nbErrors = playerErrors.get(p);
+			playerErrors.put(p, nbErrors++);
+		}
+		else {
+			playerErrors.put(p, 1);
+		}
+	}
+	
+	public static void saveErrorsToJSON() {
+		for(Map.Entry<Player, Integer> entry : playerErrors.entrySet()) {
+			Player p = entry.getKey();
+			int nbErrors = entry.getValue();
 			
+			treatmentJSON.saveErrorToJSON(p, nbErrors);
 		}
 	}
 

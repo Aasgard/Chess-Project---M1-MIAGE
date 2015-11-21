@@ -48,5 +48,15 @@ public class Analysis {
 			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
 		}
 	}
+	
+	public static void analyzeBlunderMat() {
+		List<Game> games = extractDB.extractGames();
+		
+		for(Game game : games){
+			MatAnalysis.checkBlunderMat(game);
+		}
+		
+		MatAnalysis.saveErrorsToJSON();
+	}
 
 }
