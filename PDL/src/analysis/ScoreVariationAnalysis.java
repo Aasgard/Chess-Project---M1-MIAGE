@@ -14,6 +14,7 @@ public class ScoreVariationAnalysis {
 		int sumScoreVariation = 0;
 		for(Integer score : scores){
 			sumScoreVariation =+ calculVariationScore(scorePrecedent, score);
+			scorePrecedent = score;
 		}
 		treatmentJSON.saveAverageVariation(idGame, 	sumScoreVariation/scores.size());
 	}
