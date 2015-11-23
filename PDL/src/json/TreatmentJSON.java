@@ -3,11 +3,13 @@ package json;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import object.FEN;
 import object.Game;
 import object.Opening;
 import object.Player;
@@ -19,7 +21,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
-	public void saveAllScoreToJSON(Game g, List<Integer> scores){
+	public void saveAllScoreToJSON(Game g, HashMap<FEN, Integer> scores){
 		
 	}
 
