@@ -11,6 +11,7 @@ public class Game {
 	private Opening opening;
 	private Event event;
 	private int result;
+	private String date;
 	
 	public Game(int id, List<Move> moves, int result){
 		this.id = id;
@@ -32,6 +33,14 @@ public class Game {
 
 	public void setAlMoves(List<Move> alMoves) {
 		this.alMoves = alMoves;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public Player getWhitePlayer() {
