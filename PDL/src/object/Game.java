@@ -9,6 +9,7 @@ public class Game {
 	private Player whitePlayer;
 	private Player blackPlayer;
 	private Opening opening;
+	private Event event;
 	private int result;
 	
 	public Game(int id, List<Move> moves, int result){
@@ -16,9 +17,6 @@ public class Game {
 		this.alMoves = moves;	
 		this.result = result;
 	}
-
-	// TODO à supprimer
-	public Game(){}
 
 	public int getId() {
 		return id;
@@ -35,23 +33,45 @@ public class Game {
 	public void setAlMoves(List<Move> alMoves) {
 		this.alMoves = alMoves;
 	}
-	
-	public int getNbMoves(){
-		return this.alMoves.size();
+
+	public Player getWhitePlayer() {
+		return whitePlayer;
 	}
-	
+
+	public void setWhitePlayer(Player whitePlayer) {
+		this.whitePlayer = whitePlayer;
+	}
+
+	public Player getBlackPlayer() {
+		return blackPlayer;
+	}
+
+	public void setBlackPlayer(Player blackPlayer) {
+		this.blackPlayer = blackPlayer;
+	}
+
+	public Opening getOpening() {
+		return opening;
+	}
+
+	public void setOpening(Opening opening) {
+		this.opening = opening;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
 	public int getResult() {
 		return result;
 	}
 
 	public void setResult(int result) {
 		this.result = result;
-	}
-	
-	public void printGame(){
-		System.out.println("Numéro : " + this.id);
-		System.out.println("Moves : " + this.alMoves);
-		System.out.println("Nombre de Moves : " + this.alMoves.size());
 	}
 	
 }
