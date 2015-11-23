@@ -12,13 +12,21 @@ public class MatAnalysis {
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
 	public static void checkBlunderMat(Game game) {
+		Player whitePlayer = null;
+		Player blackPlayer = null;
 		boolean previousIsMate = false;
 		boolean currentIsMate = false;
 		
 		for(Move move : game.getAlMoves()) {
 			currentIsMate = move.isMate();
+			
 			if(previousIsMate && !currentIsMate) {
-				
+				if(move.getHalfMove()%2 == 0) {
+					addErrorToPlayer(whitePlayer);
+				}
+				else {
+					addErrorToPlayer(blackPlayer);
+				}
 			}
 			
 			previousIsMate = currentIsMate;
