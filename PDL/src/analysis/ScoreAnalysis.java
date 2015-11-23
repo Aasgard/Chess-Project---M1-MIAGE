@@ -20,7 +20,7 @@ public class ScoreAnalysis {
 	public static void analyzeScoreGame(Game game) {
 		scores = new HashMap<FEN,Integer>();
 		for(Move move : game.getAlMoves()){
-			int score = move.getHigherDepthScore();
+			int score = move.getFen().getHigherDepthScore();
 			scores.put(move.getFen(), score); 
 		}
 		treatmentJSON.saveAllScoreToJSON(game, scores);
