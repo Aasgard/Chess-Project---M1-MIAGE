@@ -4,7 +4,6 @@ import java.util.List;
 
 import json.ITreatmentJSON;
 import json.TreatmentJSON;
-import java.util.*;
 
 public class ScoreVariationAnalysis {
 	
