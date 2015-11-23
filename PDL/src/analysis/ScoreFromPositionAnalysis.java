@@ -17,9 +17,9 @@ public class ScoreFromPositionAnalysis {
 	public static void getEvolScore(List<Move> moves){
 		fen = moves.get(0).getLog();
 		for(Move move : moves){
-			isBestMove(extractJSON.extractScoreAfterMove(move));
+			isBestMove(extractJSON.extractFENAfterMove(move));
 		}
-		treatmentJSON.saveBestFENToJSON(FEN fen);
+		treatmentJSON.saveBestFENToJSON(fen);
 	}
 	
 	private static void isBestMove(FEN fen){
