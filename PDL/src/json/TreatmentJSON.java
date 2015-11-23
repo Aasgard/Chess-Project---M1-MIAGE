@@ -15,6 +15,8 @@ import object.Opening;
 import object.Player;
 import object.Position;
 
+import javax.json;
+
 public class TreatmentJSON implements ITreatmentJSON {
 
 	private String path = "D:/wamp/www/PDL Website/json/";
@@ -22,7 +24,26 @@ public class TreatmentJSON implements ITreatmentJSON {
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
 	public void saveAllScoreToJSON(Game g, HashMap<FEN, Integer> scores){
+		JSONArray outputJSON = new JSONArray();			
+		JSONObject game = new JSONObject();
 		
+		if(extractJSON.isGameExiste(g)){
+			// TODO Update game in JSON
+		}else{
+			// Create a new game in the jsonFile
+			game.put("id", g.getId());
+			
+//			Iterator it = scores.iterator();
+//			
+//			JSONArray scoresJson = new JSONArray();			
+//			JSONObject score = new JSONObject();
+			
+			
+			outputJSON.put(game);
+		}
+		
+		// Save the game
+		this.saveInFile(outputJSON, "Game");
 	}
 
 	public void saveTotalScoreToJSON(Game g, int totalScore){
@@ -67,14 +88,13 @@ public class TreatmentJSON implements ITreatmentJSON {
 		this.saveInFile(outputJSON, "Game");
 	}
 
-	public void saveBestMoveToJSON(Position p, String bestFEN){
+	public void saveBestFenToJSON(String position, FEN fen){
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject position = new JSONObject();
 		
 		// Create a new opening in the jsonFile
-	//	position.put("id", p.getId());
-	//	position.put("position", p.position());
-		position.put("evol_score_global", bestFEN);
+		position.put("position", position);
+		position.put("evol_score_global", fen.getPosition);
 		
 		outputJSON.put(position);
 		
@@ -133,7 +153,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		try {
 			File f1 = new File(this.path + objectName + ".txt");
 			fw = new FileWriter(f1);
-			fw.write(jsonArray.toString(2));
+			fw.write(jsonArray.toString());
 			fw.flush();
 			fw.close();
 		} catch (IOException e1) {

@@ -10,6 +10,7 @@ import object.Position;
 import object.Game;
 import object.Opening;
 import object.Player;
+import object.FEN;
 
 
 public class ExtractJSON {
@@ -41,5 +42,10 @@ public class ExtractJSON {
 	public HashMap<Integer, List<Integer>> extractScoresGames(){
 		//TODO
 		return new HashMap<Integer, List<Integer>>();
+	}
+	
+	public FEN extractFenAfterMove(Move m){
+		FEN fen = new FEN();
+		return fen;
 	}
 }
