@@ -5,6 +5,7 @@ import java.util.List;
 public class Player {
 
 	private int id;
+	private String name;
 	private int nb_game_played;
 	
 	public int getId() {
