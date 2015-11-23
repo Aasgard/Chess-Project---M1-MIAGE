@@ -28,7 +28,6 @@ public class ExtractDB implements IExtractDB{
 
 	@Override
 	public List<Game> extractGames() {
-		
 		List<Move>alMoves = new ArrayList<Move>();
 		// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
 		//try {
