@@ -13,7 +13,7 @@ public interface ITreatmentJSON {
 	
 	public void saveAverageVariation(int idGame, double averageVariation);
 	
-	public void saveBestFenToJSON(Position bestPosition, String FEN);
+	public void saveBestFenToJSON(String FEN, FEN bestPosition);
 
 	public void saveWinRateOpening(Opening o, double rate);
 	

@@ -88,13 +88,13 @@ public class TreatmentJSON implements ITreatmentJSON {
 		this.saveInFile(outputJSON, "Game");
 	}
 
-	public void saveBestFenToJSON(Position p, String bestFEN){
+	public void saveBestFenToJSON(String position, FEN fen){
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject position = new JSONObject();
 		
 		// Create a new opening in the jsonFile
-		position.put("position", p.getFen());
-		position.put("evol_score_global", bestFEN);
+		position.put("position", position);
+		position.put("evol_score_global", fen.getPosition);
 		
 		outputJSON.put(position);
 		
