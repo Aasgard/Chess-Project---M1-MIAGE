@@ -13,9 +13,8 @@ import object.FEN;
 import object.Game;
 import object.Opening;
 import object.Player;
-import object.Position;
 
-import javax.json;
+//import javax.json;
 
 public class TreatmentJSON implements ITreatmentJSON {
 
@@ -88,13 +87,13 @@ public class TreatmentJSON implements ITreatmentJSON {
 		this.saveInFile(outputJSON, "Game");
 	}
 
-	public void saveBestFenToJSON(String position, FEN fen){
+	public void saveBestFenToJSON(String pos, FEN fen){
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject position = new JSONObject();
 		
 		// Create a new opening in the jsonFile
 		position.put("position", position);
-		position.put("evol_score_global", fen.getPosition);
+		position.put("evol_score_global", fen.getPosition());
 		
 		outputJSON.put(position);
 		
