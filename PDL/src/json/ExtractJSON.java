@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import object.Move;
-import object.Position;
 
 import object.Game;
 import object.Opening;
@@ -33,19 +32,13 @@ public class ExtractJSON {
 		return false;
 	}
 	
-	public Position extractScoreAfterMove(Move m){
-		//TODO
-		Position positionSuivante = null;
-		return positionSuivante;
-	}
-	
 	public HashMap<Integer, List<Integer>> extractScoresGames(){
 		//TODO
 		return new HashMap<Integer, List<Integer>>();
 	}
 	
 	public FEN extractFenAfterMove(Move m){
-		FEN fen = new FEN();
+		FEN fen = new FEN("null");
 		return fen;
 	}
 }
