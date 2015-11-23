@@ -15,6 +15,8 @@ import object.Opening;
 import object.Player;
 import object.Position;
 
+import javax.json;
+
 public class TreatmentJSON implements ITreatmentJSON {
 
 	private String path = "D:/wamp/www/PDL Website/json/";

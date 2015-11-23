@@ -12,20 +12,24 @@ public class ScoreFromPositionAnalysis {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	private static ExtractJSON extractJSON = new ExtractJSON();
-	private static String fen;
-	private static Position bestPosition = null;
+	private static FEN bestFEN = new FEN();
 	
 	public static void getEvolScore(List<Move> moves){
 		fen = moves.get(0).getLog();
 		for(Move move : moves){
-			isBestMove(extractJSON.extractScoreAfterMove(move));
+			isBestMove(extractJSON.extractFENAfterMove(move));
 		}
-		treatmentJSON.saveBestFenToJSON(bestPosition , fen);
+<<<<<<< HEAD
+		treatmentJSON.saveBestFenToJSON(fen, bestPosition);
+=======
+		treatmentJSON.saveBestFENToJSON(fen);
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
 	}
 	
-	private static void isBestMove(Position position){
-		if(position.getScore() > bestPosition.getScore()){
-			bestPosition = position;
+	private static void isBestMove(FEN fen){
+		if(fen.getScore() > bestFEN.getScore()){
+			bestFEN.setPosition(fen.getPosition());
+			bestFEN.setScore(fen.getScore());
 		}
 	}
 }
