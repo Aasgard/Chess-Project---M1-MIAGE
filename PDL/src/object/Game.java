@@ -12,11 +12,17 @@ public class Game {
 	private Event event;
 	private int result;
 	private String date;
-	
-	public Game(int id, List<Move> moves, int result){
+
+	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date) {
+		super();
 		this.id = id;
-		this.alMoves = moves;	
+		this.alMoves = alMoves;
+		this.whitePlayer = whitePlayer;
+		this.blackPlayer = blackPlayer;
+		this.opening = opening;
+		this.event = event;
 		this.result = result;
+		this.date = date;
 	}
 
 	public int getId() {
