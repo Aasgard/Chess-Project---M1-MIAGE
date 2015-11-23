@@ -20,7 +20,7 @@ public class ScoreFromPositionAnalysis {
 		for(Move move : moves){
 			isBestMove(extractJSON.extractScoreAfterMove(move));
 		}
-		treatmentJSON.saveBestMoveToJSON(bestPosition , fen);
+		treatmentJSON.saveBestFenToJSON(bestPosition , fen);
 	}
 	
 	private static void isBestMove(Position position){
