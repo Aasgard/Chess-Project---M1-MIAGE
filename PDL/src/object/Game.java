@@ -6,6 +6,9 @@ public class Game {
 
 	private int id;
 	private List<Move> alMoves;
+	private Player whitePlayer;
+	private Player blackPlayer;
+	private Opening opening;
 	private int result;
 	
 	public Game(int id, List<Move> moves, int result){
