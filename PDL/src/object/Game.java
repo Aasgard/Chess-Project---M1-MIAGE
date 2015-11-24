@@ -8,16 +8,17 @@ public class Game {
 	private List<Move> alMoves;
 	private Player whitePlayer;
 	private Player blackPlayer;
+	private int whiteElo;
+	private int blackElo;
 	private Opening opening;
 	private Event event;
 	private int result;
 	private String date;
-
 	public Game(){
 		
 	}
 	
-	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date) {
+	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int backElo) {
 		super();
 		this.id = id;
 		this.alMoves = alMoves;
@@ -27,6 +28,8 @@ public class Game {
 		this.event = event;
 		this.result = result;
 		this.date = date;
+		this.blackElo = blackElo;
+		this.whiteElo = whiteElo;
 	}
 
 	public int getId() {
@@ -69,6 +72,23 @@ public class Game {
 		this.blackPlayer = blackPlayer;
 	}
 
+	public int getWhiteElo() {
+		return whiteElo;
+	}
+
+	public void setWhiteElo(int whiteElo) {
+		this.whiteElo = whiteElo;
+	}
+
+	public int getBlackElo() {
+		return blackElo;
+	}
+
+	public void setBlackElo(int blackElo) {
+		this.blackElo = blackElo;
+	}
+
+	
 	public Opening getOpening() {
 		return opening;
 	}

@@ -11,6 +11,7 @@ public class Move {
 		this.num = n;
 		this.halfMove = hm;
 		this.fen = fen;
+		this.isMate = checkIsMate();
 	}
 
 	public FEN getFen() {
@@ -38,6 +39,14 @@ public class Move {
 	}
 	
 	public boolean isMate() {
+		return isMate;
+	}
+
+	public void setMate(boolean isMate) {
+		this.isMate = isMate;
+	}
+	
+	private boolean checkIsMate() {
 		
 		try {
 			String[] splittedLogs = this.getFen().getLog().split("\\. ");
