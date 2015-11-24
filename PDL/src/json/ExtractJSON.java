@@ -14,7 +14,7 @@ import java.util.List;
 
 import javax.json.*;
 import javax.json.stream.JsonParser;
-
+import javax.json.stream.JsonParser.Event;
 
 import org.json.JSONObject;
 
@@ -32,14 +32,14 @@ public class ExtractJSON implements GlobalJSON{
 	}
 
 	public boolean isGameExiste(int idGame) {
-	
+
 		return false;
-}
+	}
 	public boolean isGameExiste(Game g) {
 		String file = readJSONFile(GlobalJSON.GAME_FILE);
-		
+
 		JSONObject jsonObj = new JSONObject(file);
-	
+
 		//ouvre / lire le fichier
 		//check la cle
 		return false;
@@ -65,7 +65,7 @@ public class ExtractJSON implements GlobalJSON{
 		return fen;
 	}
 
-	
+
 	/**
 	 * Create an Object game from the Json File
 	 * @param idGame
@@ -73,25 +73,22 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException 
 	 */
 	public Game getGame(int idGame) throws IOException{
-		JsonObject jsonObject = readJSONFile(GlobalJSON.GAME_FILE);
+		JsonArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 		
-		JsonArray gameArray = jsonObject.getJsonArray("game");
-		
-		for(JsonValue value : gameArray){
-			JsonObject innerJsonObject = jsonObject.getJsonObject(value.toString());
-
-			if (idGame == innerJsonObject.getInt("id")){
+		for (JsonValue gameJsonValue : gamesArray) {
+			JsonObject gameObject = (JsonObject)gameJsonValue;
+			if (idGame == gameObject.getInt("id")){
 				Game game = new Game();
-				game.setId(innerJsonObject.getInt("id"));
-				game.setWhitePlayer(new Player(innerJsonObject.getInt("id_white")));
-				game.setBlackPlayer(new Player(innerJsonObject.getInt("id_black")));
-				game.setDate(innerJsonObject.getString("date"));
+				game.setId(gameObject.getInt("id"));
+				game.setWhitePlayer(new Player(gameObject.getInt("id_white")));
+				game.setBlackPlayer(new Player(gameObject.getInt("id_black")));
+				game.setDate(gameObject.getString("date"));
 				return game;
 			}
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Read the Json Object to find the game with this id
 	 * @param idGame
@@ -99,21 +96,19 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException
 	 */
 	public JsonObject getJsonGame(int idGame) throws IOException{
-		JsonObject jsonObject = readJSONFile(GlobalJSON.GAME_FILE);
-		
-		JsonArray gameArray = jsonObject.getJsonArray("game");
-		
-		for(JsonValue value : gameArray){
-			JsonObject innerJsonObject = jsonObject.getJsonObject(value.toString());
+		JsonArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 
-			if (idGame == innerJsonObject.getInt("id")){
-				return innerJsonObject;
+		for (JsonValue game : gamesArray) {
+			JsonObject gameObject = (JsonObject)game;
+			if (idGame == gameObject.getInt("id")){
+				return gameObject;
 			}
 		}
+
 		return null;
 	}
-	
-	
+
+
 	/**
 	 * Remove a game to the Json file
 	 * @param JsonObjectGame
@@ -121,17 +116,15 @@ public class ExtractJSON implements GlobalJSON{
 	 */
 	public void deleteJsonGame(JsonObject JsonObjectGame) throws IOException{
 		JsonArray jsonArrayAll = readJSONFile(GlobalJSON.GAME_FILE);
-		
+
 		jsonArrayAll.remove(JsonObjectGame);
-		
+
 		JsonArrayBuilder gamesBuilder = Json.createArrayBuilder();
-		JsonObjectBuilder gameBuilder = Json.createObjectBuilder();
-		
-		JsonArray gamesArray = gamesBuilder.build();
-		
+		JsonArray jsonArray = gamesBuilder.build();
 		// Write in the file
+		writeJSONFile(jsonArray, GlobalJSON.GAME_FILE);
 	}
-	
+
 	/**
 	 * Get the Json file 
 	 * @param objectName
@@ -139,7 +132,7 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException
 	 */
 	private JsonArray readJSONFile(String objectName) throws IOException{
-		
+
 		InputStream file = new FileInputStream(GlobalJSON.PATH + objectName);
 
 		JsonReader jsonReader = Json.createReader(file);
@@ -147,7 +140,7 @@ public class ExtractJSON implements GlobalJSON{
 
 		jsonReader.close();
 		file.close();
-		
+
 		return jsonArray;		
 	}
 
@@ -159,9 +152,9 @@ public class ExtractJSON implements GlobalJSON{
 	 */
 	public void writeJSONFile(JsonArray jsonArray, String objectName) throws FileNotFoundException{
 		OutputStream os = new FileOutputStream(GlobalJSON.PATH + objectName);
-        JsonWriter jsonWriter = Json.createWriter(os);
+		JsonWriter jsonWriter = Json.createWriter(os);
 
-        jsonWriter.writeArray(jsonArray);
-        jsonWriter.close();
+		jsonWriter.writeArray(jsonArray);
+		jsonWriter.close();
 	}
 }
