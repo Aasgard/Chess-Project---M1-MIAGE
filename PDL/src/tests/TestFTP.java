@@ -1,7 +1,5 @@
 package tests;
 
-import java.io.File;
-
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
@@ -24,7 +22,12 @@ public class TestFTP {
 		Channel channel = session.openChannel("sftp");
 		channel.connect();
 		ChannelSftp c = (ChannelSftp) channel;
-		c.put("text.txt","/var/www/PDL/");
+		c.put("JSONContainer/Opening.json","/var/www/PDL/");
+		c.put("JSONContainer/Game.json","/var/www/PDL/");
+		
+		System.out.println("Fichiers transférés.");
+		
+		session.disconnect();
 		
 	}
 

@@ -13,6 +13,10 @@ public class Game {
 	private int result;
 	private String date;
 
+	public Game(){
+		
+	}
+	
 	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date) {
 		super();
 		this.id = id;

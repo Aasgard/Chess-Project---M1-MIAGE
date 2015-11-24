@@ -13,18 +13,22 @@ import tools.MySQL;
 
 public class ExtractDB implements IExtractDB{
 
-/*	private ArrayList<Game> getGamesByOpening(int idOpening){
-		ArrayList<Game> res = new ArrayList<Game>();
-		String query = "SELECT Game.id FROM Game WHERE ecoId = " + idOpening;
+	@Override
+	public List<Move> extractMovesByGame(int idGame){
+		List<Move> alMoves = new ArrayList<Move>();
+		String query = "SELECT Move.id, Move.halfMove, FEN.id, FEN.log FROM Move, FEN WHERE Move.idFEN = FEN.id AND Move.idGame = " + idGame;
+		ResultSet rs = MySQL.getInstance().query(query);
+		
 		try {
-			ResultSet rs = MySQL.getInstance().query(query);
 			while(rs.next()){
-				//res.add(new Game(rs.getInt(1)));
+				Move currentMove = Move(rs.getInt(1),rs.getInt(2),new FEN(rs.getString(3), rs.getString(4)));
 			}
-		} catch (SQLException e) { e.printStackTrace(); }
-
-		return res;
-	}*/
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return alMoves;
+	}
 
 	@Override
 	public List<Game> extractGames() {
@@ -32,24 +36,13 @@ public class ExtractDB implements IExtractDB{
 		List<Move> alMoves = new ArrayList<Move>();
 		
 		try {
-			while(MySQL.getInstance().query("").next()){
+			while(MySQL.getInstance().query("SELECT Game.id, Game.whiteId, j1.name,Game.blackId, j2.name, date, Opening.id, Opening.opening, Opening.variation, Opening.moves, Opening.nbMoves, Game.result,Event.id, Event.name, Event.city FROM Player j1, Player j2, Game, Opening, Event WHERE Opening.id = Game.ecoId AND Game.eventId = Event.id AND j1.id = Game.whiteId AND j2.id = Game.blackId").next()){
 				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		
-		// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
-		//try {
-			
-			//ResultSet rs = MySQL.getInstance().query("SELECT Move.id, FEN.log, Move.halfMove FROM Move, FEN WHERE FEN.id = Move.idFEN AND Move.idGame = " + ident + " AND FEN.log IS NOT NULL;");
-			//while(rs.next()){
-//			Move currentMove = new Move(rs.getInt(1), rs.getString(2), rs.getInt(3));
-//			alMoves.add(currentMove);
-//		}
-//	} catch (SQLException e) { e.printStackTrace(); }
-		// TODO Auto-generated method stub
 		return alGames;
 	}
 
