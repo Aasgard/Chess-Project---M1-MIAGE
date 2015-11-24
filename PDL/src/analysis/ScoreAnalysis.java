@@ -10,7 +10,7 @@ import tools.Tools;
 
 public class ScoreAnalysis {
 	
-	private static HashMap<FEN, Integer> scores;
+	private static List<FEN> scores;
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	
 	/**
@@ -18,14 +18,14 @@ public class ScoreAnalysis {
 	 * @param game to analyze
 	 */
 	public static void analyzeScoreGame(Game game) {
-		scores = new HashMap<FEN,Integer>();
+		scores = new ArrayList<FEN>();
+		int sumScore = 0;
 		for(Move move : game.getAlMoves()){
-			int score = move.getFen().getHigherDepthScore();
-			scores.put(move.getFen(), score); 
+			FEN fen = move.getFen();
+			scores.add(fen); 
+			sumScore += fen.getScore();
 		}
-		treatmentJSON.saveAllScoreToJSON(game, scores);
-		List<Integer> list = new ArrayList(scores.values());
-		int sumScore = Tools.getSommeAL(list);
+		treatmentJSON.saveAllScoreToJSON(game, scores);		
 		
 		treatmentJSON.saveTotalScoreToJSON(game, sumScore);
 	}
