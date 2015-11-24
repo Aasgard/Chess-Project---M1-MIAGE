@@ -21,7 +21,6 @@ public class testExtract {
 		
 		double endTime =timer.elapsedTime();
 		
-		System.out.println("Temps d'exécution des requêtes : " + endTime + " sec.");
 		System.out.println("Temps d'exécution des requêtes : " + endTime + " sec.\n");
 		System.out.println("Temps par Game : " + endTime/alGame.size() + " sec.");
 	}
