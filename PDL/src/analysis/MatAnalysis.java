@@ -8,12 +8,15 @@ import object.*;
 
 public class MatAnalysis {
 
-	private static HashMap<Player, Integer> playerErrors;
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	private static Player whitePlayer;
 	private static Player blackPlayer;
-	
+	private static HashMap<Player, Integer> playerErrors;
+	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
+	/**
+	 * 
+	 * @param game
+	 */
 	public static void checkBlunderMat(Game game) {
 		whitePlayer = game.getWhitePlayer();
 		blackPlayer = game.getBlackPlayer();
@@ -24,6 +27,7 @@ public class MatAnalysis {
 		
 		for(Move move : game.getAlMoves()) {
 			
+			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
 				
@@ -33,6 +37,7 @@ public class MatAnalysis {
 				
 				previousIsMateWhite = currentIsMateWhite;
 			}
+			// blackPlayer is playing
 			else {
 				currentIsMateBlack = move.isMate();
 				
@@ -45,6 +50,10 @@ public class MatAnalysis {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param p
+	 */
 	public static void addErrorToPlayer(Player p) {
 		if(playerErrors.containsKey(p)) {
 			int nbErrors = playerErrors.get(p);
@@ -55,6 +64,9 @@ public class MatAnalysis {
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public static void saveErrorsToJSON() {
 		for(Map.Entry<Player, Integer> entry : playerErrors.entrySet()) {
 			Player p = entry.getKey();
