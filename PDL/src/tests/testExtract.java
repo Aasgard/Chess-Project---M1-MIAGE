@@ -17,12 +17,12 @@ public class testExtract {
 		
 		System.out.println("Extraction des Games : ");
 		List<Game> alGame = ExtractDB.extractGames();
-		System.out.println("Nombre de Games : " + alGame.size());
+		System.out.println("Nombre de Games : " + alGame.size() + "\n");
 		
 		double endTime =timer.elapsedTime();
 		
 		System.out.println("Temps d'exécution des requêtes : " + endTime + " sec.\n");
-		System.out.println("Temps par Game : " + alGame.size()/endTime + " sec.");
+		System.out.println("Temps par Game : " + endTime/alGame.size() + " sec.");
 	}
 
 }

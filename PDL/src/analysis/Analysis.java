@@ -1,5 +1,6 @@
 package analysis;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -11,11 +12,9 @@ import object.*;
 
 public class Analysis {
 
-	private static IExtractDB extractDB = new ExtractDB();
-
 
 	public static void analyzeScoreGame(){
-		List<Game> games = extractDB.extractGames();
+		List<Game> games = ExtractDB.extractGames();
 
 		for(Game game : games){
 			ScoreAnalysis.analyzeScoreGame(game);
@@ -24,7 +23,7 @@ public class Analysis {
 
 	public static void analyzeScoreEvolutionFromPosition(){
 
-		HashMap<String, List<Move>> mapFENMoves= extractDB.extractGameAndMoveByPosition();
+		HashMap<String, List<Move>> mapFENMoves= ExtractDB.extractGameAndMoveByPosition();
 
 		for(Entry<String, List<Move>> fenMoves :  mapFENMoves.entrySet()){
 			ScoreFromPositionAnalysis.getEvolScore(fenMoves.getValue());
@@ -34,7 +33,9 @@ public class Analysis {
 	public static void analyzeScoreVariation(){
 		ExtractJSON extractJSON = new ExtractJSON();
 
-		List<Game> listGames = extractJSON.extractScoresGames();
+		List<Game> listGames = new ArrayList<Game>();
+		// TODO : revoir extractScoreGames, à quoi correspondent les differents int
+		//= extractJSON.extractScoresGames();
 
 		for(Game g : listGames){
 			List<Integer> listeScore = new ArrayList<Integer>();
@@ -47,7 +48,7 @@ public class Analysis {
 	}
 
 	public static void analyzeOpenings(){
-		HashMap<Opening, List<Game>> mapgameByOpening = extractDB.extractGamesByOpening();
+		HashMap<Opening, List<Game>> mapgameByOpening = ExtractDB.extractGamesByOpening();
 
 		for(Entry<Opening, List<Game>> gameByOpening : mapgameByOpening.entrySet()){
 			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
@@ -55,7 +56,7 @@ public class Analysis {
 	}
 
 	public static void analyzeBlunderMat() {
-		List<Game> games = extractDB.extractGames();
+		List<Game> games = ExtractDB.extractGames();
 
 		for(Game game : games){
 			MatAnalysis.checkBlunderMat(game);

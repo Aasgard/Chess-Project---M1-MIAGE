@@ -10,7 +10,8 @@ public class MatAnalysis {
 
 	private static Player whitePlayer;
 	private static Player blackPlayer;
-	private static HashMap<Player, Integer> playerErrors;
+	private static HashMap<Integer, Integer> errorsPerGame;
+	private static HashMap<Player, HashMap<Integer, Integer>> playerErrors;
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
 	/**
@@ -32,7 +33,7 @@ public class MatAnalysis {
 				currentIsMateWhite = move.isMate();
 				
 				if(previousIsMateWhite && !currentIsMateWhite) {
-					addErrorToPlayer(whitePlayer);
+					addErrorToPlayer(whitePlayer, game.getId());
 				}
 				
 				previousIsMateWhite = currentIsMateWhite;
@@ -42,7 +43,7 @@ public class MatAnalysis {
 				currentIsMateBlack = move.isMate();
 				
 				if(previousIsMateBlack && !currentIsMateBlack) {
-					addErrorToPlayer(blackPlayer);
+					addErrorToPlayer(blackPlayer, game.getId());
 				}
 				
 				previousIsMateBlack = currentIsMateBlack;
@@ -54,26 +55,28 @@ public class MatAnalysis {
 	 * 
 	 * @param p
 	 */
-	public static void addErrorToPlayer(Player p) {
+	public static void addErrorToPlayer(Player p, int idGame) {
+		
 		if(playerErrors.containsKey(p)) {
-			int nbErrors = playerErrors.get(p);
-			playerErrors.put(p, nbErrors++);
+			errorsPerGame = playerErrors.get(p);
+			
+			if(errorsPerGame.containsKey(idGame)) {
+				int nbErrors = errorsPerGame.get(idGame);
+				errorsPerGame.put(idGame, nbErrors++);
+			}
 		}
 		else {
-			playerErrors.put(p, 1);
+			errorsPerGame.put(idGame, 1);
 		}
+		
+		playerErrors.put(p, errorsPerGame);
 	}
 	
 	/**
 	 * 
 	 */
 	public static void saveErrorsToJSON() {
-		for(Map.Entry<Player, Integer> entry : playerErrors.entrySet()) {
-			Player p = entry.getKey();
-			int nbErrors = entry.getValue();
-			
-			treatmentJSON.saveErrorToJSON(p, nbErrors);
-		}
+		treatmentJSON.saveErrorToJSON(playerErrors);
 	}
 
 }
