@@ -32,20 +32,15 @@ public class ExtractJSON {
 
 	public boolean isGameExiste(int idGame) {
 	
+		return false;
 }
 	public boolean isGameExiste(Game g) {
 		String file = readJSONFile(GlobalJSON.GAME_FILE);
 		
 		JSONObject jsonObj = new JSONObject(file);
-		
-<<<<<<< HEAD
-		
+	
 		//ouvre / lire le fichier
 		//check la cle
-=======
-		// TODO Verifier dans le fichier
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
 		return false;
 	}
 
