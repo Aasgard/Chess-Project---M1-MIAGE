@@ -1,5 +1,6 @@
 package json;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,15 +10,15 @@ public interface ITreatmentJSON {
 
 	public void saveAllScoreToJSON(Game g, List<FEN> scores);
 	
-	public void saveTotalScoreToJSON(Game g, int totalScore);
+	public void saveTotalScoreToJSON(Game g, int totalScore) throws IOException;
 	
 	public void saveAverageVariation(int idGame, double averageVariation);
 	
 	public void saveBestFenToJSON(String FEN, FEN bestPosition);
 
-	public void saveWinRateOpening(Opening o, double rate);
+	public void saveWinRateOpening(Opening o, double rate) throws IOException;
 	
-	public void saveErrorToJSON(Player p, int nbError);
+	public void saveErrorToJSON(HashMap<Player, HashMap<Integer, Integer>> players);
 	
 	
 }

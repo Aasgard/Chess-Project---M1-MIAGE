@@ -15,6 +15,7 @@ import java.util.List;
 import javax.json.*;
 import javax.json.stream.JsonParser;
 import javax.json.stream.JsonParser.Event;
+import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
 
 import org.json.JSONObject;
 
@@ -104,7 +105,24 @@ public class ExtractJSON implements GlobalJSON{
 				return gameObject;
 			}
 		}
+		return null;
+	}
+	
+	/**
+	 * Read the Json Object to find the opening with this id
+	 * @param idOpening
+	 * @return JsonObject Opening or NULL
+	 * @throws IOException
+	 */
+	public JsonObject getJsonOpening(int idOpening) throws IOException{
+		JsonArray openingsArray = readJSONFile(GlobalJSON.OPENING_FILE);
 
+		for (JsonValue opening : openingsArray) {
+			JsonObject openingObject = (JsonObject)opening;
+			if (idOpening == openingObject.getInt("id")){
+				return openingObject;
+			}
+		}
 		return null;
 	}
 
@@ -114,15 +132,15 @@ public class ExtractJSON implements GlobalJSON{
 	 * @param JsonObjectGame
 	 * @throws IOException
 	 */
-	public void deleteJsonGame(JsonObject JsonObjectGame) throws IOException{
+	public JsonArray deleteJsonGame(JsonObject JsonObjectGame) throws IOException{
 		JsonArray jsonArrayAll = readJSONFile(GlobalJSON.GAME_FILE);
 
 		jsonArrayAll.remove(JsonObjectGame);
 
 		JsonArrayBuilder gamesBuilder = Json.createArrayBuilder();
 		JsonArray jsonArray = gamesBuilder.build();
-		// Write in the file
-		writeJSONFile(jsonArray, GlobalJSON.GAME_FILE);
+		
+		return jsonArray;
 	}
 
 	/**
@@ -131,7 +149,7 @@ public class ExtractJSON implements GlobalJSON{
 	 * @return
 	 * @throws IOException
 	 */
-	private JsonArray readJSONFile(String objectName) throws IOException{
+	public JsonArray readJSONFile(String objectName) throws IOException{
 
 		InputStream file = new FileInputStream(GlobalJSON.PATH + objectName);
 
@@ -142,19 +160,5 @@ public class ExtractJSON implements GlobalJSON{
 		file.close();
 
 		return jsonArray;		
-	}
-
-	/**
-	 * Write the new file 
-	 * @param jsonArray
-	 * @param objectName
-	 * @throws FileNotFoundException
-	 */
-	public void writeJSONFile(JsonArray jsonArray, String objectName) throws FileNotFoundException{
-		OutputStream os = new FileOutputStream(GlobalJSON.PATH + objectName);
-		JsonWriter jsonWriter = Json.createWriter(os);
-
-		jsonWriter.writeArray(jsonArray);
-		jsonWriter.close();
 	}
 }
