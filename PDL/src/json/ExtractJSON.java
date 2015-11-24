@@ -15,6 +15,8 @@ import javax.json.Json;
 import javax.json.stream.JsonParser;
 
 
+import org.json.JSONObject;
+
 import object.Move;
 
 import object.Game;
@@ -28,7 +30,19 @@ public class ExtractJSON {
 	public ExtractJSON() {
 	}
 
+<<<<<<< HEAD
 	public boolean isGameExiste(int idGame) {
+=======
+	public boolean isGameExiste(Game g) {
+		String file = readJSONFile(GlobalJSON.GAME_FILE);
+		
+		JSONObject jsonObj = new JSONObject(file);
+		
+		
+		//ouvre / lire le fichier
+		//check la cle
+		// TODO Verifier dans le fichier
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
 		return false;
 	}
 
@@ -46,11 +60,17 @@ public class ExtractJSON {
 		//TODO
 		return new HashMap<Integer, List<Integer>>();
 	}
+<<<<<<< HEAD
 
 	public FEN extractFenAfterMove(Move m){
+=======
+	
+	public FEN extractFENAfterMove(Move m){
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
 		FEN fen = new FEN("null");
 		return fen;
 	}
+<<<<<<< HEAD
 
 	
 	/**
@@ -105,5 +125,12 @@ public class ExtractJSON {
 			}
 		}
 		return null;
+=======
+	
+	private String readJSONFile(String objectName){
+		
+		return null;
+		
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE.git
 	}
 }

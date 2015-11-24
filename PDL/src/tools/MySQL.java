@@ -7,6 +7,7 @@ public class MySQL {
 
 	private Connection cnx;
 	private static MySQL db;
+	private String lastQuery;
 	
 	private MySQL(){
 		String url= "jdbc:mysql://109.8.192.56:3306/";
@@ -31,8 +32,14 @@ public class MySQL {
 	public ResultSet query(String query) throws SQLException{
 		Statement st = db.cnx.createStatement();
 		ResultSet rs = st.executeQuery(query);
+		this.lastQuery = query;
 		
 		return rs;
 	}
+	
+	public String getLastQUeery(){
+		return this.lastQuery;
+	}
+	
 	
 }
