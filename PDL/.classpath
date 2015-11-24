@@ -7,5 +7,7 @@
 	<classpathentry kind="lib" path="json.jar"/>
 	<classpathentry kind="lib" path="D:/Etude/M1 MIAGE/PDL/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/Etude/M1 MIAGE/PDL/gson-2.4.jar"/>
+	<classpathentry kind="lib" path="json2.jar"/>
+	<classpathentry kind="lib" path="mysql-connector-java-5.1.37-bin2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

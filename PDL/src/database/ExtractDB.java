@@ -30,6 +30,16 @@ public class ExtractDB implements IExtractDB{
 	public List<Game> extractGames() {
 		List<Game> alGames = new ArrayList<Game>();
 		List<Move> alMoves = new ArrayList<Move>();
+		
+		try {
+			while(MySQL.getInstance().query("").next()){
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
 		// TODO revoir la fonction pour récupérer tous les games (methode déplacée de la classe Game)
 		//try {
 			
@@ -40,7 +50,7 @@ public class ExtractDB implements IExtractDB{
 //		}
 //	} catch (SQLException e) { e.printStackTrace(); }
 		// TODO Auto-generated method stub
-		return null;
+		return alGames;
 	}
 
 	@Override
