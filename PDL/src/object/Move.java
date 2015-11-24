@@ -7,7 +7,7 @@ public class Move {
 	private boolean isMate;
 	private FEN fen;
 	
-	public Move(int n, String log, int hm, FEN fen){
+	public Move(int n, int hm, FEN fen){
 		this.num = n;
 		this.halfMove = hm;
 		this.fen = fen;
@@ -46,8 +46,11 @@ public class Move {
 		this.isMate = isMate;
 	}
 	
+	public String toString(){
+		return "[ Move : " +this.num + " - " + this.halfMove + " - " + this.fen.toString() + " ]";
+	}
+	
 	private boolean checkIsMate() {
-		
 		try {
 			String[] splittedLogs = this.getFen().getLog().split("\\. ");
 			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
@@ -56,9 +59,7 @@ public class Move {
 			if(mate == "mate") {
 				return true;
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		} catch (Exception e) {}
 		
 		return false;
 	}

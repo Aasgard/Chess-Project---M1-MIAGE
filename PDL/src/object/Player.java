@@ -8,11 +8,11 @@ public class Player {
 	private String name;
 	private int nbGamePlayed;
 	
-	public Player(int id, String name, int nbGamePayed) {
+	public Player(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.nbGamePlayed = nbGamePayed;
+		this.nbGamePlayed = 0;
 	}
 
 	public int getId() {

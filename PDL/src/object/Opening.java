@@ -12,8 +12,16 @@ public class Opening {
 	private String variation;
 	private String moves;
 	private int nbMoves;
-
 	
+	public Opening(int id, String name, String variation, String moves, int nbMoves) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.variation = variation;
+		this.moves = moves;
+		this.nbMoves = nbMoves;
+	}
+
 	public int getId() {
 		return id;
 	}

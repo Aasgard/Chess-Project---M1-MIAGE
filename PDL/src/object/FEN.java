@@ -6,9 +6,7 @@ public class FEN {
 	private String RawFEN;
 	private String Log;
 	
-	
 	public FEN(String rawFEN, String log) {
-		super();
 		this.Log = log;
 		this.RawFEN = rawFEN;
 		this.Position = this.RawFEN.split(" ")[0];
@@ -47,18 +45,19 @@ public class FEN {
 		Log = log;
 	}
 	
-	
 	private int getHigherDepthScore(){
 		int scoreVoulu = 0;
 		try{
-
-			String[] splittedLogs = this.Log.split("\\. ");
+			String[] splittedLogs = this.Log.split(". ");
 			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
 			scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
-		}catch(NumberFormatException e){			
-		}
+		}catch(Exception e){}
 		
 		return scoreVoulu;
+	}
+	
+	public String toString(){
+		return "[ FEN : " +this.RawFEN + " - " + this.Log + " ]";
 	}
 	
 }
