@@ -79,7 +79,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 	}
 
 
-	public void saveAverageVariation(Game g, double variable){
+	public void saveAverageVariation(Game g, double variable) throws IOException{
 		
 		// Get the JsonObject from the game id
 		JsonObject gameJson = extractJSON.getJsonGame(g.getId());
