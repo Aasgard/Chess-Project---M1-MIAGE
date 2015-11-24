@@ -83,7 +83,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Game");
+		this.saveInFile(outputJSON, GlobalJSON.GAME_FILE);
 	}
 
 	public void saveBestFenToJSON(String pos, FEN fen){
@@ -97,7 +97,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		outputJSON.put(position);
 		
 		// Save the rankingPosition
-		this.saveInFile(outputJSON, "RankingPosition");
+		this.saveInFile(outputJSON, GlobalJSON.RANKINGPOSITION_FILE);
 	}
 
 	public void saveWinRateOpening(Opening o, double rate){
@@ -117,7 +117,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Opening");
+		this.saveInFile(outputJSON, GlobalJSON.OPENING_FILE);
 	}
 
 	// on est supposé sauvegarder les erreurs par partie
@@ -137,7 +137,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Player");
+		this.saveInFile(outputJSON, GlobalJSON.PLAYER_FILE);
 	}
 
 	
@@ -149,7 +149,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		FileWriter fw;
 
 		try {
-			File f1 = new File(GlobalJSON.path + objectName + ".txt");
+			File f1 = new File(GlobalJSON.PATH + objectName + ".txt");
 			fw = new FileWriter(f1);
 			fw.write(jsonArray.toString());
 			fw.flush();

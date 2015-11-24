@@ -4,6 +4,8 @@ package json;
 import java.util.HashMap;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import object.Move;
 
 import object.Game;
@@ -18,6 +20,13 @@ public class ExtractJSON {
 	}
 
 	public boolean isGameExiste(Game g) {
+		String file = readJSONFile(GlobalJSON.GAME_FILE);
+		
+		JSONObject jsonObj = new JSONObject(file);
+		
+		
+		//ouvre / lire le fichier
+		//check la cle
 		// TODO Verifier dans le fichier
 		return false;
 	}
@@ -40,5 +49,11 @@ public class ExtractJSON {
 	public FEN extractFENAfterMove(Move m){
 		FEN fen = new FEN("null");
 		return fen;
+	}
+	
+	private String readJSONFile(String objectName){
+		
+		return null;
+		
 	}
 }
