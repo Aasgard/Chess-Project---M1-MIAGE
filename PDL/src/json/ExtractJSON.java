@@ -36,12 +36,7 @@ public class ExtractJSON implements GlobalJSON{
 		return false;
 	}
 	public boolean isGameExiste(Game g) {
-		String file = readJSONFile(GlobalJSON.GAME_FILE);
-
-		JSONObject jsonObj = new JSONObject(file);
-
-		//ouvre / lire le fichier
-		//check la cle
+		
 		return false;
 	}
 
@@ -61,7 +56,7 @@ public class ExtractJSON implements GlobalJSON{
 	}
 
 	public FEN extractFENAfterMove(Move m){
-		FEN fen = new FEN("null");
+		FEN fen = new FEN("null", null);
 		return fen;
 	}
 

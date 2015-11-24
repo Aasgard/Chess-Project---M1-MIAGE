@@ -12,7 +12,7 @@ public class ScoreFromPositionAnalysis {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	private static ExtractJSON extractJSON = new ExtractJSON();
-	private static FEN bestFEN = new FEN(new String());
+	private static FEN bestFEN = new FEN(new String(), new String());
 	
 	public static void getEvolScore(List<Move> moves){
 		String fen = moves.get(0).getFen().getPosition();

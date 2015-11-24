@@ -53,13 +53,13 @@ public class ExtractDB{
 	}
 
 
-	public HashMap<Opening, List<Game>> extractGamesByOpening() {
+	public static HashMap<Opening, List<Game>> extractGamesByOpening() {
 		// TODO Auto-generated method s tub
 		return null;
 	}
 
 
-	public HashMap<String, List<Move>> extractGameAndMoveByPosition() {
+	public static HashMap<String, List<Move>> extractGameAndMoveByPosition() {
 		// TODO Auto-generated method stub
 		return null;
 	}
