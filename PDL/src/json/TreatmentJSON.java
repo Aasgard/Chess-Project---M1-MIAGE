@@ -32,7 +32,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
-	public void saveAllScoreToJSON(Game g, HashMap<FEN, Integer> scores){
+	public void saveAllScoreToJSON(Game g, List<FEN> scores){
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject game = new JSONObject();
 		
