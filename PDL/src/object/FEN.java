@@ -7,10 +7,12 @@ public class FEN {
 	private String Log;
 	
 	
-	public FEN(String rawFEN) {
+	public FEN(String rawFEN, String log) {
 		super();
+		this.Log = log;
 		this.RawFEN = rawFEN;
 		this.Position = this.RawFEN.split(" ")[0];
+		this.Score = getHigherDepthScore();
 	}
 	
 	public String getPosition() {
@@ -46,10 +48,16 @@ public class FEN {
 	}
 	
 	
-	public int getHigherDepthScore(){
-		String[] splittedLogs = this.Log.split("\\. ");
-		String chaineVoulue = splittedLogs[splittedLogs.length - 2];
-		int scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
+	private int getHigherDepthScore(){
+		int scoreVoulu = 0;
+		try{
+
+			String[] splittedLogs = this.Log.split("\\. ");
+			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
+			scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
+		}catch(NumberFormatException e){			
+		}
+		
 		return scoreVoulu;
 	}
 	
