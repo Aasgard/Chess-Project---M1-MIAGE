@@ -24,9 +24,6 @@ public class ExtractJSON {
 		
 		JSONObject jsonObj = new JSONObject(file);
 		
-		
-		//ouvre / lire le fichier
-		//check la cle
 		// TODO Verifier dans le fichier
 		return false;
 	}
