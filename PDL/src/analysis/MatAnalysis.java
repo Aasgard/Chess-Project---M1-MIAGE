@@ -10,10 +10,13 @@ public class MatAnalysis {
 
 	private static HashMap<Player, Integer> playerErrors;
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+	private static Player whitePlayer;
+	private static Player blackPlayer;
+	
 
 	public static void checkBlunderMat(Game game) {
-		Player whitePlayer = game.getWhitePlayer();
-		Player blackPlayer = game.getBlackPlayer();
+		whitePlayer = game.getWhitePlayer();
+		blackPlayer = game.getBlackPlayer();
 		boolean previousIsMateWhite = false;
 		boolean currentIsMateWhite = false;
 		boolean previousIsMateBlack = false;
