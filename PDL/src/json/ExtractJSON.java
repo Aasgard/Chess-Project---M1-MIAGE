@@ -37,7 +37,7 @@ public class ExtractJSON {
 		return new HashMap<Integer, List<Integer>>();
 	}
 	
-	public FEN extractFenAfterMove(Move m){
+	public FEN extractFENAfterMove(Move m){
 		FEN fen = new FEN("null");
 		return fen;
 	}
