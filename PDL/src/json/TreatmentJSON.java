@@ -18,7 +18,6 @@ import object.Player;
 
 public class TreatmentJSON implements ITreatmentJSON {
 
-	private String path = "D:/wamp/www/PDL Website/json/";
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
@@ -150,7 +149,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		FileWriter fw;
 
 		try {
-			File f1 = new File(this.path + objectName + ".txt");
+			File f1 = new File(GlobalJSON.path + objectName + ".txt");
 			fw = new FileWriter(f1);
 			fw.write(jsonArray.toString());
 			fw.flush();
