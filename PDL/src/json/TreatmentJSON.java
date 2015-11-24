@@ -26,7 +26,7 @@ import object.Player;
 
 
 
-public class TreatmentJSON implements ITreatmentJSON {
+public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
 	protected String path = "D:/wamp/www/PDL Website/json/";
 
@@ -52,7 +52,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Game");
+		this.saveInFile(outputJSON, GAME_FILE);
 	}
 
 	public void saveTotalScoreToJSON(Game g, int totalScore){
@@ -71,7 +71,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Game");
+		this.saveInFile(outputJSON, GAME_FILE);
 	}
 	
 	public void saveAverageVariation(int idGame, double averageVariation){
@@ -79,7 +79,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 	}
 
 
-	public void saveAverageVariation(Game g, double variable) throws IOException{
+	public void saveAverageVariation(Game g, double variable){
 		
 		// Get the JsonObject from the game id
 		JsonObject gameJson = extractJSON.getJsonGame(g.getId());
@@ -108,7 +108,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		JsonObject gameJsonObject = gameBuilder.build();
 
 		// Save the game
-		this.saveInFile(gameJsonObject, "Game");		
+		this.saveInFile(gameJsonObject, GAME_FILE);		
 	}
 
 	public void saveBestFenToJSON(String pos, FEN fen){
@@ -122,7 +122,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		outputJSON.put(position);
 		
 		// Save the rankingPosition
-		this.saveInFile(outputJSON, "RankingPosition");
+		this.saveInFile(outputJSON, RANKINGPOSITION_FILE);
 	}
 
 	public void saveWinRateOpening(Opening o, double rate){
@@ -142,7 +142,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Opening");
+		this.saveInFile(outputJSON, OPENING_FILE);
 	}
 
 	// on est supposé sauvegarder les erreurs par partie
@@ -162,7 +162,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		}
 		
 		// Save the game
-		this.saveInFile(outputJSON, "Player");
+		this.saveInFile(outputJSON, PLAYER_FILE);
 	}
 
 	
@@ -179,7 +179,7 @@ public class TreatmentJSON implements ITreatmentJSON {
 		
 		// Overwrite the json File
 		try {
-			os = new FileOutputStream(this.path + objectName + ".txt");
+			os = new FileOutputStream(PATH + objectName);
 			JsonWriter jsonWriter = Json.createWriter(os);
 	        jsonWriter.writeObject(jsonObject);
 	        jsonWriter.close();
