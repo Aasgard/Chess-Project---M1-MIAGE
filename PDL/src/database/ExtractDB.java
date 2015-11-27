@@ -52,6 +52,33 @@ public class ExtractDB{
 		return alGames;
 	}
 
+	public static int extractNumberPlayers(){
+		int nb_player = -1;
+		String query = "SELECT COUNT(id.Player) FROM Player";
+		try{
+			ResultSet rs = MySQL.getInstance().query(query);
+			while(rs.next()){
+				nb_player = rs.getInt(1);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return nb_player;
+	}
+	
+	public static int extractNumberEvents(){
+		int nb_event = -1;
+		String query = "SELECT COUNT(id.Event) FROM Event";
+		try{
+			ResultSet rs = MySQL.getInstance().query(query);
+			while(rs.next()){
+				nb_event = rs.getInt(1);
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return nb_event;
+	}
 
 	public static HashMap<Opening, List<Integer>> extractResultsByOpening() {
 		// TODO Auto-generated method s tub
