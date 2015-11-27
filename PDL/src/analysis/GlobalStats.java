@@ -14,6 +14,9 @@ public class GlobalStats {
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
+	/*
+	 * Get nb_total : players, games and events to save in JSON
+	 */
 	public void getGlobalStats(int nb_games){
 		int nb_players = ExtractDB.extractNumberPlayers();
 		int nb_events = ExtractDB.extractNumberEvents();
@@ -41,7 +44,9 @@ public class GlobalStats {
 			} 
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players);
 	}
-
+	/*
+	 * Create board which contains 5 BestGames
+	 */
 	public void getGlobalBestVar(int nb_games) throws IOException{
 		Game tableaubest_Games[] = new Game[4];
 		for(int i = 0; i< nb_games ; i++){
