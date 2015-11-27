@@ -1,5 +1,6 @@
 package analysis;
 
+import java.io.IOException;
 import java.util.List;
 
 import json.ITreatmentJSON;
@@ -10,7 +11,7 @@ public class ScoreVariationAnalysis {
 	
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	
-	public static void getAverageVariationGame(Game game, List<Integer> scores) {
+	public static void getAverageVariationGame(Game game, List<Integer> scores) throws IOException {
 		int previousScore = 0;
 		int sumScoreVariation = 0;
 		for(Integer score : scores){

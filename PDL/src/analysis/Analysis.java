@@ -1,5 +1,6 @@
 package analysis;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -30,7 +31,7 @@ public class Analysis {
 		}
 	}
 
-	public static void analyzeScoreVariation(){
+	public static void analyzeScoreVariation() throws IOException{
 		ExtractJSON extractJSON = new ExtractJSON();
 
 		List<Game> listGames = new ArrayList<Game>();
@@ -47,7 +48,7 @@ public class Analysis {
 		}
 	}
 
-	public static void analyzeOpenings(){
+	public static void analyzeOpenings() throws IOException{
 		HashMap<Opening, List<Integer>> mapgameByOpening = ExtractDB.extractResultsByOpening();
 
 		for(Entry<Opening, List<Integer>> gameByOpening : mapgameByOpening.entrySet()){
