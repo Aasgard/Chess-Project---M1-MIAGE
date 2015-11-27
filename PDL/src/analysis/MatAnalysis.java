@@ -25,12 +25,12 @@ public class MatAnalysis {
 	public static void checkBlunderMat(Game game) {
 		whitePlayer = game.getWhitePlayer();
 		blackPlayer = game.getBlackPlayer();
+		
 		boolean previousIsMateWhite = false;
 		boolean currentIsMateWhite = false;
 		boolean previousIsMateBlack = false;
 		boolean currentIsMateBlack = false;
-		blundersWhitePlayer = new ArrayList<Blunder>();
-		blundersBlackPlayer = new ArrayList<Blunder>();
+		
 		Blunder blunderWhitePlayer = new Blunder(game.getId(), 0);
 		Blunder blunderBlackPlayer = new Blunder(game.getId(), 0);
 		
@@ -41,9 +41,7 @@ public class MatAnalysis {
 				currentIsMateWhite = move.isMate();
 				
 				if(previousIsMateWhite && !currentIsMateWhite) {
-					int nbErrors = blunderWhitePlayer.getNbErrors();
-					blunderWhitePlayer.setNbErrors(nbErrors++);
-					blunderWhitePlayer.addPositionError(move.getFen());
+					addErrorToPlayer(whitePlayer, blunderWhitePlayer, move.getFen());
 				}
 				
 				previousIsMateWhite = currentIsMateWhite;
@@ -53,9 +51,7 @@ public class MatAnalysis {
 				currentIsMateBlack = move.isMate();
 				
 				if(previousIsMateBlack && !currentIsMateBlack) {
-					int nbErrors = blunderBlackPlayer.getNbErrors();
-					blunderBlackPlayer.setNbErrors(nbErrors++);
-					blunderBlackPlayer.addPositionError(move.getFen());
+					addErrorToPlayer(blackPlayer, blunderBlackPlayer, move.getFen());
 				}
 				
 				previousIsMateBlack = currentIsMateBlack;
@@ -64,12 +60,11 @@ public class MatAnalysis {
 		
 		if(blunderWhitePlayer.getNbErrors() != 0) {
 			blundersWhitePlayer.add(blunderWhitePlayer);
-			
-			addErrorToPlayer(whitePlayer, blundersWhitePlayer);
+			playerErrors.put(whitePlayer, blundersWhitePlayer);
 		}
 		if(blunderBlackPlayer.getNbErrors() != 0) {
 			blundersBlackPlayer.add(blunderBlackPlayer);
-			addErrorToPlayer(blackPlayer, blundersBlackPlayer);
+			playerErrors.put(blackPlayer, blundersBlackPlayer);
 		}
 	}
 	
@@ -77,9 +72,11 @@ public class MatAnalysis {
 	 * 
 	 * @param p
 	 */
-	public static void addErrorToPlayer(Player p, List<Blunder> blundersPlayer) {
+	public static void addErrorToPlayer(Player p, Blunder blunder, FEN fen) {
 
-		playerErrors.put(p, blundersPlayer);
+		int nbErrors = blunder.getNbErrors();
+		blunder.setNbErrors(nbErrors++);
+		blunder.addPositionError(fen);
 		
 	}
 	
