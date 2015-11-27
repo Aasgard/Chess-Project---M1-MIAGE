@@ -252,7 +252,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 	}
 
 	@Override
-	public void saveAverageVariation(int idGame, double averageVariation) {
+	public void saveAverageVariation(int idGame, int averageVariation) {
 		// TODO Auto-generated method stub
 		
 	}
