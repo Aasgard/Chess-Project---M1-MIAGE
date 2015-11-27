@@ -19,15 +19,12 @@ public class ScoreAnalysis {
 	 */
 	public static void analyzeScoreGame(Game game) {
 		scores = new ArrayList<FEN>();
-		int sumScore = 0;
 		for(Move move : game.getAlMoves()){
 			FEN fen = move.getFen();
 			scores.add(fen); 
-			sumScore += fen.getScore();
 		}
 		treatmentJSON.saveAllScoreToJSON(game, scores);		
 		
-		treatmentJSON.saveTotalScoreToJSON(game, sumScore);
 	}
 	
 	

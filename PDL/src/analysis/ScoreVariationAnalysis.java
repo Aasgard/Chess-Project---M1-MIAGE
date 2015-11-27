@@ -17,11 +17,11 @@ public class ScoreVariationAnalysis {
 			sumScoreVariation =+ calculVariationScore(previousScore, score);
 			previousScore = score;
 		}
-		treatmentJSON.saveAverageVariation(game, sumScoreVariation/scores.size());
+		treatmentJSON.saveAverageVariation(game, sumScoreVariation);
 	}
 
 	private static int calculVariationScore(int previousScore, int score){
-		return (score - previousScore);
+		return (Math.abs(score - previousScore));
 	}
 	
 }

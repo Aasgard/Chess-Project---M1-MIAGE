@@ -1,5 +1,6 @@
 package analysis;
 
+import java.io.IOException;
 import java.util.List;
 
 import json.ITreatmentJSON;
@@ -17,8 +18,9 @@ public class OpeningAnaysis {
 	 * Calcul and save win rate for the opening
 	 * @param o
 	 * @param games
+	 * @throws IOException 
 	 */
-	public static void getWinRateOpening(Opening o, List<Integer> value) {
+	public static void getWinRateOpening(Opening o, List<Integer> value) throws IOException {
 		nbWhite = 0;
 		nbBlack = 0;
 		exaequo = 0;

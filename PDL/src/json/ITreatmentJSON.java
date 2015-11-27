@@ -10,8 +10,6 @@ public interface ITreatmentJSON {
 
 	public void saveAllScoreToJSON(Game g, List<FEN> scores);
 	
-	public void saveTotalScoreToJSON(Game g, int totalScore) throws IOException;
-	
 	public void saveAverageVariation(int idGame, double averageVariation);
 	
 	public void saveBestFenToJSON(String FEN, FEN bestPosition);

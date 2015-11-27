@@ -58,38 +58,6 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		this.saveInFile(outputJSON, GAME_FILE);
 	}
 
-	public void saveTotalScoreToJSON(Game g, int totalScore) throws IOException{
-
-		// Get the JsonObject from the game id
-		JsonObject gameJson = extractJSON.getJsonGame(g.getId());
-
-		JsonObjectBuilder gameBuilder = Json.createObjectBuilder();
-
-		// If the game is in the Json
-		if(gameJson != null){
-
-			// Recreate the game already set
-			// TODO add the "total_score" to je JsonObject
-			gameBuilder.add("", gameJson).add("score_total", totalScore);
-
-			// Update the game
-			//			gameBuilder.add("score_total", totalScore);		
-
-		}else{
-
-			// Create a new game in the jsonFile			
-			gameBuilder.add("id", g.getId());
-			gameBuilder.add("id_white", g.getWhitePlayer().getId());
-			gameBuilder.add("id_black", g.getBlackPlayer().getId());
-			gameBuilder.add("date", g.getDate());
-			gameBuilder.add("score_total", totalScore);			
-		}
-		// Create the JsonObject
-		JsonObject gameJsonObject = gameBuilder.build();
-
-		// Save the game
-		saveInFile(gameJsonObject, GAME_FILE);
-	}
 
 	public void saveAverageVariation(Game g, double variable) throws IOException{
 
@@ -149,7 +117,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 				if(openingJson != null){
 					// Recreate the game already set
 					// TODO add the "average_win_rate" to je JsonObject
-					openingBuilder.add("", openingJson).add("average_win_rate", rate);
+					//openingBuilder.add("", openingJson).add("average_win_rate", rate);
 
 					// Update the game
 					// gameBuilder.add("average_win_rate", rate);	
