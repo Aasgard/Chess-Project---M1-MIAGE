@@ -161,7 +161,7 @@ public class ExtractJSON implements GlobalJSON{
 	 * @return JsonObject Game or NULL
 	 * @throws IOException
 	 */
-	public JsonObject getJsonGame(int idGame) throws IOException{
+	public JSONObject getJsonGame(int idGame) throws IOException{
 		JsonArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 
 		for (JsonValue game : gamesArray) {
@@ -179,7 +179,7 @@ public class ExtractJSON implements GlobalJSON{
 	 * @return JsonObject Opening or NULL
 	 * @throws IOException
 	 */
-	public JsonObject getJsonOpening(int idOpening) throws IOException{
+	public JSONObject getJsonOpening(int idOpening) throws IOException{
 		JsonArray openingsArray = readJSONFile(GlobalJSON.OPENING_FILE);
 
 		for (JsonValue opening : openingsArray) {
@@ -188,6 +188,11 @@ public class ExtractJSON implements GlobalJSON{
 				return openingObject;
 			}
 		}
+		return null;
+	}
+	
+	public JSONObject getJsonPlayer(int idPlayer) throws IOException{
+		
 		return null;
 	}
 

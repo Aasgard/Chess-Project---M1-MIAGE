@@ -128,8 +128,6 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 	}
 
 
-
-
 	/**
 	 * Save all the players with their errors
 	 * 
