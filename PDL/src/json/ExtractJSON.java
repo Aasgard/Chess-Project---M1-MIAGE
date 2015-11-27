@@ -1,10 +1,12 @@
 package json;
 
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,6 +19,7 @@ import javax.json.stream.JsonParser;
 import javax.json.stream.JsonParser.Event;
 import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import object.Move;
@@ -24,6 +27,8 @@ import object.Move;
 import object.Game;
 import object.Opening;
 import object.Player;
+import testJson.ExtractJSON;
+import testJson.GlobalJSON;
 import object.FEN;
 
 
@@ -84,7 +89,52 @@ public class ExtractJSON implements GlobalJSON{
 		}
 		return null;
 	}
+	
+	
+	/**
+	 *  TEST JSON
+	 */
+	public void testParcoursJson(){
+		String jsonData = readJSONFileObject(GlobalJSON.GAME_FILE);
+		JSONArray gamesArray = new JSONArray(jsonData);
+		for(int i = 0; i < gamesArray.length(); i++) {
+			JSONObject game = gamesArray.getJSONObject(i);
+			
+	        System.out.println("name: " + game.getString("name"));
+	        System.out.println("version: " + game.getString("version"));
+	        System.out.println("description: " + game.getString("description"));
+	        JSONArray nbErrors = game.getJSONArray("errors");
+			for(int j = 0; j < nbErrors.length(); j++) {
+				JSONObject jObject = nbErrors.getJSONObject(j);
+				System.out.println("idGame: " + jObject.getInt("idGame"));
+				System.out.println("nbError: " + jObject.getInt("nbError"));
+			}
+	    }
+	}
+	
+	public static String readJSONFileObject(String objectName){
 
+		 String result = "";
+		    try {
+		        BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));
+		        StringBuilder sb = new StringBuilder();
+		        String line = br.readLine();
+		        while (line != null) {
+		            sb.append(line);
+		            line = br.readLine();
+		        }
+		        result = sb.toString();
+		    } catch(Exception e) {
+		        e.printStackTrace();
+		    }
+		    return result;
+	}
+	/**
+	 * Fin TEST JSON
+	 */
+
+	
+	
 	/**
 	 * Read the Json Object to find the game with this id
 	 * @param idGame
