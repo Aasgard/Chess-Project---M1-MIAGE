@@ -42,7 +42,7 @@ public class ExtractJSON implements GlobalJSON{
 		return false;
 	}
 	public boolean isGameExiste(Game g) {
-		
+
 		return false;
 	}
 
@@ -74,67 +74,71 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException 
 	 */
 	public Game getGame(int idGame) throws IOException{
-		JsonArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
-		
-		for (JsonValue gameJsonValue : gamesArray) {
-			JsonObject gameObject = (JsonObject)gameJsonValue;
+		String jsonData = readJSONFile(GlobalJSON.GAME_FILE);
+
+		JSONArray gamesArray = new JSONArray(jsonData);
+		for(int i = 0; i < gamesArray.length(); i++) {
+			JSONObject gameObject = gamesArray.getJSONObject(i);
+			
 			if (idGame == gameObject.getInt("id")){
-				Game game = new Game();
-				game.setId(gameObject.getInt("id"));
-				game.setWhitePlayer(new Player(gameObject.getInt("id_white")));
-				game.setBlackPlayer(new Player(gameObject.getInt("id_black")));
-				game.setDate(gameObject.getString("date"));
+				Player whitePlayer = new Player(gameObject.getInt("id_white"));
+				Player blackPlayer = new Player(gameObject.getInt("id_black"));
+				String date = gameObject.getString("date");
+				int inconnu = 0;
+				List<Move> allMoves = null;
+				
+				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu);
 				return game;
 			}
 		}
 		return null;
 	}
-	
-	
+
+
 	/**
 	 *  TEST JSON
 	 */
 	public void testParcoursJson(){
-		String jsonData = readJSONFileObject(GlobalJSON.GAME_FILE);
+		String jsonData = readJSONFile(GlobalJSON.GAME_FILE);
 		JSONArray gamesArray = new JSONArray(jsonData);
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject game = gamesArray.getJSONObject(i);
-			
-	        System.out.println("name: " + game.getString("name"));
-	        System.out.println("version: " + game.getString("version"));
-	        System.out.println("description: " + game.getString("description"));
-	        JSONArray nbErrors = game.getJSONArray("errors");
+
+			System.out.println("name: " + game.getString("name"));
+			System.out.println("version: " + game.getString("version"));
+			System.out.println("description: " + game.getString("description"));
+			JSONArray nbErrors = game.getJSONArray("errors");
 			for(int j = 0; j < nbErrors.length(); j++) {
 				JSONObject jObject = nbErrors.getJSONObject(j);
 				System.out.println("idGame: " + jObject.getInt("idGame"));
 				System.out.println("nbError: " + jObject.getInt("nbError"));
 			}
-	    }
+		}
 	}
-	
-	public static String readJSONFileObject(String objectName){
 
-		 String result = "";
-		    try {
-		        BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));
-		        StringBuilder sb = new StringBuilder();
-		        String line = br.readLine();
-		        while (line != null) {
-		            sb.append(line);
-		            line = br.readLine();
-		        }
-		        result = sb.toString();
-		    } catch(Exception e) {
-		        e.printStackTrace();
-		    }
-		    return result;
+	public static String readJSONFile(String objectName){
+
+		String result = "";
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));
+			StringBuilder sb = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				sb.append(line);
+				line = br.readLine();
+			}
+			result = sb.toString();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 	/**
 	 * Fin TEST JSON
 	 */
 
-	
-	
+
+
 	/**
 	 * Read the Json Object to find the game with this id
 	 * @param idGame
@@ -152,7 +156,7 @@ public class ExtractJSON implements GlobalJSON{
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Read the Json Object to find the opening with this id
 	 * @param idOpening
@@ -184,26 +188,7 @@ public class ExtractJSON implements GlobalJSON{
 
 		JsonArrayBuilder gamesBuilder = Json.createArrayBuilder();
 		JsonArray jsonArray = gamesBuilder.build();
-		
+
 		return jsonArray;
-	}
-
-	/**
-	 * Get the Json file 
-	 * @param objectName
-	 * @return
-	 * @throws IOException
-	 */
-	public JsonArray readJSONFile(String objectName) throws IOException{
-
-		InputStream file = new FileInputStream(GlobalJSON.PATH + objectName);
-
-		JsonReader jsonReader = Json.createReader(file);
-		JsonArray jsonArray = jsonReader.readArray();
-
-		jsonReader.close();
-		file.close();
-
-		return jsonArray;		
 	}
 }

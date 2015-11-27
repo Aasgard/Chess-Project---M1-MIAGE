@@ -22,6 +22,7 @@ public class Game {
 	}
 	
 	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int backElo, String PGN) {
+
 		super();
 		this.id = id;
 		this.alMoves = alMoves;
