@@ -61,43 +61,23 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
 	}
 
+	public void saveAverageVariation(Game g, int variable) throws IOException{
+		JSONObject gameJson = extractJSON.getJsonGame(g.getId());
+		boolean exists = true;
 
-
-
-	public void saveAverageVariation(Game g, double variable) throws IOException{
-
-		// Get the JsonObject from the game id
-		JsonObject gameJson = extractJSON.getJsonGame(g.getId());
-
-		JsonObjectBuilder gameBuilder = Json.createObjectBuilder();
-
-		// If the game is in the Json
-		if(gameJson != null){
-
-			// Recreate the game already set
-			// TODO add the "move_average" to je JsonObject
-			gameBuilder.add("", gameJson).add("move_average", variable);
-
-			// Update the game
-			//			gameBuilder.add("move_average", variable);		
-
-		}else{
-
-			// Create a new game in the jsonFile			
-			gameBuilder.add("id", g.getId());
-			gameBuilder.add("id_white", g.getWhitePlayer().getId());
-			gameBuilder.add("id_black", g.getBlackPlayer().getId());
-			gameBuilder.add("date", g.getDate());
-			gameBuilder.add("move_average", variable);			
+		if(gameJson == null){
+			gameJson = createGameJson(g);
+			exists = false;
 		}
-		// Create the JsonObject
-		JsonObject gameJsonObject = gameBuilder.build();
-
+		
+		gameJson.put("score_total_variation", variable);
 		// Save the game
-		saveInFile(gameJsonObject, GAME_FILE);
+		saveInFile(gameJson, GAME_FILE, exists);
 	}
 
+	// TODO : refaire fonction 
 	public void saveBestFenToJSON(String pos, FEN fen){
+		boolean exists = false;
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject position = new JSONObject();
 
@@ -108,7 +88,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		outputJSON.put(position);
 
 		// Save the rankingPosition
-		saveInFile(outputJSON, RANKINGPOSITION_FILE);
+		saveInFile(outputJSON, RANKINGPOSITION_FILE, exists);
 	}
 
 	@Override
@@ -116,7 +96,6 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		// Get the JsonObject from the game id
 		JSONObject openingJson = extractJSON.getJsonOpening(o.getId());
 		boolean exists = true;
-		// If the game is in the Json
 		if(openingJson == null){
 			openingJson = createOpening(o);
 			exists = false;
@@ -148,24 +127,13 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 	}
 
 
-	public void saveBestFenToJSON(String pos, FEN fen){
-		JSONArray outputJSON = new JSONArray();			
-		JSONObject position = new JSONObject();
 
-		// Create a new opening in the jsonFile
-		position.put("position", position);
-		position.put("evol_score_global", fen.getPosition());
-
-		outputJSON.put(position);
-
-		// Save the rankingPosition
-		saveInFile(outputJSON, RANKINGPOSITION_FILE);
-	}
 
 	/**
 	 * Save all the players with their errors
 	 * 
 	 */
+	//TODO : refaire fonction
 	public void saveErrorToJSON(HashMap<Player,HashMap<Integer,Integer>> players){
 
 		JsonArray playersJson = extractJSON.readJSONFile(OPENING_FILE);
@@ -256,13 +224,6 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		jsonWriter.close();
 	}
 
-	@Override
-	public void saveAverageVariation(int idGame, int averageVariation) {
-		// TODO Auto-generated method stub
-
-	}
-
-
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
 
@@ -292,4 +253,8 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
 		return object;
 	}
+
+
+
+
 }
