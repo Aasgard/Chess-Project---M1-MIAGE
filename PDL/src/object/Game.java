@@ -14,11 +14,14 @@ public class Game {
 	private Event event;
 	private int result;
 	private String date;
+	private String PGN;
+
+
 	public Game(){
 		
 	}
 	
-	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int backElo) {
+	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int backElo, String PGN) {
 		super();
 		this.id = id;
 		this.alMoves = alMoves;
@@ -30,6 +33,7 @@ public class Game {
 		this.date = date;
 		this.blackElo = blackElo;
 		this.whiteElo = whiteElo;
+		this.PGN = PGN;
 	}
 
 	public int getId() {
@@ -113,4 +117,12 @@ public class Game {
 		this.result = result;
 	}
 	
+	
+	public String getPGN() {
+		return PGN;
+	}
+
+	public void setPGN(String PGN) {
+		PGN = PGN;
+	}
 }

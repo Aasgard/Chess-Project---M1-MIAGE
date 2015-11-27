@@ -35,27 +35,48 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
-	public void saveAllScoreToJSON(Game g, List<FEN> scores){
-		JSONArray outputJSON = new JSONArray();			
-		JSONObject game = new JSONObject();
-
-		if(extractJSON.isGameExiste(g)){
-			// TODO Update game in JSON
-		}else{
-			// Create a new game in the jsonFile
-			game.put("id", g.getId());
-
-			//			Iterator it = scores.iterator();
-			//			
-			//			JSONArray scoresJson = new JSONArray();			
-			//			JSONObject score = new JSONObject();
-
-
-			outputJSON.put(game);
+	public void saveAllScoreToJSON(Game g, List<FEN> scores){	
+		JSONObject game = extractJSON.getJsonGame(g.getId());
+		boolean exists = true;
+		if (game == null){
+			game = createGameJson(g);
+			exists = false;
 		}
+		JSONArray scoresJson = new JSONArray();
+		int nbMove = 1;
+		for(FEN fen : scores){
+			JSONObject score = new JSONObject();
+			score.put("number_move", nbMove);
+			score.put("score", fen.getScore());
+			score.put("FEN", fen.getRawFEN());
+			
+			scoresJson.put(score);
+			nbMove ++;
 
-		// Save the game
-		this.saveInFile(outputJSON, GAME_FILE);
+		}
+		
+		game.put("scores", scoresJson);
+		
+		this.saveInFile(game, GlobalJSON.GAME_FILE, exists);
+		
+	}
+
+
+	private JSONObject createGameJson(Game g) {
+		JSONObject object = new JSONObject();
+		
+		object.put("id", g.getId());
+		object.put("id_white", g.getWhitePlayer().getId());
+		object.put("id_black", g.getBlackPlayer().getId());
+		object.put("PGN", g.getPGN());
+		object.put("evol_score_move", "");
+		object.put("move_average", "");
+		object.put("date", g.getDate());
+		object.put("score_total_variation", "");
+		object.put("id_opening", g.getOpening().getId());
+		object.put("scores", new JSONArray());
+		
+		return object;
 	}
 
 
@@ -214,7 +235,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		saveInFile(openingJsonObject, OPENING_FILE);
 	}
 
-	public static void saveInFile(JsonObject jsonObject, String objectName) throws IOException{
+	public void saveInFile(JSONObject jsonObject, String objectName, boolean exists) throws IOException{
 		JsonArray jsonArray;
 
 		switch (objectName) {
