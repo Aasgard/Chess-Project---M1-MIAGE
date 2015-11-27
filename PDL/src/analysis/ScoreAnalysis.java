@@ -6,7 +6,6 @@ import json.*;
 import object.FEN;
 import object.Game;
 import object.Move;
-import tools.Tools;
 
 public class ScoreAnalysis {
 	

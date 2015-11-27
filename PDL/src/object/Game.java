@@ -21,7 +21,7 @@ public class Game {
 		
 	}
 	
-	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int backElo, String PGN) {
+	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN) {
 
 		super();
 		this.id = id;
@@ -124,6 +124,6 @@ public class Game {
 	}
 
 	public void setPGN(String PGN) {
-		PGN = PGN;
+		this.PGN = PGN;
 	}
 }

@@ -1,35 +1,13 @@
 package json;
 
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.json.*;
-import javax.json.stream.JsonParser;
-import javax.json.stream.JsonParser.Event;
-import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import object.Move;
-
-import object.Game;
-import object.Opening;
-import object.Player;
-import testJson.ExtractJSON;
-import testJson.GlobalJSON;
-import object.FEN;
+import org.json.*;
+import object.*;
 
 
 public class ExtractJSON implements GlobalJSON{
@@ -85,8 +63,9 @@ public class ExtractJSON implements GlobalJSON{
 				String date = gameObject.getString("date");
 				int inconnu = 0;
 				List<Move> allMoves = null;
+				String pgn = "";
 				
-				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu);
+				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn);
 				return game;
 			}
 		}
@@ -130,6 +109,7 @@ public class ExtractJSON implements GlobalJSON{
 
 		String result = "";
 		try {
+			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();
@@ -162,10 +142,10 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException
 	 */
 	public JSONObject getJsonGame(int idGame) throws IOException{
-		JsonArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
+		JSONArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 
-		for (JsonValue game : gamesArray) {
-			JsonObject gameObject = (JsonObject)game;
+		for(int i = 0; i < gamesArray.length(); i++) {
+			JSONObject gameObject = gamesArray.getJSONObject(i);
 			if (idGame == gameObject.getInt("id")){
 				return gameObject;
 			}
@@ -180,10 +160,9 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException
 	 */
 	public JSONObject getJsonOpening(int idOpening) throws IOException{
-		JsonArray openingsArray = readJSONFile(GlobalJSON.OPENING_FILE);
-
-		for (JsonValue opening : openingsArray) {
-			JsonObject openingObject = (JsonObject)opening;
+		JSONArray openingsArray = readJSONFile(GlobalJSON.OPENING_FILE);
+		for(int i = 0; i < openingsArray.length(); i++) {
+			JSONObject openingObject = openingsArray.getJSONObject(i);
 			if (idOpening == openingObject.getInt("id")){
 				return openingObject;
 			}
@@ -202,9 +181,9 @@ public class ExtractJSON implements GlobalJSON{
 	 * @param JsonObjectGame
 	 * @throws IOException
 	 */
-	public JsonArray deleteJsonGame(JsonObject JsonObjectGame) throws IOException{
-		JsonArray jsonArrayAll = readJSONFile(GlobalJSON.GAME_FILE);
-
+	public JSONArray deleteJsonGame(JSONObject JsonObjectGame) throws IOException{
+		JSONArray jsonArrayAll = readJSONFile(GlobalJSON.GAME_FILE);
+		//TODO : A voir suivant ce que tu veux faire
 		jsonArrayAll.remove(JsonObjectGame);
 
 		JsonArrayBuilder gamesBuilder = Json.createArrayBuilder();
