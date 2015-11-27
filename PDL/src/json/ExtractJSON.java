@@ -74,9 +74,8 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException 
 	 */
 	public Game getGame(int idGame) throws IOException{
-		String jsonData = readJSONFile(GlobalJSON.GAME_FILE);
+		JSONArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 
-		JSONArray gamesArray = new JSONArray(jsonData);
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject gameObject = gamesArray.getJSONObject(i);
 			
@@ -94,13 +93,24 @@ public class ExtractJSON implements GlobalJSON{
 		return null;
 	}
 
+	public static JSONArray deleteJsonObject(JSONObject myJsonObject, String objectName){
+		JSONArray jsonArray = readJSONFile(objectName);
+
+		for(int i = 0; i < jsonArray.length(); i++) {
+			JSONObject gameObject = jsonArray.getJSONObject(i);
+			if (gameObject.getInt("id") == myJsonObject.getInt("id")){
+				jsonArray.remove(i);
+				break;
+			}
+		}
+		return jsonArray;
+	}
 
 	/**
 	 *  TEST JSON
 	 */
 	public void testParcoursJson(){
-		String jsonData = readJSONFile(GlobalJSON.GAME_FILE);
-		JSONArray gamesArray = new JSONArray(jsonData);
+		JSONArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject game = gamesArray.getJSONObject(i);
 
@@ -116,7 +126,7 @@ public class ExtractJSON implements GlobalJSON{
 		}
 	}
 
-	public static String readJSONFile(String objectName){
+	public static JSONArray readJSONFile(String objectName){
 
 		String result = "";
 		try {
@@ -131,7 +141,13 @@ public class ExtractJSON implements GlobalJSON{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		return result;
+
+		if (result.isEmpty()){
+			return null;
+		}else{
+			JSONArray jsonArray = new JSONArray(result);
+			return jsonArray;
+		}
 	}
 	/**
 	 * Fin TEST JSON

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -219,27 +220,46 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		saveInFile(openingJsonObject, OPENING_FILE);
 	}
 
-	public void saveInFile(JSONObject jsonObject, String objectName, boolean exists) throws IOException{
-		JsonArray jsonArray;
+	public static void saveInFile(JSONObject jsonObject, String objectName, boolean exist){
 
-		switch (objectName) {
-		case GlobalJSON.GAME_FILE:
-			jsonArray = extractJSON.deleteJsonGame(jsonObject);
-			break;
-		case GlobalJSON.OPENING_FILE:
-
-			break;
-		case GlobalJSON.PLAYER_FILE:
-
-			break;
-		case GlobalJSON.RANKINGPOSITION_FILE:
-
-			break;
-		default:
-			break;
+		JSONArray allData;
+		if (exist){
+			allData = ExtractJSON.deleteJsonObject(jsonObject, objectName);
+		} else {
+			allData = ExtractJSON.readJSONFile(objectName);
 		}
 
-		writeJSONFile(jsonArray, objectName);		
+		try {
+			System.out.println(PATH + objectName);
+			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
+			
+			StringBuilder myNewFile = new StringBuilder();
+			
+			// Creation d'un nouveau fichier
+			writer.println("[");
+			if (allData == null){
+				
+				writer.println(jsonObject.toString(1));
+				
+				System.out.println("New File..");
+
+			// Fichier déja existant
+			} else {
+				int i;
+				for(i = 0; i < allData.length()-1; i++) {
+					JSONObject object = allData.getJSONObject(i);
+					writer.print(object.toString(1));
+					writer.println(",");
+				}
+				writer.print(jsonObject.toString(1));
+
+			}
+			writer.println("]");
+			System.out.println("Successfully Copied JSON Object to File...");
+			System.out.println("\nJSON Object: " + myNewFile.toString());
+			writer.close();
+		} catch (IOException e) {
+		}
 	}
 
 	/**
