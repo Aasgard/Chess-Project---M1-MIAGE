@@ -8,8 +8,14 @@ public interface IGlobalJSON {
 	public final String PLAYER_FILE = "Player.json";	
 	public final String RANKINGPOSITION_FILE = "RankingPosition.json";
 	
+	//Constante de GAME/Player/Opening
 	public final String ID = "id";
-
+	
+	//Constante de Player/Opening
+	public final String NAME = "name";
+	
+	//CONSTANTE de Player/RankingPosition
+	public final String ID_GAME = "id_game";
 	
 	//CONSTANTE GAME
 	public final String ID_WHITE = "id_white";
@@ -26,9 +32,7 @@ public interface IGlobalJSON {
 	public final String FEN = "fen";
 	
 	//CONSTANTE PLAYER
-	public final String NAME = "name";
 	public final String ERRORS = "errors";
-	public final String IDGAME = "idGame";
 	public final String NB_OF_ERROR = "nb_of_error";
 	public final String ERROR_FEN = "error_fen";
 	public final String NB_GAME_PLAYED = "nb_games_played";
@@ -36,5 +40,27 @@ public interface IGlobalJSON {
 	
 	//CONSTANTE OPENING
 	public final String NAME_OPENING = "name_opening";
+	public final String NB_MOVES = "nb_moves";
+	public final String MOVES = "moves";
+	public final String DATA = "data";
+	public final String Y = "Y";
+	public final String COLOR = "color";
+	
+	//CONSTANTE RANKINGPOSITION
+	public final String INIT_FEN = "init_fen";
+	public final String CLASSEMENT = "classement";
+	public final String PLAYER_NAME = "player_name";
+	public final String BEST_FEN = "best_fen";
+	public final String EVOL_SCORE_GLOBAL = "evol_score_global";
+	
+	//Constantes GlobalStats
+	public final String NB_PLAYERS = "nb_players";
+	public final String NB_GAMES = "nb_games";
+	public final String NB_EVENT = "nb_event";
+	
+	public final String BEST_PLAYER = "best_player";
+	
+	public final String BEST_GAME = "best_game";
+	public final String VAR_SCORE = "var_score";
 	
 }
