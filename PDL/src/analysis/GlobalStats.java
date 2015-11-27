@@ -5,6 +5,7 @@ import java.io.IOException;
 import database.ExtractDB;
 import json.ITreatmentJSON;
 import json.TreatmentJSON;
+import object.Game;
 import object.Player;
 import json.ExtractJSON;
 
@@ -25,13 +26,11 @@ public class GlobalStats {
 	 */
 	public void getGlobalBestPlayers() throws IOException{
 		Player tableaubest_Players[] = new Player[4];
-		try	{
 			int nb_players = ExtractDB.extractNumberPlayers();
-			int nb_win = 0;
 			for(int i = 0 ; i < nb_players; i++){
 				Player p = extractJSON.getJsonPlayer(i);
 				for(int j = 0 ; j < tableaubest_Players.length ; j++){				
-					if(p.getNbGameWin()<=nb_win){
+					if(tableaubest_Players[j].getNbGameWin()<=p.getNbGameWin()){
 						for(int k = tableaubest_Players.length ; k < j; k--){
 							tableaubest_Players[k] = tableaubest_Players[k-1];
 						}
@@ -39,15 +38,23 @@ public class GlobalStats {
 						
 					}
 				}
-			}
-		}catch (Exception e) {
-			//TODO : Erreur class à faire
-			e.printStackTrace();
-		}	 
+			} 
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players);
 	}
 
-	public void getGlobalBestVar(){
-
+	public void getGlobalBestVar(int nb_games) throws IOException{
+		Game tableaubest_Games[] = new Game[4];
+		for(int i = 0; i< nb_games ; i++){
+			Game g = extractJSON.getGame(i);
+			for(int j = 0 ; j < tableaubest_Games.length ; j++){ 
+				if(tableaubest_Games[j].getScoreTotalVariation() <= g.getScoreTotalVariation()){
+					for(int k = tableaubest_Games.length ; k < j ; k--){
+						tableaubest_Games[k] = tableaubest_Games[k-1];
+					}
+					tableaubest_Games[i] = g;
+				}
+			}
+		}
+		treatmentJSON.saveGlobalBestGamesToJSON(tableaubest_Games);
 	}
 }

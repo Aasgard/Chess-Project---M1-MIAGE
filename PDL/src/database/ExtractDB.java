@@ -41,7 +41,7 @@ public class ExtractDB{
 		try {
 			ResultSet rs = MySQL.getInstance().query(query);
 			while(rs.next()){
-				Game currentGame = new Game(rs.getInt(1), ExtractDB.extractMovesByGame(rs.getInt(1)), new Player(rs.getInt(2), rs.getString(4)), new Player(rs.getInt(5), rs.getString(6)), new Opening(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getInt(13)), new Event(rs.getInt(15), rs.getString(16), rs.getString(17)), rs.getInt(14), rs.getString(8), rs.getInt(4), rs.getInt(7), rs.getString(18));
+				Game currentGame = new Game(rs.getInt(1), ExtractDB.extractMovesByGame(rs.getInt(1)), new Player(rs.getInt(2), rs.getString(4)), new Player(rs.getInt(5), rs.getString(6)), new Opening(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getInt(13)), new Event(rs.getInt(15), rs.getString(16), rs.getString(17)), rs.getInt(14), rs.getString(8), rs.getInt(4), rs.getInt(7), rs.getString(18), 0);
 				alGames.add(currentGame);
 				System.out.println(currentGame.toString());
 			}

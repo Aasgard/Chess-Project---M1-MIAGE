@@ -15,13 +15,14 @@ public class Game {
 	private int result;
 	private String date;
 	private String PGN;
+	private double score_total_variation;
 
 
 	public Game(){
 		
 	}
 	
-	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN) {
+	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN, double score_total_variation) {
 
 		super();
 		this.id = id;
@@ -35,6 +36,7 @@ public class Game {
 		this.blackElo = blackElo;
 		this.whiteElo = whiteElo;
 		this.PGN = PGN;
+		this.score_total_variation = score_total_variation;
 	}
 
 	public int getId() {
@@ -126,4 +128,14 @@ public class Game {
 	public void setPGN(String PGN) {
 		this.PGN = PGN;
 	}
+
+	public double getScoreTotalVariation() {
+		return score_total_variation;
+	}
+
+	public void setScoreTotalVariation(double score_total_variation) {
+		this.score_total_variation = score_total_variation;
+	}
+
+
 }

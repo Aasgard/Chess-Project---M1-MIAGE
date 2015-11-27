@@ -47,8 +47,9 @@ public class ExtractJSON implements IGlobalJSON{
 				int inconnu = 0;
 				List<Move> allMoves = null;
 				String pgn = "";
+				double score_total_variation = 0;
 			
-				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn);
+				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn, score_total_variation );
 				return game;
 			}
 		}
@@ -129,7 +130,7 @@ public class ExtractJSON implements IGlobalJSON{
 				JSONArray errorsArray = playerObject.getJSONArray( ERRORS );
 				for(int j = 0; j < errorsArray.length() ; j++){
 					JSONObject errorObject = errorsArray.getJSONObject(j);
-					int idgame = errorObject.getInt( IDGAME );
+					int idgame = errorObject.getInt( ID_GAME );
 					int nb_of_error = errorObject.getInt( NB_OF_ERROR );
 					List<String> errorfen = new ArrayList<String>();
 					JSONArray errorfenArray = errorObject.getJSONArray( ERROR_FEN );

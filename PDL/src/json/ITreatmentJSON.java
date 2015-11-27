@@ -22,7 +22,7 @@ public interface ITreatmentJSON {
 	
 	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
-	public void saveGlobalBestGamesToJSON(List<Game> games);
+	public void saveGlobalBestGamesToJSON(Game[] games);
 	
 	
 }

@@ -265,7 +265,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	}
 
 	@Override
-	public void saveGlobalBestGamesToJSON(List<Game> games) {
+	public void saveGlobalBestGamesToJSON(Game[] games) {
 		// TODO Auto-generated method stub
 		
 	}
