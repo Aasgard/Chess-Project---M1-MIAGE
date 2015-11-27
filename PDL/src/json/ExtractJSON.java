@@ -7,15 +7,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import object.Move;
-
-import object.Game;
-import object.Opening;
-import object.Player;
-import object.FEN;
+import org.json.*;
+import object.*;
 
 
 public class ExtractJSON implements GlobalJSON{
@@ -52,8 +45,9 @@ public class ExtractJSON implements GlobalJSON{
 				String date = gameObject.getString("date");
 				int inconnu = 0;
 				List<Move> allMoves = null;
-				
-				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, "");
+				String pgn = "";
+			
+				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn);
 				return game;
 			}
 		}
@@ -77,6 +71,7 @@ public class ExtractJSON implements GlobalJSON{
 
 		String result = "";
 		try {
+			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));
 			StringBuilder sb = new StringBuilder();
 			String line = br.readLine();

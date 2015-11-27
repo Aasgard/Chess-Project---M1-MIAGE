@@ -12,14 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.json.JsonValue;
-import javax.json.JsonWriter;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -37,7 +29,13 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
 	public void saveAllScoreToJSON(Game g, List<FEN> scores){	
-		JSONObject game = extractJSON.getJsonGame(g.getId());
+		JSONObject game = null;
+		try {
+			game = extractJSON.getJsonGame(g.getId());
+		} catch (IOException e) {
+			// TODO : Intégrer à la classe d'erreur ? : erreur lecture json (game n'existe pas ou erreur de fichier)
+			e.printStackTrace();
+		}
 		boolean exists = true;
 		if (game == null){
 			game = createGameJson(g);
@@ -55,11 +53,9 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 			nbMove ++;
 
 		}
-
 		game.put("scores", scoresJson);
 
-		this.saveInFile(game, GlobalJSON.GAME_FILE, exists);
-
+		saveInFile(game, GlobalJSON.GAME_FILE, exists);
 	}
 
 	public void saveAverageVariation(Game g, int variable) throws IOException{

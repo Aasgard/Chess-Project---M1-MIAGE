@@ -1,10 +1,5 @@
 package object;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import tools.MySQL;
-
 public class Opening {
 
 	private int id;
