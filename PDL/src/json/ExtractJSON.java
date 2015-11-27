@@ -12,7 +12,7 @@ import org.json.*;
 import object.*;
 
 
-public class ExtractJSON implements GlobalJSON{
+public class ExtractJSON implements IGlobalJSON{
 
 	public ExtractJSON() {
 	}
@@ -35,15 +35,15 @@ public class ExtractJSON implements GlobalJSON{
 	 * @throws IOException 
 	 */
 	public Game getGame(int idGame) throws IOException{
-		JSONArray gamesArray = readJSONFile(GlobalJSON.GAME_FILE);
+		JSONArray gamesArray = readJSONFile( GAME_FILE );
 
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject gameObject = gamesArray.getJSONObject(i);
 			
-			if (idGame == gameObject.getInt("id")){
-				Player whitePlayer = new Player(gameObject.getInt("id_white"));
-				Player blackPlayer = new Player(gameObject.getInt("id_black"));
-				String date = gameObject.getString("date");
+			if (idGame == gameObject.getInt( ID )){
+				Player whitePlayer = new Player(gameObject.getInt( ID_WHITE ));
+				Player blackPlayer = new Player(gameObject.getInt( ID_BLACK ));
+				String date = gameObject.getString( DATE );
 				int inconnu = 0;
 				List<Move> allMoves = null;
 				String pgn = "";
@@ -118,29 +118,29 @@ public class ExtractJSON implements GlobalJSON{
 	}
 	
 	public Player getJsonPlayer(int idPlayer) throws IOException{
-		JSONArray playersArray = readJSONFile(GlobalJSON.PLAYER_FILE);
+		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 
 		for(int i = 0; i < playersArray.length(); i++) {
 			JSONObject playerObject = playersArray.getJSONObject(i);
 			
-			if (idPlayer == playerObject.getInt("id")){
-				String name = playerObject.getString("name");
+			if (idPlayer == playerObject.getInt( ID )){
+				String name = playerObject.getString( NAME );
 				List<ErrorPlayer> errors = new ArrayList<ErrorPlayer>();
-				JSONArray errorsArray = playerObject.getJSONArray("Errors");
+				JSONArray errorsArray = playerObject.getJSONArray( ERRORS );
 				for(int j = 0; j < errorsArray.length() ; j++){
 					JSONObject errorObject = errorsArray.getJSONObject(j);
-					int idgame = errorObject.getInt("idGame");
-					int nb_of_error = errorObject.getInt("nb_of_error");
+					int idgame = errorObject.getInt( IDGAME );
+					int nb_of_error = errorObject.getInt( NB_OF_ERROR );
 					List<String> errorfen = new ArrayList<String>();
-					JSONArray errorfenArray = errorObject.getJSONArray("error_fen");
+					JSONArray errorfenArray = errorObject.getJSONArray( ERROR_FEN );
 					for(int k = 0; k<errorfenArray.length(); k++){
 						errorfen.add(errorfenArray.getString(k));
 					}
 					ErrorPlayer ep = new ErrorPlayer(idgame, nb_of_error, errorfen);
 					errors.add(ep);
 				}
-				int nb_game_played = playerObject.getInt("nb_game_played");
-				int nb_win = playerObject.getInt("nb_win");
+				int nb_game_played = playerObject.getInt( NB_GAME_PLAYED );
+				int nb_win = playerObject.getInt( NB_GAME_WIN );
 			
 				Player player = new Player();
 				player.setId(idPlayer);

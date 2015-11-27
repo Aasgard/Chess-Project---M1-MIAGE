@@ -22,7 +22,7 @@ import object.Player;
 
 
 
-public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
+public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
@@ -53,7 +53,7 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		}
 		game.put("scores", scoresJson);
 
-		saveInFile(game, GlobalJSON.GAME_FILE, exists);
+		saveInFile(game, IGlobalJSON.GAME_FILE, exists);
 	}
 
 	public void saveAverageVariation(Game g, int variable) throws IOException{
