@@ -24,8 +24,6 @@ import object.Player;
 
 public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 
-	protected String path = "D:/wamp/www/PDL Website/json/";
-
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
 	public void saveAllScoreToJSON(Game g, List<FEN> scores){	
@@ -222,20 +220,6 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 			writer.close();
 		} catch (IOException e) {
 		}
-	}
-
-	/**
-	 * Write the new file 
-	 * @param jsonArray
-	 * @param objectName
-	 * @throws FileNotFoundException
-	 */
-	public static void writeJSONFile(JsonArray jsonArray, String objectName) throws FileNotFoundException{
-		OutputStream os = new FileOutputStream(GlobalJSON.PATH + objectName);
-		JsonWriter jsonWriter = Json.createWriter(os);
-
-		jsonWriter.writeArray(jsonArray);
-		jsonWriter.close();
 	}
 
 	private JSONObject createGameJson(Game g) {
