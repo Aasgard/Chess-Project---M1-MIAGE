@@ -1,11 +1,15 @@
 package object;
 
+import java.util.List;
+
 public class Player {
 
 	private int id;
 	private String name;
+	private List<ErrorPlayer> errors;
 	private int nbGamePlayed;
 	private int nbGameWin;
+	
 	
 	public Player(int id, String name) {
 		super();
@@ -50,5 +54,13 @@ public class Player {
 
 	public void setNbGameWin(int nbGameWin) {
 		this.nbGameWin = nbGameWin;
+	}
+
+	public List<ErrorPlayer> getErrors() {
+		return errors;
+	}
+
+	public void setErrors(List<ErrorPlayer> errors) {
+		this.errors = errors;
 	}
 }

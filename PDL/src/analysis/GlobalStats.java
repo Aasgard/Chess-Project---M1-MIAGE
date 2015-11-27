@@ -19,7 +19,10 @@ public class GlobalStats {
 		treatmentJSON.saveGlobalStatsToJSON(nb_games, nb_players, nb_events); 
 	}
 
-
+	/*
+	 * Create a board which contains 5 BestPlayers
+	 * 
+	 */
 	public void getGlobalBestPlayers() throws IOException{
 		Player tableaubest_Players[] = new Player[4];
 		try	{
