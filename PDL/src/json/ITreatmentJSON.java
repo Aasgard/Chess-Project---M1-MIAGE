@@ -20,7 +20,7 @@ public interface ITreatmentJSON {
 
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events);
 	
-	public void saveGlobalBestPlayersToJSON(List<Player> players);
+	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
 	public void saveGlobalBestGamesToJSON(List<Game> games);
 	

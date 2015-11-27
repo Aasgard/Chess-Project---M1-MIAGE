@@ -252,6 +252,24 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		return object;
 	}
 
+	@Override
+	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveGlobalBestPlayersToJSON(Player[] players) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void saveGlobalBestGamesToJSON(List<Game> games) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 

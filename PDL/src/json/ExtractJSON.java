@@ -116,7 +116,7 @@ public class ExtractJSON implements GlobalJSON{
 		return null;
 	}
 	
-	public JSONObject getJsonPlayer(int idPlayer) throws IOException{
+	public Player getJsonPlayer(int idPlayer) throws IOException{
 		// TODO getJsonPlayer
 		return null;
 	}

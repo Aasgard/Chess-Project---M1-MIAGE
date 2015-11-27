@@ -5,12 +5,14 @@ public class Player {
 	private int id;
 	private String name;
 	private int nbGamePlayed;
+	private int nbGameWin;
 	
 	public Player(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.nbGamePlayed = 0;
+		this.nbGameWin = 0;
 	}
 
 	public int getId() {
@@ -40,5 +42,13 @@ public class Player {
 	
 	public Player(int id){
 		this.id = id;
+	}
+
+	public int getNbGameWin() {
+		return nbGameWin;
+	}
+
+	public void setNbGameWin(int nbGameWin) {
+		this.nbGameWin = nbGameWin;
 	}
 }
