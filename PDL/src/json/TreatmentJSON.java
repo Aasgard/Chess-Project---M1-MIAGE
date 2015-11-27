@@ -137,35 +137,42 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		// Save the rankingPosition
 		saveInFile(outputJSON, RANKINGPOSITION_FILE);
 	}
+	
+	@Override
+	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo) throws IOException {
+		// Get the JsonObject from the game id
+				JsonObject openingJson = extractJSON.getJsonOpening(o.getId());
+
+				JsonObjectBuilder openingBuilder = Json.createObjectBuilder();
+
+				// If the game is in the Json
+				if(openingJson != null){
+					// Recreate the game already set
+					// TODO add the "average_win_rate" to je JsonObject
+					openingBuilder.add("", openingJson).add("average_win_rate", rate);
+
+					// Update the game
+					// gameBuilder.add("average_win_rate", rate);	
+
+				}else{
+					// Create a new game in the jsonFile			
+					openingBuilder.add("id", o.getId());
+					openingBuilder.add("name", o.getName());
+					openingBuilder.add("move", o.getMoves());
+					// TODO eregistrer nbwhite black et exaequo
+					//openingBuilder.add("average_win_rate", rate);			
+				}
+				// Create the JsonObject
+				JsonObject openingJsonObject = openingBuilder.build();
+
+				// Save the game
+				saveInFile(openingJsonObject, OPENING_FILE);
+		
+	}
 
 	public void saveWinRateOpening(Opening o, double rate) throws IOException{
 
-		// Get the JsonObject from the game id
-		JsonObject openingJson = extractJSON.getJsonOpening(o.getId());
-
-		JsonObjectBuilder openingBuilder = Json.createObjectBuilder();
-
-		// If the game is in the Json
-		if(openingJson != null){
-			// Recreate the game already set
-			// TODO add the "average_win_rate" to je JsonObject
-			openingBuilder.add("", openingJson).add("average_win_rate", rate);
-
-			// Update the game
-			// gameBuilder.add("average_win_rate", rate);	
-
-		}else{
-			// Create a new game in the jsonFile			
-			openingBuilder.add("id", o.getId());
-			openingBuilder.add("name", o.getName());
-			openingBuilder.add("move", o.getMoves());
-			openingBuilder.add("average_win_rate", rate);			
-		}
-		// Create the JsonObject
-		JsonObject openingJsonObject = openingBuilder.build();
-
-		// Save the game
-		saveInFile(openingJsonObject, OPENING_FILE);
+		
 	}
 
 	public void saveBestFenToJSON(String pos, FEN fen){
@@ -275,5 +282,13 @@ public class TreatmentJSON implements ITreatmentJSON, GlobalJSON {
 		jsonWriter.writeArray(jsonArray);
 		jsonWriter.close();
 	}
+
+	@Override
+	public void saveAverageVariation(int idGame, double averageVariation) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
 
 }

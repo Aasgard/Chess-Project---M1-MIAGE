@@ -15,10 +15,10 @@ public interface ITreatmentJSON {
 	public void saveAverageVariation(int idGame, double averageVariation);
 	
 	public void saveBestFenToJSON(String FEN, FEN bestPosition);
-
-	public void saveWinRateOpening(Opening o, double rate) throws IOException;
 	
 	public void saveErrorToJSON(HashMap<Player, HashMap<Integer, Integer>> players);
+
+	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo)throws IOException;
 	
 	
 }

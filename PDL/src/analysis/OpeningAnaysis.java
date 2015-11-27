@@ -8,7 +8,9 @@ import object.*;
 
 public class OpeningAnaysis {
 	
-	private static int nbWin;
+	private static int nbWhite;
+	private static int nbBlack;
+	private static int exaequo;
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	
 	/**
@@ -16,16 +18,21 @@ public class OpeningAnaysis {
 	 * @param o
 	 * @param games
 	 */
-	public static void getWinRateOpening(Opening o, List<Game> games){
-		nbWin = 0;
-		for(Game game : games){
+	public static void getWinRateOpening(Opening o, List<Integer> value) {
+		nbWhite = 0;
+		nbBlack = 0;
+		exaequo = 0;
+		for(int result : value){
 			//White player win
-			if(game.getResult() == 0)
-				nbWin++;
+			if(result == 0)
+				nbWhite++;
+			else if(result == 1)
+				nbBlack ++;
+			else
+				exaequo++;
 		}
 		
-		treatmentJSON.saveWinRateOpening(o, nbWin/games.size());
-		
+		treatmentJSON.saveWinRateOpening(o, nbWhite, nbBlack, exaequo);
 	}
 
 }

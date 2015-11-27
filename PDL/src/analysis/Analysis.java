@@ -48,9 +48,9 @@ public class Analysis {
 	}
 
 	public static void analyzeOpenings(){
-		HashMap<Opening, List<Game>> mapgameByOpening = ExtractDB.extractGamesByOpening();
+		HashMap<Opening, List<Integer>> mapgameByOpening = ExtractDB.extractResultsByOpening();
 
-		for(Entry<Opening, List<Game>> gameByOpening : mapgameByOpening.entrySet()){
+		for(Entry<Opening, List<Integer>> gameByOpening : mapgameByOpening.entrySet()){
 			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
 		}
 	}
