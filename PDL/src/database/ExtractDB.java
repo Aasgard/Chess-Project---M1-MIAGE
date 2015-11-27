@@ -16,7 +16,7 @@ import tools.MySQL;
 
 public class ExtractDB{
 
-	public static List<Move> extractMovesByGame(int idGame){
+	private static List<Move> extractMovesByGame(int idGame){
 		List<Move> alMoves = new ArrayList<Move>();
 		String query = "SELECT Move.id, Move.halfMove, FEN.id, FEN.log FROM Move, FEN WHERE Move.idFEN = FEN.id AND Move.idGame = " + idGame;
 		
@@ -53,7 +53,7 @@ public class ExtractDB{
 	}
 
 
-	public static HashMap<Opening, List<Game>> extractGamesByOpening() {
+	public static HashMap<Opening, List<Integer>> extractResultsByOpening() {
 		// TODO Auto-generated method s tub
 		return null;
 	}
