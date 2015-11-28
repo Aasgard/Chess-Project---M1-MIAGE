@@ -23,7 +23,7 @@ public class Folder extends File {
 		File[] arrayFiles = this.listFiles();
 		
 		for (File file : arrayFiles) {
-			alFilesName.add(file.getName());
+			alFilesName.add(file.getAbsolutePath());
 		}
 		
 		return alFilesName;

@@ -77,5 +77,9 @@ public class Debug {
 		System.out.println(op.toString());*/
 		
 		// test commit
+		
+		Folder jsoncontainer = new Folder("JSONContainer");
+		jsoncontainer.printFolder();
+		
 	}
 }

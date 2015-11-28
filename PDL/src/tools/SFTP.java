@@ -1,5 +1,7 @@
 package tools;
 
+import java.util.List;
+
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
@@ -45,6 +47,14 @@ public class SFTP extends JSch {
 			System.out.println("Fichier courant [" + filePath + "] transféré avec succès. Destination : [" + landPath + "]");
 		} catch (SftpException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void transferFolder(Folder f, String landPath){
+		List<String> alFilesName = f.getFilesName();
+		
+		for (String name : alFilesName) {
+			this.transferFile(name, landPath);
 		}
 	}
 	
