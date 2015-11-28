@@ -12,11 +12,15 @@ import object.*;
 
 public class Analysis {
 
-
-	public static void analyzeScoreGame(){
-		List<Game> games = ExtractDB.extractGames();
-
-		for(Game game : games){
+	private List<Game> games;
+	
+	public Analysis(){
+		this.setGames(ExtractDB.extractGames());
+	}
+	
+	public void analyzeScoreGame(){
+		
+		for(Game game : this.getGames()){
 			ScoreAnalysis.analyzeScoreGame(game);
 		}
 	}
@@ -55,13 +59,19 @@ public class Analysis {
 		}
 	}
 
-	public static void analyzeBlunderMat() {
-		List<Game> games = ExtractDB.extractGames();
-
-		for(Game game : games){
+	public void analyzeBlunderMat() {	
+		for(Game game : this.getGames()){
 			MatAnalysis.checkBlunderMat(game);
 		}	
 		MatAnalysis.saveErrorsToJSON();
+	}
+
+	public List<Game> getGames() {
+		return games;
+	}
+
+	public void setGames(List<Game> games) {
+		this.games = games;
 	}
 
 }
