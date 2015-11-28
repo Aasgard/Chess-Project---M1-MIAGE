@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.json.*;
 
+import analysis.Analysis;
 import object.Game;
 import object.Move;
 import object.Opening;
@@ -75,5 +76,8 @@ public class Debug {
 		System.out.println(op.toString());*/
 		
 		// test commit
+		
+		Analysis anal = new Analysis();
+		anal.globalStats();
 	}
 }

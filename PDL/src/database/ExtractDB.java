@@ -54,7 +54,7 @@ public class ExtractDB{
 
 	public static int extractNumberPlayers(){
 		int nb_player = -1;
-		String query = "SELECT COUNT(id.Player) FROM Player";
+		String query = "SELECT COUNT(Player.id) FROM Player";
 		try{
 			ResultSet rs = MySQL.getInstance().query(query);
 			while(rs.next()){
@@ -68,7 +68,7 @@ public class ExtractDB{
 	
 	public static int extractNumberEvents(){
 		int nb_event = -1;
-		String query = "SELECT COUNT(id.Event) FROM Event";
+		String query = "SELECT COUNT(Event.id) FROM Event";
 		try{
 			ResultSet rs = MySQL.getInstance().query(query);
 			while(rs.next()){

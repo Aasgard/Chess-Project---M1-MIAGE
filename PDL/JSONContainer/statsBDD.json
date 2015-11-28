@@ -1,0 +1,14 @@
+{"global_stats": [
+ {
+  "valeur": 99,
+  "libelle": "nb_games"
+ },
+ {
+  "valeur": 152,
+  "libelle": "nb_players"
+ },
+ {
+  "valeur": 2,
+  "libelle": "nb_event"
+ }
+]}
