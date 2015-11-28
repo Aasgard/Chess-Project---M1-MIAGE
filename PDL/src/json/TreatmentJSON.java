@@ -246,10 +246,25 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
-		object.put( NB_GAMES ,  nb_games);
-		object.put( NB_PLAYERS , nb_players);
-		object.put( NB_EVENT , nb_events);
 		
+		JSONArray objectArray = new JSONArray();
+		
+		JSONObject object1 = new JSONObject();
+		object1.put(LIBELLE, NB_GAMES);
+		object1.put(VALEUR, nb_games);
+		objectArray.put(object1);
+		
+		JSONObject object2 = new JSONObject();
+		object2.put(LIBELLE, NB_PLAYERS);
+		object2.put(VALEUR, nb_players);
+		objectArray.put(object2);
+		
+		JSONObject object3 = new JSONObject();
+		object3.put(LIBELLE, NB_EVENT);
+		object3.put(VALEUR, nb_events);
+		objectArray.put(object3);
+		
+		object.put(GLOBAL_STATS, objectArray);
 		saveInFile( object, GLOBALSTAT_FILE , false);
 	}
 	

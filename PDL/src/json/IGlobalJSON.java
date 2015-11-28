@@ -58,6 +58,9 @@ public interface IGlobalJSON {
 	public final String EVOL_SCORE_GLOBAL = "evol_score_global";
 	
 	//Constantes GlobalStats
+	public final String GLOBAL_STATS = "global_stats";
+	public final String LIBELLE = "libelle";
+	public final String VALEUR = "valeur";
 	public final String NB_PLAYERS = "nb_players";
 	public final String NB_GAMES = "nb_games";
 	public final String NB_EVENT = "nb_event";

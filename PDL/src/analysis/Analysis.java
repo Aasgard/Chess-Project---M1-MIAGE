@@ -23,6 +23,9 @@ public class Analysis {
 		}
 	}
 
+	public static void globalPlayer(){
+		
+	}
 	public static void analyzeScoreEvolutionFromPosition(){
 
 		HashMap<String, List<Move>> mapFENMoves= ExtractDB.extractGameAndMoveByPosition();
