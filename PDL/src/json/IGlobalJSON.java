@@ -7,9 +7,9 @@ public interface IGlobalJSON {
 	public final String OPENING_FILE = "Opening.json";
 	public final String PLAYER_FILE = "Player.json";	
 	public final String RANKINGPOSITION_FILE = "RankingPosition.json";
-	public final String GLOBALSTAT_FILE = "GlobalStat.json";
-	public final String GLOBALBESTPLAYER_FILE = "GlobalBestPlayer.json";
-	public final String GLOBALBESTGAME_FILE = "GlobalBestGame.json";
+	public final String GLOBALSTAT_FILE = "statsBDD.json";
+	public final String GLOBALBESTPLAYER_FILE = "bestPlayers.json";
+	public final String GLOBALBESTGAME_FILE = "bestGames.json";
 	
 	//Constante de GAME/Player/Opening
 	public final String ID = "id";
@@ -63,6 +63,8 @@ public interface IGlobalJSON {
 	public final String NB_EVENT = "nb_event";
 	
 	public final String BEST_PLAYERS = "best_players";
+	public final String RANG_PLAYER = "rang";
+	
 	
 	public final String BEST_GAMES = "best_games";
 	public final String BEST_GAME = "best_game";

@@ -84,7 +84,7 @@ public class MatAnalysis {
 	 * 
 	 */
 	public static void saveErrorsToJSON() {
-		treatmentJSON.saveErrorToJSON(playerErrors);
+		//treatmentJSON.saveErrorToJSON(playerErrors);
 	}
 
 }

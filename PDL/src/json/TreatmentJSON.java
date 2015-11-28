@@ -63,7 +63,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	// TODO : refaire fonction 
 	public void saveBestFenToJSON(String pos, FEN fen){
-		boolean exists = false;
+	/*	boolean exists = false;
 		JSONArray outputJSON = new JSONArray();			
 		JSONObject position = new JSONObject();
 
@@ -74,7 +74,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		outputJSON.put(position);
 
 		// Save the rankingPosition
-		saveInFile(outputJSON, RANKINGPOSITION_FILE, exists);
+		saveInFile(outputJSON, RANKINGPOSITION_FILE, exists);*/
 	}
 
 	@Override
@@ -119,7 +119,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 */
 	//TODO : refaire fonction
 	public void saveErrorToJSON(HashMap<Player,HashMap<Integer,Integer>> players){
-
+/*
 		JsonArray playersJson = extractJSON.readJSONFile(OPENING_FILE);
 
 		JsonArrayBuilder playersBuilder = Json.createArrayBuilder();
@@ -168,7 +168,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		JsonObject openingJsonObject = playerBuiler.build();
 
 		// Save the game
-		saveInFile(openingJsonObject, OPENING_FILE);
+		saveInFile(openingJsonObject, OPENING_FILE);*/
 	}
 
 	public static void saveInFile(JSONObject jsonObject, String objectName, boolean exist){
@@ -246,7 +246,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
-		
 		object.put( NB_GAMES ,  nb_games);
 		object.put( NB_PLAYERS , nb_players);
 		object.put( NB_EVENT , nb_events);
@@ -258,12 +257,14 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	public void saveGlobalBestPlayersToJSON(Player[] players) {
 		JSONObject object = new JSONObject();
 		JSONArray objectPlayers = new JSONArray();
-		
+		int rang = 1;
 		for(int i = 0 ; i < players.length ; i++){
 			JSONObject player = new JSONObject();
+			player.put(RANG_PLAYER, rang);
 			player.put( NAME , players[i].getName());
 			player.put( NB_GAME_WIN , players[i].getNbGameWin());
 			objectPlayers.put(player);
+			rang++;
 		}
 		object.put( BEST_PLAYERS , objectPlayers);
 		saveInFile(object, GLOBALBESTPLAYER_FILE, false);	
