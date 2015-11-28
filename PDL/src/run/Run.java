@@ -2,16 +2,13 @@ package run;
 
 import java.util.List;
 
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
 import com.jcraft.jsch.SftpException;
 
 import analysis.Analysis;
 import object.*;
 import tests.StopWatch;
+import tools.Folder;
 import tools.SFTP;
 
 public class Run {
@@ -22,16 +19,10 @@ public class Run {
 		StopWatch sw = new StopWatch();
 		
 		Analysis anal = new Analysis();
+		
+		Folder jsoncontainer = new Folder("JSONContainer");
+		
 		SFTP sftp = new SFTP("gesticompte", "sarzeau56370", "109.8.192.56", 22);
-		/*JSch jsch = new JSch();
-		Session session =  jsch.getSession("gesticompte", "109.8.192.56", 22);
-		session.setPassword("sarzeau56370");
-		jsch.setConfig("StrictHostKeyChecking", "no");
-		session.connect();
-		System.out.println("Connexion établie");
-		Channel channel = session.openChannel("sftp");
-		channel.connect();
-		ChannelSftp c = (ChannelSftp) channel;*/
 	
 		List<Game> alGames = anal.getGames();
 		
@@ -51,6 +42,7 @@ public class Run {
 		sftp.closeConnection();
 		System.out.println("SFTP terminé. Script d'analyse terminé.");
 		
+		jsoncontainer.printFolder();
 		
 		System.out.println("Temps mis : " + sw.elapsedTime() + " secondes.");
 	}

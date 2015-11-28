@@ -10,6 +10,7 @@ import analysis.Analysis;
 import object.Game;
 import object.Move;
 import object.Opening;
+import tools.Folder;
 import tools.Tools;
 
 import java.util.Iterator;
@@ -76,8 +77,5 @@ public class Debug {
 		System.out.println(op.toString());*/
 		
 		// test commit
-		
-		Analysis anal = new Analysis();
-		anal.globalStats();
 	}
 }
