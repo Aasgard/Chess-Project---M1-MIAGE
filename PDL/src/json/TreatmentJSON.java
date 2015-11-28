@@ -200,7 +200,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			}
 			writer.println("]");
 			System.out.println("Successfully Copied JSON Object to File...");
-			System.out.println("\nJSON Object: " + myNewFile.toString());
+			//System.out.println("\nJSON Object: " + myNewFile.toString());
 			writer.close();
 		} catch (IOException e) {
 		}
