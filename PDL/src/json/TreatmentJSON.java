@@ -55,9 +55,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			nbMove ++;
 
 		}
-		game.put(SCORES, scoresJson);
+		game.remove( SCORES );
+		game.put( SCORES , scoresJson);
 
-		saveInFile(game, IGlobalJSON.GAME_FILE, exists);
+		saveInFile(game, GAME_FILE, exists);
 	}
 
 	// TODO : refaire fonction 
@@ -215,16 +216,16 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
 
-		object.put("id", g.getId());
-		object.put("id_white", g.getWhitePlayer().getId());
-		object.put("id_black", g.getBlackPlayer().getId());
-		object.put("PGN", g.getPGN());
-		object.put("evol_score_move", "");
-		object.put("move_average", "");
-		object.put("date", g.getDate());
-		object.put("score_total_variation", "");
-		object.put("id_opening", g.getOpening().getId());
-		object.put("scores", "");
+		object.put( ID , g.getId());
+		object.put( ID_WHITE , g.getWhitePlayer().getId());
+		object.put( ID_BLACK , g.getBlackPlayer().getId());
+		object.put( PGN , g.getPGN());
+		object.put( EVOL_SCORE_MOVE , "");
+		object.put( MOVE_AVERAGE , "");
+		object.put( DATE , g.getDate());
+		object.put( SCORE_TOTAL_VAR , "");
+		object.put( ID_OPENING , g.getOpening().getId());
+		object.put( SCORES , "");
 
 		return object;
 	}
