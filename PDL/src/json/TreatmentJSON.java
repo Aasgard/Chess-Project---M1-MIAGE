@@ -234,30 +234,54 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	private JSONObject createOpening(Opening o) {
 		JSONObject object = new JSONObject();
 
-		object.put("id", o.getId());
-		object.put("name_opening", o.getName() + "-" + o.getVariation());
-		object.put("nb_move", o.getNbMoves());
-		object.put("move", o.getMoves());
-		object.put("win", "");
+		object.put( ID , o.getId());
+		object.put( NAME_OPENING, o.getName() + "-" + o.getVariation());
+		object.put( NB_MOVES, o.getNbMoves());
+		object.put( MOVES , o.getMoves());
+		object.put( WIN , "");
 
 		return object;
 	}
 
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
-		// TODO Auto-generated method stub
+		JSONObject object = new JSONObject();
 		
+		object.put( NB_GAMES ,  nb_games);
+		object.put( NB_PLAYERS , nb_players);
+		object.put( NB_EVENT , nb_events);
+		
+		saveInFile( object, GLOBALSTAT_FILE , false);
 	}
-
+	
 	@Override
 	public void saveGlobalBestPlayersToJSON(Player[] players) {
-		// TODO Auto-generated method stub
+		JSONObject object = new JSONObject();
+		JSONArray objectPlayers = new JSONArray();
 		
+		for(int i = 0 ; i < players.length ; i++){
+			JSONObject player = new JSONObject();
+			player.put( NAME , players[i].getName());
+			player.put( NB_GAME_WIN , players[i].getNbGameWin());
+			objectPlayers.put(player);
+		}
+		object.put( BEST_PLAYERS , objectPlayers);
+		saveInFile(object, GLOBALBESTPLAYER_FILE, false);	
 	}
 
 	@Override
 	public void saveGlobalBestGamesToJSON(Game[] games) {
-		// TODO Auto-generated method stub
+		JSONObject object = new JSONObject();
+		JSONArray objectGames = new JSONArray();
+		
+		for(int i = 0 ; i < games.length ; i++){
+			JSONObject game = new JSONObject();
+			game.put( BEST_GAME , games[i].getId());
+			game.put( VAR_SCORE , games[i].getScoreTotalVariation());
+			objectGames.put(game);
+		}
+		object.put( BEST_GAMES , objectGames);
+		saveInFile(object, GLOBALBESTGAME_FILE, false);	
 		
 	}
 
