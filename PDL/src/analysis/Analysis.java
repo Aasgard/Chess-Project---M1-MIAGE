@@ -24,8 +24,13 @@ public class Analysis {
 	}
 
 	public static void globalPlayer(){
-		
+		//TODO : a voir
 	}
+	
+	public void globalStats(){
+		GlobalStats.getGlobalStats(games.size());
+	}
+	
 	public static void analyzeScoreEvolutionFromPosition(){
 
 		HashMap<String, List<Move>> mapFENMoves= ExtractDB.extractGameAndMoveByPosition();

@@ -17,7 +17,7 @@ public class GlobalStats {
 	/*
 	 * Get nb_total : players, games and events to save in JSON
 	 */
-	public void getGlobalStats(int nb_games){
+	public static void getGlobalStats(int nb_games){
 		int nb_players = ExtractDB.extractNumberPlayers();
 		int nb_events = ExtractDB.extractNumberEvents();
 		treatmentJSON.saveGlobalStatsToJSON(nb_games, nb_players, nb_events); 
