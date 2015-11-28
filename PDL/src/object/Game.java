@@ -16,11 +16,6 @@ public class Game {
 	private String date;
 	private String PGN;
 	private double score_total_variation;
-
-
-	public Game(){
-		
-	}
 	
 	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN, double score_total_variation) {
 
