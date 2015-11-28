@@ -26,10 +26,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	private static ExtractJSON extractJSON = new ExtractJSON();
 
-	public void saveAllScoreToJSON(Game g, List<FEN> scores){	
+	public void saveAllScoreToJSON(Game g, int score_total_variation, List<FEN> scores){	
 		JSONObject game = null;
 		try {
 			game = extractJSON.getJsonGame(g.getId());
+			game.remove(SCORE_TOTAL_VAR);
+			
 		} catch (IOException e) {
 			// TODO : Intégrer à la classe d'erreur ? : erreur lecture json (game n'existe pas ou erreur de fichier)
 			e.printStackTrace();
@@ -39,35 +41,23 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			game = createGameJson(g);
 			exists = false;
 		}
+		game.put(SCORE_TOTAL_VAR , score_total_variation);
+		
 		JSONArray scoresJson = new JSONArray();
 		int nbMove = 1;
 		for(FEN fen : scores){
 			JSONObject score = new JSONObject();
-			score.put("number_move", nbMove);
-			score.put("score", fen.getScore());
-			score.put("FEN", fen.getRawFEN());
+			score.put( NUMBER_MOVE , nbMove);
+			score.put( SCORE , fen.getScore());
+			score.put( FEN, fen.getRawFEN());
 
 			scoresJson.put(score);
 			nbMove ++;
 
 		}
-		game.put("scores", scoresJson);
+		game.put(SCORES, scoresJson);
 
 		saveInFile(game, IGlobalJSON.GAME_FILE, exists);
-	}
-
-	public void saveAverageVariation(Game g, int variable) throws IOException{
-		JSONObject gameJson = extractJSON.getJsonGame(g.getId());
-		boolean exists = true;
-
-		if(gameJson == null){
-			gameJson = createGameJson(g);
-			exists = false;
-		}
-		
-		gameJson.put("score_total_variation", variable);
-		// Save the game
-		saveInFile(gameJson, GAME_FILE, exists);
 	}
 
 	// TODO : refaire fonction 

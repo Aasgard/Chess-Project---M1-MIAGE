@@ -17,11 +17,6 @@ public class ExtractJSON implements IGlobalJSON{
 	public ExtractJSON() {
 	}
 
-	public HashMap<Integer, List<Integer>> extractScoresGames(){
-		//TODO extractScoresGames
-		return new HashMap<Integer, List<Integer>>();
-	}
-
 	public FEN extractFENAfterMove(Move m){
 		// TODO extractFENAfterMove
 		return null;

@@ -30,8 +30,7 @@ public class ScoreAnalysis {
 			sumScoreVariation =+ calculVariationScore(previousScore, fen.getScore());
 			previousScore = fen.getScore();
 		}
-		treatmentJSON.saveAllScoreToJSON(game, scores);
-		treatmentJSON.saveAverageVariation(game, sumScoreVariation);
+		treatmentJSON.saveAllScoreToJSON(game, sumScoreVariation, scores);
 	}
 	
 	private static int calculVariationScore(int previousScore, int score){
