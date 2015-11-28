@@ -21,7 +21,7 @@ public class Analysis {
 	public void analyzeScoreGame(){
 		
 		for(Game game : this.getGames()){
-			ScoreAnalysis.analyzeScoreGame(game);
+			ScoreAnalysis.analyzeScore(game);
 		}
 	}
 
@@ -31,23 +31,6 @@ public class Analysis {
 
 		for(Entry<String, List<Move>> fenMoves :  mapFENMoves.entrySet()){
 			ScoreFromPositionAnalysis.getEvolScore(fenMoves.getValue());
-		}
-	}
-
-	public static void analyzeScoreVariation() throws IOException{
-		ExtractJSON extractJSON = new ExtractJSON();
-
-		List<Game> listGames = new ArrayList<Game>();
-		// TODO : revoir extractScoreGames, à quoi correspondent les differents int
-		//= extractJSON.extractScoresGames();
-
-		for(Game g : listGames){
-			List<Integer> listeScore = new ArrayList<Integer>();
-			for(Move m : g.getAlMoves()){
-				listeScore.add(m.getFen().getScore());
-			}
-			ScoreVariationAnalysis.getAverageVariationGame(g, listeScore);
-
 		}
 	}
 
