@@ -10,8 +10,7 @@ public class FEN {
 		this.Log = log;
 		this.RawFEN = rawFEN;
 		this.Position = this.RawFEN.split(" ")[0];
-		this.Score = getHigherDepthScore();
-		System.out.println(this.Score);
+		this.Score = this.getHigherDepthScore();
 	}
 	
 	public String getPosition() {
@@ -53,6 +52,7 @@ public class FEN {
 			String higherdepthlog = splittedLogs[splittedLogs.length - 2];
 			scoreVoulu = Integer.parseInt(higherdepthlog.split(" ")[9]);
 		}catch(Exception e){}
+		
 		return scoreVoulu;
 	}
 	

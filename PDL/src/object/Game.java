@@ -18,8 +18,6 @@ public class Game {
 	private double score_total_variation;
 	
 	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN, double score_total_variation) {
-
-		super();
 		this.id = id;
 		this.alMoves = alMoves;
 		this.whitePlayer = whitePlayer;
