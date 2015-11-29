@@ -29,7 +29,7 @@ public class Run {
 		/* Génération des fichiers JSON de la Homepage */
 		anal.globalStats();
 		anal.analyzeScoreGame();
-		anal.globalStats();
+		anal.globalBestGame();
 		//anal.bestPlayers();
 		//anal.bestGames();
 		

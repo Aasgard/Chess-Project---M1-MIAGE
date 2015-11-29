@@ -11,7 +11,6 @@ public class FEN {
 		this.RawFEN = rawFEN;
 		this.Position = this.RawFEN.split(" ")[0];
 		this.Score = getHigherDepthScore();
-		System.out.println(this.Score);
 	}
 	
 	public String getPosition() {

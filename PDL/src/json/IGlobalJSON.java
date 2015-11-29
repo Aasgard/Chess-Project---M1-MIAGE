@@ -73,6 +73,6 @@ public interface IGlobalJSON {
 	public final String RANG_GAME = "rang";
 	public final String EVENT = "evenement";
 	public final String DATE_GAME = "date";
-	public final String SCORE_GLOBAL = "score_global";
+	public final String SCORE_GLOBAL = "score global";
 	
 }

@@ -17,6 +17,10 @@ public class Game {
 	private String PGN;
 	private double score_total_variation;
 	
+	public Game(){
+		this.score_total_variation = 0;
+	}
+	
 	public Game(int id, List<Move> alMoves, Player whitePlayer, Player blackPlayer, Opening opening, Event event,int result, String date, int whiteElo, int blackElo, String PGN, double score_total_variation) {
 
 		super();

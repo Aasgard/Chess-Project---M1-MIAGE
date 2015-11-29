@@ -287,7 +287,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			JSONObject game = new JSONObject();
 			game.put( RANG_GAME , i+1);
 			game.put( DATE_GAME , games[i].getDate());
-			game.put( EVENT , games[i].getEvent());
+			game.put( EVENT , games[i].getEvent().getName());
 			game.put( SCORE_GLOBAL , games[i].getScoreTotalVariation());
 			objectGames.put(game);
 		}

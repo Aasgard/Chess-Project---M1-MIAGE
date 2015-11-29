@@ -50,17 +50,21 @@ public class GlobalStats {
 	 */
 	public static void getGlobalBestVar(List<Game> games){
 		Game tableaubest_Games[] = new Game[5];
+		for(int i = 0; i < tableaubest_Games.length ; i++){
+			Game ga = new Game();
+			tableaubest_Games[i] = ga;
+		}
 		for(Game g : games){
+			System.out.println("le score total de la game : "+g.getScoreTotalVariation());
 			for(int j = 0 ; j < tableaubest_Games.length ; j++){ 
 				if(tableaubest_Games[j].getScoreTotalVariation() <= g.getScoreTotalVariation()){
-					for(int k = tableaubest_Games.length ; k < j ; k--){
+					for(int k = tableaubest_Games.length ; k < j+1 ; k--){
 						tableaubest_Games[k] = tableaubest_Games[k-1];
 					}
 					tableaubest_Games[j] = g;
 				}
 			}
 		}
-		System.out.println(tableaubest_Games[0].getScoreTotalVariation());
 		treatmentJSON.saveGlobalBestGamesToJSON(tableaubest_Games);
 	}
 }

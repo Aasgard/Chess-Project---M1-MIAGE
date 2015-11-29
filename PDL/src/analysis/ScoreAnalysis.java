@@ -28,12 +28,9 @@ public class ScoreAnalysis {
 			scores.add(fen); 
 			
 			sumScoreVariation =+ calculVariationScore(previousScore, fen.getScore());
-			System.out.println("Test de recupe du log : "+fen.getLog());
-			System.out.println("Voila le score du move "+fen.getScore());
 			previousScore = fen.getScore();
 		}
 		game.setScoreTotalVariation(sumScoreVariation);
-		System.out.println("Score total de la game : "+sumScoreVariation);
 		//treatmentJSON.saveAllScoreToJSON(game, sumScoreVariation, scores);
 	}
 	
