@@ -36,7 +36,7 @@ public class SFTP extends JSch {
 			this.chan = this.session.openChannel("sftp");
 			this.chan.connect();
 			this.chansftp = (ChannelSftp) this.chan;
-		} catch (JSchException e) {
+		} catch (JSchException e){
 			e.printStackTrace();
 		}
 	}
@@ -62,7 +62,7 @@ public class SFTP extends JSch {
 		this.chansftp.disconnect();
 		this.chan.disconnect();
 		this.session.disconnect();
-		System.out.println("Connexion SFTP au serveur " + this.serveurIP + "terminée. [Toutes les connexions ont été fermées].");
+		System.out.println("Connexion SFTP au serveur " + this.serveurIP + " terminée. [Toutes les connexions ont été fermées].");
 	}
 	
 	

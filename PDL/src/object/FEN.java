@@ -11,6 +11,7 @@ public class FEN {
 		this.RawFEN = rawFEN;
 		this.Position = this.RawFEN.split(" ")[0];
 		this.Score = getHigherDepthScore();
+		System.out.println(this.Score);
 	}
 	
 	public String getPosition() {
@@ -48,11 +49,10 @@ public class FEN {
 	private int getHigherDepthScore(){
 		int scoreVoulu = 0;
 		try{
-			String[] splittedLogs = this.Log.split(". ");
-			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
-			scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
+			String[] splittedLogs = this.Log.split("\\. ");
+			String higherdepthlog = splittedLogs[splittedLogs.length - 2];
+			scoreVoulu = Integer.parseInt(higherdepthlog.split(" ")[9]);
 		}catch(Exception e){}
-		
 		return scoreVoulu;
 	}
 	
