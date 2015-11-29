@@ -60,6 +60,7 @@ public class GlobalStats {
 				}
 			}
 		}
+		System.out.println(tableaubest_Games[0].getScoreTotalVariation());
 		treatmentJSON.saveGlobalBestGamesToJSON(tableaubest_Games);
 	}
 }

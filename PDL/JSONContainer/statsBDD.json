@@ -2,14 +2,14 @@
 {"global_stats": [
  {
   "valeur": 99,
-  "libelle": "nb_games"
+  "libelle": "Nombre de games"
  },
  {
   "valeur": 152,
-  "libelle": "nb_players"
+  "libelle": "Nombre de joueurs"
  },
  {
   "valeur": 2,
-  "libelle": "nb_event"
+  "libelle": "Nombre d'evenements"
  }
 ]}]

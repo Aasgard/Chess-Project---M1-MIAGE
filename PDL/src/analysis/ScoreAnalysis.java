@@ -10,7 +10,7 @@ import object.Move;
 public class ScoreAnalysis {
 	
 	private static List<FEN> scores;
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+	//private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 	
 	/**
 	 * Analyze the score of a game
@@ -28,9 +28,12 @@ public class ScoreAnalysis {
 			scores.add(fen); 
 			
 			sumScoreVariation =+ calculVariationScore(previousScore, fen.getScore());
+			System.out.println("Voila le score du move "+fen.getScore());
 			previousScore = fen.getScore();
 		}
-		treatmentJSON.saveAllScoreToJSON(game, sumScoreVariation, scores);
+		game.setScoreTotalVariation(sumScoreVariation);
+		System.out.println("Score total de la game : "+sumScoreVariation);
+		//treatmentJSON.saveAllScoreToJSON(game, sumScoreVariation, scores);
 	}
 	
 	private static int calculVariationScore(int previousScore, int score){
