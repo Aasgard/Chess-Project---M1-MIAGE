@@ -49,11 +49,13 @@ public class GlobalStats {
 	 * Create board which contains 5 BestGames
 	 */
 	public static void getGlobalBestVar(List<Game> games){
+		
 		Game tableaubest_Games[] = new Game[5];
 		for(int i = 0; i < tableaubest_Games.length ; i++){
 			Game ga = new Game();
 			tableaubest_Games[i] = ga;
 		}
+		
 		for(Game g : games){
 			System.out.println("le score total de la game : "+g.getScoreTotalVariation());
 			for(int j = 0 ; j < tableaubest_Games.length ; j++){ 
@@ -62,6 +64,7 @@ public class GlobalStats {
 						tableaubest_Games[k] = tableaubest_Games[k-1];
 					}
 					tableaubest_Games[j] = g;
+				break;
 				}
 			}
 		}
