@@ -131,7 +131,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				break;
 			}
 			
 			if(playerJSON == null) {
