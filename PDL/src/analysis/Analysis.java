@@ -52,11 +52,11 @@ public class Analysis {
 		}
 	}
 
-	public void analyzeBlunderMat() {	
+	public void analyzePlayers() {	
 		for(Game game : this.getGames()){
-			MatAnalysis.checkBlunderMat(game);
+			PlayerAnalysis.getPlayerStats(game);
 		}	
-		MatAnalysis.saveErrorsToJSON();
+		PlayerAnalysis.savePlayersToJSON();
 	}
 
 	public List<Game> getGames() {

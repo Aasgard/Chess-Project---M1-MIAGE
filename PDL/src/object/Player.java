@@ -63,4 +63,16 @@ public class Player {
 	public void setErrors(List<ErrorPlayer> errors) {
 		this.errors = errors;
 	}
+	
+	public void addError(ErrorPlayer error) {
+		this.errors.add(error);
+	}
+	
+	public void addNbGameWin() {
+		this.nbGameWin++;
+	}
+	
+	public void addNbGamePlayed() {
+		this.nbGamePlayed++;
+	}
 }

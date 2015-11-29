@@ -113,12 +113,47 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 * 
 	 */
 	//TODO : refaire fonction
-	public void saveErrorToJSON(HashMap<Player, List<ErrorPlayer>> playerErrors) {
+	public void savePlayersToJSON(List<Player> players) {
 		JSONObject playerJSON;
 		JSONArray errorsJSON;
 		boolean exists;
 		
-		for(Entry<Player, List<ErrorPlayer>> entry : playerErrors.entrySet()) {
+		for(Player player : players) {
+			playerJSON = null;
+			exists = true;
+			
+			try {
+				playerJSON = extractJSON.getJsonFilePlayer(player.getId());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				continue;
+			}
+			
+			if(playerJSON == null) {
+				exists = false;
+			}
+			
+			errorsJSON = new JSONArray();
+			for(ErrorPlayer error : player.getErrors()) {
+				JSONObject errorJSON = new JSONObject();		
+				errorJSON.put( ID_GAME , error.getIdGame());
+				errorJSON.put( NB_OF_ERROR , error.getNb_of_error());
+				String[] FenErrors = error.getError_fen().toArray(new String[error.getError_fen().size()]);
+				errorJSON.put( ERRORS_FEN , FenErrors);
+				
+				errorsJSON.put(errorJSON);
+			}
+			
+			playerJSON.put( NAME , player.getName());
+			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
+			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
+			playerJSON.put( ERRORS , errorsJSON);
+			
+			saveInFile(playerJSON, PLAYER_FILE, exists);		
+		}
+		
+/*		for(Entry<Player, List<ErrorPlayer>> entry : playerErrors.entrySet()) {
 			Player player = entry.getKey();
 			List<ErrorPlayer> errors = entry.getValue();		
 			player.setErrors(errors);
@@ -149,12 +184,14 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				errorsJSON.put(errorJSON);
 			}
 			
-			playerJSON.remove( ERRORS );
+			playerJSON.put( NAME , player.getName());
+			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
+			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
 			playerJSON.put( ERRORS , errorsJSON);
 			
 			saveInFile(playerJSON, PLAYER_FILE, exists);
 			
-		}
+		}*/
 /*
 		JsonArray playersJson = extractJSON.readJSONFile(OPENING_FILE);
 

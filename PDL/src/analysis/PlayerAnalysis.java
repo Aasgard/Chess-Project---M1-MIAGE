@@ -9,20 +9,18 @@ import json.TreatmentJSON;
 import object.*;
 import tools.Blunder;
 
-public class MatAnalysis {
+public class PlayerAnalysis {
 
 	private static Player whitePlayer;
 	private static Player blackPlayer;
-	private static List<ErrorPlayer> blundersWhitePlayer = new ArrayList<ErrorPlayer>();
-	private static List<ErrorPlayer> blundersBlackPlayer = new ArrayList<ErrorPlayer>();
-	private static HashMap<Player, List<ErrorPlayer>> playerErrors;
+	private static List<Player> players = new ArrayList<Player>();
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
 	/**
 	 * 
 	 * @param game
 	 */
-	public static void checkBlunderMat(Game game) {
+	public static void getPlayerStats(Game game) {
 		whitePlayer = game.getWhitePlayer();
 		blackPlayer = game.getBlackPlayer();
 		
@@ -41,7 +39,7 @@ public class MatAnalysis {
 				currentIsMateWhite = move.isMate();
 				
 				if(previousIsMateWhite && !currentIsMateWhite) {
-					addErrorToPlayer(whitePlayer, errorWhitePlayer, move.getFen().getPosition());
+					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());
 				}
 				
 				previousIsMateWhite = currentIsMateWhite;
@@ -51,40 +49,56 @@ public class MatAnalysis {
 				currentIsMateBlack = move.isMate();
 				
 				if(previousIsMateBlack && !currentIsMateBlack) {
-					addErrorToPlayer(blackPlayer, errorBlackPlayer, move.getFen().getPosition());
+					addErrorToErrorPlayer(errorBlackPlayer, move.getFen().getPosition());
 				}
 				
 				previousIsMateBlack = currentIsMateBlack;
 			}
 		}
 		
-		if(errorWhitePlayer.getNb_of_error() != 0) {
-			blundersWhitePlayer.add(errorWhitePlayer);
-			playerErrors.put(whitePlayer, blundersWhitePlayer);
-		}
-		if(errorBlackPlayer.getNb_of_error() != 0) {
-			blundersBlackPlayer.add(errorBlackPlayer);
-			playerErrors.put(blackPlayer, blundersBlackPlayer);
-		}
+		addStatsToPlayers(game, errorWhitePlayer, errorBlackPlayer);
+		players.add(whitePlayer);
+		players.add(blackPlayer);
 	}
 	
 	/**
 	 * 
 	 * @param p
 	 */
-	public static void addErrorToPlayer(Player p, ErrorPlayer error, String fen) {
+	public static void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
 
-		int nbErrors = error.getNb_of_error();
-		error.setNb_of_error(nbErrors++);
+		error.addNbError();
 		error.addErrorFen(fen);
 		
+	}
+	
+	public static void addStatsToPlayers(Game game, ErrorPlayer errorWhitePlayer, ErrorPlayer errorBlackPlayer) {
+		// add Winner
+		if(game.getResult() == 0) {
+			whitePlayer.addNbGameWin();
+		}
+		else if (game.getResult() == 1) {
+			blackPlayer.addNbGameWin();
+		}
+		
+		// add nbGamePlayed
+		whitePlayer.addNbGamePlayed();
+		blackPlayer.addNbGamePlayed();
+		
+		// add errors
+		if(errorWhitePlayer.getNb_of_error() > 0) {
+			whitePlayer.addError(errorWhitePlayer);
+		}
+		if(errorBlackPlayer.getNb_of_error() > 0) {
+			blackPlayer.addError(errorBlackPlayer);
+		}
 	}
 	
 	/**
 	 * 
 	 */
-	public static void saveErrorsToJSON() {
-		treatmentJSON.saveErrorToJSON(playerErrors);
+	public static void savePlayersToJSON() {
+		treatmentJSON.savePlayersToJSON(players);
 	}
 
 }

@@ -12,7 +12,7 @@ public interface ITreatmentJSON {
 	
 	public void saveBestFenToJSON(String FEN, FEN bestPosition);
 	
-	public void saveErrorToJSON(HashMap<Player, List<ErrorPlayer>> playerErrors);
+	public void savePlayersToJSON(List<Player> players);
 
 	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo)throws IOException;
 

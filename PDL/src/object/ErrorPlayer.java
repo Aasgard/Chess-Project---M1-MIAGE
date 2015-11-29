@@ -53,6 +53,10 @@ public class ErrorPlayer {
 		this.idGame = idGame;
 	}
 	
+	public void addNbError() {
+		this.nb_of_error++;
+	}
+	
 	public void addErrorFen(String fen) {
 		this.error_fen.add(fen);
 	}
