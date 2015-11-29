@@ -28,6 +28,7 @@ public class ScoreAnalysis {
 			scores.add(fen); 
 			
 			sumScoreVariation =+ calculVariationScore(previousScore, fen.getScore());
+			System.out.println("Test de recupe du log : "+fen.getLog());
 			System.out.println("Voila le score du move "+fen.getScore());
 			previousScore = fen.getScore();
 		}

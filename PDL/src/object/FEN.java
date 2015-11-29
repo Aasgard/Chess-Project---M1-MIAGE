@@ -50,8 +50,9 @@ public class FEN {
 		try{
 			String[] splittedLogs = this.Log.split(". ");
 			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
+			System.out.println("la chaine voulue : "+chaineVoulue);
 			scoreVoulu = Integer.parseInt(chaineVoulue.split(" ")[9]);
-		}catch(Exception e){}
+		}catch(Exception e){ System.out.println( "Exception du parse");}
 		
 		return scoreVoulu;
 	}
