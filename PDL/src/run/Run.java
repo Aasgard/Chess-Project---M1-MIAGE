@@ -16,6 +16,7 @@ public class Run {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) throws JSchException, SftpException {
 		
+		/* Initialisation du chronomètre */
 		StopWatch sw = new StopWatch();
 		
 		Analysis anal = new Analysis();
@@ -24,6 +25,7 @@ public class Run {
 		
 		SFTP sftp = new SFTP("gesticompte", "sarzeau56370", "109.8.192.56", 22);
 	
+		@SuppressWarnings("unused")
 		List<Game> alGames = anal.getGames();
 		
 		/* Génération des fichiers JSON de la Homepage */
@@ -36,7 +38,7 @@ public class Run {
 		/* Transfert des fichiers générés sur le serveur Web distant */
 		//sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
 		sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
-		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
+		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		

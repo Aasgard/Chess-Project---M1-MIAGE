@@ -31,7 +31,6 @@ public class ScoreAnalysis {
 			previousScore = fen.getScore();
 		}
 		game.setScoreTotalVariation(sumScoreVariation);
-		//treatmentJSON.saveAllScoreToJSON(game, sumScoreVariation, scores);
 	}
 	
 	private static int calculVariationScore(int previousScore, int score){

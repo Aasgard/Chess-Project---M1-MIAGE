@@ -10,11 +10,20 @@ public class MySQL {
 	private String lastQuery;
 	
 	private MySQL(){
-		String url= "jdbc:mysql://109.8.192.56/";
+		/*String url= "jdbc:mysql://109.8.192.56/";
         String dbName = "pdlchess";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "pdlchess";
         String password = "miage2015";
+        String userName = "root";
+        String password = "";*/
+        
+        String url= "jdbc:mysql://109.8.192.56/";
+        String dbName = "pdlchess";
+        String driver = "com.mysql.jdbc.Driver";
+        String userName = "pdlchess";
+        String password = "miage2015";
+        
         try {
             Class.forName(driver).newInstance();
             this.cnx = (Connection)DriverManager.getConnection(url+dbName,userName,password);
