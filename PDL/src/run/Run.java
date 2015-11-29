@@ -32,7 +32,7 @@ public class Run {
 		//anal.bestGames();
 		
 		/* Transfert des fichiers générés sur le serveur Web distant */
-		sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
+		//sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");

@@ -61,16 +61,18 @@ public interface IGlobalJSON {
 	public final String GLOBAL_STATS = "global_stats";
 	public final String LIBELLE = "libelle";
 	public final String VALEUR = "valeur";
-	public final String NB_PLAYERS = "nb_players";
-	public final String NB_GAMES = "nb_games";
-	public final String NB_EVENT = "nb_event";
+	public final String NB_PLAYERS = "Nombre de joueurs";
+	public final String NB_GAMES = "Nombre de games";
+	public final String NB_EVENT = "Nombre d'evenements";
 	
 	public final String BEST_PLAYERS = "best_players";
 	public final String RANG_PLAYER = "rang";
 	
 	
 	public final String BEST_GAMES = "best_games";
-	public final String BEST_GAME = "best_game";
-	public final String VAR_SCORE = "var_score";
+	public final String RANG_GAME = "rang";
+	public final String EVENT = "evenement";
+	public final String DATE_GAME = "date";
+	public final String SCORE_GLOBAL = "score_global";
 	
 }

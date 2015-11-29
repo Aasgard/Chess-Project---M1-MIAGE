@@ -31,6 +31,10 @@ public class Analysis {
 		GlobalStats.getGlobalStats(games.size());
 	}
 	
+	public void globalBestGame(){
+		GlobalStats.getGlobalBestVar(games);
+	}
+	
 	public static void analyzeScoreEvolutionFromPosition(){
 
 		HashMap<String, List<Move>> mapFENMoves= ExtractDB.extractGameAndMoveByPosition();
