@@ -268,7 +268,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		int rang = 1;
 		for(int i = 0 ; i < players.length ; i++){
 			JSONObject player = new JSONObject();
-			player.put(RANG_PLAYER, rang);
+			player.put( RANG_PLAYER, rang);
 			player.put( NAME , players[i].getName());
 			player.put( NB_GAME_WIN , players[i].getNbGameWin());
 			objectPlayers.put(player);
@@ -285,8 +285,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		
 		for(int i = 0 ; i < games.length ; i++){
 			JSONObject game = new JSONObject();
-			game.put( BEST_GAME , games[i].getId());
-			game.put( VAR_SCORE , games[i].getScoreTotalVariation());
+			game.put( RANG_GAME , i+1);
+			game.put( DATE_GAME , games[i].getDate());
+			game.put( EVENT , games[i].getEvent());
+			game.put( SCORE_GLOBAL , games[i].getScoreTotalVariation());
 			objectGames.put(game);
 		}
 		object.put( BEST_GAMES , objectGames);

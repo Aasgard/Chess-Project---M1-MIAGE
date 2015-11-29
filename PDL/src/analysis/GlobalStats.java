@@ -1,6 +1,7 @@
 package analysis;
 
 import java.io.IOException;
+import java.util.List;
 
 import database.ExtractDB;
 import json.ITreatmentJSON;
@@ -28,7 +29,7 @@ public class GlobalStats {
 	 * 
 	 */
 	public void getGlobalBestPlayers() throws IOException{
-		Player tableaubest_Players[] = new Player[4];
+		Player tableaubest_Players[] = new Player[5];
 			int nb_players = ExtractDB.extractNumberPlayers();
 			for(int i = 0 ; i < nb_players; i++){
 				Player p = extractJSON.getJsonPlayer(i);
@@ -47,19 +48,19 @@ public class GlobalStats {
 	/*
 	 * Create board which contains 5 BestGames
 	 */
-	public void getGlobalBestVar(int nb_games) throws IOException{
-		Game tableaubest_Games[] = new Game[4];
-		for(int i = 0; i< nb_games ; i++){
-			Game g = extractJSON.getGame(i);
+	public static void getGlobalBestVar(List<Game> games){
+		Game tableaubest_Games[] = new Game[5];
+		for(Game g : games){
 			for(int j = 0 ; j < tableaubest_Games.length ; j++){ 
 				if(tableaubest_Games[j].getScoreTotalVariation() <= g.getScoreTotalVariation()){
 					for(int k = tableaubest_Games.length ; k < j ; k--){
 						tableaubest_Games[k] = tableaubest_Games[k-1];
 					}
-					tableaubest_Games[i] = g;
+					tableaubest_Games[j] = g;
 				}
 			}
 		}
+		System.out.println(tableaubest_Games[0].getScoreTotalVariation());
 		treatmentJSON.saveGlobalBestGamesToJSON(tableaubest_Games);
 	}
 }
