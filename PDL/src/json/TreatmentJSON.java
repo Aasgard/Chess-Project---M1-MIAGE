@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import object.ErrorPlayer;
 import object.FEN;
 import object.Game;
 import object.Opening;
@@ -111,7 +113,48 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 * 
 	 */
 	//TODO : refaire fonction
-	public void saveErrorToJSON(HashMap<Player,HashMap<Integer,Integer>> players){
+	public void saveErrorToJSON(HashMap<Player, List<ErrorPlayer>> playerErrors) {
+		JSONObject playerJSON;
+		JSONArray errorsJSON;
+		boolean exists;
+		
+		for(Entry<Player, List<ErrorPlayer>> entry : playerErrors.entrySet()) {
+			Player player = entry.getKey();
+			List<ErrorPlayer> errors = entry.getValue();		
+			player.setErrors(errors);
+			
+			playerJSON = null;
+			exists = true;
+			
+			try {
+				playerJSON = extractJSON.getJsonFilePlayer(player.getId());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				break;
+			}
+			
+			if(playerJSON == null) {
+				exists = false;
+			}
+			
+			errorsJSON = new JSONArray();
+			for(ErrorPlayer error : errors) {
+				JSONObject errorJSON = new JSONObject();
+				errorJSON.put( ID_GAME , error.getIdGame());
+				errorJSON.put( NB_OF_ERROR , error.getNb_of_error());
+				String[] FenErrors = error.getError_fen().toArray(new String[error.getError_fen().size()]);
+				errorJSON.put( ERRORS_FEN , FenErrors);
+				
+				errorsJSON.put(errorJSON);
+			}
+			
+			playerJSON.remove( ERRORS );
+			playerJSON.put( ERRORS , errorsJSON);
+			
+			saveInFile(playerJSON, PLAYER_FILE, exists);
+			
+		}
 /*
 		JsonArray playersJson = extractJSON.readJSONFile(OPENING_FILE);
 

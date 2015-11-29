@@ -13,9 +13,9 @@ public class MatAnalysis {
 
 	private static Player whitePlayer;
 	private static Player blackPlayer;
-	private static List<Blunder> blundersWhitePlayer = new ArrayList<Blunder>();
-	private static List<Blunder> blundersBlackPlayer = new ArrayList<Blunder>();
-	private static HashMap<Player, List<Blunder>> playerErrors;
+	private static List<ErrorPlayer> blundersWhitePlayer = new ArrayList<ErrorPlayer>();
+	private static List<ErrorPlayer> blundersBlackPlayer = new ArrayList<ErrorPlayer>();
+	private static HashMap<Player, List<ErrorPlayer>> playerErrors;
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
 	/**
@@ -31,8 +31,8 @@ public class MatAnalysis {
 		boolean previousIsMateBlack = false;
 		boolean currentIsMateBlack = false;
 		
-		Blunder blunderWhitePlayer = new Blunder(game.getId(), 0);
-		Blunder blunderBlackPlayer = new Blunder(game.getId(), 0);
+		ErrorPlayer errorWhitePlayer = new ErrorPlayer(game.getId(), 0);
+		ErrorPlayer errorBlackPlayer = new ErrorPlayer(game.getId(), 0);
 		
 		for(Move move : game.getAlMoves()) {
 			
@@ -41,7 +41,7 @@ public class MatAnalysis {
 				currentIsMateWhite = move.isMate();
 				
 				if(previousIsMateWhite && !currentIsMateWhite) {
-					addErrorToPlayer(whitePlayer, blunderWhitePlayer, move.getFen());
+					addErrorToPlayer(whitePlayer, errorWhitePlayer, move.getFen().getPosition());
 				}
 				
 				previousIsMateWhite = currentIsMateWhite;
@@ -51,19 +51,19 @@ public class MatAnalysis {
 				currentIsMateBlack = move.isMate();
 				
 				if(previousIsMateBlack && !currentIsMateBlack) {
-					addErrorToPlayer(blackPlayer, blunderBlackPlayer, move.getFen());
+					addErrorToPlayer(blackPlayer, errorBlackPlayer, move.getFen().getPosition());
 				}
 				
 				previousIsMateBlack = currentIsMateBlack;
 			}
 		}
 		
-		if(blunderWhitePlayer.getNbErrors() != 0) {
-			blundersWhitePlayer.add(blunderWhitePlayer);
+		if(errorWhitePlayer.getNb_of_error() != 0) {
+			blundersWhitePlayer.add(errorWhitePlayer);
 			playerErrors.put(whitePlayer, blundersWhitePlayer);
 		}
-		if(blunderBlackPlayer.getNbErrors() != 0) {
-			blundersBlackPlayer.add(blunderBlackPlayer);
+		if(errorBlackPlayer.getNb_of_error() != 0) {
+			blundersBlackPlayer.add(errorBlackPlayer);
 			playerErrors.put(blackPlayer, blundersBlackPlayer);
 		}
 	}
@@ -72,11 +72,11 @@ public class MatAnalysis {
 	 * 
 	 * @param p
 	 */
-	public static void addErrorToPlayer(Player p, Blunder blunder, FEN fen) {
+	public static void addErrorToPlayer(Player p, ErrorPlayer error, String fen) {
 
-		int nbErrors = blunder.getNbErrors();
-		blunder.setNbErrors(nbErrors++);
-		blunder.addPositionError(fen);
+		int nbErrors = error.getNb_of_error();
+		error.setNb_of_error(nbErrors++);
+		error.addErrorFen(fen);
 		
 	}
 	
@@ -84,7 +84,7 @@ public class MatAnalysis {
 	 * 
 	 */
 	public static void saveErrorsToJSON() {
-		//treatmentJSON.saveErrorToJSON(playerErrors);
+		treatmentJSON.saveErrorToJSON(playerErrors);
 	}
 
 }

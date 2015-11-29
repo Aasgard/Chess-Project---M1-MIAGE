@@ -127,7 +127,7 @@ public class ExtractJSON implements IGlobalJSON{
 					int idgame = errorObject.getInt( ID_GAME );
 					int nb_of_error = errorObject.getInt( NB_OF_ERROR );
 					List<String> errorfen = new ArrayList<String>();
-					JSONArray errorfenArray = errorObject.getJSONArray( ERROR_FEN );
+					JSONArray errorfenArray = errorObject.getJSONArray( ERRORS_FEN );
 					for(int k = 0; k<errorfenArray.length(); k++){
 						errorfen.add(errorfenArray.getString(k));
 					}
@@ -147,6 +147,20 @@ public class ExtractJSON implements IGlobalJSON{
 				return player;
 			}
 		}
+		return null;
+	}
+	
+	public JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
+		JSONArray playersArray = readJSONFile( PLAYER_FILE );
+		
+		for(int i = 0; i < playersArray.length(); i++) {
+			JSONObject playerObject = playersArray.getJSONObject(i);
+			
+			if(idPlayer == playerObject.getInt(ID)) {
+				return playerObject;
+			}
+		}
+		
 		return null;
 	}
 }

@@ -1,5 +1,6 @@
 package object;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ErrorPlayer {
@@ -12,6 +13,12 @@ public class ErrorPlayer {
 		this.setIdGame(idGame);
 		this.nb_of_error = nb_of_error;
 		this.error_fen = error_fen;
+	}
+	
+	public ErrorPlayer(int idGame, int nb_of_error) {
+		this.idGame = idGame;
+		this.nb_of_error = nb_of_error;
+		this.error_fen = new ArrayList<String>();
 	}
 	
 	public int getIdgame() {
@@ -46,5 +53,8 @@ public class ErrorPlayer {
 		this.idGame = idGame;
 	}
 	
+	public void addErrorFen(String fen) {
+		this.error_fen.add(fen);
+	}
 	
 }

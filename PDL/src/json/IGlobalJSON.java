@@ -37,7 +37,7 @@ public interface IGlobalJSON {
 	//CONSTANTE PLAYER
 	public final String ERRORS = "errors";
 	public final String NB_OF_ERROR = "nb_of_error";
-	public final String ERROR_FEN = "error_fen";
+	public final String ERRORS_FEN = "errors_fen";
 	public final String NB_GAME_PLAYED = "nb_games_played";
 	public final String NB_GAME_WIN = "nb_games_win";
 	
