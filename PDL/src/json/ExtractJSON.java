@@ -50,12 +50,13 @@ public class ExtractJSON implements IGlobalJSON{
 	public static JSONArray deleteJsonObject(JSONObject myJsonObject, String objectName){
 		JSONArray jsonArray = readJSONFile(objectName);
 
-		
-		for(int i = 0; i < jsonArray.length(); i++) {
-			JSONObject gameObject = jsonArray.getJSONObject(i);
-			if (gameObject.getInt(ID) == myJsonObject.getInt(ID)){
-				jsonArray.remove(i);
-				break;
+		if(!myJsonObject.toString().equals("{}")) {
+			for(int i = 0; i < jsonArray.length(); i++) {
+				JSONObject gameObject = jsonArray.getJSONObject(i);
+				if (gameObject.getInt(ID) == myJsonObject.getInt(ID)){
+					jsonArray.remove(i);
+					break;
+				}
 			}
 		}
 		return jsonArray;

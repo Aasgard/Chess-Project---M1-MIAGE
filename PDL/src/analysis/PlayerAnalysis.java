@@ -40,7 +40,7 @@ public class PlayerAnalysis {
 		// repérer les erreurs
 		checkBlunderMat(game.getAlMoves(), errorWhitePlayer, errorBlackPlayer);
 		
-		// ajout des ErrorPlayer s'il y a eu des erreurs
+		// ajout des erreurs s'il y en a eu
 		if(errorWhitePlayer.getNb_of_error() > 0) {
 			whitePlayer.addError(errorWhitePlayer);
 		}
@@ -150,7 +150,7 @@ public class PlayerAnalysis {
 				p.addNbGamePlayed();
 			}
 		}
-
+		// le player n'est pas dans la liste
 		if(!exists) {
 			// add nbGameWin
 			if(winner) {

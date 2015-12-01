@@ -11,6 +11,7 @@ import org.junit.Test;
 
 import json.ExtractJSON;
 import json.TreatmentJSON;
+import unitTests.UtilsTests;;
 
 public class TestTreatmentJSON {
 
@@ -24,28 +25,24 @@ public class TestTreatmentJSON {
 	 */
 	@Test
 	public void testsaveInFile1() {
+		// variables utilisées dans saveInFile
 		JSONObject jsonObj = new JSONObject();
 		String fileName = "treatmentJSONTest.json";
 		boolean exists = true;
 		
+		// remplissage du jsonObj
 		jsonObj.put("id", 3);
 		jsonObj.put("attr1", "test attr1");
 		jsonObj.put("attr2", 2);
 		
+		// sauvegarde du jsonObj dans le fichier
 		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
 		
+		// récupération du fichier dans un jsonArray
 		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
 		
-		for(int i = 0; i < jsonArray.length(); i++) {
-			JSONObject jsonObjFor = jsonArray.getJSONObject(i);
-			if (jsonObjFor.getInt("id") == jsonObj.getInt("id")){
-				String sobj1 = jsonObjFor.toString();
-				String sobj2 = jsonObj.toString();
-				System.out.println(sobj1);
-				System.out.println(sobj2);
-				assertTrue(sobj1.equals(sobj2));
-			}
-		}
+		// test si le jsonArray contient le jsonObj
+		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
 	}
 	
 	/**
@@ -53,26 +50,25 @@ public class TestTreatmentJSON {
 	 */
 	@Test
 	public void testsaveInFile2() {
+		// variables utilisées dans saveInFile
 		JSONObject jsonObj = new JSONObject();
+		// fichier non existant
 		String fileName = "treatmentJSONTest2.json";
 		boolean exists = false;
 		
+		// remplissage du jsonObj
 		jsonObj.put("id", 3);
 		jsonObj.put("attr1", "test attr1");
 		jsonObj.put("attr2", 2);
 		
+		// sauvegarde du jsonObj dans le fichier
 		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
 		
+		// récupération du fichier dans un jsonArray
 		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
 		
-		for(int i = 0; i < jsonArray.length(); i++) {
-			JSONObject jsonObjFor = jsonArray.getJSONObject(i);
-			if (jsonObjFor.getInt("id") == jsonObj.getInt("id")){
-				String sobj1 = jsonObjFor.toString();
-				String sobj2 = jsonObj.toString();
-				assertTrue(sobj1.equals(sobj2));
-			}
-		}
+		// test si le jsonArray contient le jsonObj
+		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
 		
 		// suppression du fichier créé
     	try{   		
@@ -85,6 +81,7 @@ public class TestTreatmentJSON {
 
 	@Test
 	public void testsaveGlobalBestGamesToJSON() {
+		
 		fail("Not yet implemented");
 	}
 }
