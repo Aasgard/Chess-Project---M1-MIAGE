@@ -12,38 +12,32 @@ import analysis.OpeningAnalysis;
 import junit.framework.TestCase;
 import object.Opening;
 
-public class TestOpeningAnaysis{
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
+public class TestOpeningAnaysis{	
 	
 	@Test
 	public void testGetWinRateOpening(){
 		
 		// Résultats attendu
-		HashMap<Opening, List<Integer>> expected = new HashMap<Opening, List<Integer>>();
-		Opening openingExpected = null;
-		List<Integer> stats = new ArrayList<Integer>();
-		expected.put(openingExpected, stats);
+		List<Integer> expected = new ArrayList<Integer>();
+		expected.add(3);
+		expected.add(1);
+		expected.add(1);
 		
 		// Initialisation
 		Opening o = new Opening(1, "Ruy Lopez", "none", "", 4);
-		List<Integer> values = new ArrayList<Integer>();
+		List<Integer> stats = new ArrayList<Integer>();
 		
 		// Ajout de resultats de partie
-		values.add(0);
-		values.add(0);
-		values.add(2);
-		values.add(0);
-		values.add(1);
+		stats.add(0);
+		stats.add(0);
+		stats.add(2);
+		stats.add(0);
+		stats.add(1);
 		
 		// Ma fonction a tester
-		OpeningAnalysis.getWinRateOpening(o, values);
+		List<Integer> actual = OpeningAnalysis.getWinRateOpening(stats);
 		
-		
+		assertEquals(expected, actual);
 	}
 
 	

@@ -11,8 +11,6 @@ import object.*;
 
 public class OpeningAnalysis {
 	
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	
 	/**
 	 * Calcul and save win rate for the opening
 	 * @param o
