@@ -36,12 +36,33 @@ public class Analysis {
 		GlobalStats.getGlobalBestVar(games);
 	}
 	
-	public static void analyzeScoreEvolutionFromPosition(){
+	public void analyzeScoreEvolutionFromPosition(){
 
-		HashMap<String, List<Move>> mapFENMoves= ExtractDB.extractGameAndMoveByPosition();
+		HashMap<String, HashMap<Integer, List<Move>>> mapFenMoves = new HashMap<String, HashMap<Integer, List<Move>>>();
+		
+		// Parcours de toutes les games
+		for(Game game: games){
+			HashMap<Integer, List<Move>> myMove = new HashMap<Integer, List<Move>>();
+			
+			// On récupère tous les moves de la games
+			List<Move> AllMoves = game.getAlMoves();
+			
+			// Ajoute le move avec l'id de la game
+			myMove.put(game.getId(), AllMoves);
+			
+			// Parcours des moves
+			for(Move move: AllMoves) {
+				String Position = move.getFen().getPosition();			
+				
+				mapFenMoves.put(Position, myMove);
+			}
+		}
 
-		for(Entry<String, List<Move>> fenMoves :  mapFENMoves.entrySet()){
-			ScoreFromPositionAnalysis.getEvolScore(fenMoves.getValue());
+		// Sauvegarde le meilleur Fen pour une position
+		//TODO : merde ! clement
+		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
+		for(Entry<String, HashMap<Integer, List<Move>>> fenMoves :  mapFenMoves.entrySet()){
+			sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
 		}
 	}
 
