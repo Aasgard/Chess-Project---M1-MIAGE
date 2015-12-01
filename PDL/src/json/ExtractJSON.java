@@ -80,13 +80,12 @@ public class ExtractJSON implements IGlobalJSON{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-
-		if (result.isEmpty()){
-			return null;
-		}else{
-			JSONArray jsonArray = new JSONArray(result);
-			return jsonArray;
+		JSONArray jsonArray = null;
+		
+		if (!result.isEmpty()){
+			jsonArray= new JSONArray(result);
 		}
+		return jsonArray;
 	}
 
 

@@ -326,7 +326,11 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
-
+		boolean exists = false;
+		if(extractJSON.readJSONFile(GLOBALSTAT_FILE) != null){
+			exists = true;
+		}
+		
 		JSONArray objectArray = new JSONArray();
 
 		JSONObject object1 = new JSONObject();
@@ -346,7 +350,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 		object.put(ID, 1);
 		object.put(GLOBAL_STATS, objectArray);
-		saveInFile( object, GLOBALSTAT_FILE , true);
+		saveInFile( object, GLOBALSTAT_FILE , exists);
 	}
 
 	@Override
