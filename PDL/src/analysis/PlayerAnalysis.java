@@ -14,7 +14,11 @@ public class PlayerAnalysis {
 	private Player whitePlayer;
 	private Player blackPlayer;
 	private List<Player> players;
+
 	private ITreatmentJSON treatmentJSON = new TreatmentJSON();
+	public List<Player> getPlayers() {
+		return players;
+	}
 
 	/**
 	 * 

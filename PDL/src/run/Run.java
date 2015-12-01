@@ -34,7 +34,7 @@ public class Run {
 		anal.analyzeScoreGame();
 		anal.globalBestGame();
 		anal.analyzeOpenings();
-		anal.bestPlayers();
+		//anal.bestPlayers();
 		//anal.bestGames();
 		
 		/* Transfert des fichiers générés sur le serveur Web distant */

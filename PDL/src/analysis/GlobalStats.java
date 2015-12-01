@@ -28,36 +28,28 @@ public class GlobalStats {
 	 * Create a board which contains 5 BestPlayers
 	 * 
 	 */
-	public static void getGlobalBestPlayers(){
+	public static void getGlobalBestPlayers(List<Player> players){
 		Player tableaubest_Players[] = new Player[5];
 		for(int i = 0; i<5; i++){
 			tableaubest_Players[i] = new Player();
 		}
-		
-		int nb_players = ExtractDB.extractNumberPlayers();
-		for(int i = 0 ; i < nb_players; i++){
-			Player p;
-			try {
-				p = extractJSON.getJsonPlayer(i);
-				if(p != null){
-					int j = 0;
-					boolean find = false;
-					while (j < tableaubest_Players.length && !find){
-						if(tableaubest_Players[j].getNbGameWin()<=p.getNbGameWin()){
-							for(int k = tableaubest_Players.length ; k < j; k--){
-								tableaubest_Players[k] = tableaubest_Players[k-1];
-							}
-							tableaubest_Players[j] = p;	
-							find = true;
-						}
-						j++;
+		for(Player p: players){	
+			int j = 0;
+			boolean find = false;
+			while(j < tableaubest_Players.length && !find){
+				if(tableaubest_Players[j].getNbGameWin() <= p.getNbGameWin()){
+					for(int k = tableaubest_Players.length ; k < j+1 ; k--){
+						tableaubest_Players[k] = tableaubest_Players[k-1];
 					}
+					tableaubest_Players[j] = p;
+					find = true;
 				}
-				
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				j++;
 			}
+			
+
+
+
 		} 
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players);
 	}
