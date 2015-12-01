@@ -29,9 +29,9 @@ public class Run {
 		List<Game> alGames = anal.getGames();
 		
 		/* Génération des fichiers JSON de la Homepage */
-		//anal.globalStats();
-		//anal.analyzeScoreGame();
-		//anal.globalBestGame();
+		anal.globalStats();
+		anal.analyzeScoreGame();
+		anal.globalBestGame();
 		anal.analyzeOpenings();
 		//anal.bestPlayers();
 		//anal.bestGames();

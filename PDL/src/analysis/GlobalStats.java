@@ -33,14 +33,17 @@ public class GlobalStats {
 			int nb_players = ExtractDB.extractNumberPlayers();
 			for(int i = 0 ; i < nb_players; i++){
 				Player p = extractJSON.getJsonPlayer(i);
-				for(int j = 0 ; j < tableaubest_Players.length ; j++){				
+				int j = 0;
+				boolean find = false;
+				while (j < tableaubest_Players.length && !find){
 					if(tableaubest_Players[j].getNbGameWin()<=p.getNbGameWin()){
 						for(int k = tableaubest_Players.length ; k < j; k--){
 							tableaubest_Players[k] = tableaubest_Players[k-1];
 						}
-						tableaubest_Players[i] = p;
-						
+						tableaubest_Players[i] = p;	
+						find = true;
 					}
+					j++;
 				}
 			} 
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players);
@@ -58,14 +61,17 @@ public class GlobalStats {
 		
 		for(Game g : games){
 			System.out.println("le score total de la game : "+g.getScoreTotalVariation());
-			for(int j = 0 ; j < tableaubest_Games.length ; j++){ 
+			int j = 0;
+			boolean find = false;
+			while(j < tableaubest_Games.length && !find){
 				if(tableaubest_Games[j].getScoreTotalVariation() <= g.getScoreTotalVariation()){
 					for(int k = tableaubest_Games.length ; k < j+1 ; k--){
 						tableaubest_Games[k] = tableaubest_Games[k-1];
 					}
 					tableaubest_Games[j] = g;
-				break;
+					find = true;
 				}
+				j++;
 			}
 		}
 		treatmentJSON.saveGlobalBestGamesToJSON(tableaubest_Games);
