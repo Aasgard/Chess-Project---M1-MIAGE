@@ -18,16 +18,16 @@ public class PlayerAnalysis {
 	public List<Player> getPlayers() {
 		return players;
 	}
-
-	/**
-	 * 
-	 * @param game
-	 */
 	
 	public PlayerAnalysis(){
 		players = new ArrayList<Player>();
 	}
 	
+	/**
+	 * Enregistre les stats et les erreurs de chaque joueur pour un game donné
+	 * 
+	 * @param game
+	 */
 	public void getPlayerStats(Game game) {
 		// récupération des players
 		whitePlayer = game.getWhitePlayer();
@@ -38,9 +38,9 @@ public class PlayerAnalysis {
 		ErrorPlayer errorBlackPlayer = new ErrorPlayer(game.getId(), 0);
 		
 		// repérer les erreurs
-		checkBlunderMat(game, errorWhitePlayer, errorBlackPlayer);
+		checkBlunderMat(game.getAlMoves(), errorWhitePlayer, errorBlackPlayer);
 		
-		// add error
+		// ajout des ErrorPlayer s'il y a eu des erreurs
 		if(errorWhitePlayer.getNb_of_error() > 0) {
 			whitePlayer.addError(errorWhitePlayer);
 		}
@@ -59,14 +59,18 @@ public class PlayerAnalysis {
 			whiteWinner = false;
 			blackWinner = true;
 		}
+		
 		// add player to the list
 		addPlayer(whitePlayer, whiteWinner);
 		addPlayer(blackPlayer, blackWinner);
 	}
 	
 	/**
+	 * Ajout d'une erreur dans un ErrorPlayer
+	 * Met à jour le nombre d'erreurs et ajoute la position de l'erreur
 	 * 
-	 * @param p
+	 * @param error
+	 * @param fen
 	 */
 	public void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
 
@@ -76,24 +80,26 @@ public class PlayerAnalysis {
 	}
 	
 	/**
+	 * Repérer les erreurs de chaque joueur pour une liste de Move donnée
 	 * 
-	 * @param game
+	 * @param moves
 	 * @param errorWhitePlayer
 	 * @param errorBlackPlayer
 	 */
-	public void checkBlunderMat(Game game, ErrorPlayer errorWhitePlayer, ErrorPlayer errorBlackPlayer) {
+	public void checkBlunderMat(List<Move> moves, ErrorPlayer errorWhitePlayer, ErrorPlayer errorBlackPlayer) {
 		
 		boolean previousIsMateWhite = false;
 		boolean currentIsMateWhite = false;
 		boolean previousIsMateBlack = false;
 		boolean currentIsMateBlack = false;
 		
-		for(Move move : game.getAlMoves()) {
+		for(Move move : moves) {
 			
 			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
 				
+				// erreur du joueur blanc
 				if(previousIsMateWhite && !currentIsMateWhite) {
 					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());
 				}
@@ -104,6 +110,7 @@ public class PlayerAnalysis {
 			else {
 				currentIsMateBlack = move.isMate();
 				
+				// erreur du joueur noir
 				if(previousIsMateBlack && !currentIsMateBlack) {
 					addErrorToErrorPlayer(errorBlackPlayer, move.getFen().getPosition());
 				}
@@ -114,6 +121,8 @@ public class PlayerAnalysis {
 	}
 	
 	/**
+	 * Ajout du player dans la liste avec ses stats mises à jour
+	 * Vérifie si le player est déjà présent ou non dans la liste
 	 * 
 	 * @param player
 	 * @param winner
@@ -155,7 +164,7 @@ public class PlayerAnalysis {
 	}
 	
 	/**
-	 * 
+	 * Enregistre tous les players dans un json
 	 */
 	public void savePlayersToJSON() {
 		treatmentJSON.savePlayersToJSON(players);
