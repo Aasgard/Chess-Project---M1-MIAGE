@@ -2,6 +2,8 @@ package json;
 
 public interface IGlobalJSON {
 	public final String PATH = "JSONContainer/";
+	public final String PATH_TEST = "JSONTest/";
+	public final String PATH_TEST_CORRIGE = "../JSONTest/";
 	
 	public final String GAME_FILE = "Game.json";
 	public final String OPENING_FILE = "Opening.json";

@@ -22,13 +22,13 @@ public class TestExtractJSON {
 	@Test
 	public void testdeleteJsonObject() {
 		JSONObject jsonObj = new JSONObject();
-		String fileName = "Tests/baseTest.json";
+		String fileName = "baseTest.json";
 		
 		jsonObj.put("id", 1);
 		
-		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObj, fileName);
+		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObj, PATH_TEST_CORRIGE + fileName);
 		
-		assertEquals(jsonArray.length(), 1);
+		assertFalse(jsonArrayContains(jsonArray, jsonObj));
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class TestExtractJSON {
 	 */
 	@Test
 	public void testreadJSONFile1() {
-		String fileName = "Tests/baseTest.json";
+		String fileName = "baseTest.json";
 		JSONObject jsonObj1 = new JSONObject();
 		JSONObject jsonObj2 = new JSONObject();
 		
@@ -52,9 +52,9 @@ public class TestExtractJSON {
 		jsonArray.put(jsonObj1);
 		jsonArray.put(jsonObj2);
 		
-		JSONArray jsonArrayRes = ExtractJSON.readJSONFile(fileName);
+		JSONArray jsonArrayRes = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
 		
-		assertEquals(jsonArrayEquals(jsonArray, jsonArrayRes), true);
+		assertTrue(jsonArrayEquals(jsonArray, jsonArrayRes));
 	}
 	
 	/**
@@ -62,8 +62,8 @@ public class TestExtractJSON {
 	 */
 	@Test
 	public void testreadJSONFile2() {
-		String fileName = "Tests/not.json";
-		JSONArray jsonArrayRes = ExtractJSON.readJSONFile(fileName);
+		String fileName = "not.json";
+		JSONArray jsonArrayRes = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
 		
 		assertNull(jsonArrayRes);
 	}
@@ -82,13 +82,29 @@ public class TestExtractJSON {
 				
 				String sobj1 = jsonObj1.toString();
 				String sobj2 = jsonObj2.toString();
-				if(sobj1.equals(sobj2)) {
-					System.out.println(jsonObj1.toString());
-					System.out.println(jsonObj1.toString());
+				if(!sobj1.equals(sobj2)) {
 					return false;
 				}	
 			}
 			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Test si un JSONArray contient un JSONObject donné
+	 * @param jsonArray
+	 * @param jsonObject
+	 * @return
+	 */
+	public boolean jsonArrayContains(JSONArray jsonArray, JSONObject jsonObject) {
+		for(int i=0; i < jsonArray.length(); i++) {
+			JSONObject jsonObjArray = jsonArray.getJSONObject(i);
+			String sobj1 = jsonObjArray.toString();
+			String sobj2 = jsonObject.toString();
+			if(sobj1.equals(sobj2)) {
+				return true;
+			}
 		}
 		return false;
 	}
