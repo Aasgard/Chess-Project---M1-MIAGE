@@ -19,9 +19,8 @@ public class OpeningAnalysis {
 	 * @param games
 	 * @throws IOException 
 	 */
-	public static HashMap<Opening, List<Integer>> getWinRateOpening(Opening o, List<Integer> value){
-		HashMap<Opening, List<Integer>> results = new HashMap<Opening, List<Integer>>(); 
-		List<Integer> total = new ArrayList<Integer>();
+	public static List<Integer> getWinRateOpening(List<Integer> value){
+		List<Integer> results = new ArrayList<Integer>();
 		
 		int nbWhite = 0;
 		int nbBlack = 0;
@@ -38,12 +37,9 @@ public class OpeningAnalysis {
 		}
 		
 		// Ajoute les totaux 
-		total.add(nbWhite);
-		total.add(nbBlack);
-		total.add(exaequo);
-		
-		// Ajoute le total des resultats
-		results.put(o, total);
+		results.add(nbWhite);
+		results.add(nbBlack);
+		results.add(exaequo);
 		
 		return results;
 	}

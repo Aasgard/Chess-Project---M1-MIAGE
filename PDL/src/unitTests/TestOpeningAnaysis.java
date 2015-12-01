@@ -3,6 +3,7 @@ package unitTests;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Test;
@@ -22,6 +23,12 @@ public class TestOpeningAnaysis{
 	@Test
 	public void testGetWinRateOpening(){
 		
+		// Résultats attendu
+		HashMap<Opening, List<Integer>> expected = new HashMap<Opening, List<Integer>>();
+		Opening openingExpected = null;
+		List<Integer> stats = new ArrayList<Integer>();
+		expected.put(openingExpected, stats);
+		
 		// Initialisation
 		Opening o = new Opening(1, "Ruy Lopez", "none", "", 4);
 		List<Integer> values = new ArrayList<Integer>();
@@ -29,7 +36,7 @@ public class TestOpeningAnaysis{
 		// Ajout de resultats de partie
 		values.add(0);
 		values.add(0);
-		values.add(0);
+		values.add(2);
 		values.add(0);
 		values.add(1);
 		
