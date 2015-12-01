@@ -1,54 +1,59 @@
 package object;
 
 public class FEN {
-	private String Position;
-	private int Score;
-	private String RawFEN;
-	private String Log;
+	private String position;
+	private int score;
+	private String rawFEN;
+	private String log;
+	
+	public FEN(){
+		this.score = -1;
+	}
+	
 	
 	public FEN(String rawFEN, String log) {
-		this.Log = log;
-		this.RawFEN = rawFEN;
-		this.Position = this.RawFEN.split(" ")[0];
-		this.Score = this.getHigherDepthScore();
+		this.log = log;
+		this.rawFEN = rawFEN;
+		this.position = this.rawFEN.split(" ")[0];
+		this.score = this.getHigherDepthScore();
 	}
 	
 	public String getPosition() {
-		return Position;
+		return position;
 	}
 	
 	public void setPosition(String position) {
-		Position = position;
+		position = position;
 	}
 	
 	public int getScore() {
-		return Score;
+		return score;
 	}
 	
 	public void setScore(int score) {
-		Score = score;
+		score = score;
 	}
 	
 	public String getRawFEN() {
-		return RawFEN;
+		return rawFEN;
 	}
 	
 	public void setRawFEN(String rawFEN) {
-		RawFEN = rawFEN;
+		rawFEN = rawFEN;
 	}
 	
 	public String getLog() {
-		return Log;
+		return log;
 	}
 	
 	public void setLog(String log) {
-		Log = log;
+		log = log;
 	}
 	
 	private int getHigherDepthScore(){
 		int scoreVoulu = 0;
 		try{
-			String[] splittedLogs = this.Log.split("\\. ");
+			String[] splittedLogs = this.log.split("\\. ");
 			String higherdepthlog = splittedLogs[splittedLogs.length - 2];
 			scoreVoulu = Integer.parseInt(higherdepthlog.split(" ")[9]);
 		}catch(Exception e){}
@@ -57,7 +62,7 @@ public class FEN {
 	}
 	
 	public String toString(){
-		return "[ FEN : " +this.RawFEN + " - " + this.Log + " ]";
+		return "[ FEN : " +this.rawFEN + " - " + this.log + " ]";
 	}
 	
 }

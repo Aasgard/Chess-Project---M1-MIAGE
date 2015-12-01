@@ -1,56 +1,49 @@
 package analysis;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
-
-import json.ExtractJSON;
 import json.ITreatmentJSON;
 import json.TreatmentJSON;
-import object.FEN;
-import object.Move;
+import object.GameAndNextMove;
 
 public class ScoreFromPositionAnalysis {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	private FEN bestFEN;
-	
+
+
 	public ScoreFromPositionAnalysis(){
-		setBestFEN(new FEN(new String(), new String()));
 	}
-	
+
 	/**
 	 * Sauvegarde le meilleur move pour un FEN
-	 * @param Position
+	 * @param position
 	 * @param movesByGame
 	 */
-	public void getEvolScore(String Position, HashMap<Integer, List<Move>> movesByGame){
+	public void getEvolScore(String position, List<GameAndNextMove> movesByGame){
+		GameAndNextMove tableaubest_GameAndNextMove[] = new GameAndNextMove[5];
+		for(int i = 0; i<5; i++){
+			tableaubest_GameAndNextMove[i] = new GameAndNextMove();
+		}
+		for(GameAndNextMove gameAndNextMove : movesByGame){
+			int j = 0;
+			boolean find = false;
+			while(j < tableaubest_GameAndNextMove.length && !find){
+				if(tableaubest_GameAndNextMove[j].getMove().getFen().getScore() <= gameAndNextMove.getMove().getFen().getScore()){
+
+					System.out.println("test if j = " + j);
+					for(int k = tableaubest_GameAndNextMove.length-1 ; k > j ; k--){
+						System.out.println("test");
+						tableaubest_GameAndNextMove[k] = tableaubest_GameAndNextMove[k-1];
+					}
+					tableaubest_GameAndNextMove[j] = gameAndNextMove;
+					find = true;
+				}
+				j++;
+			} 
+		}
 		
-		// Parcours les differentes parties
-		for(Entry<Integer, List<Move>> fenMoves :  movesByGame.entrySet()){
-			List<Move> moves = fenMoves.getValue();
-			
-			// Parcours les moves d'une partie
-			for(Move move: moves){
-				this.isBestMove(ExtractJSON.extractFENAfterMove(move));
-			}
-		}
-
-		treatmentJSON.saveBestFenToJSON(Position, getBestFEN());
-	}
-	
-	private void isBestMove(FEN fen ){
-		if(fen.getScore() > getBestFEN().getScore()){
-			getBestFEN().setPosition(fen.getPosition());
-			getBestFEN().setScore(fen.getScore());
-		}
+		treatmentJSON.saveBestFenToJSON(position, tableaubest_GameAndNextMove);
 	}
 
-	public FEN getBestFEN() {
-		return bestFEN;
-	}
 
-	public void setBestFEN(FEN bestFEN) {
-		this.bestFEN = bestFEN;
-	}
+
 }

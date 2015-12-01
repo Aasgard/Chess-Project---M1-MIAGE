@@ -27,6 +27,9 @@ public class ExtractJSON implements IGlobalJSON{
 	 */
 	public static Game getGame(int idGame) throws IOException{
 		JSONArray gamesArray = readJSONFile( GAME_FILE );
+		if(gamesArray == null){
+			gamesArray = new JSONArray();
+		}
 
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject gameObject = gamesArray.getJSONObject(i);
@@ -109,6 +112,38 @@ public class ExtractJSON implements IGlobalJSON{
 		return null;
 	}
 	
+	
+	/**
+	 * Read the Json Object to find the opening with this id
+	 * 
+	 * @param position
+	 * @return
+	 * @throws IOException
+	 */
+	public static JSONObject getJsonPosition(String position){
+
+		JSONArray positionArray = readJSONFile( RANKINGPOSITION_FILE );
+
+		JSONObject positionFind = null;
+		
+		if (positionArray == null){
+			positionArray = new JSONArray();
+		}
+		
+		int i = 0;
+		boolean find = false;
+		while(i< positionArray.length() && !find){
+			JSONObject positionObject = positionArray.getJSONObject(i);
+
+				if(positionObject.get(ID) == position){
+					find = true;
+					positionFind = positionObject;
+				}
+				i++;
+		}		
+		return positionFind;
+	}
+	
 	public static Player getJsonPlayer(int idPlayer) throws IOException{
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 		Player player = null;
@@ -148,7 +183,8 @@ public class ExtractJSON implements IGlobalJSON{
 	
 	public static JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
-		if (playersArray == null){
+	
+		if(playersArray == null){
 			playersArray = new JSONArray();
 		}
 		for(int i = 0; i < playersArray.length(); i++) {
@@ -159,6 +195,12 @@ public class ExtractJSON implements IGlobalJSON{
 			}
 		}
 		
+		return null;
+	}
+
+
+	public static JSONObject getJsonOpening(String position) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }

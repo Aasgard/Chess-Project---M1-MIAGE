@@ -51,11 +51,11 @@ public interface IGlobalJSON {
 	public final String COLOR = "color";
 	
 	//CONSTANTE RANKINGPOSITION
+	public final String ID_POSITION = "id_position";
 	public final String INIT_FEN = "init_fen";
-	public final String CLASSEMENT = "classement";
-	public final String PLAYER_NAME = "player_name";
-	public final String BEST_FEN = "best_fen";
-	public final String EVOL_SCORE_GLOBAL = "evol_score_global";
+	public final String FEN_NEXT_POSITION = "fen_next_position";
+	public final String NEXTS = "nexts";
+	
 	
 	//Constantes GlobalStats
 	public final String GLOBAL_STATS = "global_stats";

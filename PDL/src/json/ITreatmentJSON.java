@@ -8,8 +8,6 @@ public interface ITreatmentJSON {
 
 	public void saveAllScoreToJSON(Game g, int score_total_variation , List<FEN> scores);
 	
-	public void saveBestFenToJSON(String FEN, FEN bestPosition);
-	
 	public void savePlayersToJSON(List<Player> players);
 
 	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo);
@@ -19,6 +17,8 @@ public interface ITreatmentJSON {
 	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
 	public void saveGlobalBestGamesToJSON(Game[] games);
+
+	public void saveBestFenToJSON(String position, GameAndNextMove[] tableaubest_GameAndNextMove);
 	
 	
 }

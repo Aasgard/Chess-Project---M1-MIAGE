@@ -43,10 +43,6 @@ public class GlobalStats {
 				}
 				j++;
 			}
-			
-
-
-
 		} 
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players);
 	}

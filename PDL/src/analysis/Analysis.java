@@ -1,6 +1,8 @@
 package analysis;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -10,68 +12,82 @@ import object.*;
 public class Analysis {
 
 	private List<Game> games;
-	
+
 	public Analysis(){
 		this.setGames(ExtractDB.extractGames());
 	}
-	
+
 	public void analyzeScoreGame(){
-		
+
 		for(Game game : this.getGames()){
 			ScoreAnalysis.analyzeScore(game);
 		}
 	}
-	
+
 	public void globalStats(){
 		GlobalStats.getGlobalStats(games.size());
 	}
-	
+
 	public void globalBestGame(){
 		GlobalStats.getGlobalBestVar(games);
 	}
-	
+
 	public void analyzeScoreEvolutionFromPosition(){
 
-		HashMap<String, HashMap<Integer, List<Move>>> mapFenMoves = new HashMap<String, HashMap<Integer, List<Move>>>();
-		
+		HashMap<String, List<GameAndNextMove>> mapFenMoves = new HashMap<String, List<GameAndNextMove>>();
+
 		// Parcours de toutes les games
 		for(Game game: games){
-			HashMap<Integer, List<Move>> myMove = new HashMap<Integer, List<Move>>();
-			
 			// On récupère tous les moves de la games
-			List<Move> AllMoves = game.getAlMoves();
-			
-			// Ajoute le move avec l'id de la game
-			myMove.put(game.getId(), AllMoves);
-			
-			// Parcours des moves
-			for(Move move: AllMoves) {
-				String Position = move.getFen().getPosition();			
-				
-				mapFenMoves.put(Position, myMove);
+			List<Move> allMoves = game.getAlMoves();
+			Iterator<Move> it = allMoves.iterator();
+			if(it.hasNext()){
+
+				Move currentMove = it.next();
+				// Parcours des moves
+				while (currentMove != null) {
+
+					if(it.hasNext()){
+
+						List<GameAndNextMove> gameAndMoveList = mapFenMoves.get(currentMove.getFen().getPosition());
+						if(gameAndMoveList == null){
+							gameAndMoveList = new ArrayList<GameAndNextMove>();
+						}
+						Move next = it.next();
+						GameAndNextMove ganm = new GameAndNextMove(game.getId(), next);
+						gameAndMoveList.add(ganm);
+
+						mapFenMoves.put(currentMove.getFen().getPosition(), gameAndMoveList);
+						currentMove = next;
+					}else{
+						currentMove = null;
+					}
+				}
+
 			}
 		}
-
 		// Sauvegarde le meilleur Fen pour une position
-		//TODO : merde ! clement
+		
 		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
-		for(Entry<String, HashMap<Integer, List<Move>>> fenMoves :  mapFenMoves.entrySet()){
+		System.out.println("mapFenMoves.entrySet() " + mapFenMoves.entrySet().size());
+		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
 			sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
 		}
+		
 	}
 
 	public void analyzeOpenings(){
 		HashMap<Integer, ResultsByOpening> mapgameByOpening = new HashMap<Integer, ResultsByOpening>();
 		for(Game g : games){
 			ResultsByOpening results = mapgameByOpening.get(g.getOpening().getId());
-			
+
 			if(results == null){
 				results = new ResultsByOpening(g.getOpening());
 			}
 			results.addResult(g.getResult());
 			mapgameByOpening.put(g.getOpening().getId(), results);
 		}
-		
+
 		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
 			OpeningAnaysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
 		}

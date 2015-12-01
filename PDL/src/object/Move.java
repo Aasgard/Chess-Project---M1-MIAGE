@@ -7,6 +7,10 @@ public class Move {
 	private boolean isMate;
 	private FEN fen;
 	
+	public Move(){
+		this.fen = new FEN();
+	}
+	
 	public Move(int n, int hm, FEN fen){
 		this.num = n;
 		this.halfMove = hm;
