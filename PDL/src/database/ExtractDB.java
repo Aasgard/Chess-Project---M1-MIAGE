@@ -83,9 +83,5 @@ public class ExtractDB{
 		return nb_event;
 	}
 
-	public static HashMap<String, List<Move>> extractGameAndMoveByPosition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

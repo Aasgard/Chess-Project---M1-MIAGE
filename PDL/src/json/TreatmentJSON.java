@@ -2,9 +2,7 @@ package json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -19,12 +17,11 @@ import object.Player;
 
 public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
-	private static ExtractJSON extractJSON = new ExtractJSON();
 
 	public void saveAllScoreToJSON(Game g, int score_total_variation, List<FEN> scores){	
 		JSONObject game = null;
 		try {
-			game = extractJSON.getJsonGame(g.getId());
+			game = ExtractJSON.getJsonGame(g.getId());
 			game.remove(SCORE_TOTAL_VAR);
 
 		} catch (IOException e) {
@@ -77,7 +74,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		// Get the JsonObject from the game id
 		JSONObject openingJson;
 		try {
-			openingJson = extractJSON.getJsonOpening(o.getId());
+			openingJson = ExtractJSON.getJsonOpening(o.getId());
 
 			boolean exists = true;
 			if(openingJson == null){
@@ -109,7 +106,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			// Save the game
 			saveInFile(openingJson, OPENING_FILE, exists);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -119,7 +115,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 * Save all the players with their errors
 	 * 
 	 */
-	//TODO : refaire fonction
 	public void savePlayersToJSON(List<Player> players) {
 		JSONObject playerJSON;
 		JSONArray errorsJSON;
@@ -130,9 +125,8 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			exists = true;
 
 			try {
-				playerJSON = extractJSON.getJsonFilePlayer(player.getId());
+				playerJSON = ExtractJSON.getJsonFilePlayer(player.getId());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				continue;
 			}
@@ -160,96 +154,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 			saveInFile(playerJSON, PLAYER_FILE, exists);		
 		}
-
-		/*		for(Entry<Player, List<ErrorPlayer>> entry : playerErrors.entrySet()) {
-			Player player = entry.getKey();
-			List<ErrorPlayer> errors = entry.getValue();		
-			player.setErrors(errors);
-
-			playerJSON = null;
-			exists = true;
-
-			try {
-				playerJSON = extractJSON.getJsonFilePlayer(player.getId());
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				continue;
-			}
-
-			if(playerJSON == null) {
-				exists = false;
-			}
-
-			errorsJSON = new JSONArray();
-			for(ErrorPlayer error : errors) {
-				JSONObject errorJSON = new JSONObject();
-				errorJSON.put( ID_GAME , error.getIdGame());
-				errorJSON.put( NB_OF_ERROR , error.getNb_of_error());
-				String[] FenErrors = error.getError_fen().toArray(new String[error.getError_fen().size()]);
-				errorJSON.put( ERRORS_FEN , FenErrors);
-
-				errorsJSON.put(errorJSON);
-			}
-
-			playerJSON.put( NAME , player.getName());
-			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
-			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
-			playerJSON.put( ERRORS , errorsJSON);
-
-			saveInFile(playerJSON, PLAYER_FILE, exists);
-
-		}*/
-		/*
-		JsonArray playersJson = extractJSON.readJSONFile(OPENING_FILE);
-
-		JsonArrayBuilder playersBuilder = Json.createArrayBuilder();
-		JsonObjectBuilder playerBuiler = Json.createObjectBuilder();
-		JsonArrayBuilder errorsBuilder = Json.createArrayBuilder();
-		JsonObjectBuilder errorBuilder = Json.createObjectBuilder();		
-
-		for (Map.Entry<Player, HashMap<Integer, Integer>> player : players.entrySet()) {
-
-			int idPlayer = player.getKey().getId();
-			playerBuiler.add("id", idPlayer);
-
-			JsonObject myPlayerObject;
-			boolean playerFinded = false;
-			for (int i = 0; i < playersJson.size() && playerFinded; i++){
-				JsonObject playerJson = playersJson.getJsonObject(i);
-				JsonObject playerObject = (JsonObject)playerJson;
-				if (idPlayer == playerObject.getInt("id")){
-					playerObject = myPlayerObject;
-					playerFinded = true;
-				}
-			}
-
-			for (Map.Entry<Integer, Integer> error : errors.entrySet()) {
-
-			}
-			playersBuilder.add(playerBuiler);
-		}
-		// If the game is in the Json
-		if(playerJson != null){
-			// Recreate the game already set
-			// TODO add the "average_win_rate" to je JsonObject
-			playerBuiler.add("", playerJson).add("average_win_rate", rate);
-
-			// Update the game
-			// gameBuilder.add("average_win_rate", rate);	
-
-		}else{
-			// Create a new game in the jsonFile			
-			playerBuiler.add("id", o.getId());
-			playerBuiler.add("name", o.getName());
-			playerBuiler.add("move", o.getMoves());
-			playerBuiler.add("average_win_rate", rate);			
-		}
-		// Create the JsonObject
-		JsonObject openingJsonObject = playerBuiler.build();
-
-		// Save the game
-		saveInFile(openingJsonObject, OPENING_FILE);*/
 	}
 
 	public static void saveInFile(JSONObject jsonObject, String objectName, boolean exist){
@@ -265,7 +169,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			System.out.println(PATH + objectName);
 			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
 
-			StringBuilder myNewFile = new StringBuilder();
 
 			// Creation d'un nouveau fichier
 			writer.println("[");
@@ -288,7 +191,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			}
 			writer.println("]");
 			System.out.println("Successfully Copied JSON Object to File...");
-			//System.out.println("\nJSON Object: " + myNewFile.toString());
 			writer.close();
 		} catch (IOException e) {
 		}
@@ -326,7 +228,11 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
-
+		boolean exists = false;
+		if(ExtractJSON.readJSONFile(GLOBALSTAT_FILE) != null){
+			exists = true;
+		}
+		
 		JSONArray objectArray = new JSONArray();
 
 		JSONObject object1 = new JSONObject();
@@ -346,7 +252,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 		object.put(ID, 1);
 		object.put(GLOBAL_STATS, objectArray);
-		saveInFile( object, GLOBALSTAT_FILE , true);
+		saveInFile( object, GLOBALSTAT_FILE , exists);
 	}
 
 	@Override

@@ -13,7 +13,7 @@ import tools.SFTP;
 
 public class Run {
 
-	@SuppressWarnings("static-access")
+	
 	public static void main(String[] args) throws JSchException, SftpException {
 		
 		/* Initialisation du chronomètre */
@@ -34,6 +34,7 @@ public class Run {
 		anal.analyzeScoreGame();
 		anal.globalBestGame();
 		anal.analyzeOpenings();
+		anal.analyzeScoreEvolutionFromPosition();
 		//anal.bestPlayers();
 		//anal.bestGames();
 		

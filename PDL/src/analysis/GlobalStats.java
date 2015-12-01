@@ -1,6 +1,5 @@
 package analysis;
 
-import java.io.IOException;
 import java.util.List;
 
 import database.ExtractDB;
@@ -8,12 +7,10 @@ import json.ITreatmentJSON;
 import json.TreatmentJSON;
 import object.Game;
 import object.Player;
-import json.ExtractJSON;
 
 public class GlobalStats {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	private static ExtractJSON extractJSON = new ExtractJSON();
 
 	/*
 	 * Get nb_total : players, games and events to save in JSON

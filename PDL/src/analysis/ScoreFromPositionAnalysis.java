@@ -1,6 +1,8 @@
 package analysis;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import json.ExtractJSON;
 import json.ITreatmentJSON;
@@ -11,22 +13,44 @@ import object.Move;
 public class ScoreFromPositionAnalysis {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	private static ExtractJSON extractJSON = new ExtractJSON();
-	private static FEN bestFEN = new FEN(new String(), new String());
+	private FEN bestFEN;
 	
-	public static void getEvolScore(List<Move> moves){
-		String fen = moves.get(0).getFen().getPosition();
-		for(Move move : moves){
-			isBestMove(extractJSON.extractFENAfterMove(move));
-		}
-
-		treatmentJSON.saveBestFenToJSON(fen, bestFEN);
+	public ScoreFromPositionAnalysis(){
+		setBestFEN(new FEN(new String(), new String()));
 	}
 	
-	private static void isBestMove(FEN fen ){
-		if(fen.getScore() > bestFEN.getScore()){
-			bestFEN.setPosition(fen.getPosition());
-			bestFEN.setScore(fen.getScore());
+	/**
+	 * Sauvegarde le meilleur move pour un FEN
+	 * @param Position
+	 * @param movesByGame
+	 */
+	public void getEvolScore(String Position, HashMap<Integer, List<Move>> movesByGame){
+		
+		// Parcours les differentes parties
+		for(Entry<Integer, List<Move>> fenMoves :  movesByGame.entrySet()){
+			List<Move> moves = fenMoves.getValue();
+			
+			// Parcours les moves d'une partie
+			for(Move move: moves){
+				this.isBestMove(ExtractJSON.extractFENAfterMove(move));
+			}
 		}
+
+		treatmentJSON.saveBestFenToJSON(Position, getBestFEN());
+	}
+	
+	private void isBestMove(FEN fen ){
+		if(fen.getScore() > getBestFEN().getScore()){
+			getBestFEN().setPosition(fen.getPosition());
+			getBestFEN().setScore(fen.getScore());
+		}
+	}
+
+	public FEN getBestFEN() {
+		return bestFEN;
+	}
+
+	public void setBestFEN(FEN bestFEN) {
+		this.bestFEN = bestFEN;
 	}
 }

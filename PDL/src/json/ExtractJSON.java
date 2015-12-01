@@ -13,10 +13,7 @@ import object.*;
 
 public class ExtractJSON implements IGlobalJSON{
 
-	public ExtractJSON() {
-	}
-
-	public FEN extractFENAfterMove(Move m){
+	public static FEN extractFENAfterMove(Move m){
 		// TODO extractFENAfterMove
 		return null;
 	}
@@ -28,7 +25,7 @@ public class ExtractJSON implements IGlobalJSON{
 	 * @return
 	 * @throws IOException 
 	 */
-	public Game getGame(int idGame) throws IOException{
+	public static Game getGame(int idGame) throws IOException{
 		JSONArray gamesArray = readJSONFile( GAME_FILE );
 
 		for(int i = 0; i < gamesArray.length(); i++) {
@@ -80,13 +77,12 @@ public class ExtractJSON implements IGlobalJSON{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-
-		if (result.isEmpty()){
-			return null;
-		}else{
-			JSONArray jsonArray = new JSONArray(result);
-			return jsonArray;
+		JSONArray jsonArray = null;
+		
+		if (!result.isEmpty()){
+			jsonArray= new JSONArray(result);
 		}
+		return jsonArray;
 	}
 
 
@@ -97,7 +93,7 @@ public class ExtractJSON implements IGlobalJSON{
 	 * @return JsonObject Game or NULL
 	 * @throws IOException
 	 */
-	public JSONObject getJsonGame(int idGame) throws IOException{
+	public static JSONObject getJsonGame(int idGame) throws IOException{
 		// TODO getJsonGame
 		return null;
 	}
@@ -108,12 +104,12 @@ public class ExtractJSON implements IGlobalJSON{
 	 * @return JsonObject Opening or NULL
 	 * @throws IOException
 	 */
-	public JSONObject getJsonOpening(int idOpening) throws IOException{
+	public static JSONObject getJsonOpening(int idOpening) throws IOException{
 		// TODO getJsonOpening
 		return null;
 	}
 	
-	public Player getJsonPlayer(int idPlayer) throws IOException{
+	public static Player getJsonPlayer(int idPlayer) throws IOException{
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 		Player player = null;
 		for(int i = 0; i < playersArray.length(); i++) {
@@ -150,7 +146,7 @@ public class ExtractJSON implements IGlobalJSON{
 		return player;
 	}
 	
-	public JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
+	public static JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 		if (playersArray == null){
 			playersArray = new JSONArray();
