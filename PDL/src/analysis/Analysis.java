@@ -45,12 +45,15 @@ public class Analysis {
 		}
 	}
 
-	public void analyzeOpenings() throws IOException{
+	public void analyzeOpenings(){
 		HashMap<Opening, List<Integer>> mapgameByOpening = new HashMap<Opening, List<Integer>>();
 		for(Game g : games){
 			List<Integer> results = mapgameByOpening.get(g.getOpening());
 			if(results == null){
 				results = new ArrayList<Integer>();
+			}else{
+				String test = "";
+				System.out.println(test);
 			}
 			results.add(g.getResult());
 			mapgameByOpening.put(g.getOpening(), results);

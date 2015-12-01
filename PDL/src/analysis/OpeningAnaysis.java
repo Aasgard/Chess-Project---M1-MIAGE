@@ -20,7 +20,7 @@ public class OpeningAnaysis {
 	 * @param games
 	 * @throws IOException 
 	 */
-	public static void getWinRateOpening(Opening o, List<Integer> value) throws IOException {
+	public static void getWinRateOpening(Opening o, List<Integer> value){
 		nbWhite = 0;
 		nbBlack = 0;
 		exaequo = 0;

@@ -29,16 +29,17 @@ public class Run {
 		List<Game> alGames = anal.getGames();
 		
 		/* Génération des fichiers JSON de la Homepage */
-		anal.globalStats();
-		anal.analyzeScoreGame();
-		anal.globalBestGame();
+		//anal.globalStats();
+		//anal.analyzeScoreGame();
+		//anal.globalBestGame();
+		anal.analyzeOpenings();
 		//anal.bestPlayers();
 		//anal.bestGames();
 		
 		/* Transfert des fichiers générés sur le serveur Web distant */
 		//sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
-		sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
-		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
+		//sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
+		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		
