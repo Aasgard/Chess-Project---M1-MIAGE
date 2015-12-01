@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import database.*;
+import json.TreatmentJSON;
 import object.*;
 
 public class Analysis {
@@ -73,7 +74,19 @@ public class Analysis {
 		}
 		
 		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
-			OpeningAnaysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
+			HashMap<Opening, List<Integer>> rateByOpening = OpeningAnalysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
+			
+			// On récupère l'opening avec ses stats
+			for(Entry<Opening, List<Integer>> opening :  rateByOpening.entrySet()){
+				Opening o = opening.getKey();
+				int nbWhite = opening.getValue().get(0);
+				int nbBlack = opening.getValue().get(1);
+				int exaequo = opening.getValue().get(2);
+				
+				// Sauvegarde de l'opening
+				TreatmentJSON treatmentJSON = new TreatmentJSON();				
+				treatmentJSON.saveWinRateOpening(o, nbWhite, nbBlack, exaequo);
+			}
 		}
 	}
 

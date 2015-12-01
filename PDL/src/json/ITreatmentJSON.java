@@ -20,5 +20,4 @@ public interface ITreatmentJSON {
 	
 	public void saveGlobalBestGamesToJSON(Game[] games);
 	
-	
 }

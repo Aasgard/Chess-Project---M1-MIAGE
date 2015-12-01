@@ -38,7 +38,7 @@ public class ExtractJSON implements IGlobalJSON{
 				int inconnu = 0;
 				List<Move> allMoves = null;
 				String pgn = "";
-				double score_total_variation = 0;
+				int score_total_variation = 0;
 			
 				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn, score_total_variation );
 				return game;

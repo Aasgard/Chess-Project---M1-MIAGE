@@ -69,7 +69,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		saveInFile(outputJSON, RANKINGPOSITION_FILE, exists);*/
 	}
 
-	@Override
 	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo) {
 		// Get the JsonObject from the game id
 		JSONObject openingJson;
