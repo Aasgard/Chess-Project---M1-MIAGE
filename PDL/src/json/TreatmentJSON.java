@@ -2,9 +2,7 @@ package json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -265,7 +263,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			System.out.println(PATH + objectName);
 			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
 
-			StringBuilder myNewFile = new StringBuilder();
 
 			// Creation d'un nouveau fichier
 			writer.println("[");
@@ -288,7 +285,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			}
 			writer.println("]");
 			System.out.println("Successfully Copied JSON Object to File...");
-			//System.out.println("\nJSON Object: " + myNewFile.toString());
 			writer.close();
 		} catch (IOException e) {
 		}
@@ -327,7 +323,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
 		boolean exists = false;
-		if(extractJSON.readJSONFile(GLOBALSTAT_FILE) != null){
+		if(ExtractJSON.readJSONFile(GLOBALSTAT_FILE) != null){
 			exists = true;
 		}
 		
