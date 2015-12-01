@@ -68,6 +68,7 @@ public class Analysis {
 			pa.getPlayerStats(game);
 		}	
 		pa.savePlayersToJSON();
+		GlobalStats.getGlobalBestPlayers(pa.getPlayers());
 	}
 
 	public List<Game> getGames() {
@@ -78,9 +79,5 @@ public class Analysis {
 		this.games = games;
 	}
 
-	public void bestPlayers() {
-		GlobalStats.getGlobalBestPlayers();
-		
-	}
 
 }
