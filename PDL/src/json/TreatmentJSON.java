@@ -139,6 +139,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 			if(playerJSON == null) {
 				exists = false;
+				playerJSON = new JSONObject();
 			}
 
 			errorsJSON = new JSONArray();
@@ -151,7 +152,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 				errorsJSON.put(errorJSON);
 			}
-
+			playerJSON.put(ID, player.getId());
 			playerJSON.put( NAME , player.getName());
 			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
 			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
@@ -343,8 +344,9 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object3.put(VALEUR, nb_events);
 		objectArray.put(object3);
 
+		object.put(ID, 1);
 		object.put(GLOBAL_STATS, objectArray);
-		saveInFile( object, GLOBALSTAT_FILE , false);
+		saveInFile( object, GLOBALSTAT_FILE , true);
 	}
 
 	@Override

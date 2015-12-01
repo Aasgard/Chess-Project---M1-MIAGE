@@ -62,11 +62,12 @@ public class Analysis {
 		}
 	}
 
-	public void analyzePlayers() {	
+	public void analyzePlayers() {
+		PlayerAnalysis pa = new PlayerAnalysis();
 		for(Game game : this.getGames()){
-			PlayerAnalysis.getPlayerStats(game);
+			pa.getPlayerStats(game);
 		}	
-		PlayerAnalysis.savePlayersToJSON();
+		pa.savePlayersToJSON();
 	}
 
 	public List<Game> getGames() {
@@ -75,6 +76,11 @@ public class Analysis {
 
 	public void setGames(List<Game> games) {
 		this.games = games;
+	}
+
+	public void bestPlayers() {
+		GlobalStats.getGlobalBestPlayers();
+		
 	}
 
 }

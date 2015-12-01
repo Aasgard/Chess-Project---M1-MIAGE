@@ -11,16 +11,20 @@ import tools.Blunder;
 
 public class PlayerAnalysis {
 
-	private static Player whitePlayer;
-	private static Player blackPlayer;
-	private static List<Player> players = new ArrayList<Player>();
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+	private Player whitePlayer;
+	private Player blackPlayer;
+	private List<Player> players;
+	private ITreatmentJSON treatmentJSON = new TreatmentJSON();
 
 	/**
 	 * 
 	 * @param game
 	 */
-	public static void getPlayerStats(Game game) {
+	
+	public PlayerAnalysis(){
+		players = new ArrayList<Player>();
+	}
+	public void getPlayerStats(Game game) {
 		whitePlayer = game.getWhitePlayer();
 		blackPlayer = game.getBlackPlayer();
 		
@@ -65,14 +69,14 @@ public class PlayerAnalysis {
 	 * 
 	 * @param p
 	 */
-	public static void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
+	public void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
 
 		error.addNbError();
 		error.addErrorFen(fen);
 		
 	}
 	
-	public static void addStatsToPlayers(Game game, ErrorPlayer errorWhitePlayer, ErrorPlayer errorBlackPlayer) {
+	public void addStatsToPlayers(Game game, ErrorPlayer errorWhitePlayer, ErrorPlayer errorBlackPlayer) {
 		// add Winner
 		if(game.getResult() == 0) {
 			whitePlayer.addNbGameWin();
@@ -97,7 +101,7 @@ public class PlayerAnalysis {
 	/**
 	 * 
 	 */
-	public static void savePlayersToJSON() {
+	public void savePlayersToJSON() {
 		treatmentJSON.savePlayersToJSON(players);
 	}
 
