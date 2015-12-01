@@ -1,6 +1,7 @@
 package analysis;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -44,9 +45,17 @@ public class Analysis {
 		}
 	}
 
-	public static void analyzeOpenings() throws IOException{
-		HashMap<Opening, List<Integer>> mapgameByOpening = ExtractDB.extractResultsByOpening();
-
+	public void analyzeOpenings() throws IOException{
+		HashMap<Opening, List<Integer>> mapgameByOpening = new HashMap<Opening, List<Integer>>();
+		for(Game g : games){
+			List<Integer> results = mapgameByOpening.get(g.getOpening());
+			if(results == null){
+				results = new ArrayList<Integer>();
+			}
+			results.add(g.getResult());
+			mapgameByOpening.put(g.getOpening(), results);
+		}
+		
 		for(Entry<Opening, List<Integer>> gameByOpening : mapgameByOpening.entrySet()){
 			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
 		}
