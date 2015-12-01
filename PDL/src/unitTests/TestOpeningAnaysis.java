@@ -4,11 +4,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestOpeningAnaysis {
+import junit.framework.TestCase;
+
+public class TestOpeningAnaysis extends TestCase{
 
 	@Test
 	public void test() {
 		fail("Not yet implemented");
 	}
 
+	
 }
