@@ -46,21 +46,19 @@ public class Analysis {
 	}
 
 	public void analyzeOpenings(){
-		HashMap<Opening, List<Integer>> mapgameByOpening = new HashMap<Opening, List<Integer>>();
+		HashMap<Integer, ResultsByOpening> mapgameByOpening = new HashMap<Integer, ResultsByOpening>();
 		for(Game g : games){
-			List<Integer> results = mapgameByOpening.get(g.getOpening());
+			ResultsByOpening results = mapgameByOpening.get(g.getOpening().getId());
+			
 			if(results == null){
-				results = new ArrayList<Integer>();
-			}else{
-				String test = "";
-				System.out.println(test);
+				results = new ResultsByOpening(g.getOpening());
 			}
-			results.add(g.getResult());
-			mapgameByOpening.put(g.getOpening(), results);
+			results.addResult(g.getResult());
+			mapgameByOpening.put(g.getOpening().getId(), results);
 		}
 		
-		for(Entry<Opening, List<Integer>> gameByOpening : mapgameByOpening.entrySet()){
-			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
+		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
+			OpeningAnaysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
 		}
 	}
 
