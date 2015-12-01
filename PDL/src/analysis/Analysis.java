@@ -21,10 +21,6 @@ public class Analysis {
 			ScoreAnalysis.analyzeScore(game);
 		}
 	}
-
-	public static void globalPlayer(){
-		//TODO : a voir
-	}
 	
 	public void globalStats(){
 		GlobalStats.getGlobalStats(games.size());

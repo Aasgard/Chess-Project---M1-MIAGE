@@ -34,6 +34,7 @@ public class Run {
 		anal.analyzeScoreGame();
 		anal.globalBestGame();
 		anal.analyzeOpenings();
+		anal.analyzeScoreEvolutionFromPosition();
 		//anal.bestPlayers();
 		//anal.bestGames();
 		
