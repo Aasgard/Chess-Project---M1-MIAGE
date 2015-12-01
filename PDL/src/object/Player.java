@@ -1,5 +1,6 @@
 package object;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
@@ -17,6 +18,7 @@ public class Player {
 		this.name = name;
 		this.nbGamePlayed = 0;
 		this.nbGameWin = 0;
+		this.errors = new ArrayList<ErrorPlayer>();
 	}
 
 	public int getId() {

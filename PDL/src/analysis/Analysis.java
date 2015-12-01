@@ -1,6 +1,7 @@
 package analysis;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -44,19 +45,30 @@ public class Analysis {
 		}
 	}
 
-	public static void analyzeOpenings() throws IOException{
-		HashMap<Opening, List<Integer>> mapgameByOpening = ExtractDB.extractResultsByOpening();
-
-		for(Entry<Opening, List<Integer>> gameByOpening : mapgameByOpening.entrySet()){
-			OpeningAnaysis.getWinRateOpening(gameByOpening.getKey(), gameByOpening.getValue());
+	public void analyzeOpenings(){
+		HashMap<Integer, ResultsByOpening> mapgameByOpening = new HashMap<Integer, ResultsByOpening>();
+		for(Game g : games){
+			ResultsByOpening results = mapgameByOpening.get(g.getOpening().getId());
+			
+			if(results == null){
+				results = new ResultsByOpening(g.getOpening());
+			}
+			results.addResult(g.getResult());
+			mapgameByOpening.put(g.getOpening().getId(), results);
+		}
+		
+		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
+			OpeningAnaysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
 		}
 	}
 
-	public void analyzePlayers() {	
+	public void analyzePlayers() {
+		PlayerAnalysis pa = new PlayerAnalysis();
 		for(Game game : this.getGames()){
-			PlayerAnalysis.getPlayerStats(game);
+			pa.getPlayerStats(game);
 		}	
-		PlayerAnalysis.savePlayersToJSON();
+		pa.savePlayersToJSON();
+		GlobalStats.getGlobalBestPlayers(pa.getPlayers());
 	}
 
 	public List<Game> getGames() {
@@ -66,5 +78,6 @@ public class Analysis {
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}
+
 
 }

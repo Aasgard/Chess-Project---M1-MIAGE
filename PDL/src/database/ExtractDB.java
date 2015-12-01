@@ -83,12 +83,6 @@ public class ExtractDB{
 		return nb_event;
 	}
 
-	public static HashMap<Opening, List<Integer>> extractResultsByOpening() {
-		// TODO Auto-generated method s tub
-		return null;
-	}
-
-
 	public static HashMap<String, List<Move>> extractGameAndMoveByPosition() {
 		// TODO Auto-generated method stub
 		return null;

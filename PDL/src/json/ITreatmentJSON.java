@@ -14,7 +14,7 @@ public interface ITreatmentJSON {
 	
 	public void savePlayersToJSON(List<Player> players);
 
-	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo)throws IOException;
+	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo);
 
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events);
 	
