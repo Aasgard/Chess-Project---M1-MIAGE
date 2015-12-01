@@ -74,19 +74,11 @@ public class Analysis {
 		}
 		
 		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
-			HashMap<Opening, List<Integer>> rateByOpening = OpeningAnalysis.getWinRateOpening(gameByOpening.getValue().getOpening(), gameByOpening.getValue().getResults());
-			
-			// On récupère l'opening avec ses stats
-			for(Entry<Opening, List<Integer>> opening :  rateByOpening.entrySet()){
-				Opening o = opening.getKey();
-				int nbWhite = opening.getValue().get(0);
-				int nbBlack = opening.getValue().get(1);
-				int exaequo = opening.getValue().get(2);
+			List<Integer> rateByOpening = OpeningAnalysis.getWinRateOpening(gameByOpening.getValue().getResults());
 				
-				// Sauvegarde de l'opening
-				TreatmentJSON treatmentJSON = new TreatmentJSON();				
-				treatmentJSON.saveWinRateOpening(o, nbWhite, nbBlack, exaequo);
-			}
+			// Sauvegarde de l'opening
+			TreatmentJSON treatmentJSON = new TreatmentJSON();				
+			treatmentJSON.saveWinRateOpening(gameByOpening.getValue().getOpening(), rateByOpening.get(0), rateByOpening.get(1), rateByOpening.get(2));
 		}
 	}
 
