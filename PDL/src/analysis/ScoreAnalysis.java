@@ -8,9 +8,6 @@ import object.Move;
 
 public class ScoreAnalysis {
 	
-	private static List<FEN> scores;
-	//private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	
 	/**
 	 * Analyze the score of a game
 	 * @param game to analyze
@@ -19,12 +16,10 @@ public class ScoreAnalysis {
 		
 		int previousScore = 0;
 		int sumScoreVariation = 0;
-		scores = new ArrayList<FEN>();
 		
 		for(Move move : game.getAlMoves()){
 			
 			FEN fen = move.getFen();
-			scores.add(fen); 
 			
 			sumScoreVariation =+ calculVariationScore(previousScore, fen.getScore());
 			previousScore = fen.getScore();
