@@ -1,18 +1,15 @@
 package analysis;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import json.ITreatmentJSON;
 import json.TreatmentJSON;
 import object.*;
 
-public class OpeningAnaysis {
-	
-	private static int nbWhite;
-	private static int nbBlack;
-	private static int exaequo;
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+public class OpeningAnalysis {
 	
 	/**
 	 * Calcul and save win rate for the opening
@@ -20,10 +17,13 @@ public class OpeningAnaysis {
 	 * @param games
 	 * @throws IOException 
 	 */
-	public static void getWinRateOpening(Opening o, List<Integer> value){
-		nbWhite = 0;
-		nbBlack = 0;
-		exaequo = 0;
+	public static List<Integer> getWinRateOpening(List<Integer> value){
+		List<Integer> results = new ArrayList<Integer>();
+		
+		int nbWhite = 0;
+		int nbBlack = 0;
+		int exaequo = 0;
+		
 		for(int result : value){
 			//White player win
 			if(result == 0)
@@ -34,7 +34,12 @@ public class OpeningAnaysis {
 				exaequo++;
 		}
 		
-		treatmentJSON.saveWinRateOpening(o, nbWhite, nbBlack, exaequo);
+		// Ajoute les totaux 
+		results.add(nbWhite);
+		results.add(nbBlack);
+		results.add(exaequo);
+		
+		return results;
 	}
 
 }

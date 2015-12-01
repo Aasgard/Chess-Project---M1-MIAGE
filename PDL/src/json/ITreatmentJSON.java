@@ -20,5 +20,4 @@ public interface ITreatmentJSON {
 
 	public void saveBestFenToJSON(String position, GameAndNextMove[] tableaubest_GameAndNextMove);
 	
-	
 }

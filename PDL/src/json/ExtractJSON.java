@@ -41,7 +41,7 @@ public class ExtractJSON implements IGlobalJSON{
 				int inconnu = 0;
 				List<Move> allMoves = null;
 				String pgn = "";
-				double score_total_variation = 0;
+				int score_total_variation = 0;
 			
 				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn, score_total_variation );
 				return game;
@@ -53,12 +53,13 @@ public class ExtractJSON implements IGlobalJSON{
 	public static JSONArray deleteJsonObject(JSONObject myJsonObject, String objectName){
 		JSONArray jsonArray = readJSONFile(objectName);
 
-		
-		for(int i = 0; i < jsonArray.length(); i++) {
-			JSONObject gameObject = jsonArray.getJSONObject(i);
-			if (gameObject.getInt(ID) == myJsonObject.getInt(ID)){
-				jsonArray.remove(i);
-				break;
+		if(!myJsonObject.toString().equals("{}")) {
+			for(int i = 0; i < jsonArray.length(); i++) {
+				JSONObject gameObject = jsonArray.getJSONObject(i);
+				if (gameObject.getInt(ID) == myJsonObject.getInt(ID)){
+					jsonArray.remove(i);
+					break;
+				}
 			}
 		}
 		return jsonArray;
