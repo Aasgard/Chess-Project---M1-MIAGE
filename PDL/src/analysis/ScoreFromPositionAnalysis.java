@@ -13,7 +13,6 @@ import object.Move;
 public class ScoreFromPositionAnalysis {
 
 	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-	private static ExtractJSON extractJSON = new ExtractJSON();
 	private FEN bestFEN;
 	
 	public ScoreFromPositionAnalysis(){
@@ -33,7 +32,7 @@ public class ScoreFromPositionAnalysis {
 			
 			// Parcours les moves d'une partie
 			for(Move move: moves){
-				this.isBestMove(extractJSON.extractFENAfterMove(move));
+				this.isBestMove(ExtractJSON.extractFENAfterMove(move));
 			}
 		}
 

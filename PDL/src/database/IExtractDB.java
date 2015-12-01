@@ -19,10 +19,5 @@ public interface IExtractDB {
 	 */
 	List<Game> extractGames();
 	
-	/**
-	 * extract next move after each position
-	 * @return
-	 */
-	HashMap<String, List<Move>> extractGameAndMoveByPosition();
 	
 }

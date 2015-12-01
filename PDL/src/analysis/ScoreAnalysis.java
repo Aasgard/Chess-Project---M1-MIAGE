@@ -2,7 +2,6 @@ package analysis;
 
 import java.util.*;
 
-import json.*;
 import object.FEN;
 import object.Game;
 import object.Move;

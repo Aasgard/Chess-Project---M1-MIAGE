@@ -1,7 +1,5 @@
 package analysis;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -22,10 +20,6 @@ public class Analysis {
 		for(Game game : this.getGames()){
 			ScoreAnalysis.analyzeScore(game);
 		}
-	}
-
-	public static void globalPlayer(){
-		//TODO : a voir
 	}
 	
 	public void globalStats(){
