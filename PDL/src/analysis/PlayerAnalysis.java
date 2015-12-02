@@ -96,11 +96,12 @@ public class PlayerAnalysis {
 		boolean currentIsMateBlack = false;
 		
 		for(Move move : moves) {
-			
+
+			System.out.println("Move !");
 			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
-				
+				if (currentIsMateWhite) System.out.println("Erreur trouvé");
 				// erreur du joueur blanc
 				if(previousIsMateWhite && !currentIsMateWhite) {
 					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());
