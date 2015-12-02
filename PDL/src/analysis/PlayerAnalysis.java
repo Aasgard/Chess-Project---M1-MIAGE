@@ -63,8 +63,6 @@ public class PlayerAnalysis {
 		// add player to the list
 		addPlayer(whitePlayer, whiteWinner);
 		addPlayer(blackPlayer, blackWinner);
-		System.out.println("nom white : " + whitePlayer.getName());
-		System.out.println("nom black : " + blackPlayer.getName());
 	}
 	
 	/**
