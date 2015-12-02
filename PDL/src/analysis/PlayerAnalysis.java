@@ -167,6 +167,7 @@ public class PlayerAnalysis {
 	 * Enregistre tous les players dans un json
 	 */
 	public void savePlayersToJSON() {
+		System.out.println("taille players : " + players.size());
 		treatmentJSON.savePlayersToJSON(players);
 	}
 

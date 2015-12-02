@@ -60,7 +60,7 @@ public class Move {
 			String chaineVoulue = splittedLogs[splittedLogs.length - 2];
 			String mate = chaineVoulue.split(" ")[8];
 			
-			if(mate == "mate") {
+			if(mate.equals("mate")) {
 				return true;
 			}
 		} catch (Exception e) {}

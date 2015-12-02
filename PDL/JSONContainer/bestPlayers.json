@@ -1,0 +1,31 @@
+
+[
+{
+ "best_players": [
+  {
+   "name": "Mamedjarova,Z",
+   "nb_games_win": 2,
+   "rang": 1
+  },
+  {
+   "name": "Simantsev,M",
+   "nb_games_win": 1,
+   "rang": 2
+  },
+  {
+   "name": "Kislinsky,A",
+   "nb_games_win": 0,
+   "rang": 3
+  },
+  {
+   "nb_games_win": 0,
+   "rang": 4
+  },
+  {
+   "nb_games_win": 0,
+   "rang": 5
+  }
+ ],
+ "id": 1
+}
+]

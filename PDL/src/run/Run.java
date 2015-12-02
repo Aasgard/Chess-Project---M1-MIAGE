@@ -16,19 +16,19 @@ public class Run {
 	
 	public static void main(String[] args) throws JSchException, SftpException {
 		
-		/* Initialisation du chronomètre */
+		/* Initialisation du chronomï¿½tre */
 		StopWatch sw = new StopWatch();
 		
 		Analysis anal = new Analysis();
 		
 		Folder jsoncontainer = new Folder("JSONContainer");
 		
-		SFTP sftp = new SFTP("gesticompte", "sarzeau56370", "109.8.192.56", 22);
+		//SFTP sftp = new SFTP("gesticompte", "sarzeau56370", "109.8.192.56", 22);
 	
 		@SuppressWarnings("unused")
 		List<Game> alGames = anal.getGames();
 		
-		/* Génération des fichiers JSON de la Homepage */
+		/* Gï¿½nï¿½ration des fichiers JSON de la Homepage */
 		anal.globalStats();
 		anal.analyzePlayers();
 		anal.analyzeScoreGame();
@@ -38,17 +38,17 @@ public class Run {
 		//anal.bestPlayers();
 		//anal.bestGames();
 		
-		/* Transfert des fichiers générés sur le serveur Web distant */
-		sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
+		/* Transfert des fichiers gï¿½nï¿½rï¿½s sur le serveur Web distant */
+		//sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		
 		System.out.println("Temps mis : " + sw.elapsedTime() + " secondes.");
-		System.out.println("Fichiers transférés. Déconnexion du serveur SFTP ...");
-		sftp.closeConnection();
-		System.out.println("SFTP terminé. Script d'analyse terminé.");
+		System.out.println("Fichiers transfï¿½rï¿½s. Dï¿½connexion du serveur SFTP ...");
+		//sftp.closeConnection();
+		System.out.println("SFTP terminï¿½. Script d'analyse terminï¿½.");
 		
 		jsoncontainer.printFolder();
 		
