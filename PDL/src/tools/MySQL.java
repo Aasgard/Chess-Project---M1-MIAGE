@@ -22,7 +22,7 @@ public class MySQL {
         String dbName = "pdl2";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
-        String password = "root";
+        String password = "";
         
         try {
             Class.forName(driver).newInstance();
