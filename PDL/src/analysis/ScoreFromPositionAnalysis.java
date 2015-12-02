@@ -23,15 +23,14 @@ public class ScoreFromPositionAnalysis {
 		for(int i = 0; i<5; i++){
 			tableaubest_GameAndNextMove[i] = new GameAndNextMove();
 		}
+		System.out.println(movesByGame.size());
 		for(GameAndNextMove gameAndNextMove : movesByGame){
 			int j = 0;
 			boolean find = false;
 			while(j < tableaubest_GameAndNextMove.length && !find){
 				if(tableaubest_GameAndNextMove[j].getMove().getFen().getScore() <= gameAndNextMove.getMove().getFen().getScore()){
 
-					System.out.println("test if j = " + j);
 					for(int k = tableaubest_GameAndNextMove.length-1 ; k > j ; k--){
-						System.out.println("test");
 						tableaubest_GameAndNextMove[k] = tableaubest_GameAndNextMove[k-1];
 					}
 					tableaubest_GameAndNextMove[j] = gameAndNextMove;

@@ -7,7 +7,7 @@ public class FEN {
 	private String log;
 	
 	public FEN(){
-		this.score = -1;
+		this.score = Integer.MIN_VALUE;
 	}
 	
 	

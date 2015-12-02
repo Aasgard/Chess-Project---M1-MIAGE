@@ -51,29 +51,29 @@ public class Analysis {
 					if(it.hasNext()){
 
 						Move next = it.next();
-						
-						List<GameAndNextMove> gameAndMoveList = mapFenMoves.get(currentMove.getFen().getPosition());
-						if(gameAndMoveList == null){
-							gameAndMoveList = new ArrayList<GameAndNextMove>();
-						}
-						GameAndNextMove ganm = new GameAndNextMove(game.getId(), next);
-						gameAndMoveList.add(ganm);
 
-						mapFenMoves.put(currentMove.getFen().getPosition(), gameAndMoveList);
-						currentMove = next;
+							List<GameAndNextMove> gameAndMoveList = mapFenMoves.get(currentMove.getFen().getPosition());
+							if(gameAndMoveList == null){
+								gameAndMoveList = new ArrayList<GameAndNextMove>();
+							}
+							GameAndNextMove ganm = new GameAndNextMove(game.getId(), next);
+							gameAndMoveList.add(ganm);
+
+							mapFenMoves.put(currentMove.getFen().getPosition(), gameAndMoveList);
+							currentMove = next;
+
 					}else{
 						currentMove = null;
 					}
 				}
-
 			}
 		}
 		// Sauvegarde le meilleur Fen pour une position
 		
 		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
-		System.out.println("mapFenMoves.entrySet() " + mapFenMoves.entrySet().size());
 		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
-			sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
+			if(fenMoves.getValue().size() > 1)
+				sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
 		}
 		
 	}

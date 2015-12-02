@@ -301,14 +301,17 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		JSONArray objectGamesAndNextMove = new JSONArray();
 		for(int i = 0 ; i < gameAndNextMove.length ; i++){
 
-			JSONObject gameAndNextMoveJSON = new JSONObject();
 			int idGame = gameAndNextMove[i].getGameID();
-			int score = gameAndNextMove[i].getMove().getFen().getScore();
-			String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
-			gameAndNextMoveJSON.put( ID_GAME , idGame);
-			gameAndNextMoveJSON.put( SCORE , score);
-			gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
-			objectGamesAndNextMove.put(gameAndNextMove);
+			if(idGame != -1){
+
+				JSONObject gameAndNextMoveJSON = new JSONObject();
+				int score = gameAndNextMove[i].getMove().getFen().getScore();
+				String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
+				gameAndNextMoveJSON.put( ID_GAME , idGame);
+				gameAndNextMoveJSON.put( SCORE , score);
+				gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
+				objectGamesAndNextMove.put(gameAndNextMoveJSON);
+			}
 		}	
 		object.put(ID, position);
 		object.put(NEXTS, objectGamesAndNextMove);
