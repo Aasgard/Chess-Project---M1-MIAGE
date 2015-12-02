@@ -16,7 +16,7 @@ public class Run {
 	
 	public static void main(String[] args) throws JSchException, SftpException {
 		
-		/* Initialisation du chronomètre */
+		/* Initialisation du chronomï¿½tre */
 		StopWatch sw = new StopWatch();
 		
 		Analysis anal = new Analysis();
@@ -28,17 +28,16 @@ public class Run {
 		@SuppressWarnings("unused")
 		List<Game> alGames = anal.getGames();
 		
-		/* Génération des fichiers JSON de la Homepage */
+		/* Gï¿½nï¿½ration des fichiers JSON de la Homepage */
 		anal.globalStats();
 		anal.analyzePlayers();
 		anal.analyzeScoreGame();
 		anal.globalBestGame();
 		anal.analyzeOpenings();
 		anal.analyzeScoreEvolutionFromPosition();
-		//anal.bestPlayers();
-		//anal.bestGames();
+		anal.saveGames();
 		
-		/* Transfert des fichiers générés sur le serveur Web distant */
+		/* Transfert des fichiers gï¿½nï¿½rï¿½s sur le serveur Web distant */
 		sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
@@ -46,8 +45,8 @@ public class Run {
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		
 		System.out.println("Temps mis : " + sw.elapsedTime() + " secondes.");
-		System.out.println("Fichiers transférés. Déconnexion du serveur SFTP ...");
-		sftp.closeConnection();
+		System.out.println("Fichiers transférés. Dï¿½connexion du serveur SFTP ...");
+		//sftp.closeConnection();
 		System.out.println("SFTP terminé. Script d'analyse terminé.");
 		
 		jsoncontainer.printFolder();

@@ -63,8 +63,6 @@ public class PlayerAnalysis {
 		// add player to the list
 		addPlayer(whitePlayer, whiteWinner);
 		addPlayer(blackPlayer, blackWinner);
-		System.out.println("nom white : " + whitePlayer.getName());
-		System.out.println("nom black : " + blackPlayer.getName());
 	}
 	
 	/**
@@ -170,6 +168,7 @@ public class PlayerAnalysis {
 	 * Enregistre tous les players dans un json
 	 */
 	public void savePlayersToJSON() {
+		System.out.println("taille players : " + players.size());
 		treatmentJSON.savePlayersToJSON(players);
 	}
 

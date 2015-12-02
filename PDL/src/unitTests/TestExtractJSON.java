@@ -48,8 +48,24 @@ public class TestExtractJSON {
 		// suppression du jsonObj dans le fichier
 		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObj, PATH_TEST_CORRIGE + fileName);
 		
-		// test si le jsonArray est null
+		// test si le jsonArray ne contient pas le jsonObj
 		assertFalse(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
+	}
+	
+	/**
+	 * Test de suppression d'un JSONObject vide dans un fichier inexistant
+	 */
+	@Test
+	public void testdeleteJsonObject3() {
+		// variables utilisées dans deleteJsonObject
+		JSONObject jsonObj = new JSONObject();
+		String fileName = "not.json";
+		
+		// suppression du jsonObj dans le fichier
+		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObj, PATH_TEST_CORRIGE + fileName);
+		
+		// test si le jsonArray est null
+		assertNull(jsonArray);
 	}
 
 	/**

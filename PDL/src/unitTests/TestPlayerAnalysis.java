@@ -57,22 +57,9 @@ public class TestPlayerAnalysis {
 	public void testCheckBlunderMat(){
 		
 		/* Expected */
-		List<Player> expected = new ArrayList<Player>();
-		
 		// Définit une erreur pour le joueur blanc
-		Player whitePlayer = new Player();
 		ErrorPlayer expErrorWHite = new ErrorPlayer(1, 1);
 		
-		// Aucune erreur pour le joueur noir
-		Player blackPlayer = new Player();
-		List<ErrorPlayer> expErrorBlack = new ArrayList<ErrorPlayer>();
-		blackPlayer.setErrors(expErrorBlack);
-		
-		expected.add(whitePlayer);
-		expected.add(blackPlayer);
-		
-		
-		/* Initialisation */
 		
 		// ErrorPlayer
 		ErrorPlayer errorWhite = new ErrorPlayer(1, 0);
@@ -82,8 +69,6 @@ public class TestPlayerAnalysis {
 		PlayerAnalysis playerAnalysis = new PlayerAnalysis();
 		playerAnalysis.checkBlunderMat(moves, errorWhite, errorBlack);
 		
-		System.out.println("Erreurs black : " + errorBlack.getNb_of_error());
-		System.out.println("Erreurs white : " + errorWhite.getNb_of_error());
 		// Test si le joueur blanc a une erreur
 		assertEquals(expErrorWHite.getNb_of_error(), errorWhite.getNb_of_error());
 	}
@@ -94,7 +79,7 @@ public class TestPlayerAnalysis {
 		
 		/* Initialisation */
 		
-		
+		P
 		
 		// - Game
 		Game g = new Game();
