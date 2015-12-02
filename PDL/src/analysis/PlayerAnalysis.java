@@ -98,10 +98,14 @@ public class PlayerAnalysis {
 			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
+				if(currentIsMateWhite) {
+					System.out.println("mate");
+				}
 				
 				// erreur du joueur blanc
 				if(previousIsMateWhite && !currentIsMateWhite) {
 					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());
+					System.out.println("\n Blunder \n");
 				}
 				
 				previousIsMateWhite = currentIsMateWhite;
@@ -109,10 +113,14 @@ public class PlayerAnalysis {
 			// blackPlayer is playing
 			else {
 				currentIsMateBlack = move.isMate();
+				if(currentIsMateBlack) {
+					System.out.println("mate");
+				}
 				
 				// erreur du joueur noir
 				if(previousIsMateBlack && !currentIsMateBlack) {
 					addErrorToErrorPlayer(errorBlackPlayer, move.getFen().getPosition());
+					System.out.println("\n Blunder \n");
 				}
 				
 				previousIsMateBlack = currentIsMateBlack;

@@ -3,6 +3,8 @@ package unitTests;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import json.ExtractJSON;
+
 public class UtilsTests {
 
 	/**
@@ -44,6 +46,13 @@ public class UtilsTests {
 			}
 		}
 		return false;
+	}
+	
+	public static void deleteJsonObjectFromFile(JSONObject jsonObject, String objectName) {
+		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObject, objectName);
+		
+		JSONObject newJson = new JSONObject();
+		
 	}
 	
 }
