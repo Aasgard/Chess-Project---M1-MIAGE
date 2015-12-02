@@ -307,7 +307,9 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				JSONObject gameAndNextMoveJSON = new JSONObject();
 				int score = gameAndNextMove[i].getMove().getFen().getScore();
 				String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
+				int idMove = gameAndNextMove[i].getMove().getNum();
 				gameAndNextMoveJSON.put( ID_GAME , idGame);
+				gameAndNextMoveJSON.put(ID_MOVE, idMove);
 				gameAndNextMoveJSON.put( SCORE , score);
 				gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
 				objectGamesAndNextMove.put(gameAndNextMoveJSON);

@@ -33,7 +33,7 @@ public class ExtractJSON implements IGlobalJSON{
 
 		for(int i = 0; i < gamesArray.length(); i++) {
 			JSONObject gameObject = gamesArray.getJSONObject(i);
-			
+
 			if (idGame == gameObject.getInt( ID )){
 				Player whitePlayer = new Player(gameObject.getInt( ID_WHITE ));
 				Player blackPlayer = new Player(gameObject.getInt( ID_BLACK ));
@@ -42,7 +42,7 @@ public class ExtractJSON implements IGlobalJSON{
 				List<Move> allMoves = null;
 				String pgn = "";
 				int score_total_variation = 0;
-			
+
 				Game game = new Game(idGame, allMoves, whitePlayer, blackPlayer, null, null, inconnu, date, inconnu, inconnu, pgn, score_total_variation );
 				return game;
 			}
@@ -54,11 +54,13 @@ public class ExtractJSON implements IGlobalJSON{
 		JSONArray jsonArray = readJSONFile(objectName);
 
 		if(!myJsonObject.toString().equals("{}")) {
-			for(int i = 0; i < jsonArray.length(); i++) {
+			int i = 0;
+			boolean find = false;
+			while (i < jsonArray.length() && !find){
 				JSONObject gameObject = jsonArray.getJSONObject(i);
-				if (gameObject.getInt(ID) == myJsonObject.getInt(ID)){
+				if (gameObject.get(ID).equals(myJsonObject.get(ID))){
 					jsonArray.remove(i);
-					break;
+					find = true;
 				}
 			}
 		}
@@ -82,7 +84,7 @@ public class ExtractJSON implements IGlobalJSON{
 			e.printStackTrace();
 		}
 		JSONArray jsonArray = null;
-		
+
 		if (!result.isEmpty()){
 			jsonArray= new JSONArray(result);
 		}
@@ -112,8 +114,8 @@ public class ExtractJSON implements IGlobalJSON{
 		// TODO getJsonOpening
 		return null;
 	}
-	
-	
+
+
 	/**
 	 * Read the Json Object to find the opening with this id
 	 * 
@@ -126,31 +128,31 @@ public class ExtractJSON implements IGlobalJSON{
 		JSONArray positionArray = readJSONFile( RANKINGPOSITION_FILE );
 
 		JSONObject positionFind = null;
-		
+
 		if (positionArray == null){
 			positionArray = new JSONArray();
 		}
-		
+
 		int i = 0;
 		boolean find = false;
 		while(i< positionArray.length() && !find){
 			JSONObject positionObject = positionArray.getJSONObject(i);
 
-				if(positionObject.get(ID) == position){
-					find = true;
-					positionFind = positionObject;
-				}
-				i++;
+			if(positionObject.get(ID).equals(position)){
+				find = true;
+				positionFind = positionObject;
+			}
+			i++;
 		}		
 		return positionFind;
 	}
-	
+
 	public static Player getJsonPlayer(int idPlayer) throws IOException{
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 		Player player = null;
 		for(int i = 0; i < playersArray.length(); i++) {
 			JSONObject playerObject = playersArray.getJSONObject(i);
-			
+
 			if (idPlayer == playerObject.getInt( ID )){
 				String name = playerObject.getString( NAME );
 				List<ErrorPlayer> errors = new ArrayList<ErrorPlayer>();
@@ -169,33 +171,33 @@ public class ExtractJSON implements IGlobalJSON{
 				}
 				int nb_game_played = playerObject.getInt( NB_GAME_PLAYED );
 				int nb_win = playerObject.getInt( NB_GAME_WIN );
-			
+
 				player = new Player();
 				player.setId(idPlayer);
 				player.setName(name);
 				player.setErrors(errors);
 				player.setNb_game_played(nb_game_played);
 				player.setNbGameWin(nb_win);
-				
+
 			}
 		}
 		return player;
 	}
-	
+
 	public static JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
-	
+
 		if(playersArray == null){
 			playersArray = new JSONArray();
 		}
 		for(int i = 0; i < playersArray.length(); i++) {
 			JSONObject playerObject = playersArray.getJSONObject(i);
-			
+
 			if(idPlayer == playerObject.getInt(ID)) {
 				return playerObject;
 			}
 		}
-		
+
 		return null;
 	}
 

@@ -55,7 +55,7 @@ public interface IGlobalJSON {
 	public final String COLOR = "color";
 	
 	//CONSTANTE RANKINGPOSITION
-	public final String ID_POSITION = "id_position";
+	public final String ID_MOVE = "id_move";
 	public final String INIT_FEN = "init_fen";
 	public final String FEN_NEXT_POSITION = "fen_next_position";
 	public final String NEXTS = "nexts";
