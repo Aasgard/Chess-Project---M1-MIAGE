@@ -23,7 +23,6 @@ public class ScoreFromPositionAnalysis {
 		for(int i = 0; i<5; i++){
 			tableaubest_GameAndNextMove[i] = new GameAndNextMove();
 		}
-		System.out.println(movesByGame.size());
 		for(GameAndNextMove gameAndNextMove : movesByGame){
 			int j = 0;
 			boolean find = false;
