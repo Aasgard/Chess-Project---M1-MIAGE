@@ -1,7 +1,7 @@
 [
 {
  "nb_games_played": 2,
- "name": "2386",
+ "name": "Plischki,S",
  "id": 4,
  "nb_games_win": 1,
  "errors": []
@@ -15,7 +15,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2481",
+ "name": "Burg,T",
  "id": 6,
  "nb_games_win": 1,
  "errors": []
@@ -29,7 +29,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2474",
+ "name": "Stachowiak,K",
  "id": 8,
  "nb_games_win": 0,
  "errors": []
@@ -43,7 +43,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2549",
+ "name": "Neiksans,A",
  "id": 10,
  "nb_games_win": 1,
  "errors": []
@@ -57,7 +57,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2498",
+ "name": "Andreev,Ed UKR",
  "id": 12,
  "nb_games_win": 1,
  "errors": []
@@ -71,7 +71,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2422",
+ "name": "Smirnov,Arte",
  "id": 14,
  "nb_games_win": 1,
  "errors": []
@@ -85,7 +85,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2486",
+ "name": "Zaragatski,I",
  "id": 16,
  "nb_games_win": 1,
  "errors": []
@@ -99,7 +99,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2581",
+ "name": "Babula,V",
  "id": 18,
  "nb_games_win": 1,
  "errors": [{
@@ -117,7 +117,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2330",
+ "name": "Berry,S",
  "id": 20,
  "nb_games_win": 0,
  "errors": []
@@ -135,7 +135,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2320",
+ "name": "Kantans,T",
  "id": 22,
  "nb_games_win": 0,
  "errors": [{
@@ -153,7 +153,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2303",
+ "name": "Tuma,Ja",
  "id": 24,
  "nb_games_win": 0,
  "errors": []
@@ -167,7 +167,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2375",
+ "name": "Dolezal,Ra1",
  "id": 26,
  "nb_games_win": 1,
  "errors": []
@@ -181,7 +181,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2085",
+ "name": "Stastny,Pe",
  "id": 28,
  "nb_games_win": 0,
  "errors": []
@@ -195,7 +195,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2350",
+ "name": "Jurcik,Mart",
  "id": 30,
  "nb_games_win": 1,
  "errors": []
@@ -209,7 +209,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2169",
+ "name": "Steiner,B",
  "id": 32,
  "nb_games_win": 0,
  "errors": []
@@ -223,7 +223,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2166",
+ "name": "Kozak,Mi",
  "id": 34,
  "nb_games_win": 0,
  "errors": []
@@ -237,7 +237,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2463",
+ "name": "Cernousek,L",
  "id": 36,
  "nb_games_win": 1,
  "errors": []
@@ -251,7 +251,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2445",
+ "name": "Plat,V",
  "id": 38,
  "nb_games_win": 1,
  "errors": []
@@ -265,7 +265,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2412",
+ "name": "Biolek,R1",
  "id": 40,
  "nb_games_win": 1,
  "errors": []
@@ -279,7 +279,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2164",
+ "name": "Hrbolka,L jr",
  "id": 42,
  "nb_games_win": 1,
  "errors": []
@@ -293,7 +293,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2399",
+ "name": "Bures,J",
  "id": 44,
  "nb_games_win": 0,
  "errors": []
@@ -307,7 +307,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2145",
+ "name": "Janda,Z",
  "id": 46,
  "nb_games_win": 0,
  "errors": []
@@ -321,7 +321,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2124",
+ "name": "Friml,A",
  "id": 48,
  "nb_games_win": 0,
  "errors": []
@@ -335,7 +335,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2111",
+ "name": "Pedersen,HB",
  "id": 50,
  "nb_games_win": 0,
  "errors": []
@@ -349,7 +349,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2070",
+ "name": "Slampa,J",
  "id": 52,
  "nb_games_win": 0,
  "errors": []
@@ -367,7 +367,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2039",
+ "name": "Vykouk,Jan",
  "id": 54,
  "nb_games_win": 0,
  "errors": []
@@ -381,7 +381,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2231",
+ "name": "Jedlicka,A",
  "id": 56,
  "nb_games_win": 1,
  "errors": [{
@@ -399,7 +399,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2196",
+ "name": "Bartos,J",
  "id": 58,
  "nb_games_win": 1,
  "errors": []
@@ -413,7 +413,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2038",
+ "name": "Mikes,J",
  "id": 60,
  "nb_games_win": 0,
  "errors": []
@@ -427,7 +427,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1916",
+ "name": "Gungl,T",
  "id": 62,
  "nb_games_win": 0,
  "errors": []
@@ -441,7 +441,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2267",
+ "name": "Sadilek,P",
  "id": 64,
  "nb_games_win": 1,
  "errors": []
@@ -455,7 +455,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1997",
+ "name": "Grussova,H",
  "id": 66,
  "nb_games_win": 0,
  "errors": []
@@ -469,7 +469,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2255",
+ "name": "Ptacnikova,L",
  "id": 68,
  "nb_games_win": 1,
  "errors": []
@@ -483,7 +483,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1977",
+ "name": "Horak,Ales",
  "id": 70,
  "nb_games_win": 1,
  "errors": []
@@ -497,7 +497,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2212",
+ "name": "Schou Moldt,T",
  "id": 72,
  "nb_games_win": 1,
  "errors": []
@@ -511,7 +511,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1968",
+ "name": "Ta,V",
  "id": 74,
  "nb_games_win": 0,
  "errors": []
@@ -525,7 +525,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2198",
+ "name": "Furman,Bo",
  "id": 76,
  "nb_games_win": 0,
  "errors": []
@@ -539,7 +539,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1933",
+ "name": "Dolezal,Ra2",
  "id": 78,
  "nb_games_win": 0,
  "errors": []
@@ -553,7 +553,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2137",
+ "name": "Thestrup,S",
  "id": 80,
  "nb_games_win": 1,
  "errors": [{
@@ -571,7 +571,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1901",
+ "name": "Konvalinka,Vladislav",
  "id": 82,
  "nb_games_win": 0,
  "errors": []
@@ -585,7 +585,7 @@
 },
 {
  "nb_games_played": 2,
- "name": "2052",
+ "name": "Toman,Ondrej",
  "id": 84,
  "nb_games_win": 1,
  "errors": []
@@ -599,7 +599,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1817",
+ "name": "Badelka,Olga",
  "id": 86,
  "nb_games_win": 0,
  "errors": [{
@@ -617,7 +617,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1812",
+ "name": "Rasmussen,He2",
  "id": 88,
  "nb_games_win": 0,
  "errors": []
@@ -631,7 +631,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1917",
+ "name": "Andersen,Dani",
  "id": 90,
  "nb_games_win": 0,
  "errors": []
@@ -645,7 +645,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2079",
+ "name": "Zahour,Ivan",
  "id": 92,
  "nb_games_win": 1,
  "errors": []
@@ -659,7 +659,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1894",
+ "name": "Kula,Dominik",
  "id": 94,
  "nb_games_win": 1,
  "errors": []
@@ -673,7 +673,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2029",
+ "name": "Jensen,Le1",
  "id": 96,
  "nb_games_win": 0,
  "errors": []
@@ -687,7 +687,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2009",
+ "name": "Treppendahl,T",
  "id": 98,
  "nb_games_win": 0,
  "errors": []
@@ -701,7 +701,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2006",
+ "name": "Gratze,M",
  "id": 100,
  "nb_games_win": 1,
  "errors": []
@@ -715,7 +715,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1863",
+ "name": "Okrouhlik,Zdenek",
  "id": 102,
  "nb_games_win": 1,
  "errors": []
@@ -729,7 +729,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1971",
+ "name": "Tejkal,J",
  "id": 104,
  "nb_games_win": 0,
  "errors": []
@@ -743,7 +743,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1801",
+ "name": "Hansen,HenrikD",
  "id": 106,
  "nb_games_win": 0,
  "errors": []
@@ -757,7 +757,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1964",
+ "name": "Smolik,Boris",
  "id": 108,
  "nb_games_win": 1,
  "errors": []
@@ -771,7 +771,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "0",
+ "name": "Bublik,Frantisek",
  "id": 110,
  "nb_games_win": 0,
  "errors": [{
@@ -793,7 +793,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1947",
+ "name": "Papay,J",
  "id": 112,
  "nb_games_win": 1,
  "errors": []
@@ -807,7 +807,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1736",
+ "name": "Krutsky,Martin",
  "id": 114,
  "nb_games_win": 0,
  "errors": []
@@ -821,7 +821,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1936",
+ "name": "Klakurka,S",
  "id": 116,
  "nb_games_win": 1,
  "errors": []
@@ -835,7 +835,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "0",
+ "name": "Zeman,Lukas",
  "id": 118,
  "nb_games_win": 0,
  "errors": []
@@ -849,7 +849,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2001",
+ "name": "Vrchotka,J",
  "id": 120,
  "nb_games_win": 1,
  "errors": []
@@ -863,7 +863,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1735",
+ "name": "Balka,L",
  "id": 122,
  "nb_games_win": 0,
  "errors": []
@@ -877,7 +877,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1750",
+ "name": "Straslipka,Jiri",
  "id": 124,
  "nb_games_win": 0,
  "errors": []
@@ -891,7 +891,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1826",
+ "name": "Frijling,J",
  "id": 126,
  "nb_games_win": 0,
  "errors": []
@@ -905,7 +905,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1820",
+ "name": "Hanzlik,David",
  "id": 128,
  "nb_games_win": 0,
  "errors": []
@@ -919,7 +919,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1798",
+ "name": "Egholm,Leif",
  "id": 130,
  "nb_games_win": 1,
  "errors": []
@@ -933,7 +933,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1778",
+ "name": "Parpel,P",
  "id": 132,
  "nb_games_win": 0,
  "errors": []
@@ -947,7 +947,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1792",
+ "name": "Kuchar,Tomas",
  "id": 134,
  "nb_games_win": 0,
  "errors": []
@@ -961,7 +961,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1779",
+ "name": "Huba,Mark J",
  "id": 136,
  "nb_games_win": 0,
  "errors": []
@@ -975,7 +975,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1767",
+ "name": "Hanzlik,Daniel",
  "id": 138,
  "nb_games_win": 1,
  "errors": []
@@ -993,7 +993,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1764",
+ "name": "Purkyt,Jaroslav",
  "id": 140,
  "nb_games_win": 1,
  "errors": []
@@ -1007,7 +1007,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1645",
+ "name": "Schoeppe,Christian",
  "id": 142,
  "nb_games_win": 0,
  "errors": []
@@ -1021,7 +1021,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1630",
+ "name": "Hellinger,Jan",
  "id": 144,
  "nb_games_win": 0,
  "errors": []
@@ -1035,7 +1035,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1753",
+ "name": "Mriso,Milos",
  "id": 146,
  "nb_games_win": 0,
  "errors": []
@@ -1049,7 +1049,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1575",
+ "name": "Steinhart,Roel",
  "id": 148,
  "nb_games_win": 1,
  "errors": []
@@ -1063,7 +1063,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "1391",
+ "name": "Nguyen,Thai Dai Vinh",
  "id": 150,
  "nb_games_win": 0,
  "errors": []
@@ -1077,7 +1077,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2514",
+ "name": "Teske,H",
  "id": 152,
  "nb_games_win": 0,
  "errors": []
@@ -1098,7 +1098,7 @@
 },
 {
  "nb_games_played": 1,
- "name": "2565",
+ "name": "Kislinsky,A",
  "id": 155,
  "nb_games_win": 0,
  "errors": []
