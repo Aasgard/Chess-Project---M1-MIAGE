@@ -290,8 +290,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	public void saveBestFenToJSON(String position, GameAndNextMove[] gameAndNextMove) {
 		
 		JSONObject object = ExtractJSON.getJsonPosition(position);
-		JSONArray objectArray = new JSONArray();
-		JSONObject objectToSave = new JSONObject();
 
 		boolean exists = true;
 		
@@ -304,17 +302,16 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		for(int i = 0 ; i < gameAndNextMove.length ; i++){
 
 			JSONObject gameAndNextMoveJSON = new JSONObject();
-			//gameAndNextMoveJSON.put( ID_POSITION , position); 
-			gameAndNextMoveJSON.put( ID_GAME , gameAndNextMove[i].getGameID());
-			gameAndNextMoveJSON.put( SCORE , gameAndNextMove[i].getMove().getFen().getScore());
-			gameAndNextMoveJSON.put( FEN_NEXT_POSITION , gameAndNextMove[i].getMove().getFen().getPosition());
+			int idGame = gameAndNextMove[i].getGameID();
+			int score = gameAndNextMove[i].getMove().getFen().getScore();
+			String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
+			gameAndNextMoveJSON.put( ID_GAME , idGame);
+			gameAndNextMoveJSON.put( SCORE , score);
+			gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
 			objectGamesAndNextMove.put(gameAndNextMove);
 		}	
-		objectToSave.put(ID_POSITION, position);
-		objectToSave.put(NEXTS, objectGamesAndNextMove);
-		objectArray.put(objectToSave);
 		object.put(ID, position);
-		object.put("caca", objectArray);
+		object.put(NEXTS, objectGamesAndNextMove);
 		saveInFile(object,RANKINGPOSITION_FILE, exists);	
 	}
 

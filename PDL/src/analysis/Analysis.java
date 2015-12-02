@@ -50,11 +50,12 @@ public class Analysis {
 
 					if(it.hasNext()){
 
+						Move next = it.next();
+						
 						List<GameAndNextMove> gameAndMoveList = mapFenMoves.get(currentMove.getFen().getPosition());
 						if(gameAndMoveList == null){
 							gameAndMoveList = new ArrayList<GameAndNextMove>();
 						}
-						Move next = it.next();
 						GameAndNextMove ganm = new GameAndNextMove(game.getId(), next);
 						gameAndMoveList.add(ganm);
 
