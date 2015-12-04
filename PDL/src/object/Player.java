@@ -12,6 +12,7 @@ public class Player {
 	private List<ErrorPlayer> errors;
 	private int nbGamePlayed;
 	private int nbGameWin;
+	private int nbGameLoose;
 	private Map<String, Integer> elos;
 	
 	
@@ -21,6 +22,7 @@ public class Player {
 		this.name = name;
 		this.nbGamePlayed = 0;
 		this.nbGameWin = 0;
+		this.nbGameLoose = 0;
 		this.errors = new ArrayList<ErrorPlayer>();
 		this.elos = new HashMap<String, Integer>();
 	}
@@ -82,11 +84,22 @@ public class Player {
 		this.nbGamePlayed++;
 	}
 	
+	public void addNbGameLoose(){
+		this.nbGameLoose++;
+	}
 	public void addElo(String date, int elo) {
 		this.elos.put(date, elo);
 	}
 	
 	public Map<String, Integer> getElos() {
 		return this.elos;
+	}
+
+	public int getNbGameLoose() {
+		return nbGameLoose;
+	}
+
+	public void setNbGameLoose(int nbGameLoose) {
+		this.nbGameLoose = nbGameLoose;
 	}
 }
