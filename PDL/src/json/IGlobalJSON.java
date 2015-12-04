@@ -26,13 +26,18 @@ public interface IGlobalJSON {
 	
 	//CONSTANTE GAME
 	public final String ID_WHITE = "id_white";
+	public final String NAME_WHITE = "name_white";
 	public final String ID_BLACK = "id_black";
+	public final String NAME_BLACK = "name_black";
+	public final String EVENT_NAME = "event_name";
 	public final String PGN = "pgn";
+	public final String ID_OPENING = "id_opening";
+	public final String DATE = "date";
+	public final String RESULT ="result";
+	
 	public final String EVOL_SCORE_MOVE = "evol_score_move";
 	public final String MOVE_AVERAGE = "move_average";
-	public final String DATE = "date";
 	public final String SCORE_TOTAL_VAR	= "score_total_variation";
-	public final String ID_OPENING = "id_opening";
 	public final String SCORES = "scores";
 	public final String NUMBER_MOVE = "number_move";
 	public final String SCORE = "score";
@@ -44,6 +49,7 @@ public interface IGlobalJSON {
 	public final String ERRORS_FEN = "errors_fen";
 	public final String NB_GAME_PLAYED = "nb_games_played";
 	public final String NB_GAME_WIN = "nb_games_win";
+	public final String NB_GAME_LOOSE= "nb_games_loose";
 	public final String ELOS = "elos";
 	public final String ELO = "elo";
 	
@@ -53,7 +59,7 @@ public interface IGlobalJSON {
 	public final String MOVES = "moves";
 	public final String WIN = "win";
 	public final String DATA = "data";
-	public final String Y = "Y";
+	public final String Y = "y";
 	public final String COLOR = "color";
 	
 	//CONSTANTE RANKINGPOSITION

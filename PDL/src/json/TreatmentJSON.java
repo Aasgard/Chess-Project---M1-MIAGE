@@ -2,6 +2,7 @@ package json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import object.ErrorPlayer;
 import object.FEN;
 import object.Game;
 import object.GameAndNextMove;
+import object.Move;
 import object.Opening;
 import object.Player;
 
@@ -73,7 +75,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			white.put(COLOR, "#F6F3EE");
 
 			JSONObject black = new JSONObject();
-			black.put(NAME, " Black");
+			black.put(NAME, "Black");
 			black.put(Y, nbBlack);
 			black.put(COLOR, "#494847");
 
@@ -146,7 +148,8 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			playerJSON.put(ID, player.getId());
 			playerJSON.put( NAME , player.getName());
 			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
-			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
+			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());	
+			playerJSON.put( NB_GAME_LOOSE, player.getNbGameLoose());
 			playerJSON.put( ERRORS , errorsJSONArray);
 			playerJSON.put( ELOS , elosJSONArray);
 
@@ -193,6 +196,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		} catch (IOException e) {
 		}
 	}
+	
 
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
@@ -269,6 +273,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			player.put( RANG_PLAYER, rang);
 			player.put( NAME , players[i].getName());
 			player.put( NB_GAME_WIN , players[i].getNbGameWin());
+			player.put(NB_GAME_LOOSE, players[i].getNbGameLoose());
 			objectPlayers.put(player);
 			rang++;
 		}
@@ -336,26 +341,58 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	}
 
 	@Override
-	public void saveGames(List<Game> games) {
-		for(Game g: games){
-			JSONObject object;
-			try {
-				object = ExtractJSON.getJsonGame(g.getId());
-				boolean exists = true;
+	public void saveGames(List<Game> games) {	
+		
+		try {
+			System.out.println(PATH + GAME_FILE);
+			PrintWriter writer = new PrintWriter(PATH + GAME_FILE, "UTF-8");
 
-				if(object == null){
-					exists = false;
-					object = new JSONObject();
+			writer.println('[');
+			Iterator<Game> it = games.iterator();
+			boolean hasNext = false;
+			if(it.hasNext()){
+				hasNext = true;
+			}
+			while(hasNext){
+				Game g = it.next();
+				JSONObject obj = new JSONObject();
+				
+				obj.put(ID_GAME, g.getId());
+				obj.put(ID_WHITE, g.getWhitePlayer().getId());
+				obj.put(NAME_WHITE, g.getWhitePlayer().getName());
+				obj.put(ID_BLACK, g.getBlackPlayer().getId());
+				obj.put(NAME_BLACK, g.getBlackPlayer().getName());
+				obj.put(EVENT_NAME, g.getEvent().getName());
+				obj.put(NAME_OPENING, g.getOpening().getName());
+				obj.put(ID_OPENING, g.getOpening().getId());
+				obj.put(RESULT, g.getResult());
+				obj.put(DATE, g.getDate());
+				obj.put(PGN, g.getPGN());
+				
+				JSONArray scores = new JSONArray();
+				int i = 0;
+				for(Move m : g.getAlMoves()){
+					JSONObject score = new JSONObject();
+					score.put(ID, i);
+					score.put(SCORE, m.getFen().getScore());
+					scores.put(score);
+					i++;
 				}
-				object = new JSONObject(g);
-				saveInFile(object,GAME_FILE, exists);	
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				obj.put(SCORES, scores);
+				writer.println(obj);
+				hasNext = it.hasNext();
+				if(hasNext)
+					writer.print(",");
 			}
 
-			
+			writer.println(']');
+			System.out.println("New File..");
+
+			System.out.println("Successfully Copied JSON Object to File...");
+			writer.close();
+		} catch (IOException e) {
 		}
+		
 	}
 
 

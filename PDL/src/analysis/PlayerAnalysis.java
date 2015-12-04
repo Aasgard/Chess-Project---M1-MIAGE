@@ -61,8 +61,8 @@ public class PlayerAnalysis {
 		}
 		
 		// add player to the list
-		addPlayer(whitePlayer, whiteWinner, game.getDate(), game.getWhiteElo());
-		addPlayer(blackPlayer, blackWinner, game.getDate(), game.getBlackElo());
+		addPlayer(whitePlayer, whiteWinner, blackWinner, game.getDate(), game.getWhiteElo());
+		addPlayer(blackPlayer, blackWinner, whiteWinner, game.getDate(), game.getBlackElo());
 	}
 	
 	/**
@@ -127,7 +127,7 @@ public class PlayerAnalysis {
 	 * @param player
 	 * @param winner
 	 */
-	public void addPlayer(Player player, boolean winner, String date, int elo) {
+	public void addPlayer(Player player, boolean winner, boolean other, String date, int elo) {
 		boolean exists = false;
 		Iterator<Player> it = players.iterator();
 		
@@ -145,7 +145,10 @@ public class PlayerAnalysis {
 				// add nbGameWin
 				if(winner) {
 					p.addNbGameWin();
-				}	
+				}
+				if(other){
+					p.addNbGameLoose();
+				}
 				// add nbGamePlayed
 				p.addNbGamePlayed();				
 				// add Elo
@@ -157,6 +160,9 @@ public class PlayerAnalysis {
 			// add nbGameWin
 			if(winner) {
 				player.addNbGameWin();
+			}
+			if(other){
+				player.addNbGameLoose();
 			}
 			// add nbGamePlayed
 			player.addNbGamePlayed();

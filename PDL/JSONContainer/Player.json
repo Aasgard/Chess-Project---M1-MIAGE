@@ -11,6 +11,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Plischki,S",
  "id": 4,
  "nb_games_win": 1,
@@ -28,6 +29,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Rausis,I",
  "id": 5,
  "nb_games_win": 0,
@@ -45,6 +47,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Burg,T",
  "id": 6,
  "nb_games_win": 1,
@@ -62,6 +65,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Mamedov,Nid",
  "id": 7,
  "nb_games_win": 1,
@@ -79,6 +83,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Stachowiak,K",
  "id": 8,
  "nb_games_win": 0,
@@ -96,6 +101,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Kempinski,R",
  "id": 9,
  "nb_games_win": 0,
@@ -113,6 +119,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Neiksans,A",
  "id": 10,
  "nb_games_win": 1,
@@ -130,6 +137,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Luch,M",
  "id": 11,
  "nb_games_win": 1,
@@ -147,6 +155,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Andreev,Ed UKR",
  "id": 12,
  "nb_games_win": 1,
@@ -164,6 +173,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Kanovsky,D",
  "id": 13,
  "nb_games_win": 1,
@@ -181,6 +191,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Smirnov,Arte",
  "id": 14,
  "nb_games_win": 1,
@@ -198,6 +209,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Boros,De",
  "id": 15,
  "nb_games_win": 1,
@@ -215,6 +227,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Zaragatski,I",
  "id": 16,
  "nb_games_win": 1,
@@ -232,6 +245,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Freisler,P",
  "id": 17,
  "nb_games_win": 0,
@@ -249,6 +263,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Babula,V",
  "id": 18,
  "nb_games_win": 1,
@@ -270,6 +285,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Wieczorek,O",
  "id": 19,
  "nb_games_win": 0,
@@ -287,6 +303,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Berry,S",
  "id": 20,
  "nb_games_win": 0,
@@ -304,6 +321,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Baumegger,S",
  "id": 21,
  "nb_games_win": 1,
@@ -325,6 +343,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Kantans,T",
  "id": 22,
  "nb_games_win": 0,
@@ -346,6 +365,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Simacek,P",
  "id": 23,
  "nb_games_win": 1,
@@ -363,6 +383,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Tuma,Ja",
  "id": 24,
  "nb_games_win": 0,
@@ -380,6 +401,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Manik,M",
  "id": 25,
  "nb_games_win": 1,
@@ -397,6 +419,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Dolezal,Ra1",
  "id": 26,
  "nb_games_win": 1,
@@ -414,6 +437,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Mamedjarova,T",
  "id": 27,
  "nb_games_win": 0,
@@ -431,6 +455,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 2,
  "name": "Stastny,Pe",
  "id": 28,
  "nb_games_win": 0,
@@ -448,6 +473,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Vavra,P1",
  "id": 29,
  "nb_games_win": 1,
@@ -465,6 +491,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Jurcik,Mart",
  "id": 30,
  "nb_games_win": 1,
@@ -476,6 +503,7 @@
   "elo": 2065
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Brem,S",
  "id": 31,
  "nb_games_win": 0,
@@ -487,6 +515,7 @@
   "elo": 2169
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Steiner,B",
  "id": 32,
  "nb_games_win": 0,
@@ -504,6 +533,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Jurcik,Mari",
  "id": 33,
  "nb_games_win": 1,
@@ -515,6 +545,7 @@
   "elo": 2166
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kozak,Mi",
  "id": 34,
  "nb_games_win": 0,
@@ -532,6 +563,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Kasparov,S",
  "id": 35,
  "nb_games_win": 1,
@@ -549,6 +581,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Cernousek,L",
  "id": 36,
  "nb_games_win": 1,
@@ -560,6 +593,7 @@
   "elo": 2139
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Rubes,J",
  "id": 37,
  "nb_games_win": 0,
@@ -577,6 +611,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Plat,V",
  "id": 38,
  "nb_games_win": 1,
@@ -594,6 +629,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Hrbolka,L sr",
  "id": 39,
  "nb_games_win": 0,
@@ -611,6 +647,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Biolek,R1",
  "id": 40,
  "nb_games_win": 1,
@@ -622,6 +659,7 @@
   "elo": 2114
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Turner,R",
  "id": 41,
  "nb_games_win": 0,
@@ -639,6 +677,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Hrbolka,L jr",
  "id": 42,
  "nb_games_win": 1,
@@ -650,6 +689,7 @@
   "elo": 2412
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kristiansen,Jen",
  "id": 43,
  "nb_games_win": 0,
@@ -661,6 +701,7 @@
   "elo": 2399
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Bures,J",
  "id": 44,
  "nb_games_win": 0,
@@ -678,6 +719,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Ulanowski,K",
  "id": 45,
  "nb_games_win": 1,
@@ -689,6 +731,7 @@
   "elo": 2145
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Janda,Z",
  "id": 46,
  "nb_games_win": 0,
@@ -706,6 +749,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Weichhold,P",
  "id": 47,
  "nb_games_win": 2,
@@ -717,6 +761,7 @@
   "elo": 2124
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Friml,A",
  "id": 48,
  "nb_games_win": 0,
@@ -734,6 +779,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Lechtynsky,J",
  "id": 49,
  "nb_games_win": 1,
@@ -745,6 +791,7 @@
   "elo": 2111
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Pedersen,HB",
  "id": 50,
  "nb_games_win": 0,
@@ -762,6 +809,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Balin,J",
  "id": 51,
  "nb_games_win": 1,
@@ -773,6 +821,7 @@
   "elo": 2070
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Slampa,J",
  "id": 52,
  "nb_games_win": 0,
@@ -790,6 +839,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Jacobsen,Bo",
  "id": 53,
  "nb_games_win": 1,
@@ -805,6 +855,7 @@
   "elo": 2039
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Vykouk,Jan",
  "id": 54,
  "nb_games_win": 0,
@@ -822,6 +873,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Weinzettl,E",
  "id": 55,
  "nb_games_win": 1,
@@ -839,6 +891,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Jedlicka,A",
  "id": 56,
  "nb_games_win": 1,
@@ -854,6 +907,7 @@
   "elo": 1976
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Partys,P",
  "id": 57,
  "nb_games_win": 0,
@@ -871,6 +925,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Bartos,J",
  "id": 58,
  "nb_games_win": 1,
@@ -882,6 +937,7 @@
   "elo": 2073
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Volek,R",
  "id": 59,
  "nb_games_win": 0,
@@ -893,6 +949,7 @@
   "elo": 2038
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Mikes,J",
  "id": 60,
  "nb_games_win": 0,
@@ -910,6 +967,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Cajbel,M",
  "id": 61,
  "nb_games_win": 1,
@@ -921,6 +979,7 @@
   "elo": 1916
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Gungl,T",
  "id": 62,
  "nb_games_win": 0,
@@ -932,6 +991,7 @@
   "elo": 2171
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Nguyen,Thai Dai Van",
  "id": 63,
  "nb_games_win": 0,
@@ -949,6 +1009,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Sadilek,P",
  "id": 64,
  "nb_games_win": 1,
@@ -960,6 +1021,7 @@
   "elo": 1954
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Pavlicek,P",
  "id": 65,
  "nb_games_win": 0,
@@ -971,6 +1033,7 @@
   "elo": 1997
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Grussova,H",
  "id": 66,
  "nb_games_win": 0,
@@ -988,6 +1051,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 0,
  "name": "Mamedjarova,Z",
  "id": 67,
  "nb_games_win": 2,
@@ -999,6 +1063,7 @@
   "elo": 2255
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Ptacnikova,L",
  "id": 68,
  "nb_games_win": 1,
@@ -1010,6 +1075,7 @@
   "elo": 2001
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Chmelik,J",
  "id": 69,
  "nb_games_win": 0,
@@ -1021,6 +1087,7 @@
   "elo": 1977
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Horak,Ales",
  "id": 70,
  "nb_games_win": 1,
@@ -1032,6 +1099,7 @@
   "elo": 2216
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Hadraba,V",
  "id": 71,
  "nb_games_win": 0,
@@ -1043,6 +1111,7 @@
   "elo": 2212
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Schou Moldt,T",
  "id": 72,
  "nb_games_win": 1,
@@ -1054,6 +1123,7 @@
   "elo": 1958
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kaluzny,Ma",
  "id": 73,
  "nb_games_win": 0,
@@ -1065,6 +1135,7 @@
   "elo": 1968
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Ta,V",
  "id": 74,
  "nb_games_win": 0,
@@ -1076,6 +1147,7 @@
   "elo": 2202
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Stone,A ENG",
  "id": 75,
  "nb_games_win": 0,
@@ -1087,6 +1159,7 @@
   "elo": 2198
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Furman,Bo",
  "id": 76,
  "nb_games_win": 0,
@@ -1098,6 +1171,7 @@
   "elo": 1933
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Plug,A",
  "id": 77,
  "nb_games_win": 0,
@@ -1109,6 +1183,7 @@
   "elo": 1933
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Dolezal,Ra2",
  "id": 78,
  "nb_games_win": 0,
@@ -1120,6 +1195,7 @@
   "elo": 2155
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Grichkevitch,G",
  "id": 79,
  "nb_games_win": 0,
@@ -1131,6 +1207,7 @@
   "elo": 2137
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Thestrup,S",
  "id": 80,
  "nb_games_win": 1,
@@ -1146,6 +1223,7 @@
   "elo": 1832
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Zima,To2",
  "id": 81,
  "nb_games_win": 0,
@@ -1157,6 +1235,7 @@
   "elo": 1901
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Konvalinka,Vladislav",
  "id": 82,
  "nb_games_win": 0,
@@ -1168,6 +1247,7 @@
   "elo": 2106
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Ksana,V",
  "id": 83,
  "nb_games_win": 1,
@@ -1185,6 +1265,7 @@
   }
  ],
  "nb_games_played": 2,
+ "nb_games_loose": 1,
  "name": "Toman,Ondrej",
  "id": 84,
  "nb_games_win": 1,
@@ -1196,6 +1277,7 @@
   "elo": 1809
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kaluzny,Jiri",
  "id": 85,
  "nb_games_win": 0,
@@ -1207,6 +1289,7 @@
   "elo": 1817
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Badelka,Olga",
  "id": 86,
  "nb_games_win": 0,
@@ -1222,6 +1305,7 @@
   "elo": 2026
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Marek,Mat",
  "id": 87,
  "nb_games_win": 0,
@@ -1233,6 +1317,7 @@
   "elo": 1812
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Rasmussen,He2",
  "id": 88,
  "nb_games_win": 0,
@@ -1244,6 +1329,7 @@
   "elo": 2176
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Vales,V",
  "id": 89,
  "nb_games_win": 0,
@@ -1255,6 +1341,7 @@
   "elo": 1917
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Andersen,Dani",
  "id": 90,
  "nb_games_win": 0,
@@ -1266,6 +1353,7 @@
   "elo": 2196
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Horak,Ji1",
  "id": 91,
  "nb_games_win": 1,
@@ -1277,6 +1365,7 @@
   "elo": 2079
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Zahour,Ivan",
  "id": 92,
  "nb_games_win": 1,
@@ -1288,6 +1377,7 @@
   "elo": 1909
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Cenek,M2",
  "id": 93,
  "nb_games_win": 0,
@@ -1299,6 +1389,7 @@
   "elo": 1894
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Kula,Dominik",
  "id": 94,
  "nb_games_win": 1,
@@ -1310,6 +1401,7 @@
   "elo": 2035
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Riha,Jaroslav",
  "id": 95,
  "nb_games_win": 0,
@@ -1321,6 +1413,7 @@
   "elo": 2029
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Jensen,Le1",
  "id": 96,
  "nb_games_win": 0,
@@ -1332,6 +1425,7 @@
   "elo": 1887
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Majerik,V",
  "id": 97,
  "nb_games_win": 0,
@@ -1343,6 +1437,7 @@
   "elo": 2009
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Treppendahl,T",
  "id": 98,
  "nb_games_win": 0,
@@ -1354,6 +1449,7 @@
   "elo": 1878
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Cenek,M1",
  "id": 99,
  "nb_games_win": 0,
@@ -1365,6 +1461,7 @@
   "elo": 2006
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Gratze,M",
  "id": 100,
  "nb_games_win": 1,
@@ -1376,6 +1473,7 @@
   "elo": 1875
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Horyna,J",
  "id": 101,
  "nb_games_win": 0,
@@ -1387,6 +1485,7 @@
   "elo": 1863
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Okrouhlik,Zdenek",
  "id": 102,
  "nb_games_win": 1,
@@ -1398,6 +1497,7 @@
   "elo": 1982
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Jirasek,J",
  "id": 103,
  "nb_games_win": 0,
@@ -1409,6 +1509,7 @@
   "elo": 1971
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Tejkal,J",
  "id": 104,
  "nb_games_win": 0,
@@ -1420,6 +1521,7 @@
   "elo": 1826
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Skuthan,Jiri",
  "id": 105,
  "nb_games_win": 0,
@@ -1431,6 +1533,7 @@
   "elo": 1801
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Hansen,HenrikD",
  "id": 106,
  "nb_games_win": 0,
@@ -1442,6 +1545,7 @@
   "elo": 1968
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Bazantova,M",
  "id": 107,
  "nb_games_win": 1,
@@ -1453,6 +1557,7 @@
   "elo": 1964
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Smolik,Boris",
  "id": 108,
  "nb_games_win": 1,
@@ -1464,6 +1569,7 @@
   "elo": 1768
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Sigurdsson,Ja",
  "id": 109,
  "nb_games_win": 0,
@@ -1475,6 +1581,7 @@
   "elo": 0
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Bublik,Frantisek",
  "id": 110,
  "nb_games_win": 0,
@@ -1490,6 +1597,7 @@
   "elo": 1963
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Valenta,P",
  "id": 111,
  "nb_games_win": 0,
@@ -1505,6 +1613,7 @@
   "elo": 1947
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Papay,J",
  "id": 112,
  "nb_games_win": 1,
@@ -1516,6 +1625,7 @@
   "elo": 1664
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Bobek,Daniel",
  "id": 113,
  "nb_games_win": 0,
@@ -1527,6 +1637,7 @@
   "elo": 1736
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Krutsky,Martin",
  "id": 114,
  "nb_games_win": 0,
@@ -1538,6 +1649,7 @@
   "elo": 1946
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Eiriksson,S",
  "id": 115,
  "nb_games_win": 0,
@@ -1549,6 +1661,7 @@
   "elo": 1936
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Klakurka,S",
  "id": 116,
  "nb_games_win": 1,
@@ -1560,6 +1673,7 @@
   "elo": 1710
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Babicka,Michal",
  "id": 117,
  "nb_games_win": 0,
@@ -1571,6 +1685,7 @@
   "elo": 0
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Zeman,Lukas",
  "id": 118,
  "nb_games_win": 0,
@@ -1582,6 +1697,7 @@
   "elo": 1936
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Kudela,S",
  "id": 119,
  "nb_games_win": 1,
@@ -1593,6 +1709,7 @@
   "elo": 2001
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Vrchotka,J",
  "id": 120,
  "nb_games_win": 1,
@@ -1604,6 +1721,7 @@
   "elo": 1761
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kastl,Daniel",
  "id": 121,
  "nb_games_win": 0,
@@ -1615,6 +1733,7 @@
   "elo": 1735
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Balka,L",
  "id": 122,
  "nb_games_win": 0,
@@ -1626,6 +1745,7 @@
   "elo": 1966
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Papay,M",
  "id": 123,
  "nb_games_win": 1,
@@ -1637,6 +1757,7 @@
   "elo": 1750
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Straslipka,Jiri",
  "id": 124,
  "nb_games_win": 0,
@@ -1648,6 +1769,7 @@
   "elo": 1862
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Klimek,Pe",
  "id": 125,
  "nb_games_win": 1,
@@ -1659,6 +1781,7 @@
   "elo": 1826
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Frijling,J",
  "id": 126,
  "nb_games_win": 0,
@@ -1670,6 +1793,7 @@
   "elo": 1625
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Holy,Filip",
  "id": 127,
  "nb_games_win": 1,
@@ -1681,6 +1805,7 @@
   "elo": 1820
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Hanzlik,David",
  "id": 128,
  "nb_games_win": 0,
@@ -1692,6 +1817,7 @@
   "elo": 0
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Goc,Vlastimil",
  "id": 129,
  "nb_games_win": 0,
@@ -1703,6 +1829,7 @@
   "elo": 1798
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Egholm,Leif",
  "id": 130,
  "nb_games_win": 1,
@@ -1714,6 +1841,7 @@
   "elo": 1568
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Kirchner,Michal",
  "id": 131,
  "nb_games_win": 0,
@@ -1725,6 +1853,7 @@
   "elo": 1778
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Parpel,P",
  "id": 132,
  "nb_games_win": 0,
@@ -1736,6 +1865,7 @@
   "elo": 0
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Zak,Jiri",
  "id": 133,
  "nb_games_win": 0,
@@ -1747,6 +1877,7 @@
   "elo": 1792
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Kuchar,Tomas",
  "id": 134,
  "nb_games_win": 0,
@@ -1758,6 +1889,7 @@
   "elo": 1688
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Ruzicka,V1",
  "id": 135,
  "nb_games_win": 0,
@@ -1769,6 +1901,7 @@
   "elo": 1779
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Huba,Mark J",
  "id": 136,
  "nb_games_win": 0,
@@ -1780,6 +1913,7 @@
   "elo": 1669
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Maly,Jiri",
  "id": 137,
  "nb_games_win": 1,
@@ -1791,6 +1925,7 @@
   "elo": 1767
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Hanzlik,Daniel",
  "id": 138,
  "nb_games_win": 1,
@@ -1802,6 +1937,7 @@
   "elo": 1637
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Hanzlik,Tomas",
  "id": 139,
  "nb_games_win": 0,
@@ -1817,6 +1953,7 @@
   "elo": 1764
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Purkyt,Jaroslav",
  "id": 140,
  "nb_games_win": 1,
@@ -1828,6 +1965,7 @@
   "elo": 1406
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Valterova,Veronika",
  "id": 141,
  "nb_games_win": 0,
@@ -1839,6 +1977,7 @@
   "elo": 1645
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Schoeppe,Christian",
  "id": 142,
  "nb_games_win": 0,
@@ -1850,6 +1989,7 @@
   "elo": 1745
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Hruby,Va",
  "id": 143,
  "nb_games_win": 0,
@@ -1861,6 +2001,7 @@
   "elo": 1630
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Hellinger,Jan",
  "id": 144,
  "nb_games_win": 0,
@@ -1872,6 +2013,7 @@
   "elo": 1736
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Kochert,B",
  "id": 145,
  "nb_games_win": 1,
@@ -1883,6 +2025,7 @@
   "elo": 1753
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Mriso,Milos",
  "id": 146,
  "nb_games_win": 0,
@@ -1894,6 +2037,7 @@
   "elo": 1699
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Svoboda,Zde1",
  "id": 147,
  "nb_games_win": 1,
@@ -1905,6 +2049,7 @@
   "elo": 1575
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Steinhart,Roel",
  "id": 148,
  "nb_games_win": 1,
@@ -1916,6 +2061,7 @@
   "elo": 1516
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 1,
  "name": "Polansky,Adam Lubos",
  "id": 149,
  "nb_games_win": 0,
@@ -1927,6 +2073,7 @@
   "elo": 1391
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Nguyen,Thai Dai Vinh",
  "id": 150,
  "nb_games_win": 0,
@@ -1938,6 +2085,7 @@
   "elo": 1525
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Obrsal,Josef",
  "id": 151,
  "nb_games_win": 0,
@@ -1949,6 +2097,7 @@
   "elo": 2514
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Teske,H",
  "id": 152,
  "nb_games_win": 0,
@@ -1960,6 +2109,7 @@
   "elo": 2503
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Krejci,Jan2",
  "id": 153,
  "nb_games_win": 0,
@@ -1971,6 +2121,7 @@
   "elo": 2454
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Simantsev,M",
  "id": 154,
  "nb_games_win": 1,
@@ -1982,6 +2133,7 @@
   "elo": 2565
  }],
  "nb_games_played": 1,
+ "nb_games_loose": 0,
  "name": "Kislinsky,A",
  "id": 155,
  "nb_games_win": 0,
