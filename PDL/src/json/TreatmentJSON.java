@@ -3,6 +3,7 @@ package json;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -101,7 +102,8 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 */
 	public void savePlayersToJSON(List<Player> players) {
 		JSONObject playerJSON;
-		JSONArray errorsJSON;
+		JSONArray errorsJSONArray;
+		JSONArray elosJSONArray;
 		boolean exists;
 
 		for(Player player : players) {
@@ -119,7 +121,8 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				playerJSON = new JSONObject();
 			}
 
-			errorsJSON = new JSONArray();
+			// add errors
+			errorsJSONArray = new JSONArray();
 			for(ErrorPlayer error : player.getErrors()) {
 				JSONObject errorJSON = new JSONObject();		
 				errorJSON.put( ID_GAME , error.getIdGame());
@@ -127,13 +130,25 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				String[] FenErrors = error.getError_fen().toArray(new String[error.getError_fen().size()]);
 				errorJSON.put( ERRORS_FEN , FenErrors);
 
-				errorsJSON.put(errorJSON);
+				errorsJSONArray.put(errorJSON);
 			}
+			
+			// add elos
+			elosJSONArray = new JSONArray();
+			for(Map.Entry<String, Integer> entry : player.getElos().entrySet()) {
+				JSONObject eloJSON = new JSONObject();
+				eloJSON.put( DATE , entry.getKey());
+				eloJSON.put( ELO , entry.getValue());
+				
+				elosJSONArray.put(eloJSON);
+			}
+			
 			playerJSON.put(ID, player.getId());
 			playerJSON.put( NAME , player.getName());
 			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
 			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
-			playerJSON.put( ERRORS , errorsJSON);
+			playerJSON.put( ERRORS , errorsJSONArray);
+			playerJSON.put( ELOS , elosJSONArray);
 
 			saveInFile(playerJSON, PLAYER_FILE, exists);		
 		}
@@ -161,7 +176,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 				System.out.println("New File..");
 
-				// Fichier déja existant
+				// Fichier dï¿½ja existant
 			} else {
 				int i;
 				for(i = 0; i < allData.length(); i++) {

@@ -61,8 +61,8 @@ public class PlayerAnalysis {
 		}
 		
 		// add player to the list
-		addPlayer(whitePlayer, whiteWinner);
-		addPlayer(blackPlayer, blackWinner);
+		addPlayer(whitePlayer, whiteWinner, game.getDate(), game.getWhiteElo());
+		addPlayer(blackPlayer, blackWinner, game.getDate(), game.getBlackElo());
 	}
 	
 	/**
@@ -95,11 +95,10 @@ public class PlayerAnalysis {
 		
 		for(Move move : moves) {
 
-			System.out.println("Move !");
 			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
-				if (currentIsMateWhite) System.out.println("Erreur trouvé");
+				
 				// erreur du joueur blanc
 				if(previousIsMateWhite && !currentIsMateWhite) {
 					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());
@@ -128,7 +127,7 @@ public class PlayerAnalysis {
 	 * @param player
 	 * @param winner
 	 */
-	public void addPlayer(Player player, boolean winner) {
+	public void addPlayer(Player player, boolean winner, String date, int elo) {
 		boolean exists = false;
 		Iterator<Player> it = players.iterator();
 		
@@ -148,7 +147,9 @@ public class PlayerAnalysis {
 					p.addNbGameWin();
 				}	
 				// add nbGamePlayed
-				p.addNbGamePlayed();
+				p.addNbGamePlayed();				
+				// add Elo
+				p.addElo(date, elo);
 			}
 		}
 		// le player n'est pas dans la liste
@@ -159,6 +160,8 @@ public class PlayerAnalysis {
 			}
 			// add nbGamePlayed
 			player.addNbGamePlayed();
+			// add Elo
+			player.addElo(date, elo);
 			// add player to the list
 			players.add(player);
 		}

@@ -1,7 +1,9 @@
 package object;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Player {
 
@@ -10,6 +12,7 @@ public class Player {
 	private List<ErrorPlayer> errors;
 	private int nbGamePlayed;
 	private int nbGameWin;
+	private Map<String, Integer> elos;
 	
 	
 	public Player(int id, String name) {
@@ -19,6 +22,7 @@ public class Player {
 		this.nbGamePlayed = 0;
 		this.nbGameWin = 0;
 		this.errors = new ArrayList<ErrorPlayer>();
+		this.elos = new HashMap<String, Integer>();
 	}
 
 	public int getId() {
@@ -76,5 +80,13 @@ public class Player {
 	
 	public void addNbGamePlayed() {
 		this.nbGamePlayed++;
+	}
+	
+	public void addElo(String date, int elo) {
+		this.elos.put(date, elo);
+	}
+	
+	public Map<String, Integer> getElos() {
+		return this.elos;
 	}
 }

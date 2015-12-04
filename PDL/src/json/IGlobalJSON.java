@@ -44,6 +44,8 @@ public interface IGlobalJSON {
 	public final String ERRORS_FEN = "errors_fen";
 	public final String NB_GAME_PLAYED = "nb_games_played";
 	public final String NB_GAME_WIN = "nb_games_win";
+	public final String ELOS = "elos";
+	public final String ELO = "elo";
 	
 	//CONSTANTE OPENING
 	public final String NAME_OPENING = "name_opening";
