@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Player {
 
@@ -22,7 +23,7 @@ public class Player {
 		this.nbGamePlayed = 0;
 		this.nbGameWin = 0;
 		this.errors = new ArrayList<ErrorPlayer>();
-		this.elos = new HashMap<String, Integer>();
+		this.elos = new TreeMap<String, Integer>(new DateCompare());
 	}
 
 	public int getId() {
