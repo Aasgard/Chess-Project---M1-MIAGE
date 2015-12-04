@@ -1,4 +1,3 @@
-
 [
 {
  "best_players": [
@@ -8,24 +7,25 @@
    "rang": 1
   },
   {
-   "name": "Simantsev,M",
-   "nb_games_win": 1,
+   "name": "Weichhold,P",
+   "nb_games_win": 2,
    "rang": 2
   },
   {
-   "name": "Kislinsky,A",
-   "nb_games_win": 0,
+   "name": "Simantsev,M",
+   "nb_games_win": 1,
    "rang": 3
   },
   {
-   "nb_games_win": 0,
+   "name": "Steinhart,Roel",
+   "nb_games_win": 1,
    "rang": 4
   },
   {
-   "nb_games_win": 0,
+   "name": "Svoboda,Zde1",
+   "nb_games_win": 1,
    "rang": 5
   }
  ],
  "id": 1
-}
-]
+}]
