@@ -51,7 +51,7 @@ public interface IGlobalJSON {
 	public final String MOVES = "moves";
 	public final String WIN = "win";
 	public final String DATA = "data";
-	public final String Y = "Y";
+	public final String Y = "y";
 	public final String COLOR = "color";
 	
 	//CONSTANTE RANKINGPOSITION

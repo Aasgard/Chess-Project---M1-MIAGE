@@ -178,6 +178,23 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		} catch (IOException e) {
 		}
 	}
+	
+	public static void saveInFile(JSONArray jsonArray, String objectName){
+		try {
+			System.out.println(PATH + objectName);
+			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
+
+			// Creation d'un nouveau fichier
+			for (int i = 0; i < jsonArray.length(); i++) {
+				writer.println(jsonArray.getJSONObject(i));
+			}
+			System.out.println("New File..");
+
+			System.out.println("Successfully Copied JSON Object to File...");
+			writer.close();
+		} catch (IOException e) {
+		}
+	}
 
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
@@ -322,6 +339,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	@Override
 	public void saveGames(List<Game> games) {
+		JSONArray gamesArray = new JSONArray();
 		for(Game g: games){
 			JSONObject object;
 			try {
@@ -333,14 +351,15 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 					object = new JSONObject();
 				}
 				object = new JSONObject(g);
-				saveInFile(object,GAME_FILE, exists);	
+				gamesArray.put(object);
+				//saveInFile(object,GAME_FILE, exists);	
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-
-			
+			}			
 		}
+		
+		saveInFile(gamesArray, GAME_FILE);
 	}
 
 
