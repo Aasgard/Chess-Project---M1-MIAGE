@@ -23,12 +23,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		JSONObject game = null;
 		try {
 			game = ExtractJSON.getJsonGame(g.getId());
-			game.remove(SCORE_TOTAL_VAR);
-
 		} catch (IOException e) {
-			// TODO : Intégrer à la classe d'erreur ? : erreur lecture json (game n'existe pas ou erreur de fichier)
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+
 		boolean exists = true;
 		if (game == null){
 			game = createGameJson(g);
@@ -215,7 +215,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		if(ExtractJSON.readJSONFile(GLOBALSTAT_FILE) != null){
 			exists = true;
 		}
-		
+
 		JSONArray objectArray = new JSONArray();
 
 		JSONObject object1 = new JSONObject();
@@ -242,12 +242,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	public void saveGlobalBestPlayersToJSON(Player[] players) {
 		JSONObject object = new JSONObject();
 		JSONArray objectPlayers = new JSONArray();
-		
+
 		boolean exists = false;
 		if(ExtractJSON.readJSONFile(GLOBALBESTPLAYER_FILE) != null){
 			exists = true;
 		}
-		
+
 		int rang = 1;
 		for(int i = 0 ; i < players.length ; i++){
 			JSONObject player = new JSONObject();
@@ -266,12 +266,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	public void saveGlobalBestGamesToJSON(Game[] games) {
 		JSONObject object = new JSONObject();
 		JSONArray objectGames = new JSONArray();
-		
+
 		boolean exists = false;
 		if(ExtractJSON.readJSONFile(GLOBALBESTGAME_FILE) != null){
 			exists = true;
 		}
-		
+
 		for(int i = 0 ; i < games.length ; i++){
 			JSONObject game = new JSONObject();
 			game.put( RANG_GAME , i+1);
@@ -288,11 +288,11 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	@Override
 	public void saveBestFenToJSON(String position, GameAndNextMove[] gameAndNextMove) {
-		
+
 		JSONObject object = ExtractJSON.getJsonPosition(position);
 
 		boolean exists = true;
-		
+
 		if(object == null){
 			exists = false;
 			object = new JSONObject();
@@ -318,6 +318,29 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put(ID, position);
 		object.put(NEXTS, objectGamesAndNextMove);
 		saveInFile(object,RANKINGPOSITION_FILE, exists);	
+	}
+
+	@Override
+	public void saveGames(List<Game> games) {
+		for(Game g: games){
+			JSONObject object;
+			try {
+				object = ExtractJSON.getJsonGame(g.getId());
+				boolean exists = true;
+
+				if(object == null){
+					exists = false;
+					object = new JSONObject();
+				}
+				object = new JSONObject(g);
+				saveInFile(object,GAME_FILE, exists);	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			
+		}
 	}
 
 

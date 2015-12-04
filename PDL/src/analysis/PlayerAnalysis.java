@@ -63,8 +63,6 @@ public class PlayerAnalysis {
 		// add player to the list
 		addPlayer(whitePlayer, whiteWinner);
 		addPlayer(blackPlayer, blackWinner);
-		System.out.println("nom white : " + whitePlayer.getName());
-		System.out.println("nom black : " + blackPlayer.getName());
 	}
 	
 	/**
@@ -96,11 +94,12 @@ public class PlayerAnalysis {
 		boolean currentIsMateBlack = false;
 		
 		for(Move move : moves) {
-			
+
+			System.out.println("Move !");
 			// whitePlayer is playing
 			if(move.getHalfMove()%2 == 0) {
 				currentIsMateWhite = move.isMate();
-				
+				if (currentIsMateWhite) System.out.println("Erreur trouvé");
 				// erreur du joueur blanc
 				if(previousIsMateWhite && !currentIsMateWhite) {
 					addErrorToErrorPlayer(errorWhitePlayer, move.getFen().getPosition());

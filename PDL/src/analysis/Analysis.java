@@ -115,6 +115,11 @@ public class Analysis {
 	public void setGames(List<Game> games) {
 		this.games = games;
 	}
+	
+	public void saveGames(){
+		TreatmentJSON treatment = new TreatmentJSON();
+		treatment.saveGames(getGames());
+	}
 
 
 }
