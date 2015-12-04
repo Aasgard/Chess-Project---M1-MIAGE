@@ -21,7 +21,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 	public void saveAllScoreToJSON(Game g, int score_total_variation, List<FEN> scores){	
 		JSONObject game = null;
-		game = ExtractJSON.getJsonGame(g.getId());
+		try {
+			game = ExtractJSON.getJsonGame(g.getId());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
 		boolean exists = true;
@@ -318,16 +323,23 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	@Override
 	public void saveGames(List<Game> games) {
 		for(Game g: games){
-			JSONObject object = ExtractJSON.getJsonGame(g.getId());
+			JSONObject object;
+			try {
+				object = ExtractJSON.getJsonGame(g.getId());
+				boolean exists = true;
 
-			boolean exists = true;
-
-			if(object == null){
-				exists = false;
-				object = new JSONObject();
+				if(object == null){
+					exists = false;
+					object = new JSONObject();
+				}
+				object = new JSONObject(g);
+				saveInFile(object,GAME_FILE, exists);	
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			object = new JSONObject(g);
-			saveInFile(object,GAME_FILE, exists);	
+
+			
 		}
 	}
 

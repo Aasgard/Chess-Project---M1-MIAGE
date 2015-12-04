@@ -79,15 +79,15 @@ public class TestPlayerAnalysis {
 		
 		/* Initialisation */
 		
-		P
+		//P
 		
 		// - Game
 		Game g = new Game();
 		g.setId(1);
 		g.setAlMoves(moves);
 		g.setResult(1);
-		g.setWhitePlayer(whitePlayer);
-		g.setBlackPlayer(blackPlayer);
+		//g.setWhitePlayer(whitePlayer);
+		//g.setBlackPlayer(blackPlayer);
 		
 		/* -------------- */
 		
