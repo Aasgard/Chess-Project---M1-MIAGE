@@ -102,11 +102,15 @@
  "name": "Babula,V",
  "id": 18,
  "nb_games_win": 1,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 8,
   "nb_of_error": 1,
   "errors_fen": ["3r1k2/1R3Q2/5pp1/8/P2N4/4P1P1/5PPK/2r2q2"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 2,
@@ -127,22 +131,30 @@
  "name": "Baumegger,S",
  "id": 21,
  "nb_games_win": 1,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 86,
   "nb_of_error": 1,
   "errors_fen": ["1R6/p3Q1kp/5pp1/8/6P1/3P3b/4PP1P/q1r3NK"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 2,
  "name": "Kantans,T",
  "id": 22,
  "nb_games_win": 0,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 86,
   "nb_of_error": 1,
   "errors_fen": ["1R6/p3Q2p/5ppk/8/6P1/3P3b/4PP1P/q1r3NK"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 2,
@@ -359,11 +371,15 @@
  "name": "Jacobsen,Bo",
  "id": 53,
  "nb_games_win": 1,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 25,
   "nb_of_error": 1,
   "errors_fen": ["4r3/2P2pk1/3Q1b2/7B/5B2/2qK2P1/b7/5R2"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
@@ -384,11 +400,15 @@
  "name": "Jedlicka,A",
  "id": 56,
  "nb_games_win": 1,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 91,
   "nb_of_error": 1,
   "errors_fen": ["3rkq1R/6p1/2P3p1/3Bp3/4P3/8/4K3/8"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
@@ -556,11 +576,15 @@
  "name": "Thestrup,S",
  "id": 80,
  "nb_games_win": 1,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 39,
   "nb_of_error": 1,
   "errors_fen": ["8/2k5/1p1Q4/p3Pp2/P3pP1P/KP4P1/8/4q3"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
@@ -602,11 +626,15 @@
  "name": "Badelka,Olga",
  "id": 86,
  "nb_games_win": 0,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 42,
   "nb_of_error": 1,
   "errors_fen": ["1r6/4pk2/3p1pp1/2qP3p/2p1P2P/2Q2PK1/1P4P1/1R6"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
@@ -774,22 +802,30 @@
  "name": "Bublik,Frantisek",
  "id": 110,
  "nb_games_win": 0,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 54,
   "nb_of_error": 1,
   "errors_fen": ["b1Q5/3R1pkp/pr4pq/1p6/1P1Q4/P4B2/6Pb/1N5K"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
  "name": "Valenta,P",
  "id": 111,
  "nb_games_win": 0,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 54,
   "nb_of_error": 1,
   "errors_fen": ["b1Q5/3R1pkp/pr4pq/1p2b3/1P1Q4/P4B2/6P1/1N5K"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,
@@ -985,11 +1021,15 @@
  "name": "Hanzlik,Tomas",
  "id": 139,
  "nb_games_win": 0,
+<<<<<<< HEAD
  "errors": [{
   "id_game": 68,
   "nb_of_error": 1,
   "errors_fen": ["5Q2/p1P5/6kp/8/3Pp1n1/4Bbq1/PP3RP1/R5K1"]
  }]
+=======
+ "errors": []
+>>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
  "nb_games_played": 1,

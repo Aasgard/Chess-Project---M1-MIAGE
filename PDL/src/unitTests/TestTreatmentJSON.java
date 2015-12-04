@@ -43,9 +43,6 @@ public class TestTreatmentJSON {
 		
 		// test si le jsonArray contient le jsonObj
 		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
-		
-		// suppression de l'objet créé
-		// TODO supprimer jsonobject from file
 	}
 	
 	/**
@@ -80,27 +77,6 @@ public class TestTreatmentJSON {
     	}catch(Exception e){ 		
     		e.printStackTrace();   		
     	}
-	}
-	
-	/**
-	 * Save JSONObject vide dans un fichier existant
-	 */
-	@Test
-	public void testsaveInFile3() {
-		// variables utilisées dans saveInFile
-		JSONObject jsonObj = new JSONObject();
-		// fichier non existant
-		String fileName = "treatmentJSONTest.json";
-		boolean exists = false;
-		
-		// sauvegarde du jsonObj dans le fichier
-		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
-		
-		// récupération du fichier dans un jsonArray
-		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
-		
-		// test si le jsonArray contient le jsonObj
-		assertFalse(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
 	}
 
 	@Test

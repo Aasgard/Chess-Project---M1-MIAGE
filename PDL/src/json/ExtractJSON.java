@@ -99,27 +99,9 @@ public class ExtractJSON implements IGlobalJSON{
 	 * @return JsonObject Game or NULL
 	 * @throws IOException
 	 */
-	public static JSONObject getJsonGame(int idGame){
-		JSONArray gamesArray = readJSONFile( GAME_FILE );
-
-		JSONObject gameFind = null;
-
-		if (gamesArray == null){
-			gamesArray = new JSONArray();
-		}
-
-		int i = 0;
-		boolean find = false;
-		while(i< gamesArray.length() && !find){
-			JSONObject gameObject = gamesArray.getJSONObject(i);
-
-			if(gameObject.get(ID).equals(idGame)){
-				find = true;
-				gameFind = gameObject;
-			}
-			i++;
-		}		
-		return gameFind;
+	public static JSONObject getJsonGame(int idGame) throws IOException{
+		// TODO getJsonGame
+		return null;
 	}
 
 	/**
@@ -129,26 +111,8 @@ public class ExtractJSON implements IGlobalJSON{
 	 * @throws IOException
 	 */
 	public static JSONObject getJsonOpening(int idOpening) throws IOException{
-		JSONArray openingArray = readJSONFile( OPENING_FILE );
-
-		JSONObject openingFind = null;
-
-		if (openingArray == null){
-			openingArray = new JSONArray();
-		}
-
-		int i = 0;
-		boolean find = false;
-		while(i< openingArray.length() && !find){
-			JSONObject openingObject = openingArray.getJSONObject(i);
-
-			if(openingObject.get(ID).equals(idOpening)){
-				find = true;
-				openingFind = openingObject;
-			}
-			i++;
-		}		
-		return openingFind;
+		// TODO getJsonOpening
+		return null;
 	}
 
 

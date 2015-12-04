@@ -35,7 +35,7 @@ public class GlobalStats {
 			boolean find = false;
 			while(j < tableaubest_Players.length && !find){
 				if(tableaubest_Players[j].getNbGameWin() <= p.getNbGameWin()){
-					for(int k = tableaubest_Players.length-1 ; k > j ; k--){
+					for(int k = tableaubest_Players.length ; k < j+1 ; k--){
 						tableaubest_Players[k] = tableaubest_Players[k-1];
 					}
 					tableaubest_Players[j] = p;
