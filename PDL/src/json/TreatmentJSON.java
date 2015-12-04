@@ -148,7 +148,8 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			playerJSON.put(ID, player.getId());
 			playerJSON.put( NAME , player.getName());
 			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
-			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());
+			playerJSON.put( NB_GAME_WIN , player.getNbGameWin());	
+			playerJSON.put( NB_GAME_LOOSE, player.getNbGameLoose());
 			playerJSON.put( ERRORS , errorsJSONArray);
 			playerJSON.put( ELOS , elosJSONArray);
 
@@ -272,7 +273,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			player.put( RANG_PLAYER, rang);
 			player.put( NAME , players[i].getName());
 			player.put( NB_GAME_WIN , players[i].getNbGameWin());
-			player.put( NB_GAME_LOOSE, players[i].getNbGameLoose());
 			objectPlayers.put(player);
 			rang++;
 		}
