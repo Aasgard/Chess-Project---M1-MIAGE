@@ -273,6 +273,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			player.put( RANG_PLAYER, rang);
 			player.put( NAME , players[i].getName());
 			player.put( NB_GAME_WIN , players[i].getNbGameWin());
+			player.put(NB_GAME_LOOSE, players[i].getNbGameLoose());
 			objectPlayers.put(player);
 			rang++;
 		}
