@@ -2,6 +2,7 @@ package json;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import object.ErrorPlayer;
 import object.FEN;
 import object.Game;
 import object.GameAndNextMove;
+import object.Move;
 import object.Opening;
 import object.Player;
 
@@ -194,22 +196,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}
 	}
 	
-	public static void saveInFile(JSONArray jsonArray, String objectName){
-		try {
-			System.out.println(PATH + objectName);
-			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
-
-			// Creation d'un nouveau fichier
-			for (int i = 0; i < jsonArray.length(); i++) {
-				writer.println(jsonArray.getJSONObject(i));
-			}
-			System.out.println("New File..");
-
-			System.out.println("Successfully Copied JSON Object to File...");
-			writer.close();
-		} catch (IOException e) {
-		}
-	}
 
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
@@ -353,28 +339,58 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	}
 
 	@Override
-	public void saveGames(List<Game> games) {
-		JSONArray gamesArray = new JSONArray();
-		for(Game g: games){
-			JSONObject object;
-			try {
-				object = ExtractJSON.getJsonGame(g.getId());
-				boolean exists = true;
+	public void saveGames(List<Game> games) {	
+		
+		try {
+			System.out.println(PATH + GAME_FILE);
+			PrintWriter writer = new PrintWriter(PATH + GAME_FILE, "UTF-8");
 
-				if(object == null){
-					exists = false;
-					object = new JSONObject();
+			writer.println('[');
+			Iterator<Game> it = games.iterator();
+			boolean hasNext = false;
+			if(it.hasNext()){
+				hasNext = true;
+			}
+			while(hasNext){
+				Game g = it.next();
+				JSONObject obj = new JSONObject();
+				
+				obj.put(ID_GAME, g.getId());
+				obj.put(ID_WHITE, g.getWhitePlayer().getId());
+				obj.put(NAME_WHITE, g.getWhitePlayer().getName());
+				obj.put(ID_BLACK, g.getBlackPlayer().getId());
+				obj.put(NAME_BLACK, g.getBlackPlayer().getName());
+				obj.put(EVENT_NAME, g.getEvent().getName());
+				obj.put(NAME_OPENING, g.getOpening().getName());
+				obj.put(ID_OPENING, g.getOpening().getId());
+				obj.put(RESULT, g.getResult());
+				obj.put(DATE, g.getDate());
+				obj.put(PGN, g.getPGN());
+				
+				JSONArray scores = new JSONArray();
+				int i = 0;
+				for(Move m : g.getAlMoves()){
+					JSONObject score = new JSONObject();
+					score.put(ID, i);
+					score.put(SCORE, m.getFen().getScore());
+					scores.put(score);
+					i++;
 				}
-				object = new JSONObject(g);
-				gamesArray.put(object);
-				//saveInFile(object,GAME_FILE, exists);	
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}			
+				obj.put(SCORES, scores);
+				writer.println(obj);
+				hasNext = it.hasNext();
+				if(hasNext)
+					writer.print(",");
+			}
+
+			writer.println(']');
+			System.out.println("New File..");
+
+			System.out.println("Successfully Copied JSON Object to File...");
+			writer.close();
+		} catch (IOException e) {
 		}
 		
-		saveInFile(gamesArray, GAME_FILE);
 	}
 
 

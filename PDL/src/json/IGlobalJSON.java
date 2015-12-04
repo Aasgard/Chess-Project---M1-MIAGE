@@ -26,13 +26,18 @@ public interface IGlobalJSON {
 	
 	//CONSTANTE GAME
 	public final String ID_WHITE = "id_white";
+	public final String NAME_WHITE = "name_white";
 	public final String ID_BLACK = "id_black";
+	public final String NAME_BLACK = "name_black";
+	public final String EVENT_NAME = "event_name";
 	public final String PGN = "pgn";
+	public final String ID_OPENING = "id_opening";
+	public final String DATE = "date";
+	public final String RESULT ="result";
+	
 	public final String EVOL_SCORE_MOVE = "evol_score_move";
 	public final String MOVE_AVERAGE = "move_average";
-	public final String DATE = "date";
 	public final String SCORE_TOTAL_VAR	= "score_total_variation";
-	public final String ID_OPENING = "id_opening";
 	public final String SCORES = "scores";
 	public final String NUMBER_MOVE = "number_move";
 	public final String SCORE = "score";
