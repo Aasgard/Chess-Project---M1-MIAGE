@@ -1,5 +1,15 @@
 [
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2386
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2386
+  }
+ ],
  "nb_games_played": 2,
  "name": "Plischki,S",
  "id": 4,
@@ -7,6 +17,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2532
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2532
+  }
+ ],
  "nb_games_played": 2,
  "name": "Rausis,I",
  "id": 5,
@@ -14,6 +34,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2481
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2481
+  }
+ ],
  "nb_games_played": 2,
  "name": "Burg,T",
  "id": 6,
@@ -21,6 +51,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2602
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2602
+  }
+ ],
  "nb_games_played": 2,
  "name": "Mamedov,Nid",
  "id": 7,
@@ -28,6 +68,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2474
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2474
+  }
+ ],
  "nb_games_played": 2,
  "name": "Stachowiak,K",
  "id": 8,
@@ -35,6 +85,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2587
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2587
+  }
+ ],
  "nb_games_played": 2,
  "name": "Kempinski,R",
  "id": 9,
@@ -42,6 +102,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2549
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2549
+  }
+ ],
  "nb_games_played": 2,
  "name": "Neiksans,A",
  "id": 10,
@@ -49,6 +119,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2432
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2432
+  }
+ ],
  "nb_games_played": 2,
  "name": "Luch,M",
  "id": 11,
@@ -56,6 +136,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2498
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2498
+  }
+ ],
  "nb_games_played": 2,
  "name": "Andreev,Ed UKR",
  "id": 12,
@@ -63,6 +153,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2385
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2385
+  }
+ ],
  "nb_games_played": 2,
  "name": "Kanovsky,D",
  "id": 13,
@@ -70,6 +170,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2422
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2422
+  }
+ ],
  "nb_games_played": 2,
  "name": "Smirnov,Arte",
  "id": 14,
@@ -77,6 +187,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2498
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2498
+  }
+ ],
  "nb_games_played": 2,
  "name": "Boros,De",
  "id": 15,
@@ -84,6 +204,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2486
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2486
+  }
+ ],
  "nb_games_played": 2,
  "name": "Zaragatski,I",
  "id": 16,
@@ -91,6 +221,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2322
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2322
+  }
+ ],
  "nb_games_played": 2,
  "name": "Freisler,P",
  "id": 17,
@@ -98,21 +238,37 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2581
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2581
+  }
+ ],
  "nb_games_played": 2,
  "name": "Babula,V",
  "id": 18,
  "nb_games_win": 1,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 8,
   "nb_of_error": 1,
   "errors_fen": ["3r1k2/1R3Q2/5pp1/8/P2N4/4P1P1/5PPK/2r2q2"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2353
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2353
+  }
+ ],
  "nb_games_played": 2,
  "name": "Wieczorek,O",
  "id": 19,
@@ -120,6 +276,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2330
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2330
+  }
+ ],
  "nb_games_played": 2,
  "name": "Berry,S",
  "id": 20,
@@ -127,36 +293,58 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2474
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2474
+  }
+ ],
  "nb_games_played": 2,
  "name": "Baumegger,S",
  "id": 21,
  "nb_games_win": 1,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 86,
   "nb_of_error": 1,
   "errors_fen": ["1R6/p3Q1kp/5pp1/8/6P1/3P3b/4PP1P/q1r3NK"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2320
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2320
+  }
+ ],
  "nb_games_played": 2,
  "name": "Kantans,T",
  "id": 22,
  "nb_games_win": 0,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 86,
   "nb_of_error": 1,
   "errors_fen": ["1R6/p3Q2p/5ppk/8/6P1/3P3b/4PP1P/q1r3NK"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2467
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2467
+  }
+ ],
  "nb_games_played": 2,
  "name": "Simacek,P",
  "id": 23,
@@ -164,6 +352,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2303
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2303
+  }
+ ],
  "nb_games_played": 2,
  "name": "Tuma,Ja",
  "id": 24,
@@ -171,6 +369,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2413
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2413
+  }
+ ],
  "nb_games_played": 2,
  "name": "Manik,M",
  "id": 25,
@@ -178,6 +386,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2375
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2375
+  }
+ ],
  "nb_games_played": 2,
  "name": "Dolezal,Ra1",
  "id": 26,
@@ -185,6 +403,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2249
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2249
+  }
+ ],
  "nb_games_played": 2,
  "name": "Mamedjarova,T",
  "id": 27,
@@ -192,6 +420,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2085
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2085
+  }
+ ],
  "nb_games_played": 2,
  "name": "Stastny,Pe",
  "id": 28,
@@ -199,6 +437,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2364
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2364
+  }
+ ],
  "nb_games_played": 2,
  "name": "Vavra,P1",
  "id": 29,
@@ -206,6 +454,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2350
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2350
+  }
+ ],
  "nb_games_played": 2,
  "name": "Jurcik,Mart",
  "id": 30,
@@ -213,6 +471,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2065
+ }],
  "nb_games_played": 1,
  "name": "Brem,S",
  "id": 31,
@@ -220,6 +482,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2169
+ }],
  "nb_games_played": 1,
  "name": "Steiner,B",
  "id": 32,
@@ -227,6 +493,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2525
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2525
+  }
+ ],
  "nb_games_played": 2,
  "name": "Jurcik,Mari",
  "id": 33,
@@ -234,6 +510,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2166
+ }],
  "nb_games_played": 1,
  "name": "Kozak,Mi",
  "id": 34,
@@ -241,6 +521,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2482
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2482
+  }
+ ],
  "nb_games_played": 2,
  "name": "Kasparov,S",
  "id": 35,
@@ -248,6 +538,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2463
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2463
+  }
+ ],
  "nb_games_played": 2,
  "name": "Cernousek,L",
  "id": 36,
@@ -255,6 +555,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2139
+ }],
  "nb_games_played": 1,
  "name": "Rubes,J",
  "id": 37,
@@ -262,6 +566,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2445
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2445
+  }
+ ],
  "nb_games_played": 2,
  "name": "Plat,V",
  "id": 38,
@@ -269,6 +583,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2133
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2133
+  }
+ ],
  "nb_games_played": 2,
  "name": "Hrbolka,L sr",
  "id": 39,
@@ -276,6 +600,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2412
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2412
+  }
+ ],
  "nb_games_played": 2,
  "name": "Biolek,R1",
  "id": 40,
@@ -283,6 +617,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2114
+ }],
  "nb_games_played": 1,
  "name": "Turner,R",
  "id": 41,
@@ -290,6 +628,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2164
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2164
+  }
+ ],
  "nb_games_played": 2,
  "name": "Hrbolka,L jr",
  "id": 42,
@@ -297,6 +645,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2412
+ }],
  "nb_games_played": 1,
  "name": "Kristiansen,Jen",
  "id": 43,
@@ -304,6 +656,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2399
+ }],
  "nb_games_played": 1,
  "name": "Bures,J",
  "id": 44,
@@ -311,6 +667,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2083
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2083
+  }
+ ],
  "nb_games_played": 2,
  "name": "Ulanowski,K",
  "id": 45,
@@ -318,6 +684,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2145
+ }],
  "nb_games_played": 1,
  "name": "Janda,Z",
  "id": 46,
@@ -325,6 +695,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2382
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2382
+  }
+ ],
  "nb_games_played": 2,
  "name": "Weichhold,P",
  "id": 47,
@@ -332,6 +712,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2124
+ }],
  "nb_games_played": 1,
  "name": "Friml,A",
  "id": 48,
@@ -339,6 +723,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2361
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2361
+  }
+ ],
  "nb_games_played": 2,
  "name": "Lechtynsky,J",
  "id": 49,
@@ -346,6 +740,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2111
+ }],
  "nb_games_played": 1,
  "name": "Pedersen,HB",
  "id": 50,
@@ -353,6 +751,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2342
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2342
+  }
+ ],
  "nb_games_played": 2,
  "name": "Balin,J",
  "id": 51,
@@ -360,6 +768,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2070
+ }],
  "nb_games_played": 1,
  "name": "Slampa,J",
  "id": 52,
@@ -367,21 +779,31 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2312
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2312
+  }
+ ],
  "nb_games_played": 2,
  "name": "Jacobsen,Bo",
  "id": 53,
  "nb_games_win": 1,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 25,
   "nb_of_error": 1,
   "errors_fen": ["4r3/2P2pk1/3Q1b2/7B/5B2/2qK2P1/b7/5R2"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2039
+ }],
  "nb_games_played": 1,
  "name": "Vykouk,Jan",
  "id": 54,
@@ -389,6 +811,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2297
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2297
+  }
+ ],
  "nb_games_played": 2,
  "name": "Weinzettl,E",
  "id": 55,
@@ -396,21 +828,31 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2231
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2231
+  }
+ ],
  "nb_games_played": 2,
  "name": "Jedlicka,A",
  "id": 56,
  "nb_games_win": 1,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 91,
   "nb_of_error": 1,
   "errors_fen": ["3rkq1R/6p1/2P3p1/3Bp3/4P3/8/4K3/8"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1976
+ }],
  "nb_games_played": 1,
  "name": "Partys,P",
  "id": 57,
@@ -418,6 +860,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2196
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2196
+  }
+ ],
  "nb_games_played": 2,
  "name": "Bartos,J",
  "id": 58,
@@ -425,6 +877,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2073
+ }],
  "nb_games_played": 1,
  "name": "Volek,R",
  "id": 59,
@@ -432,6 +888,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2038
+ }],
  "nb_games_played": 1,
  "name": "Mikes,J",
  "id": 60,
@@ -439,6 +899,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2191
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2191
+  }
+ ],
  "nb_games_played": 2,
  "name": "Cajbel,M",
  "id": 61,
@@ -446,6 +916,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1916
+ }],
  "nb_games_played": 1,
  "name": "Gungl,T",
  "id": 62,
@@ -453,6 +927,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2171
+ }],
  "nb_games_played": 1,
  "name": "Nguyen,Thai Dai Van",
  "id": 63,
@@ -460,6 +938,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2267
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2267
+  }
+ ],
  "nb_games_played": 2,
  "name": "Sadilek,P",
  "id": 64,
@@ -467,6 +955,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1954
+ }],
  "nb_games_played": 1,
  "name": "Pavlicek,P",
  "id": 65,
@@ -474,6 +966,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1997
+ }],
  "nb_games_played": 1,
  "name": "Grussova,H",
  "id": 66,
@@ -481,6 +977,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2264
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2264
+  }
+ ],
  "nb_games_played": 2,
  "name": "Mamedjarova,Z",
  "id": 67,
@@ -488,6 +994,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2255
+ }],
  "nb_games_played": 1,
  "name": "Ptacnikova,L",
  "id": 68,
@@ -495,6 +1005,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2001
+ }],
  "nb_games_played": 1,
  "name": "Chmelik,J",
  "id": 69,
@@ -502,6 +1016,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1977
+ }],
  "nb_games_played": 1,
  "name": "Horak,Ales",
  "id": 70,
@@ -509,6 +1027,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2216
+ }],
  "nb_games_played": 1,
  "name": "Hadraba,V",
  "id": 71,
@@ -516,6 +1038,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2212
+ }],
  "nb_games_played": 1,
  "name": "Schou Moldt,T",
  "id": 72,
@@ -523,6 +1049,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1958
+ }],
  "nb_games_played": 1,
  "name": "Kaluzny,Ma",
  "id": 73,
@@ -530,6 +1060,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1968
+ }],
  "nb_games_played": 1,
  "name": "Ta,V",
  "id": 74,
@@ -537,6 +1071,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2202
+ }],
  "nb_games_played": 1,
  "name": "Stone,A ENG",
  "id": 75,
@@ -544,6 +1082,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2198
+ }],
  "nb_games_played": 1,
  "name": "Furman,Bo",
  "id": 76,
@@ -551,6 +1093,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1933
+ }],
  "nb_games_played": 1,
  "name": "Plug,A",
  "id": 77,
@@ -558,6 +1104,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1933
+ }],
  "nb_games_played": 1,
  "name": "Dolezal,Ra2",
  "id": 78,
@@ -565,6 +1115,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2155
+ }],
  "nb_games_played": 1,
  "name": "Grichkevitch,G",
  "id": 79,
@@ -572,21 +1126,25 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2137
+ }],
  "nb_games_played": 1,
  "name": "Thestrup,S",
  "id": 80,
  "nb_games_win": 1,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 39,
   "nb_of_error": 1,
   "errors_fen": ["8/2k5/1p1Q4/p3Pp2/P3pP1P/KP4P1/8/4q3"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1832
+ }],
  "nb_games_played": 1,
  "name": "Zima,To2",
  "id": 81,
@@ -594,6 +1152,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1901
+ }],
  "nb_games_played": 1,
  "name": "Konvalinka,Vladislav",
  "id": 82,
@@ -601,6 +1163,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2106
+ }],
  "nb_games_played": 1,
  "name": "Ksana,V",
  "id": 83,
@@ -608,6 +1174,16 @@
  "errors": []
 },
 {
+ "elos": [
+  {
+   "date": "2013-06-20",
+   "elo": 2052
+  },
+  {
+   "date": "2013-06-21",
+   "elo": 2052
+  }
+ ],
  "nb_games_played": 2,
  "name": "Toman,Ondrej",
  "id": 84,
@@ -615,6 +1191,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1809
+ }],
  "nb_games_played": 1,
  "name": "Kaluzny,Jiri",
  "id": 85,
@@ -622,21 +1202,25 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1817
+ }],
  "nb_games_played": 1,
  "name": "Badelka,Olga",
  "id": 86,
  "nb_games_win": 0,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 42,
   "nb_of_error": 1,
   "errors_fen": ["1r6/4pk2/3p1pp1/2qP3p/2p1P2P/2Q2PK1/1P4P1/1R6"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2026
+ }],
  "nb_games_played": 1,
  "name": "Marek,Mat",
  "id": 87,
@@ -644,6 +1228,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1812
+ }],
  "nb_games_played": 1,
  "name": "Rasmussen,He2",
  "id": 88,
@@ -651,6 +1239,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2176
+ }],
  "nb_games_played": 1,
  "name": "Vales,V",
  "id": 89,
@@ -658,6 +1250,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1917
+ }],
  "nb_games_played": 1,
  "name": "Andersen,Dani",
  "id": 90,
@@ -665,6 +1261,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2196
+ }],
  "nb_games_played": 1,
  "name": "Horak,Ji1",
  "id": 91,
@@ -672,6 +1272,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2079
+ }],
  "nb_games_played": 1,
  "name": "Zahour,Ivan",
  "id": 92,
@@ -679,6 +1283,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1909
+ }],
  "nb_games_played": 1,
  "name": "Cenek,M2",
  "id": 93,
@@ -686,6 +1294,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1894
+ }],
  "nb_games_played": 1,
  "name": "Kula,Dominik",
  "id": 94,
@@ -693,6 +1305,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2035
+ }],
  "nb_games_played": 1,
  "name": "Riha,Jaroslav",
  "id": 95,
@@ -700,6 +1316,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2029
+ }],
  "nb_games_played": 1,
  "name": "Jensen,Le1",
  "id": 96,
@@ -707,6 +1327,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1887
+ }],
  "nb_games_played": 1,
  "name": "Majerik,V",
  "id": 97,
@@ -714,6 +1338,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2009
+ }],
  "nb_games_played": 1,
  "name": "Treppendahl,T",
  "id": 98,
@@ -721,6 +1349,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1878
+ }],
  "nb_games_played": 1,
  "name": "Cenek,M1",
  "id": 99,
@@ -728,6 +1360,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2006
+ }],
  "nb_games_played": 1,
  "name": "Gratze,M",
  "id": 100,
@@ -735,6 +1371,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1875
+ }],
  "nb_games_played": 1,
  "name": "Horyna,J",
  "id": 101,
@@ -742,6 +1382,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1863
+ }],
  "nb_games_played": 1,
  "name": "Okrouhlik,Zdenek",
  "id": 102,
@@ -749,6 +1393,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1982
+ }],
  "nb_games_played": 1,
  "name": "Jirasek,J",
  "id": 103,
@@ -756,6 +1404,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1971
+ }],
  "nb_games_played": 1,
  "name": "Tejkal,J",
  "id": 104,
@@ -763,6 +1415,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1826
+ }],
  "nb_games_played": 1,
  "name": "Skuthan,Jiri",
  "id": 105,
@@ -770,6 +1426,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1801
+ }],
  "nb_games_played": 1,
  "name": "Hansen,HenrikD",
  "id": 106,
@@ -777,6 +1437,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1968
+ }],
  "nb_games_played": 1,
  "name": "Bazantova,M",
  "id": 107,
@@ -784,6 +1448,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1964
+ }],
  "nb_games_played": 1,
  "name": "Smolik,Boris",
  "id": 108,
@@ -791,6 +1459,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1768
+ }],
  "nb_games_played": 1,
  "name": "Sigurdsson,Ja",
  "id": 109,
@@ -798,36 +1470,40 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 0
+ }],
  "nb_games_played": 1,
  "name": "Bublik,Frantisek",
  "id": 110,
  "nb_games_win": 0,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 54,
   "nb_of_error": 1,
   "errors_fen": ["b1Q5/3R1pkp/pr4pq/1p6/1P1Q4/P4B2/6Pb/1N5K"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1963
+ }],
  "nb_games_played": 1,
  "name": "Valenta,P",
  "id": 111,
  "nb_games_win": 0,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 54,
   "nb_of_error": 1,
   "errors_fen": ["b1Q5/3R1pkp/pr4pq/1p2b3/1P1Q4/P4B2/6P1/1N5K"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1947
+ }],
  "nb_games_played": 1,
  "name": "Papay,J",
  "id": 112,
@@ -835,6 +1511,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1664
+ }],
  "nb_games_played": 1,
  "name": "Bobek,Daniel",
  "id": 113,
@@ -842,6 +1522,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1736
+ }],
  "nb_games_played": 1,
  "name": "Krutsky,Martin",
  "id": 114,
@@ -849,6 +1533,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1946
+ }],
  "nb_games_played": 1,
  "name": "Eiriksson,S",
  "id": 115,
@@ -856,6 +1544,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1936
+ }],
  "nb_games_played": 1,
  "name": "Klakurka,S",
  "id": 116,
@@ -863,6 +1555,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1710
+ }],
  "nb_games_played": 1,
  "name": "Babicka,Michal",
  "id": 117,
@@ -870,6 +1566,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 0
+ }],
  "nb_games_played": 1,
  "name": "Zeman,Lukas",
  "id": 118,
@@ -877,6 +1577,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1936
+ }],
  "nb_games_played": 1,
  "name": "Kudela,S",
  "id": 119,
@@ -884,6 +1588,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 2001
+ }],
  "nb_games_played": 1,
  "name": "Vrchotka,J",
  "id": 120,
@@ -891,6 +1599,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1761
+ }],
  "nb_games_played": 1,
  "name": "Kastl,Daniel",
  "id": 121,
@@ -898,6 +1610,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1735
+ }],
  "nb_games_played": 1,
  "name": "Balka,L",
  "id": 122,
@@ -905,6 +1621,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1966
+ }],
  "nb_games_played": 1,
  "name": "Papay,M",
  "id": 123,
@@ -912,6 +1632,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1750
+ }],
  "nb_games_played": 1,
  "name": "Straslipka,Jiri",
  "id": 124,
@@ -919,6 +1643,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1862
+ }],
  "nb_games_played": 1,
  "name": "Klimek,Pe",
  "id": 125,
@@ -926,6 +1654,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1826
+ }],
  "nb_games_played": 1,
  "name": "Frijling,J",
  "id": 126,
@@ -933,6 +1665,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1625
+ }],
  "nb_games_played": 1,
  "name": "Holy,Filip",
  "id": 127,
@@ -940,6 +1676,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1820
+ }],
  "nb_games_played": 1,
  "name": "Hanzlik,David",
  "id": 128,
@@ -947,6 +1687,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 0
+ }],
  "nb_games_played": 1,
  "name": "Goc,Vlastimil",
  "id": 129,
@@ -954,6 +1698,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1798
+ }],
  "nb_games_played": 1,
  "name": "Egholm,Leif",
  "id": 130,
@@ -961,6 +1709,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1568
+ }],
  "nb_games_played": 1,
  "name": "Kirchner,Michal",
  "id": 131,
@@ -968,6 +1720,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1778
+ }],
  "nb_games_played": 1,
  "name": "Parpel,P",
  "id": 132,
@@ -975,6 +1731,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 0
+ }],
  "nb_games_played": 1,
  "name": "Zak,Jiri",
  "id": 133,
@@ -982,6 +1742,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1792
+ }],
  "nb_games_played": 1,
  "name": "Kuchar,Tomas",
  "id": 134,
@@ -989,6 +1753,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1688
+ }],
  "nb_games_played": 1,
  "name": "Ruzicka,V1",
  "id": 135,
@@ -996,6 +1764,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1779
+ }],
  "nb_games_played": 1,
  "name": "Huba,Mark J",
  "id": 136,
@@ -1003,6 +1775,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1669
+ }],
  "nb_games_played": 1,
  "name": "Maly,Jiri",
  "id": 137,
@@ -1010,6 +1786,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1767
+ }],
  "nb_games_played": 1,
  "name": "Hanzlik,Daniel",
  "id": 138,
@@ -1017,21 +1797,25 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1637
+ }],
  "nb_games_played": 1,
  "name": "Hanzlik,Tomas",
  "id": 139,
  "nb_games_win": 0,
-<<<<<<< HEAD
  "errors": [{
   "id_game": 68,
   "nb_of_error": 1,
   "errors_fen": ["5Q2/p1P5/6kp/8/3Pp1n1/4Bbq1/PP3RP1/R5K1"]
  }]
-=======
- "errors": []
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1764
+ }],
  "nb_games_played": 1,
  "name": "Purkyt,Jaroslav",
  "id": 140,
@@ -1039,6 +1823,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1406
+ }],
  "nb_games_played": 1,
  "name": "Valterova,Veronika",
  "id": 141,
@@ -1046,6 +1834,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1645
+ }],
  "nb_games_played": 1,
  "name": "Schoeppe,Christian",
  "id": 142,
@@ -1053,6 +1845,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1745
+ }],
  "nb_games_played": 1,
  "name": "Hruby,Va",
  "id": 143,
@@ -1060,6 +1856,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1630
+ }],
  "nb_games_played": 1,
  "name": "Hellinger,Jan",
  "id": 144,
@@ -1067,6 +1867,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1736
+ }],
  "nb_games_played": 1,
  "name": "Kochert,B",
  "id": 145,
@@ -1074,6 +1878,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1753
+ }],
  "nb_games_played": 1,
  "name": "Mriso,Milos",
  "id": 146,
@@ -1081,6 +1889,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1699
+ }],
  "nb_games_played": 1,
  "name": "Svoboda,Zde1",
  "id": 147,
@@ -1088,6 +1900,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1575
+ }],
  "nb_games_played": 1,
  "name": "Steinhart,Roel",
  "id": 148,
@@ -1095,6 +1911,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1516
+ }],
  "nb_games_played": 1,
  "name": "Polansky,Adam Lubos",
  "id": 149,
@@ -1102,6 +1922,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1391
+ }],
  "nb_games_played": 1,
  "name": "Nguyen,Thai Dai Vinh",
  "id": 150,
@@ -1109,6 +1933,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-20",
+  "elo": 1525
+ }],
  "nb_games_played": 1,
  "name": "Obrsal,Josef",
  "id": 151,
@@ -1116,6 +1944,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-21",
+  "elo": 2514
+ }],
  "nb_games_played": 1,
  "name": "Teske,H",
  "id": 152,
@@ -1123,6 +1955,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-21",
+  "elo": 2503
+ }],
  "nb_games_played": 1,
  "name": "Krejci,Jan2",
  "id": 153,
@@ -1130,6 +1966,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-21",
+  "elo": 2454
+ }],
  "nb_games_played": 1,
  "name": "Simantsev,M",
  "id": 154,
@@ -1137,6 +1977,10 @@
  "errors": []
 },
 {
+ "elos": [{
+  "date": "2013-06-21",
+  "elo": 2565
+ }],
  "nb_games_played": 1,
  "name": "Kislinsky,A",
  "id": 155,
