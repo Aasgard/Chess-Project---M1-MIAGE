@@ -72,7 +72,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			white.put(COLOR, "#F6F3EE");
 
 			JSONObject black = new JSONObject();
-			black.put(NAME, " Black");
+			black.put(NAME, "Black");
 			black.put(Y, nbBlack);
 			black.put(COLOR, "#494847");
 
