@@ -36,7 +36,7 @@ public class ExtractDB{
 
 	public static List<Game> extractGames() {
 		List<Game> alGames = new ArrayList<Game>();
-		String query = "SELECT Game.id, Game.whiteId, j1.name, Game.whiteElo, Game.blackId, j2.name, Game.blackElo, date, Opening.id, Opening.opening, Opening.variation, Opening.moves, Opening.nbMoves, Game.result,Event.id, Event.name, Event.city, Game.movesSAN FROM Player j1, Player j2, Game, Opening, Event WHERE Opening.id = Game.ecoId AND Game.eventId = Event.id AND j1.id = Game.whiteId AND j2.id = Game.blackId";
+		String query = "SELECT Game.id, Game.whiteId, j1.name, Game.whiteElo, Game.blackId, j2.name, Game.blackElo, date, Opening.id, Opening.opening, Opening.variation, Opening.moves, Opening.nbMoves, Game.result,Event.id, Event.name, Event.city, Game.movesUCI FROM Player j1, Player j2, Game, Opening, Event WHERE Opening.id = Game.ecoId AND Game.eventId = Event.id AND j1.id = Game.whiteId AND j2.id = Game.blackId";
 		int i = 0;
 		
 		try {

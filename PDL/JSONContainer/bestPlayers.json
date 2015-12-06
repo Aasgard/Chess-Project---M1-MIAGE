@@ -1,66 +1,34 @@
-<<<<<<< HEAD
 [
 {
  "best_players": [
   {
+   "nb_games_loose": 0,
    "name": "Mamedjarova,Z",
    "nb_games_win": 2,
    "rang": 1
   },
   {
-   "name": "Weichhold,P",
-   "nb_games_win": 2,
+   "nb_games_loose": 0,
+   "name": "Simantsev,M",
+   "nb_games_win": 1,
    "rang": 2
   },
   {
-   "name": "Simantsev,M",
-   "nb_games_win": 1,
+   "nb_games_loose": 0,
+   "name": "Kislinsky,A",
+   "nb_games_win": 0,
    "rang": 3
   },
   {
-   "name": "Steinhart,Roel",
-   "nb_games_win": 1,
+   "nb_games_loose": 0,
+   "nb_games_win": 0,
    "rang": 4
   },
   {
-   "name": "Svoboda,Zde1",
-   "nb_games_win": 1,
+   "nb_games_loose": 0,
+   "nb_games_win": 0,
    "rang": 5
   }
  ],
  "id": 1
 }]
-=======
-
-[
-{
- "best_players": [
-  {
-   "name": "Mamedjarova,Z",
-   "nb_games_win": 2,
-   "rang": 1
-  },
-  {
-   "name": "Weichhold,P",
-   "nb_games_win": 2,
-   "rang": 2
-  },
-  {
-   "name": "Simantsev,M",
-   "nb_games_win": 1,
-   "rang": 3
-  },
-  {
-   "name": "Steinhart,Roel",
-   "nb_games_win": 1,
-   "rang": 4
-  },
-  {
-   "name": "Svoboda,Zde1",
-   "nb_games_win": 1,
-   "rang": 5
-  }
- ],
- "id": 1
-}]
->>>>>>> branch 'master' of https://github.com/Aasgard/Chess-Project---M1-MIAGE
