@@ -7,9 +7,9 @@ import com.jcraft.jsch.SftpException;
 
 import analysis.Analysis;
 import object.*;
-import tests.StopWatch;
 import tools.Folder;
 import tools.SFTP;
+import tools.StopWatch;
 
 public class Run {
 
