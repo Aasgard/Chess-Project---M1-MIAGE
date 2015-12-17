@@ -43,7 +43,6 @@ public class Analysis {
 			List<Move> allMoves = game.getAlMoves();
 			Iterator<Move> it = allMoves.iterator();
 			if(it.hasNext()){
-
 				Move currentMove = it.next();
 				// Parcours des moves
 				while (currentMove != null) {
@@ -72,7 +71,7 @@ public class Analysis {
 		
 		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
 		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
-			if(fenMoves.getValue().size() > 1)
+			//if(fenMoves.getValue().size() > 1)
 				sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
 		}
 		
