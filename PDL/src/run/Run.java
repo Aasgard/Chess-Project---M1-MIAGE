@@ -29,13 +29,13 @@ public class Run {
 		List<Game> alGames = anal.getGames();
 		
 		/* Gï¿½nï¿½ration des fichiers JSON de la Homepage */
-		anal.globalStats();
+		//anal.globalStats();
 		anal.analyzePlayers();
-		anal.analyzeScoreGame();
-		anal.globalBestGame();
-		anal.analyzeOpenings();
-		anal.analyzeScoreEvolutionFromPosition();
-		anal.saveGames();
+		//anal.analyzeScoreGame();
+		//anal.globalBestGame();
+		//anal.analyzeOpenings();
+		//anal.analyzeScoreEvolutionFromPosition();
+		//anal.saveGames();
 		
 		/* Transfert des fichiers gï¿½nï¿½rï¿½s sur le serveur Web distant */
 		sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
@@ -45,9 +45,9 @@ public class Run {
 		//sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		
 		System.out.println("Temps mis : " + sw.elapsedTime() + " secondes.");
-		System.out.println("Fichiers transférés. Dï¿½connexion du serveur SFTP ...");
-		//sftp.closeConnection();
-		System.out.println("SFTP terminé. Script d'analyse terminé.");
+		System.out.println("Fichiers transfï¿½rï¿½s. Dï¿½connexion du serveur SFTP ...");
+		sftp.closeConnection();
+		System.out.println("SFTP terminï¿½. Script d'analyse terminï¿½.");
 		
 		jsoncontainer.printFolder();
 		
