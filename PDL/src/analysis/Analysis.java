@@ -73,8 +73,7 @@ public class Analysis {
 		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
 			//if(fenMoves.getValue().size() > 1)
 				sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
-		}
-		
+		}		
 	}
 
 	public void analyzeOpenings(){
