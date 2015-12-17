@@ -14,11 +14,6 @@ import json.TreatmentJSON;
 import unitTests.UtilsTests;;
 
 public class TestTreatmentJSON {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 	
 	/**
 	 * Save JSONObject dans un fichier existant
@@ -36,7 +31,9 @@ public class TestTreatmentJSON {
 		jsonObj.put("attr2", 2);
 		
 		// sauvegarde du jsonObj dans le fichier
+		System.out.println(PATH_TEST_CORRIGE + fileName);
 		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
+		System.out.println("out saveInFile");
 		
 		// récupération du fichier dans un jsonArray
 		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);

@@ -167,7 +167,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}
 
 		try {
-			System.out.println(PATH + objectName);
 			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
 
 
