@@ -23,46 +23,11 @@ import object.Player;
 
 public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
-
-	public void saveAllScoreToJSON(Game g, int score_total_variation, List<FEN> scores){	
-		JSONObject game = null;
-		try {
-			game = ExtractJSON.getJsonGame(g.getId());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		boolean exists = true;
-		if (game == null){
-			game = createGameJson(g);
-			exists = false;
-		}
-		game.put(SCORE_TOTAL_VAR , score_total_variation);
-
-		JSONArray scoresJson = new JSONArray();
-		int nbMove = 1;
-		for(FEN fen : scores){
-			JSONObject score = new JSONObject();
-			score.put( NUMBER_MOVE , nbMove);
-			score.put( SCORE , fen.getScore());
-			score.put( FEN, fen.getRawFEN());
-
-			scoresJson.put(score);
-			nbMove ++;
-
-		}
-		game.remove( SCORES );
-		game.put( SCORES , scoresJson);
-
-		saveInFile(game, GAME_FILE, exists);
-	}
-
-
 	public void saveWinRateOpening(HashMap<Opening, List<Integer>> openings) {
 		
 		try {
-			System.out.println(PATH + RANKINGPOSITION_FILE);
-			PrintWriter writer = new PrintWriter(PATH + RANKINGPOSITION_FILE, "UTF-8");
+			System.out.println(PATH + OPENING_FILE);
+			PrintWriter writer = new PrintWriter(PATH + OPENING_FILE, "UTF-8");
 			writer.print('[');
 			int n = 0;
 			for(Entry<Opening , List<Integer>> opening : openings.entrySet()){
@@ -220,25 +185,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		} catch (IOException e) {
 		}
 	}
-
-
-	private JSONObject createGameJson(Game g) {
-		JSONObject object = new JSONObject();
-
-		object.put( ID , g.getId());
-		object.put( ID_WHITE , g.getWhitePlayer().getId());
-		object.put( ID_BLACK , g.getBlackPlayer().getId());
-		object.put( PGN , g.getPGN());
-		object.put( EVOL_SCORE_MOVE , "");
-		object.put( MOVE_AVERAGE , "");
-		object.put( DATE , g.getDate());
-		object.put( SCORE_TOTAL_VAR , "");
-		object.put( ID_OPENING , g.getOpening().getId());
-		object.put( SCORES , "");
-
-		return object;
-	}
-
 
 	private JSONObject createOpening(Opening o) {
 		JSONObject object = new JSONObject();

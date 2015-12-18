@@ -9,12 +9,6 @@ public class ErrorPlayer {
 	private int nb_of_error;
 	private List<String> error_fen;
 	
-	public ErrorPlayer(int idGame, int nb_of_error, List<String> error_fen){
-		this.setIdGame(idGame);
-		this.nb_of_error = nb_of_error;
-		this.error_fen = error_fen;
-	}
-	
 	public ErrorPlayer(int idGame, int nb_of_error) {
 		this.idGame = idGame;
 		this.nb_of_error = nb_of_error;

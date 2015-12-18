@@ -39,7 +39,6 @@ public class ScoreFromPositionAnalysis {
 			} 
 		}
 		return tableaubest_GameAndNextMove;
-		//treatmentJSON.saveBestFenToJSON(position, tableaubest_GameAndNextMove);
 	}
 
 

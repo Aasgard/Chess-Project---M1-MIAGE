@@ -39,10 +39,10 @@ public class Run {
 		
 		/* Transfert des fichiers g�n�r�s sur le serveur Web distant */
 		sftp.transferFolder(jsoncontainer, "/var/www/gesticompte.fr/json");
-		sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
+		/*sftp.transferFile("JSONContainer/bestGames.json", "/var/www/gesticompte.fr/json");
 		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
 		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
-		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");
+		sftp.transferFile("JSONContainer/statsBDD.json", "/var/www/gesticompte.fr/json");*/
 		
 		System.out.println("Temps mis : " + sw.elapsedTime() + " secondes.");
 		System.out.println("Fichiers transf�r�s. D�connexion du serveur SFTP ...");
