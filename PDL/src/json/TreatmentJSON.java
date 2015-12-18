@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -306,9 +307,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	}
 
 	@Override
-	public void saveBestFenToJSON(String position, GameAndNextMove[] gameAndNextMove) {
+	public void saveBestFenToJSON(Map<String, GameAndNextMove[]> map_fen_GameAndNextMove_tab){
 
-		JSONObject object = ExtractJSON.getJsonPosition(position);
+		
+		JSONObject object = null;
 
 		boolean exists = true;
 
@@ -316,7 +318,9 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			exists = false;
 			object = new JSONObject();
 		}
-
+		for(Entry<String , GameAndNextMove[]> fen_GameAndNextMove_tab : map_fen_GameAndNextMove_tab.entrySet()){
+		String position = fen_GameAndNextMove_tab.getKey();
+		GameAndNextMove[] gameAndNextMove = fen_GameAndNextMove_tab.getValue();
 		JSONArray objectGamesAndNextMove = new JSONArray();
 		for(int i = 0 ; i < gameAndNextMove.length ; i++){
 
@@ -336,6 +340,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}	
 		object.put(ID, position);
 		object.put(NEXTS, objectGamesAndNextMove);
+	}
 		saveInFile(object,RANKINGPOSITION_FILE, exists);	
 	}
 

@@ -18,7 +18,7 @@ public class ScoreFromPositionAnalysis {
 	 * @param position
 	 * @param movesByGame
 	 */
-	public void getEvolScore(String position, List<GameAndNextMove> movesByGame){
+	public GameAndNextMove[] getEvolScore(String position, List<GameAndNextMove> movesByGame){
 		GameAndNextMove tableaubest_GameAndNextMove[] = new GameAndNextMove[5];
 		for(int i = 0; i<5; i++){
 			tableaubest_GameAndNextMove[i] = new GameAndNextMove();
@@ -38,8 +38,8 @@ public class ScoreFromPositionAnalysis {
 				j++;
 			} 
 		}
-		
-		treatmentJSON.saveBestFenToJSON(position, tableaubest_GameAndNextMove);
+		return tableaubest_GameAndNextMove;
+		//treatmentJSON.saveBestFenToJSON(position, tableaubest_GameAndNextMove);
 	}
 
 
