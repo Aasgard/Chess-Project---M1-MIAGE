@@ -9,14 +9,14 @@ Ce projet à pour but d'analyser des parties d'échecs.
 * Classement des 5 meilleures parties par score global.
 
 * Statistiques base de données : 
-    - Nombre de games	
+    - Nombre de parties	
     - Nombre de joueurs	
     - Nombre d'evenements
 
 ###Joueurs
 
 - Pourcentage de jeu gagné
-- Nombre d'erreur (echecs et mat oublié)
+- Nombre d'erreurs (echecs et mat oublié)
 
 
 ###Parties
@@ -24,7 +24,7 @@ Ce projet à pour but d'analyser des parties d'échecs.
 - Fluctuation du score
 - Possibilité de rejouer la partie
 
-###Ouverture
+###Ouvertures
 
 - Possibilité de rejouer à partir de l'ouverture
 - Pourcentage des victoires (blanc, noir, ex aequo)
