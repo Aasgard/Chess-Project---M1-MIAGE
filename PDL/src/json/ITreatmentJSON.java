@@ -20,6 +20,8 @@ public interface ITreatmentJSON {
 	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
 	public void saveGlobalBestGamesToJSON(Game[] games);
+	
+	void saveGlobalBestGamesToJSON(Game[] games, String fileName);
 
 	public void saveBestFenToJSON(Map<String, GameAndNextMove[]> map_fen_GameAndNextMove_tab);
 	
