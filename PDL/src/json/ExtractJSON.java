@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.json.*;
+
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 import object.*;
 
 
@@ -21,6 +24,7 @@ public class ExtractJSON implements IGlobalJSON{
 
 	/**
 	 * Create an Object game from the Json File
+	 * 
 	 * @param idGame
 	 * @return
 	 * @throws IOException 
@@ -50,6 +54,13 @@ public class ExtractJSON implements IGlobalJSON{
 		return null;
 	}
 
+	/**
+	 * Retourne un JSONArray qui ne contient pas le myJsonObject
+	 * 
+	 * @param myJsonObject
+	 * @param objectName
+	 * @return
+	 */
 	public static JSONArray deleteJsonObject(JSONObject myJsonObject, String objectName){
 		JSONArray jsonArray = readJSONFile(objectName);
 
@@ -62,11 +73,18 @@ public class ExtractJSON implements IGlobalJSON{
 					jsonArray.remove(i);
 					find = true;
 				}
+				i++;
 			}
 		}
 		return jsonArray;
 	}
 
+	/**
+	 * Retourne le JSONArray du fichier objectName
+	 * 
+	 * @param objectName
+	 * @return
+	 */
 	public static JSONArray readJSONFile(String objectName){
 
 		String result = "";
@@ -95,6 +113,7 @@ public class ExtractJSON implements IGlobalJSON{
 
 	/**
 	 * Read the Json Object to find the game with this id
+	 * 
 	 * @param idGame
 	 * @return JsonObject Game or NULL
 	 * @throws IOException
@@ -106,6 +125,7 @@ public class ExtractJSON implements IGlobalJSON{
 
 	/**
 	 * Read the Json Object to find the opening with this id
+	 * 
 	 * @param idOpening
 	 * @return JsonObject Opening or NULL
 	 * @throws IOException
@@ -120,7 +140,7 @@ public class ExtractJSON implements IGlobalJSON{
 	 * Read the Json Object to find the opening with this id
 	 * 
 	 * @param position
-	 * @return
+	 * @return JSONObject
 	 * @throws IOException
 	 */
 	public static JSONObject getJsonPosition(String position){
@@ -147,6 +167,13 @@ public class ExtractJSON implements IGlobalJSON{
 		return positionFind;
 	}
 
+	/**
+	 * Retourne un Player selon son id à partir du JSON
+	 * 
+	 * @param idPlayer
+	 * @return Player le player recherché
+	 * @throws IOException
+	 */
 	public static Player getJsonPlayer(int idPlayer) throws IOException{
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 		Player player = null;
@@ -184,6 +211,13 @@ public class ExtractJSON implements IGlobalJSON{
 		return player;
 	}
 
+	/**
+	 * Retourne un JSONObject du player ayant l'id idPlayer
+	 * 
+	 * @param idPlayer
+	 * @return JSONObject du player recherché
+	 * @throws IOException
+	 */
 	public static JSONObject getJsonFilePlayer(int idPlayer) throws IOException {
 		JSONArray playersArray = readJSONFile( PLAYER_FILE );
 

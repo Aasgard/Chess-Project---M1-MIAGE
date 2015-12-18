@@ -11,11 +11,6 @@ import json.ExtractJSON;
 import unitTests.UtilsTests;;
 
 public class TestExtractJSON {
-
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
 	
 	/**
 	 * Test de suppression d'un JSONObject dans un fichier existant

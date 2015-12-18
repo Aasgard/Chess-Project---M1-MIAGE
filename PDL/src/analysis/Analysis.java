@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import database.*;
@@ -39,7 +40,7 @@ public class Analysis {
 
 		// Parcours de toutes les games
 		for(Game game: games){
-			// On récupère tous les moves de la games
+			// On rï¿½cupï¿½re tous les moves de la games
 			List<Move> allMoves = game.getAlMoves();
 			Iterator<Move> it = allMoves.iterator();
 			if(it.hasNext()){
@@ -68,12 +69,16 @@ public class Analysis {
 			}
 		}
 		// Sauvegarde le meilleur Fen pour une position
-		
+		Map<String , GameAndNextMove[]> result = new HashMap<String, GameAndNextMove[]>();
 		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
 		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
 			//if(fenMoves.getValue().size() > 1)
-				sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
-		}		
+				///sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
+				result.put(fenMoves.getKey(), sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue()));
+				
+		}
+		TreatmentJSON treatmentJSON = new TreatmentJSON();				
+		treatmentJSON.saveBestFenToJSON(result);
 	}
 
 	public void analyzeOpenings(){

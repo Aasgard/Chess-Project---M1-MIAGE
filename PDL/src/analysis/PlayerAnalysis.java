@@ -72,7 +72,7 @@ public class PlayerAnalysis {
 	 * @param error
 	 * @param fen
 	 */
-	public void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
+	private void addErrorToErrorPlayer(ErrorPlayer error, String fen) {
 
 		error.addNbError();
 		error.addErrorFen(fen);
