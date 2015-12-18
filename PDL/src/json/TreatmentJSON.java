@@ -234,6 +234,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		return object;
 	}
 
+	/**
+	 * Save nb of games played, nb of players and nb of events in a json file
+	 * @param nb_games
+	 * @param nb_players
+	 * @param nb_events
+	 */
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
@@ -263,7 +269,47 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put(GLOBAL_STATS, objectArray);
 		saveInFile( object, GLOBALSTAT_FILE , exists);
 	}
+	
+	/**
+	 * Save nb of games played, nb of players and nb of events in a json file
+	 * @param nb_games
+	 * @param nb_players
+	 * @param nb_events
+	 */
+	@Override
+	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events, String fileName) {
+		JSONObject object = new JSONObject();
+		boolean exists = false;
+		if(ExtractJSON.readJSONFile(fileName) != null){
+			exists = true;
+		}
 
+		JSONArray objectArray = new JSONArray();
+
+		JSONObject object1 = new JSONObject();
+		object1.put(LIBELLE, NB_GAMES);
+		object1.put(VALEUR, nb_games);
+		objectArray.put(object1);
+
+		JSONObject object2 = new JSONObject();
+		object2.put(LIBELLE, NB_PLAYERS);
+		object2.put(VALEUR, nb_players);
+		objectArray.put(object2);
+
+		JSONObject object3 = new JSONObject();
+		object3.put(LIBELLE, NB_EVENT);
+		object3.put(VALEUR, nb_events);
+		objectArray.put(object3);
+
+		object.put(ID, 1);
+		object.put(GLOBAL_STATS, objectArray);
+		saveInFile( object, fileName , exists);
+	}
+
+	/**
+	 * Save the best players in JSON file
+	 * @param players
+	 */
 	@Override
 	public void saveGlobalBestPlayersToJSON(Player[] players) {
 		JSONObject object = new JSONObject();
@@ -287,6 +333,36 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put(ID, 1);
 		object.put( BEST_PLAYERS , objectPlayers);
 		saveInFile(object, GLOBALBESTPLAYER_FILE, exists);	
+	}
+	
+	/**
+	 * Save the best players in specific JSON file
+	 * @param players
+	 * @param fileName
+	 */
+	@Override
+	public void saveGlobalBestPlayersToJSON(Player[] players, String fileName) {
+		JSONObject object = new JSONObject();
+		JSONArray objectPlayers = new JSONArray();
+
+		boolean exists = false;
+		if(ExtractJSON.readJSONFile(fileName) != null){
+			exists = true;
+		}
+
+		int rang = 1;
+		for(int i = 0 ; i < players.length ; i++){
+			JSONObject player = new JSONObject();
+			player.put( RANG_PLAYER, rang);
+			player.put( NAME , players[i].getName());
+			player.put( NB_GAME_WIN , players[i].getNbGameWin());
+			player.put(NB_GAME_LOOSE, players[i].getNbGameLoose());
+			objectPlayers.put(player);
+			rang++;
+		}
+		object.put(ID, 1);
+		object.put( BEST_PLAYERS , objectPlayers);
+		saveInFile(object, fileName, exists);	
 	}
 
 	/**
@@ -345,6 +421,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		saveInFile(object, fileName, exists);	
 	}
 
+	/**
+	 * @param position
+	 * @param gameAndNextMove
+	 */
 	@Override
 	public void saveBestFenToJSON(Map<String, GameAndNextMove[]> map_fen_GameAndNextMove_tab){
 
@@ -360,7 +440,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				GameAndNextMove[] gameAndNextMove = fen_GameAndNextMove_tab.getValue();
 				JSONArray objectGamesAndNextMove = new JSONArray();
 				for(int i = 0 ; i < gameAndNextMove.length ; i++){
-
 					int idGame = gameAndNextMove[i].getGameID();
 					if(idGame != -1){
 
@@ -382,6 +461,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				if(n <= map_fen_GameAndNextMove_tab.size()){
 					writer.println(',');
 				}
+
 				writer.println(object);
 			}
 
@@ -395,6 +475,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}
 	}
 
+	/**
+	 * Sauvegarde une liste de games dans un JSON
+	 * @param games
+	 */
 	@Override
 	public void saveGames(List<Game> games) {	
 

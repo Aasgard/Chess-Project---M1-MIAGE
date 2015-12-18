@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import json.ExtractJSON;
 import object.Game;
+import object.Player;
 
 public class UtilsTests {
 
@@ -50,10 +51,10 @@ public class UtilsTests {
 	}
 	
 	/**
-	 * Test si un JSONArray contient une game donnée
+	 * Test si un JSONArray contient une game donnée selon son rang
 	 * @param jsonArray
 	 * @param game
-	 * @return
+	 * @return bool
 	 */
 	public static boolean jsonArrayContainsGame(JSONArray jsonArray, Game game, int rang) {
 		boolean isInJson = false;
@@ -63,9 +64,9 @@ public class UtilsTests {
 		System.out.println(bestGameArray.toString());
 
 		for(int i=0; i < bestGameArray.length(); i++) {
-			JSONObject jsonObjTemp = jsonArray.getJSONObject(i);
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
 			
-			if((int)jsonObj.get("rang") == rang) {
+			if((int)jsonObjTemp.get("rang") == rang) {
 				isInJson = true;
 				
 				if(
@@ -82,6 +83,57 @@ public class UtilsTests {
 		}
 		return true;
 	}
+	
+	/**
+	 * Test si un JSONArray contient un player donné selon son rang
+	 * @param jsonArray
+	 * @param game
+	 * @return bool
+	 */
+	public static boolean jsonArrayContainsPlayer(JSONArray jsonArray, Player player, int rang) {
+		boolean isInJson = false;
+		JSONObject jsonObj = jsonArray.getJSONObject(0);
+		JSONArray bestGameArray = (JSONArray) jsonObj.get("best_players");
+
+		for(int i=0; i < bestGameArray.length(); i++) {
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
+			
+			if((int)jsonObjTemp.get("rang") == rang) {
+				isInJson = true;
+				
+				if(
+						(int)jsonObjTemp.get("nb_games_loose") != player.getNbGameLoose() ||
+						!jsonObjTemp.get("name").equals(player.getName()) ||
+						!jsonObjTemp.get("nb_games_win").equals(player.getNbGameWin())
+					) {
+					return false;
+				}
+			}
+		}
+		if(!isInJson) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Test si le jsonArray de GlobalStats est bon
+	 * @param jsonArray
+	 */
+	public static boolean testJsonArrayGlobalStats(JSONArray jsonArray) {
+		JSONObject jsonObj = jsonArray.getJSONObject(0);
+		JSONArray bestGameArray = (JSONArray) jsonObj.get("global_stats");
+
+		for(int i=0; i < bestGameArray.length(); i++) {
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
+			
+			if(!jsonObjTemp.has("valeur") || !jsonObjTemp.has("libelle")){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 	public static void deleteJsonObjectFromFile(JSONObject jsonObject, String objectName) {
 		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObject, objectName);
