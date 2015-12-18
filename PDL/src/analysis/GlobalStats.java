@@ -74,17 +74,11 @@ public class GlobalStats {
 		for(int i = 0; i<5; i++){
 			tableaubest_Players[i] = new Player();
 		}
-		System.out.println("taille de la liste de players : "+players.size());
-
 		for(Player p: players){	
 			int j = 0;
 			boolean find = false;
-			System.out.println(p.getName() + " et son nombre de victoire " + p.getNbGameWin());
 			while(j < tableaubest_Players.length && !find){
 				if(tableaubest_Players[j].getNbGameWin() <= p.getNbGameWin()){
-					System.out.println("test " + tableaubest_Players.length);
-
-					int m = j+1;
 					for(int k = tableaubest_Players.length-1 ; k > j ; k--){
 						tableaubest_Players[k] = tableaubest_Players[k-1];
 					}
@@ -94,9 +88,6 @@ public class GlobalStats {
 				j++;
 			}
 		} 
-		for(int i = 0; i<5; i++){
-			System.out.println("Nom dans le tableau : "+tableaubest_Players[i].getName());
-		}
 		treatmentJSON.saveGlobalBestPlayersToJSON(tableaubest_Players, fileName);
 	}
 	
@@ -111,7 +102,6 @@ public class GlobalStats {
 			Game ga = new Game();
 			tableaubest_Games[i] = ga;
 		}
-
 		for(Game g : games){
 			int j = 0;
 			boolean find = false;
@@ -144,7 +134,6 @@ public class GlobalStats {
 		}
 
 		for(Game g : games){
-			System.out.println("le score total de la game : "+g.getScoreTotalVariation());
 			int j = 0;
 			boolean find = false;
 			while(j < tableaubest_Games.length && !find){

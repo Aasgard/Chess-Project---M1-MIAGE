@@ -72,10 +72,7 @@ public class Analysis {
 		Map<String , GameAndNextMove[]> result = new HashMap<String, GameAndNextMove[]>();
 		ScoreFromPositionAnalysis sfpa = new ScoreFromPositionAnalysis();
 		for(Entry<String, List<GameAndNextMove>> fenMoves :  mapFenMoves.entrySet()){
-			//if(fenMoves.getValue().size() > 1)
-				///sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue());
-				result.put(fenMoves.getKey(), sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue()));
-				
+				result.put(fenMoves.getKey(), sfpa.getEvolScore(fenMoves.getKey(), fenMoves.getValue()));		
 		}
 		TreatmentJSON treatmentJSON = new TreatmentJSON();				
 		treatmentJSON.saveBestFenToJSON(result);

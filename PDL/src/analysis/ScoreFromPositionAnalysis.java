@@ -1,14 +1,9 @@
 package analysis;
 
 import java.util.List;
-import json.ITreatmentJSON;
-import json.TreatmentJSON;
 import object.GameAndNextMove;
 
 public class ScoreFromPositionAnalysis {
-
-	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
-
 
 	public ScoreFromPositionAnalysis(){
 	}

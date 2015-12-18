@@ -1,7 +1,5 @@
 package analysis;
 
-import java.util.*;
-
 import object.FEN;
 import object.Game;
 import object.Move;

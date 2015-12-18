@@ -2,12 +2,8 @@ package analysis;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
-import json.ITreatmentJSON;
-import json.TreatmentJSON;
-import object.*;
+import java.util.List;
 
 public class OpeningAnalysis {
 	
