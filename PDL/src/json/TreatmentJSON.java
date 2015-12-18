@@ -353,7 +353,9 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			PrintWriter writer = new PrintWriter(PATH + RANKINGPOSITION_FILE, "UTF-8");
 
 			writer.println('[');
+			int n = 0;
 			for(Entry<String , GameAndNextMove[]> fen_GameAndNextMove_tab : map_fen_GameAndNextMove_tab.entrySet()){
+				n++;
 				String position = fen_GameAndNextMove_tab.getKey();
 				GameAndNextMove[] gameAndNextMove = fen_GameAndNextMove_tab.getValue();
 				JSONArray objectGamesAndNextMove = new JSONArray();
@@ -376,7 +378,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				JSONObject object = new JSONObject();
 				object.put(ID, position);
 				object.put(NEXTS, objectGamesAndNextMove);
-
+				
+				if(n <= map_fen_GameAndNextMove_tab.size()){
+					writer.println(',');
+				}
 				writer.println(object);
 			}
 
