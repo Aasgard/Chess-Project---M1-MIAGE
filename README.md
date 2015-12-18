@@ -77,3 +77,12 @@ Packages
 - unitTest : unit test
 
 ##Licences
+
+###HIGHCHARTS JS
+Highcharts.js in underCreative Commons Attribution-NonCommercial 3.0 license.
+
+###DATATABLES
+DataTables is available under the MIT license.
+
+###CHESS.JS AND CHESSBOARD.JS
+Both are under the MIT license.
