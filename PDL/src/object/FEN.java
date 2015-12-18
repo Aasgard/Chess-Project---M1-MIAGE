@@ -19,19 +19,19 @@ public class FEN {
 	}
 	
 	public String getPosition() {
-		return position;
+		return this.position;
 	}
 	
 	public void setPosition(String position) {
-		position = position;
+		this.position = position;
 	}
 	
 	public int getScore() {
-		return score;
+		return this.score;
 	}
 	
 	public void setScore(int score) {
-		score = score;
+		this.score = score;
 	}
 	
 	public String getRawFEN() {
@@ -39,15 +39,15 @@ public class FEN {
 	}
 	
 	public void setRawFEN(String rawFEN) {
-		rawFEN = rawFEN;
+		this.rawFEN = rawFEN;
 	}
 	
 	public String getLog() {
-		return log;
+		return this.log;
 	}
 	
 	public void setLog(String log) {
-		log = log;
+		this.log = log;
 	}
 	
 	private int getHigherDepthScore(){

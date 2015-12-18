@@ -30,7 +30,7 @@ public class ErrorPlayer {
 	}
 	
 	public int getNb_of_error() {
-		return nb_of_error;
+		return this.nb_of_error;
 	}
 	
 	public void setNb_of_error(int nb_of_error) {
@@ -38,7 +38,7 @@ public class ErrorPlayer {
 	}
 	
 	public List<String> getError_fen() {
-		return error_fen;
+		return this.error_fen;
 	}
 	
 	public void setError_fen(List<String> error_fen) {
@@ -46,7 +46,7 @@ public class ErrorPlayer {
 	}
 
 	public int getIdGame() {
-		return idGame;
+		return this.idGame;
 	}
 
 	public void setIdGame(int idGame) {

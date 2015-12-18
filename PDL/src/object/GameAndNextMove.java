@@ -17,7 +17,7 @@ public class GameAndNextMove {
 	}
 	
 	public Move getMove() {
-		return nextMove;
+		return this.nextMove;
 	}
 	public void setMove(Move move) {
 		this.nextMove = move;
