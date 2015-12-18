@@ -92,14 +92,14 @@ public class Analysis {
 			results.addResult(g.getResult());
 			mapgameByOpening.put(g.getOpening().getId(), results);
 		}
-
+		HashMap<Opening, List<Integer>> openings = new HashMap<Opening, List<Integer>>();
 		for(Entry<Integer, ResultsByOpening> gameByOpening : mapgameByOpening.entrySet()){
 			List<Integer> rateByOpening = OpeningAnalysis.getWinRateOpening(gameByOpening.getValue().getResults());
-				
-			// Sauvegarde de l'opening
-			TreatmentJSON treatmentJSON = new TreatmentJSON();				
-			treatmentJSON.saveWinRateOpening(gameByOpening.getValue().getOpening(), rateByOpening.get(0), rateByOpening.get(1), rateByOpening.get(2));
+			openings.put(gameByOpening.getValue().getOpening(), rateByOpening);			
 		}
+		// Sauvegarde des openings
+		TreatmentJSON treatmentJSON = new TreatmentJSON();	
+		treatmentJSON.saveWinRateOpening(openings);
 	}
 
 	public void analyzePlayers() {
