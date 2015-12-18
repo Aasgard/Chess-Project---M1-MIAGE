@@ -4,14 +4,14 @@ Ce projet à pour but d'analyser des parties d'échecs.
 
 ##Analyses
 ###Global
-Classement des 5 meilleurs joueurs.
+* Classement des 5 meilleurs joueurs.
 
-Classement des 5 meilleures parties par score global.
+* Classement des 5 meilleures parties par score global.
 
-Statistiques base de données : 
-- Nombre de games	
-- Nombre de joueurs	
-- Nombre d'evenements
+* Statistiques base de données : 
+    - Nombre de games	
+    - Nombre de joueurs	
+    - Nombre d'evenements
 
 ###Joueurs
 
