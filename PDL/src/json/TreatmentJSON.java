@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -134,17 +135,17 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 
 				errorsJSONArray.put(errorJSON);
 			}
-			
+
 			// add elos
 			elosJSONArray = new JSONArray();
 			for(Map.Entry<String, Integer> entry : player.getElos().entrySet()) {
 				JSONObject eloJSON = new JSONObject();
 				eloJSON.put( DATE , entry.getKey());
 				eloJSON.put( ELO , entry.getValue());
-				
+
 				elosJSONArray.put(eloJSON);
 			}
-			
+
 			playerJSON.put(ID, player.getId());
 			playerJSON.put( NAME , player.getName());
 			playerJSON.put( NB_GAME_PLAYED , player.getNb_game_played());
@@ -202,7 +203,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		} catch (IOException e) {
 		}
 	}
-	
+
 
 	private JSONObject createGameJson(Game g) {
 		JSONObject object = new JSONObject();
@@ -349,7 +350,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put( BEST_GAMES , objectGames);
 		saveInFile(object, GLOBALBESTGAME_FILE, exists);	
 	}
-	
+
 	/**
 	 * Sauvegarde les meilleures parties dans un json
 	 * 
@@ -383,37 +384,48 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 * @param gameAndNextMove
 	 */
 	@Override
-	public void saveBestFenToJSON(String position, GameAndNextMove[] gameAndNextMove) {
+	public void saveBestFenToJSON(Map<String, GameAndNextMove[]> map_fen_GameAndNextMove_tab){
 
-		JSONObject object = ExtractJSON.getJsonPosition(position);
+		try {
+			System.out.println(PATH + RANKINGPOSITION_FILE);
+			PrintWriter writer = new PrintWriter(PATH + RANKINGPOSITION_FILE, "UTF-8");
 
-		boolean exists = true;
+			writer.println('[');
+			for(Entry<String , GameAndNextMove[]> fen_GameAndNextMove_tab : map_fen_GameAndNextMove_tab.entrySet()){
+				String position = fen_GameAndNextMove_tab.getKey();
+				GameAndNextMove[] gameAndNextMove = fen_GameAndNextMove_tab.getValue();
+				JSONArray objectGamesAndNextMove = new JSONArray();
+				for(int i = 0 ; i < gameAndNextMove.length ; i++){
 
-		if(object == null){
-			exists = false;
-			object = new JSONObject();
-		}
+					int idGame = gameAndNextMove[i].getGameID();
+					if(idGame != -1){
 
-		JSONArray objectGamesAndNextMove = new JSONArray();
-		for(int i = 0 ; i < gameAndNextMove.length ; i++){
+						JSONObject gameAndNextMoveJSON = new JSONObject();
+						int score = gameAndNextMove[i].getMove().getFen().getScore();
+						String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
+						int idMove = gameAndNextMove[i].getMove().getNum();
+						gameAndNextMoveJSON.put( ID_GAME , idGame);
+						gameAndNextMoveJSON.put(ID_MOVE, idMove);
+						gameAndNextMoveJSON.put( SCORE , score);
+						gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
+						objectGamesAndNextMove.put(gameAndNextMoveJSON);
+					}
+				}
+				JSONObject object = new JSONObject();
+				object.put(ID, position);
+				object.put(NEXTS, objectGamesAndNextMove);
 
-			int idGame = gameAndNextMove[i].getGameID();
-			if(idGame != -1){
-
-				JSONObject gameAndNextMoveJSON = new JSONObject();
-				int score = gameAndNextMove[i].getMove().getFen().getScore();
-				String positionNext = gameAndNextMove[i].getMove().getFen().getPosition();
-				int idMove = gameAndNextMove[i].getMove().getNum();
-				gameAndNextMoveJSON.put( ID_GAME , idGame);
-				gameAndNextMoveJSON.put(ID_MOVE, idMove);
-				gameAndNextMoveJSON.put( SCORE , score);
-				gameAndNextMoveJSON.put( FEN_NEXT_POSITION , positionNext );
-				objectGamesAndNextMove.put(gameAndNextMoveJSON);
+				writer.println(object);
 			}
-		}	
-		object.put(ID, position);
-		object.put(NEXTS, objectGamesAndNextMove);
-		saveInFile(object,RANKINGPOSITION_FILE, exists);	
+
+
+			writer.println(']');
+			System.out.println("New File..");
+
+			System.out.println("Successfully Copied JSON Object to File...");
+			writer.close();
+		} catch (IOException e) {
+		}
 	}
 
 	/**
@@ -422,7 +434,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 	 */
 	@Override
 	public void saveGames(List<Game> games) {	
-		
+
 		try {
 			System.out.println(PATH + GAME_FILE);
 			PrintWriter writer = new PrintWriter(PATH + GAME_FILE, "UTF-8");
@@ -436,7 +448,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			while(hasNext){
 				Game g = it.next();
 				JSONObject obj = new JSONObject();
-				
+
 				obj.put(ID_GAME, g.getId());
 				obj.put(ID_WHITE, g.getWhitePlayer().getId());
 				obj.put(NAME_WHITE, g.getWhitePlayer().getName());
@@ -448,7 +460,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				obj.put(RESULT, g.getResult());
 				obj.put(DATE, g.getDate());
 				obj.put(PGN, g.getPGN());
-				
+
 				JSONArray scores = new JSONArray();
 				int i = 0;
 				for(Move m : g.getAlMoves()){
@@ -472,7 +484,7 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 			writer.close();
 		} catch (IOException e) {
 		}
-		
+
 	}
 
 

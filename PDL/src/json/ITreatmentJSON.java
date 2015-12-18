@@ -1,6 +1,7 @@
 package json;
 
 import java.util.List;
+import java.util.Map;
 
 import object.*;
 
@@ -24,6 +25,6 @@ public interface ITreatmentJSON {
 	
 	public void saveGlobalBestGamesToJSON(Game[] games, String fileName);
 
-	public void saveBestFenToJSON(String position, GameAndNextMove[] tableaubest_GameAndNextMove);
+	public void saveBestFenToJSON(Map<String, GameAndNextMove[]> map_fen_GameAndNextMove_tab);
 	
 }
