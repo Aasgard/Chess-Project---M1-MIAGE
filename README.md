@@ -26,10 +26,10 @@ Statistiques base de données :
 
 ###Ouverture
 
-Possibilité de rejouer à partir de l'ouverture
-Pourcentage des victoires (blanc, noir, ex aequo)
+- Possibilité de rejouer à partir de l'ouverture
+- Pourcentage des victoires (blanc, noir, ex aequo)
 
 
 ###Evolution du score à partir d'une position
 
-Meilleures évolutions de score à partir d'une position
+- Meilleures évolutions de score à partir d'une position
