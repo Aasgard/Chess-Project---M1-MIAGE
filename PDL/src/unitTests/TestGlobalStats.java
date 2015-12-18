@@ -39,12 +39,14 @@ public class TestGlobalStats {
 		games.add(game4);
 		games.add(game5);
 		Event event = new Event(1, "Tournoi", "Rennes");
-		int i = 6;
+		int i = 1;
+		// les games sont rangées de la moins bonne à la meilleur
+		// pour tester si elles seront remises dans le bon ordre
 		for(Game game : games) {
 			game.setDate("2015-0" + i + "-20");
 			game.setEvent(event);
-			game.setScoreTotalVariation(1000 - i);
-			i--;
+			game.setScoreTotalVariation(1000 + i);
+			i++;
 		}
 		
 		// setup for testGetGlobalBestPlayers
@@ -60,6 +62,8 @@ public class TestGlobalStats {
 		players.add(player4);
 		players.add(player5);
 		int j = 0;
+		// les joueurs sont rangés du moins bon au meilleur
+		// pour tester s'ils seront remis dans le bon ordre
 		for(Player player : players) {
 			player.setNbGameWin(j);
 			player.setNbGameLoose(0);
@@ -83,6 +87,8 @@ public class TestGlobalStats {
 		// test si le jsonArray est bon
 		assertTrue(UtilsTests.testJsonArrayGlobalStats(jsonArray));
 		
+		
+		
 	}
 
 	/**
@@ -101,6 +107,9 @@ public class TestGlobalStats {
 		// test si les joueurs sont bien dans l'ordre
 		assertTrue(UtilsTests.jsonArrayContainsPlayer(jsonArray, players.get(0), 5));
 		assertTrue(UtilsTests.jsonArrayContainsPlayer(jsonArray, players.get(4), 1));
+		
+		// suppression du contenu du json
+		UtilsTests.deleteContentJSON(PATH_TEST + "bestPlayersTest.json");
 	}
 
 	/**

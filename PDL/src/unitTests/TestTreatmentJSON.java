@@ -62,12 +62,7 @@ public class TestTreatmentJSON {
 		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
 		
 		// suppression du contenu du fichier
-    	try{   		
-    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
-    		file.flush();
-    	}catch(Exception e){ 		
-    		e.printStackTrace();   		
-    	}
+		UtilsTests.deleteContentJSON(PATH_TEST + fileName);
 	}
 	
 	/**
@@ -88,14 +83,6 @@ public class TestTreatmentJSON {
 		
 		// test si le jsonArray contient le jsonObj
 		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
-		
-		// suppression du contenu du fichier
-    	try{   		
-    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
-    		file.flush();
-    	}catch(Exception e){ 		
-    		e.printStackTrace();   		
-    	}
 	}
 	
 	/**
@@ -151,12 +138,7 @@ public class TestTreatmentJSON {
 		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[2], 3));
 		
 		// suppression du contenu du fichier
-    	try{   		
-    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
-    		file.flush();
-    	}catch(Exception e){ 		
-    		e.printStackTrace();   		
-    	}
+		UtilsTests.deleteContentJSON(PATH_TEST + fileName);
 		
 	}
 }

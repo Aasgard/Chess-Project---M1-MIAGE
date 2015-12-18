@@ -106,6 +106,7 @@ public class TestPlayerAnalysis {
 		Game g = new Game();
 		g.setId(1);
 		g.setAlMoves(moves);
+		g.setDate("2014-07-25");
 		g.setResult(1);
 		g.setWhitePlayer(whitePlayer);
 		g.setBlackPlayer(blackPlayer);
