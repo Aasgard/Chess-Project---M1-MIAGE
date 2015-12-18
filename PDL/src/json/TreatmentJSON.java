@@ -12,7 +12,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import object.ErrorPlayer;
-import object.FEN;
 import object.Game;
 import object.GameAndNextMove;
 import object.Move;

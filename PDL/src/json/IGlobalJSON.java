@@ -1,7 +1,5 @@
 package json;
 
-import object.Opening;
-
 public interface IGlobalJSON {
 	public final String PATH = "JSONContainer/";
 	public final String PATH_TEST = "JSONTest/";
