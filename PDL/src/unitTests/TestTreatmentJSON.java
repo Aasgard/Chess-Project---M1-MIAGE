@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 import static json.IGlobalJSON.*;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,11 +49,40 @@ public class TestTreatmentJSON {
 	
 	/**
 	 * Save JSONObject dans un fichier existant
+	 * JSONObject non présent
 	 */
 	@Test
 	public void testsaveInFile1() {
 		// variables utilisées dans saveInFile
 		String fileName = "treatmentJSONTest.json";
+		boolean exists = false;
+		
+		// sauvegarde du jsonObj dans le fichier
+		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
+		
+		// récupération du fichier dans un jsonArray
+		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
+		
+		// test si le jsonArray contient le jsonObj
+		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
+		
+		// suppression du contenu du fichier
+    	try{   		
+    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
+    		file.flush();
+    	}catch(Exception e){ 		
+    		e.printStackTrace();   		
+    	}
+	}
+	
+	/**
+	 * Save JSONObject dans un fichier existant
+	 * JSONObject déjà présent
+	 */
+	@Test
+	public void testsaveInFile2() {
+		// variables utilisées dans saveInFile
+		String fileName = "treatmentJSONTest2.json";
 		boolean exists = true;
 		
 		// sauvegarde du jsonObj dans le fichier
@@ -63,16 +93,24 @@ public class TestTreatmentJSON {
 		
 		// test si le jsonArray contient le jsonObj
 		assertTrue(UtilsTests.jsonArrayContains(jsonArray, jsonObj));
+		
+		// suppression du contenu du fichier
+    	try{   		
+    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
+    		file.flush();
+    	}catch(Exception e){ 		
+    		e.printStackTrace();   		
+    	}
 	}
 	
 	/**
 	 * Save JSONObject dans un fichier inexistant
 	 */
 	@Test
-	public void testsaveInFile2() {
+	public void testsaveInFile3() {
 		// variables utilisées dans saveInFile
 		// fichier non existant
-		String fileName = "treatmentJSONTest2.json";
+		String fileName = "treatmentJSONTest3.json";
 		boolean exists = false;
 		
 		// remplissage du jsonObj
@@ -98,20 +136,32 @@ public class TestTreatmentJSON {
     	}
 	}
 
+	/**
+	 * Test save BestGames
+	 */
 	@Test
 	public void testsaveGlobalBestGamesToJSON() {
 		
 		String fileName = "bestGameTest.json";
 		
+		// appel de la méthode testée
 		treatmentJSON.saveGlobalBestGamesToJSON(games, PATH_TEST_CORRIGE + fileName);
 		
 		// récupération du fichier dans un jsonArray
 		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
 		
-		System.out.println("in");
+		// test si les games on bien été ajoutés
 		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[0], 1));
 		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[1], 2));
 		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[2], 3));
-		System.out.println("out");
+		
+		// suppression du contenu du fichier
+    	try{   		
+    		FileWriter file = new FileWriter(PATH_TEST + fileName);	
+    		file.flush();
+    	}catch(Exception e){ 		
+    		e.printStackTrace();   		
+    	}
+		
 	}
 }

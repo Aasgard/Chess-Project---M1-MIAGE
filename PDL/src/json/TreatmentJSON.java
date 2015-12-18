@@ -344,6 +344,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		saveInFile(object, fileName, exists);	
 	}
 
+	/**
+	 * @param position
+	 * @param gameAndNextMove
+	 */
 	@Override
 	public void saveBestFenToJSON(String position, GameAndNextMove[] gameAndNextMove) {
 
@@ -378,6 +382,10 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		saveInFile(object,RANKINGPOSITION_FILE, exists);	
 	}
 
+	/**
+	 * Sauvegarde une liste de games dans un JSON
+	 * @param games
+	 */
 	@Override
 	public void saveGames(List<Game> games) {	
 		

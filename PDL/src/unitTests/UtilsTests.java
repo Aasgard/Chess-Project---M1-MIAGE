@@ -63,9 +63,9 @@ public class UtilsTests {
 		System.out.println(bestGameArray.toString());
 
 		for(int i=0; i < bestGameArray.length(); i++) {
-			JSONObject jsonObjTemp = jsonArray.getJSONObject(i);
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
 			
-			if((int)jsonObj.get("rang") == rang) {
+			if((int)jsonObjTemp.get("rang") == rang) {
 				isInJson = true;
 				
 				if(
