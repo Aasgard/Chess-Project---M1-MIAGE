@@ -48,11 +48,11 @@ public class TestGlobalStats {
 		}
 		
 		// setup for testGetGlobalBestPlayers
-		Player player1 = new Player(0, "Francis Heaulme");
-		Player player2 = new Player(1, "Emile Louis");
-		Player player3 = new Player(2, "Pierrot le fou");
-		Player player4 = new Player(3, "Le désanusseur de Nottingham Forest");
-		Player player5 = new Player(4, "Rumen le bulgare");
+		Player player1 = new Player(0, "Francois");
+		Player player2 = new Player(1, "Clément");
+		Player player3 = new Player(2, "Pauline");
+		Player player4 = new Player(3, "William");
+		Player player5 = new Player(4, "Paul");
 		
 		players.add(player1);
 		players.add(player2);
@@ -67,35 +67,54 @@ public class TestGlobalStats {
 		}
 	}
 
+	/**
+	 * Test de globalStats
+	 */
 	@Test
 	public void testGetGlobalStats() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetGlobalBestPlayers() {
-		String fileName = "bestPlayersTest.json";
+		String fileName = PATH_TEST_CORRIGE + "globalStatsTest.json";
 		
 		// appel de la fonction
-		GlobalStats.getGlobalBestPlayers(players, PATH_TEST_CORRIGE + fileName);
+		GlobalStats.getGlobalStats(40, fileName);
 		
 		// récupération du fichier dans un jsonArray
-		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
+		JSONArray jsonArray = ExtractJSON.readJSONFile(fileName);
+		
+		// test si le jsonArray est bon
+		assertTrue(UtilsTests.testJsonArrayGlobalStats(jsonArray));
+		
+	}
+
+	/**
+	 * Test de getGlobalBestPlayers
+	 */
+	@Test
+	public void testGetGlobalBestPlayers() {
+		String fileName = PATH_TEST_CORRIGE + "bestPlayersTest.json";
+		
+		// appel de la fonction
+		GlobalStats.getGlobalBestPlayers(players, fileName);
+		
+		// récupération du fichier dans un jsonArray
+		JSONArray jsonArray = ExtractJSON.readJSONFile(fileName);
 		
 		// test si les joueurs sont bien dans l'ordre
 		assertTrue(UtilsTests.jsonArrayContainsPlayer(jsonArray, players.get(0), 5));
 		assertTrue(UtilsTests.jsonArrayContainsPlayer(jsonArray, players.get(4), 1));
 	}
 
+	/**
+	 * Test de getGlobalBestVar
+	 */
 	@Test
 	public void testGetGlobalBestVar() {
-		String fileName = "bestGameTest.json";
+		String fileName = PATH_TEST_CORRIGE + "bestGameTest.json";
 		
 		// appel de la fonction
-		GlobalStats.getGlobalBestVar(games, PATH_TEST_CORRIGE + fileName);
+		GlobalStats.getGlobalBestVar(games, fileName);
 		
 		// récupération du fichier dans un jsonArray
-		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
+		JSONArray jsonArray = ExtractJSON.readJSONFile(fileName);
 		
 		assertTrue(true);
 	}

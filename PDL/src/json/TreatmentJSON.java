@@ -234,6 +234,12 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		return object;
 	}
 
+	/**
+	 * Save nb of games played, nb of players and nb of events in a json file
+	 * @param nb_games
+	 * @param nb_players
+	 * @param nb_events
+	 */
 	@Override
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events) {
 		JSONObject object = new JSONObject();
@@ -262,6 +268,42 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put(ID, 1);
 		object.put(GLOBAL_STATS, objectArray);
 		saveInFile( object, GLOBALSTAT_FILE , exists);
+	}
+	
+	/**
+	 * Save nb of games played, nb of players and nb of events in a json file
+	 * @param nb_games
+	 * @param nb_players
+	 * @param nb_events
+	 */
+	@Override
+	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events, String fileName) {
+		JSONObject object = new JSONObject();
+		boolean exists = false;
+		if(ExtractJSON.readJSONFile(fileName) != null){
+			exists = true;
+		}
+
+		JSONArray objectArray = new JSONArray();
+
+		JSONObject object1 = new JSONObject();
+		object1.put(LIBELLE, NB_GAMES);
+		object1.put(VALEUR, nb_games);
+		objectArray.put(object1);
+
+		JSONObject object2 = new JSONObject();
+		object2.put(LIBELLE, NB_PLAYERS);
+		object2.put(VALEUR, nb_players);
+		objectArray.put(object2);
+
+		JSONObject object3 = new JSONObject();
+		object3.put(LIBELLE, NB_EVENT);
+		object3.put(VALEUR, nb_events);
+		objectArray.put(object3);
+
+		object.put(ID, 1);
+		object.put(GLOBAL_STATS, objectArray);
+		saveInFile( object, fileName , exists);
 	}
 
 	/**
@@ -396,7 +438,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				GameAndNextMove[] gameAndNextMove = fen_GameAndNextMove_tab.getValue();
 				JSONArray objectGamesAndNextMove = new JSONArray();
 				for(int i = 0 ; i < gameAndNextMove.length ; i++){
-
 					int idGame = gameAndNextMove[i].getGameID();
 					if(idGame != -1){
 
@@ -414,7 +455,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 				JSONObject object = new JSONObject();
 				object.put(ID, position);
 				object.put(NEXTS, objectGamesAndNextMove);
-
 				writer.println(object);
 			}
 

@@ -94,8 +94,6 @@ public class UtilsTests {
 		boolean isInJson = false;
 		JSONObject jsonObj = jsonArray.getJSONObject(0);
 		JSONArray bestGameArray = (JSONArray) jsonObj.get("best_players");
-		
-		System.out.println(bestGameArray.toString());
 
 		for(int i=0; i < bestGameArray.length(); i++) {
 			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
@@ -117,6 +115,25 @@ public class UtilsTests {
 		}
 		return true;
 	}
+	
+	/**
+	 * Test si le jsonArray de GlobalStats est bon
+	 * @param jsonArray
+	 */
+	public static boolean testJsonArrayGlobalStats(JSONArray jsonArray) {
+		JSONObject jsonObj = jsonArray.getJSONObject(0);
+		JSONArray bestGameArray = (JSONArray) jsonObj.get("global_stats");
+
+		for(int i=0; i < bestGameArray.length(); i++) {
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
+			
+			if(!jsonObjTemp.has("valeur") || !jsonObjTemp.has("libelle")){
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	
 	public static void deleteJsonObjectFromFile(JSONObject jsonObject, String objectName) {
 		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObject, objectName);

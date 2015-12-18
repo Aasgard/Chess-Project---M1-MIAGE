@@ -21,6 +21,17 @@ public class GlobalStats {
 		int nb_events = ExtractDB.extractNumberEvents();
 		treatmentJSON.saveGlobalStatsToJSON(nb_games, nb_players, nb_events); 
 	}
+	
+	/*
+	 * Get nb_total : players, games and events to save in a specific JSON
+	 * @param nb_games
+	 * @param fileName
+	 */
+	public static void getGlobalStats(int nb_games, String fileName){
+		int nb_players = ExtractDB.extractNumberPlayers();
+		int nb_events = ExtractDB.extractNumberEvents();
+		treatmentJSON.saveGlobalStatsToJSON(nb_games, nb_players, nb_events, fileName); 
+	}
 
 	/*
 	 * Create a board which contains 5 BestPlayers

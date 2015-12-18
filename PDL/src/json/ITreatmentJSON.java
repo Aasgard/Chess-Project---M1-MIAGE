@@ -17,6 +17,8 @@ public interface ITreatmentJSON {
 
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events);
 	
+	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events, String fileName);
+	
 	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
 	public void saveGlobalBestPlayersToJSON(Player[] players, String fileName);
