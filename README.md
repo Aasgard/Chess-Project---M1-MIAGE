@@ -21,8 +21,8 @@ Statistiques base de données :
 
 ###Parties
 
--Fluctuation du score
--Possibilité de rejouer la partie
+- Fluctuation du score
+- Possibilité de rejouer la partie
 
 ###Ouverture
 
