@@ -4,20 +4,46 @@ import static org.junit.Assert.*;
 import static json.IGlobalJSON.*;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import json.ExtractJSON;
+import json.ITreatmentJSON;
 import json.TreatmentJSON;
+import object.Event;
+import object.FEN;
+import object.Game;
+import object.Move;
 import unitTests.UtilsTests;;
 
 public class TestTreatmentJSON {
 
-	@Test
-	public void test() {
-		fail("Not yet implemented");
+	// For testSaveInFile
+	private static JSONObject jsonObj = new JSONObject();
+	// For testsaveGlobalBestGamesToJSON
+	private static Game[] games = {new Game(), new Game(), new Game()};
+	
+	private static ITreatmentJSON treatmentJSON = new TreatmentJSON();
+	
+	@BeforeClass
+	public static void setUp() {
+		// Create JSONObject
+		jsonObj.put("id", 3);
+		jsonObj.put("attr1", "test attr1");
+		jsonObj.put("attr2", 2);
+		
+		Event event = new Event(1, "Tournoi", "Rennes");
+		for(int i=1; i <= 3; i++) {
+			games[i-1].setDate("2015-0" + i + "-20");
+			games[i-1].setEvent(event);
+			games[i-1].setScoreTotalVariation(i+1000);
+		}
 	}
 	
 	/**
@@ -26,14 +52,8 @@ public class TestTreatmentJSON {
 	@Test
 	public void testsaveInFile1() {
 		// variables utilisées dans saveInFile
-		JSONObject jsonObj = new JSONObject();
 		String fileName = "treatmentJSONTest.json";
 		boolean exists = true;
-		
-		// remplissage du jsonObj
-		jsonObj.put("id", 3);
-		jsonObj.put("attr1", "test attr1");
-		jsonObj.put("attr2", 2);
 		
 		// sauvegarde du jsonObj dans le fichier
 		TreatmentJSON.saveInFile(jsonObj, PATH_TEST_CORRIGE + fileName, exists);
@@ -51,7 +71,6 @@ public class TestTreatmentJSON {
 	@Test
 	public void testsaveInFile2() {
 		// variables utilisées dans saveInFile
-		JSONObject jsonObj = new JSONObject();
 		// fichier non existant
 		String fileName = "treatmentJSONTest2.json";
 		boolean exists = false;
@@ -82,6 +101,17 @@ public class TestTreatmentJSON {
 	@Test
 	public void testsaveGlobalBestGamesToJSON() {
 		
-		fail("Not yet implemented");
+		String fileName = "bestGameTest.json";
+		
+		treatmentJSON.saveGlobalBestGamesToJSON(games, PATH_TEST_CORRIGE + fileName);
+		
+		// récupération du fichier dans un jsonArray
+		JSONArray jsonArray = ExtractJSON.readJSONFile(PATH_TEST_CORRIGE + fileName);
+		
+		System.out.println("in");
+		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[0], 1));
+		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[1], 2));
+		assertTrue(UtilsTests.jsonArrayContainsGame(jsonArray, games[2], 3));
+		System.out.println("out");
 	}
 }

@@ -157,6 +157,13 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}
 	}
 
+	/**
+	 * Sauvegarde un jsonObject dans un fichier donné
+	 * 
+	 * @param jsonObject
+	 * @param objectName
+	 * @param exist
+	 */
 	public static void saveInFile(JSONObject jsonObject, String objectName, boolean exist){
 
 		JSONArray allData;
@@ -167,7 +174,6 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		}
 
 		try {
-			System.out.println(PATH + objectName);
 			PrintWriter writer = new PrintWriter(PATH + objectName, "UTF-8");
 
 
@@ -282,6 +288,11 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		saveInFile(object, GLOBALBESTPLAYER_FILE, exists);	
 	}
 
+	/**
+	 * Sauvegarde les meilleures parties dans un json
+	 * 
+	 * @param games
+	 */
 	@Override
 	public void saveGlobalBestGamesToJSON(Game[] games) {
 		JSONObject object = new JSONObject();
@@ -303,7 +314,34 @@ public class TreatmentJSON implements ITreatmentJSON, IGlobalJSON {
 		object.put(ID, 1);
 		object.put( BEST_GAMES , objectGames);
 		saveInFile(object, GLOBALBESTGAME_FILE, exists);	
+	}
+	
+	/**
+	 * Sauvegarde les meilleures parties dans un json
+	 * 
+	 * @param games
+	 */
+	@Override
+	public void saveGlobalBestGamesToJSON(Game[] games, String fileName) {
+		JSONObject object = new JSONObject();
+		JSONArray objectGames = new JSONArray();
 
+		boolean exists = false;
+		if(ExtractJSON.readJSONFile(fileName) != null){
+			exists = true;
+		}
+
+		for(int i = 0 ; i < games.length ; i++){
+			JSONObject game = new JSONObject();
+			game.put( RANG_GAME , i+1);
+			game.put( DATE_GAME , games[i].getDate());
+			game.put( EVENT , games[i].getEvent().getName());
+			game.put( SCORE_GLOBAL , games[i].getScoreTotalVariation());
+			objectGames.put(game);
+		}
+		object.put(ID, 1);
+		object.put( BEST_GAMES , objectGames);
+		saveInFile(object, fileName, exists);	
 	}
 
 	@Override

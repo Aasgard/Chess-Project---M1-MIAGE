@@ -50,6 +50,26 @@ public class TestPlayerAnalysis {
 		assertTrue(moves.get(0).isMate());
 	}
 	
+	@Test
+	public void testAddPlayer(){
+		
+		// Initilisation
+		Player player = new Player(4, "ganjo");
+		Boolean winner = true;
+		Boolean other = false;
+		String date = "2013-06-20";
+		int elo = 1470;
+		
+		// Fonction a tester
+		PlayerAnalysis playerAnalysis = new PlayerAnalysis();
+		playerAnalysis.addPlayer(player, winner, other, date, elo);
+		
+		// Comparaison des résultats
+		Player playerRes = playerAnalysis.getPlayers().get(0);
+		assertEquals(1, playerAnalysis.getPlayers().size());
+		assertEquals(player, playerRes);
+	}
+
 	/**
 	 * Test pour une erreur
 	 */
@@ -77,25 +97,31 @@ public class TestPlayerAnalysis {
 	@Test
 	public void testGetPlayerStats(){
 		
-		/* Initialisation */
+		/* Initialisation */		
+		Player whitePlayer = new Player(1, "blanc");
+		Player blackPlayer = new Player(2, "noir");
 		
-		//P
 		
 		// - Game
 		Game g = new Game();
 		g.setId(1);
 		g.setAlMoves(moves);
 		g.setResult(1);
-		//g.setWhitePlayer(whitePlayer);
-		//g.setBlackPlayer(blackPlayer);
-		
-		/* -------------- */
+		g.setWhitePlayer(whitePlayer);
+		g.setBlackPlayer(blackPlayer);
+
 		
 		// Ma fonction à tester
 		PlayerAnalysis playerAnalysis = new PlayerAnalysis();
 		playerAnalysis.getPlayerStats(g);
 		
+		// Comparaison des résultats
 		List<Player> players = playerAnalysis.getPlayers();
+		
+		assertEquals(2, players.size());
+		assertEquals(whitePlayer, players.get(0));
+		assertEquals(blackPlayer, players.get(1));
+		
 		
 	}
 }
