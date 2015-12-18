@@ -1,10 +1,15 @@
 package unitTests;
 
+import java.io.FileWriter;
+
+import javax.annotation.processing.ProcessingEnvironment;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import json.ExtractJSON;
 import object.Game;
+import object.GameAndNextMove;
 import object.Player;
 
 public class UtilsTests {
@@ -134,6 +139,31 @@ public class UtilsTests {
 		return true;
 	}
 	
+	/**
+	 * Supprime le contenu d'un json
+	 * @param fileName
+	 */
+	public static void deleteContentJSON(String fileName) {
+		System.out.println(fileName);
+    	try{   		
+    		FileWriter file = new FileWriter(fileName);	
+    		file.flush();
+    	}catch(Exception e){ 		
+    		e.printStackTrace();   		
+    	}
+	}
+	
+	public static boolean rightOrderBestMoves(GameAndNextMove tableaubest_GameAndNextMove[]) {
+		for(int i=1; i < tableaubest_GameAndNextMove.length; i++) {
+			GameAndNextMove prevMove = tableaubest_GameAndNextMove[i-1];
+			GameAndNextMove nextMove = tableaubest_GameAndNextMove[i];
+			
+			if(prevMove.getMove().getFen().getScore() < nextMove.getMove().getFen().getScore()) {
+				return false;
+			}
+		}
+		return true;
+	}
 	
 	public static void deleteJsonObjectFromFile(JSONObject jsonObject, String objectName) {
 		JSONArray jsonArray = ExtractJSON.deleteJsonObject(jsonObject, objectName);
