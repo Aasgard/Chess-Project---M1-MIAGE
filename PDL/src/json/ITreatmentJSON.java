@@ -18,9 +18,11 @@ public interface ITreatmentJSON {
 	
 	public void saveGlobalBestPlayersToJSON(Player[] players);
 	
+	public void saveGlobalBestPlayersToJSON(Player[] players, String fileName);
+	
 	public void saveGlobalBestGamesToJSON(Game[] games);
 	
-	void saveGlobalBestGamesToJSON(Game[] games, String fileName);
+	public void saveGlobalBestGamesToJSON(Game[] games, String fileName);
 
 	public void saveBestFenToJSON(String position, GameAndNextMove[] tableaubest_GameAndNextMove);
 	

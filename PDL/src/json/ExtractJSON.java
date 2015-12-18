@@ -88,7 +88,6 @@ public class ExtractJSON implements IGlobalJSON{
 	public static JSONArray readJSONFile(String objectName){
 
 		String result = "";
-		System.out.println(PATH + objectName);
 		try {
 			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(new FileReader(PATH + objectName));

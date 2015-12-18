@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import json.ExtractJSON;
 import object.Game;
+import object.Player;
 
 public class UtilsTests {
 
@@ -50,10 +51,10 @@ public class UtilsTests {
 	}
 	
 	/**
-	 * Test si un JSONArray contient une game donnée
+	 * Test si un JSONArray contient une game donnée selon son rang
 	 * @param jsonArray
 	 * @param game
-	 * @return
+	 * @return bool
 	 */
 	public static boolean jsonArrayContainsGame(JSONArray jsonArray, Game game, int rang) {
 		boolean isInJson = false;
@@ -72,6 +73,40 @@ public class UtilsTests {
 						(int)jsonObjTemp.get("score global") != game.getScoreTotalVariation() ||
 						!jsonObjTemp.get("date").equals(game.getDate()) ||
 						!jsonObjTemp.get("evenement").equals(game.getEvent().getName())
+					) {
+					return false;
+				}
+			}
+		}
+		if(!isInJson) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Test si un JSONArray contient un player donné selon son rang
+	 * @param jsonArray
+	 * @param game
+	 * @return bool
+	 */
+	public static boolean jsonArrayContainsPlayer(JSONArray jsonArray, Player player, int rang) {
+		boolean isInJson = false;
+		JSONObject jsonObj = jsonArray.getJSONObject(0);
+		JSONArray bestGameArray = (JSONArray) jsonObj.get("best_players");
+		
+		System.out.println(bestGameArray.toString());
+
+		for(int i=0; i < bestGameArray.length(); i++) {
+			JSONObject jsonObjTemp = bestGameArray.getJSONObject(i);
+			
+			if((int)jsonObjTemp.get("rang") == rang) {
+				isInJson = true;
+				
+				if(
+						(int)jsonObjTemp.get("nb_games_loose") != player.getNbGameLoose() ||
+						!jsonObjTemp.get("name").equals(player.getName()) ||
+						!jsonObjTemp.get("nb_games_win").equals(player.getNbGameWin())
 					) {
 					return false;
 				}

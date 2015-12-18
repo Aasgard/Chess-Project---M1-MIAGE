@@ -5,12 +5,9 @@ import static json.IGlobalJSON.*;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,9 +15,7 @@ import json.ExtractJSON;
 import json.ITreatmentJSON;
 import json.TreatmentJSON;
 import object.Event;
-import object.FEN;
 import object.Game;
-import object.Move;
 import unitTests.UtilsTests;;
 
 public class TestTreatmentJSON {
