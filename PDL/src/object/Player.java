@@ -89,6 +89,7 @@ public class Player {
 		this.nbGameLoose++;
 	}
 	public void addElo(String date, int elo) {
+		System.out.println(date + " : elo : " + elo);
 		this.elos.put(date, elo);
 	}
 	
