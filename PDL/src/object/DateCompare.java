@@ -14,7 +14,6 @@ public class DateCompare implements Comparator<String> {
 		try {
 			Date date1 = formatter.parse(o1);
 			Date date2 = formatter.parse(o2);	
-			System.out.println("compare date" + date1.compareTo(date2));
 			return date1.compareTo(date2);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

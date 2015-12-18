@@ -1,5 +1,6 @@
 package json;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +14,7 @@ public interface ITreatmentJSON {
 	
 	public void savePlayersToJSON(List<Player> players);
 
-	public void saveWinRateOpening(Opening o, int nbWhite, int nbBlack, int exaequo);
+	public void saveWinRateOpening(HashMap<Opening, List<Integer>> openings);
 
 	public void saveGlobalStatsToJSON(int nb_games, int nb_players, int nb_events);
 	
